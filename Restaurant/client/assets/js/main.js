@@ -21,9 +21,18 @@ $(".owl-carousel").owlCarousel({
     },
   },
 });
-const spinner = document.querySelector("#spinner");
-window.addEventListener("load", function () {
-  setTimeout(() => {
-    spinner.style.visibility = "hidden";
-  }, 3000);
-});
+
+const spinner = document.querySelector(".spinner-loader");
+const main = document.querySelector("main");
+const aside = document.querySelector("aside");
+const navbar = document.querySelector(".navbar");
+main.style.display = "block";
+  aside.style.display = "flex";
+// setTimeout(() => {
+//   spinner.style.display = "none";
+  
+// }, 1000);
+
+// navbar.addEventListener("click", function () {
+//   console.log("salam");
+// });
