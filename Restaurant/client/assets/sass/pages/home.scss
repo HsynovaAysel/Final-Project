@@ -160,56 +160,53 @@ main {
   header {
     width: 100%;
     .reservation {
-  position: absolute;
-  top: 40%;
-  right: 0px;
-  z-index: 9999999;
-  a {
-    gap: 1rem;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .call {
-      transform: rotate(-90deg);
-      h4 {
-        color: #fff;
+      position: absolute;
+      top: 40%;
+      right: 0px;
+      z-index: 9999999;
+      a {
+        gap: 1rem;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .call {
+          transform: rotate(-90deg);
+          h4 {
+            color: #fff;
+          }
+          span {
+            font-size: 18px;
+          }
+        }
+        .icon {
+          border: 1px solid white;
+          width: 50px;
+          height: 50px;
+          padding: 10px;
+          border-radius: 50%;
+          margin-top: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          animation: pulse 2s infinite;
+          img {
+            width: 100%;
+          }
+        }
+        @keyframes pulse {
+          0% {
+            transform: scale3d(1, 1, 1);
+          }
+          50% {
+            transform: scale3d(1.05, 1.05, 1.05);
+          }
+          100% {
+            transform: scale3d(1, 1, 1);
+          }
+        }
       }
-      span {
-        font-size: 18px;
-      }
     }
-    .icon {
-      border: 1px solid white;
-      width: 50px;
-      height: 50px;
-      padding: 10px;
-      border-radius: 50%;
-      margin-top: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: pulse 2s infinite;
-      img{
-        width: 100%;
-      }
-    }
-    @keyframes pulse {
-      0% {
-
-        transform: scale3d(1, 1, 1);
-    }
-    50% {
-
-        transform: scale3d(1.05, 1.05, 1.05);
-    }
-    100% {
-
-        transform: scale3d(1, 1, 1);
-    }
-    }
-  }
-}
     .owl-carousel {
       .owl-item {
         &.active {
@@ -323,5 +320,101 @@ main {
       }
     }
   }
- 
+  #about {
+    padding: 100px 50px;
+    .about {
+      width: 100%;
+      display: flex;
+      gap: 1rem;
+      .about-word {
+        width: 50%;
+        .reservation-about {
+          display: flex;
+        }
+      }
+      .img-1 {
+        position: relative;
+        top: 50px;
+        // right: 50px;
+        width: 25%;
+        img {
+          width: 100%;
+        }
+      }
+      .img-2 {
+        width: 25%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  #chef {
+    padding: 100px;
+    background-color: $text-color;
+    .chef {
+      display: flex;
+      gap: 2rem;
+      .chef-img {
+        width: 40%;
+        img {
+          width: 100%;
+        }
+      }
+      .chef-content {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .about-bottom {
+          display: flex;
+          gap: 3rem;
+          align-items: center;
+          h2 {
+            color: $white-color;
+          }
+          .img {
+            width: 100px;
+            height: 100px;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  #recommends {
+    padding: 100px 80px;
+    .recommends {
+      .recommends-top {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        h1 {
+          position: absolute;
+          right: 36%;
+          font-size: 150px;
+          color: rgba($color: #000000, $alpha: 0.1);
+        }
+        .img-line {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          .line {
+            width: 50px;
+            border: 1px solid rgba($color: #000000, $alpha: 0.1);
+          }
+          .img {
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
 }
