@@ -1,0 +1,65 @@
+h1 {
+  font-family: $font-libre;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 70px;
+  color: $white-color;
+}
+h2 {
+  font-family: $font-libre;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 48px;
+  color: $text-color;
+}
+h3 {
+  font-family: $font-libre;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 53px;
+  color: $home-color;
+
+}
+h4 {
+  font-family: $font-libre;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 38px;
+  color: $home-color;
+}
+h5 {
+  font-family: $font-libre;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 34px;
+  color: $white-color;
+}
+h6 {
+  font-family: $font-libre;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 35px;
+  color: $white-color;
+}
+p {
+  color: $grey-color;
+  font-family: $font-noto;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+a {
+  color: $white-color;
+  font-family: $font-noto;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 19px;
+}
+span {
+  font-family: $font-noto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 26px;
+  color: $home-color;
+}

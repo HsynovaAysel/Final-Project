@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+    ></script>
+    <script defer src="./assets/js/main.js"></script>
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./assets/scss/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header">
+          <a href="index.html" class="logo"> Tasty </a>
+          <nav>
+            <ul>
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="#">Menu</a></li>
+              <li><a href="admin.html">Form</a></li>
+              <li><a href="favorites.html">Favorites</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="basket.html">Basket</a></li>
+              <li> <i class="fa-solid fa-moon"></i> <sup class="themse"></sup></li>
+            </ul>
+          </nav>
+          <div class="menu-icon">
+            <i class="fa-solid fa-bars"></i> <span>MENU</span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="home">
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="home bg1">
+              <div class="bg-color"></div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="home bg2">
+              <div class="bg-color"></div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="home bg3">
+              <div class="bg-color"></div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="about">
+      <div class="container">
+        <div class="about">
+          <div class="left"></div>
+          <div class="right">
+            <span>ABOUT TASTY</span>
+            <h3>Our chef cooks the most delicious food for you</h3>
+            <p>
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia, there live the blind texts. Separated
+              they live in Bookmarksgrove right at the coast of the Semantics, a
+              large language ocean.
+            </p>
+            <p>
+              A small river named Duden flows by their place and supplies it
+              with the necessary regelialia. It is a paradisematic country, in
+              which roasted parts of sentences fly into your mouth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="menu">
+      <div class="container">
+        <div class="menu">
+          <div class="menu-content">
+            <span>OUR MENU </span>
+            <h3>Discover Our Exclusive Menu</h3>
+          </div>
+          <div class="menu-btns">
+            <button class="menu-btn active-btn">Main</button>
+            <button class="menu-btn">Dessert</button>
+            <button class="menu-btn">Drinks</button>
+          </div>
+          <div class="menu-card-lists">
+            <!-- <div class="menu-card">
+              <div class="img">
+                <img src="./assets/images/dish-3 (1).jpg" alt="" />
+              </div>
+              <div class="menu-text">
+                <h5>Discover Our Exclusive Menu</h5>
+                <p>Meat, Potatoes, Rice, Tomatoe</p>
+              </div>
+              <h4>$29</h4>
+            </div> -->
+          </div>
+          <div class="reservation">
+            <p>
+              Even the all-powerful Pointing has no control about the blind
+              texts it is an almost
+            </p>
+            <button>Make a Reservation</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="blog">
+      <div class="container">
+        <div class="blog">
+          <div class="blog-content">
+            <span>GUESTS SAYS</span>
+            <h3>Our Satisfied Guests says</h3>
+          </div>
+
+          <div class="blog-card-lists">
+            <div class="blog-card">
+              <div class="img">
+                <img src="./assets/images/person_1 (1).jpg" alt="" />
+              </div>
+              <p>
+                Far far away, behind the word mountains, far from the countries
+                Vokalia and Consonantia, there live the blind texts.
+              </p>
+              <h6>Dennis Green</h6>
+              <span>Guests from Italy</span>
+            </div>
+            <div class="blog-card">
+              <div class="img">
+                <img src="./assets/images/person_2 (1).jpg" alt="" />
+              </div>
+              <p>
+                Far far away, behind the word mountains, far from the countries
+                Vokalia and Consonantia, there live the blind texts.
+              </p>
+              <h6>Dennis Green</h6>
+              <span>Guests from Italy</span>
+            </div>
+            <div class="blog-card">
+              <div class="img">
+                <img src="./assets/images/person_3 (1).jpg" alt="" />
+              </div>
+              <p>
+                Far far away, behind the word mountains, far from the countries
+                Vokalia and Consonantia, there live the blind texts.
+              </p>
+              <h6>Dennis Green</h6>
+              <span>Guests from Italy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact">
+      <div class="contact">
+        <div class="container">
+          <div class="contact-content">
+            <span>BLOG</span>
+            <h3>Recent Blog</h3>
+          </div>
+          <div class="contact-carousel">
+            <!-- Slider main container -->
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <div class="contact-card">
+                    <div class="img">
+                      <img src="./assets/images/image_5.jpg" alt="" />
+                    </div>
+                    <div class="contact-text">
+                      <span>July 7, 2018,Admin</span>
+                      <h4>
+                        Even the all-powerful Pointing has no control about the
+                        blind texts
+                      </h4>
+                      <p>Read more</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="contact-card">
+                    <div class="img">
+                      <img src="./assets/images/image_6.jpg" alt="" />
+                    </div>
+                    <div class="contact-text">
+                      <span>July 7, 2018,Admin</span>
+                      <h4>
+                        Even the all-powerful Pointing has no control about the
+                        blind texts
+                      </h4>
+                      <p>Read more</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="contact-card">
+                    <div class="img">
+                      <img src="./assets/images/image_7.jpg" alt="" />
+                    </div>
+                    <div class="contact-text">
+                      <span>July 7, 2018,Admin</span>
+                      <h4>
+                        Even the all-powerful Pointing has no control about the
+                        blind texts
+                      </h4>
+                      <p>Read more</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="contact-card">
+                    <div class="img">
+                      <img src="./assets/images/image_6.jpg" alt="" />
+                    </div>
+                    <div class="contact-text">
+                      <span>July 7, 2018,Admin</span>
+                      <h4>
+                        Even the all-powerful Pointing has no control about the
+                        blind texts
+                      </h4>
+                      <p>Read more</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="contact-card">
+                    <div class="img">
+                      <img src="./assets/images/image_5.jpg" alt="" />
+                    </div>
+                    <div class="contact-text">
+                      <span>July 7, 2018,Admin</span>
+                      <h4>
+                        Even the all-powerful Pointing has no control about the
+                        blind texts
+                      </h4>
+                      <p>Read more</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="contact-card">
+                    <div class="img">
+                      <img src="./assets/images/image_7.jpg" alt="" />
+                    </div>
+                    <div class="contact-text">
+                      <span>July 7, 2018,Admin</span>
+                      <h4>
+                        Even the all-powerful Pointing has no control about the
+                        blind texts
+                      </h4>
+                      <p>Read more</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+
+              <!-- If we need navigation buttons -->
+              <!-- <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div> -->
+
+              <!-- If we need scrollbar -->
+              <!-- <div class="swiper-scrollbar"></div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="contact-info">
+        <div class="container">
+          
+        </div>
+      </div> -->
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer">
+          <div class="footer-top">
+            <nav>
+              <ul>
+                <h3>Tasty</h3>
+                <li>
+                  <a href=""
+                    >Far far away, behind the word mountains, far from the
+                    countries.
+                  </a>
+                </li>
+
+                <div class="social-icon">
+                  <a href="#" class="icon">
+                    <i class="fa-brands fa-twitter"></i>
+                  </a>
+                  <a href="#" class="icon">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="#" class="icon">
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                </div>
+              </ul>
+              <ul>
+                <h3>Opening Hours</h3>
+                <li>
+                  <a href=""> Monday: 08: - 22:00 </a>
+                </li>
+                <li>
+                  <a href=""> Monday: 08: - 22:00 </a>
+                </li>
+                <li>
+                  <a href=""> Monday: 08: - 22:00 </a>
+                </li>
+                <li>
+                  <a href=""> Monday: 08: - 22:00 </a>
+                </li>
+                <li>
+                  <a href=""> Monday: 08: - 22:00 </a>
+                </li>
+                <li>
+                  <a href=""> Monday: 08: - 22:00 </a>
+                </li>
+              </ul>
+              <ul>
+                <h3>Contact Information</h3>
+                <li>
+                  <a href=""
+                    >198 West 21th Street, Suite 721 New York NY 10016</a
+                  >
+                </li>
+                <li><a href="">+ 1235 2355 98</a></li>
+                <li><a href="">info@yoursite.com</a></li>
+                <li><a href="">email@email.com</a></li>
+              </ul>
+              <ul>
+                <h3>Newsletter</h3>
+                <li>
+                  <a href=""
+                    >Far far away, behind the word mountains, far from the
+                    countries.
+                  </a>
+                </li>
+                <input type="text" placeholder="Subscribe" />
+              </ul>
+            </nav>
+          </div>
+          <div class="footer-bottom">
+            <p>
+              Copyright ©2024 All rights reserved | This template is made with
+              <i class="fa-solid fa-heart"></i> by Colorlib
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
