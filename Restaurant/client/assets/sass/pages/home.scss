@@ -95,9 +95,9 @@ svg.spinner-webkit {
   align-items: center;
   justify-content: center;
   transition: all 0.5s;
-
   flex-direction: column;
   gap: 4px;
+  display: none;
   span {
     transition: all 0.5s;
     border: 1px solid white;
@@ -106,12 +106,16 @@ svg.spinner-webkit {
   &:hover {
     gap: 8px;
   }
+  @media screen and (max-width: 767px) {
+    display: flex;
+  }
 }
 #candore-aside {
   height: 100vh;
   background: #1b1b1b;
-  padding: 70px 50px;
-  width: 20%;
+  // padding: 70px 50px;
+  width: 15%;
+  padding: 20px;
   position: fixed;
   left: 0;
   top: 0;
@@ -119,10 +123,11 @@ svg.spinner-webkit {
   @include flex(center, unset);
   flex-direction: column;
   gap: 100px;
+  z-index: 1111;
   // display: none;
   .candore-logo {
     img {
-      width: 195px;
+      width: 100%;
     }
   }
   nav {
@@ -191,7 +196,7 @@ main {
   display: none;
   position: absolute;
   right: 0;
-  width: 80%;
+  width: 85%;
   header {
     width: 100%;
     .reservation {
@@ -356,6 +361,7 @@ main {
     }
   }
   #about {
+    background-color: #f2eee8;
     padding: 100px 50px;
     .about {
       width: 100%;
@@ -550,7 +556,7 @@ main {
       .hourse-right {
         position: absolute;
         right: 150px;
-        // bottom: -5%;
+        bottom: -5%;
         padding: 100px 0;
         width: 40%;
         background-color: #000000;
@@ -574,15 +580,26 @@ main {
     }
   }
   #services {
-    width: 100%;
-padding: 100px 0;
-    .services {  display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    background-color: #f2eee8;
+    padding: 100px 50px;
+    .services {
+      display: flex;
+      justify-content: center;
       .services-card {
+        width: 30%;
+        .img {
+          width: 30%;
+          img {
+            width: 100%;
+          }
+        }
+        width: 50%;
         display: flex;
       }
     }
+  }
+  #features {
+    background-color: #1b1b1b;
   }
   @media screen and (max-width: 768px) {
     left: 0;

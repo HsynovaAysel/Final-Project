@@ -307,6 +307,7 @@ svg.spinner-webkit path {
   transition: all 0.5s;
   flex-direction: column;
   gap: 4px;
+  display: none;
 }
 .navbar span {
   transition: all 0.5s;
@@ -316,12 +317,17 @@ svg.spinner-webkit path {
 .navbar:hover {
   gap: 8px;
 }
+@media screen and (max-width: 767px) {
+  .navbar {
+    display: flex;
+  }
+}
 
 #candore-aside {
   height: 100vh;
   background: #1b1b1b;
-  padding: 70px 50px;
-  width: 20%;
+  width: 15%;
+  padding: 20px;
   position: fixed;
   left: 0;
   top: 0;
@@ -331,9 +337,10 @@ svg.spinner-webkit path {
   align-items: unset;
   flex-direction: column;
   gap: 100px;
+  z-index: 1111;
 }
 #candore-aside .candore-logo img {
-  width: 195px;
+  width: 100%;
 }
 #candore-aside nav ul {
   display: flex;
@@ -386,7 +393,7 @@ main {
   display: none;
   position: absolute;
   right: 0;
-  width: 80%;
+  width: 85%;
 }
 main header {
   width: 100%;
@@ -528,6 +535,7 @@ main header .owl-theme .owl-dots .owl-dot.active span {
   background-color: #c19d60;
 }
 main #about {
+  background-color: #f2eee8;
   padding: 100px 50px;
 }
 main #about .about {
@@ -710,6 +718,7 @@ main #hourse .hourse .hourse-left .owl-carousel .owl-dots {
 main #hourse .hourse .hourse-right {
   position: absolute;
   right: 150px;
+  bottom: -5%;
   padding: 100px 0;
   width: 40%;
   background-color: #000000;
@@ -731,16 +740,26 @@ main #hourse .hourse .hourse-right .content-box .line {
   border: 1px solid #c19d60;
 }
 main #services {
-  width: 100%;
-  padding: 100px 0;
+  background-color: #f2eee8;
+  padding: 100px 50px;
 }
 main #services .services {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  display: flex;
+  justify-content: center;
 }
 main #services .services .services-card {
+  width: 30%;
+  width: 50%;
   display: flex;
+}
+main #services .services .services-card .img {
+  width: 30%;
+}
+main #services .services .services-card .img img {
+  width: 100%;
+}
+main #features {
+  background-color: #1b1b1b;
 }
 @media screen and (max-width: 768px) {
   main {
