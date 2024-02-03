@@ -599,7 +599,191 @@ main {
     }
   }
   #features {
+    .features {
+      #features-top {
+        padding: 200px 0;
+        background-color: #1b1b1b;
+        .features-top {
+          margin-bottom: 50px;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+          h1 {
+            position: absolute;
+            right: 36%;
+            font-size: 150px;
+            color: rgba($color: #fff, $alpha: 0.1);
+          }
+          h2 {
+            color: white;
+          }
+          .img-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            .line {
+              width: 50px;
+              border: 1px solid rgba($color: #fff, $alpha: 0.1);
+            }
+            .img {
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      #features-bottom {
+        background-color: #f2eee8;
+      }
+    }
+  }
+  #menu-book {
+    padding: 100px 0;
     background-color: #1b1b1b;
+    .menu-book {
+      position: relative;
+
+      .menu-bg-img {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        img {
+          width: 100%;
+        }
+        animation: example 1.5s linear infinite alternate;
+      }
+      @keyframes example {
+        100% {
+          transform: translateY(10px);
+        }
+      }
+
+      .menu-top {
+        margin-bottom: 50px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        h1 {
+          position: absolute;
+          right: 36%;
+          font-size: 150px;
+          color: rgba($color: #fff, $alpha: 0.1);
+        }
+        h2 {
+          color: white;
+        }
+        .img-line {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          .line {
+            width: 50px;
+            border: 1px solid rgba($color: #fff, $alpha: 0.1);
+          }
+          .img {
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .menu-bottom {
+        .menu-all-button {
+          display: flex;
+          justify-content: center;
+          gap: 5rem;
+          margin-bottom: 50px;
+          .menu-button-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .img {
+              img {
+                width: 100%;
+              }
+            }
+            button {
+              border: none;
+              outline: none;
+              font-family: $font-libre;
+              font-size: 30px;
+              font-weight: 400;
+              line-height: 38px;
+              color: $home-color;
+              background-color: transparent;
+            }
+          }
+        }
+        .menu-card-lists {
+          padding: 0 100px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+          .menu-card {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            .img {
+              width: 100px;
+              height: 100px;
+              img {
+                width: 100%;
+                border-radius: 50%;
+              }
+            }
+            .menu-content {
+              .name-price {
+                display: flex;
+                justify-content: space-between;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #video {
+    background-image: url("../../images/banner5.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    .video {
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+      h2{
+        color: white;
+      }
+      .video-play-cricle {
+        display: flex;
+        justify-content: center;
+       width: 95px;
+       height: 100px;
+        .video-play {
+          width: 100px;
+          transition: all 1.2s;
+          img {
+            width: 100%;
+          }
+          &:hover {
+            width: 75px;
+          }
+        }
+      }
+    }
   }
   @media screen and (max-width: 768px) {
     left: 0;
