@@ -630,58 +630,86 @@ main #recommends .recommends .recommends-top .img-line .img img {
   width: 100%;
 }
 main #recommends .recommends .recommends-bottom {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  display: flex;
+  justify-content: space-between;
 }
 main #recommends .recommends .recommends-bottom .recommends-card {
-  height: 50vh;
-}
-main #recommends .recommends .recommends-bottom .recommends-card .card-top {
-  overflow: hidden;
+  width: 30%;
   position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+main #recommends .recommends .recommends-bottom .recommends-card .bg-img {
+  position: relative;
+  overflow: hidden;
+}
+main #recommends .recommends .recommends-bottom .recommends-card .bg-img img {
   transition: all 0.5s;
-}
-main #recommends .recommends .recommends-bottom .recommends-card .card-top img {
   width: 100%;
-  height: 100%;
-  transition: all 0.5s;
 }
-main #recommends .recommends .recommends-bottom .recommends-card .card-top:hover img {
-  transform: scale(1.1);
-}
-main #recommends .recommends .recommends-bottom .recommends-card .card-top:hover .card-bottom {
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  bottom: 0;
-  left: 0;
-}
-main #recommends .recommends .recommends-bottom .recommends-card .card-top:hover .card-bottom .line {
-  width: 80%;
-}
-main #recommends .recommends .recommends-bottom .recommends-card .card-top:hover .card-bottom h6 {
-  visibility: visible;
-}
-main #recommends .recommends .recommends-bottom .recommends-card .card-bottom {
-  transition: all 1.1s;
+main #recommends .recommends .recommends-bottom .recommends-card .content {
+  padding: 30px;
   position: absolute;
-  bottom: -30px;
-  z-index: 2;
-  left: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  align-items: center;
+  bottom: -55px;
+  text-align: center;
+  width: 100%;
+  transition: all 0.3s;
+  z-index: 20;
+  height: auto;
+  box-sizing: border-box;
+  background: linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.1) 2%, rgba(0, 0, 0, 0.75) 90%);
+  background: linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.01) 2%, rgba(0, 0, 0, 0.75) 90%);
+  background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, 0.01) 2%, rgba(0, 0, 0, 0.75) 90%);
 }
-main #recommends .recommends .recommends-bottom .recommends-card .card-bottom .line {
-  transition: all 1.1s;
-  width: 20%;
-  border: 1px solid white;
+main #recommends .recommends .recommends-bottom .recommends-card .content span {
+  position: relative;
+  color: #c19d60;
+  font-family: "Noah", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
-main #recommends .recommends .recommends-bottom .recommends-card .card-bottom h6 {
-  visibility: hidden;
+main #recommends .recommends .recommends-bottom .recommends-card .content h4 {
+  position: relative;
+  color: #fff;
+  font-size: 27px;
+}
+main #recommends .recommends .recommends-bottom .recommends-card .content h6 {
+  font-family: "Noah", sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  color: #fff;
+  height: 0;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: inline;
+}
+main #recommends .recommends .recommends-bottom .recommends-card .content .line {
+  text-align: center;
+  height: 1px;
+  width: 60px;
+  background-color: #fff;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  margin: 0 auto 30px;
+}
+main #recommends .recommends .recommends-bottom .recommends-card:hover .bg-img img {
+  filter: none;
+  transform: scale(1.09, 1.09);
+  transition: all 1s ease;
+}
+main #recommends .recommends .recommends-bottom .recommends-card:hover .content {
+  bottom: 0;
+}
+main #recommends .recommends .recommends-bottom .recommends-card:hover .content .line {
+  width: 100%;
+  transition-property: all;
+  transition-duration: 0.8s;
+  transition-timing-function: ease-in-out;
 }
 main #hourse {
   background-image: url("../../images/banner5 (1).jpg");
@@ -1008,6 +1036,156 @@ main #video .bg-color .video .video-play-cricle .video-play img {
 }
 main #video .bg-color .video .video-play-cricle .video-play:hover {
   width: 75%;
+}
+main #meet-chef {
+  position: relative;
+}
+main #meet-chef .meet-chef #meet-chef-top {
+  padding: 100px 0;
+  background-color: #1b1b1b;
+}
+main #meet-chef .meet-chef #meet-chef-top .meet-chef-top {
+  margin-bottom: 50px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+main #meet-chef .meet-chef #meet-chef-top .meet-chef-top h1 {
+  position: absolute;
+  right: 36%;
+  font-size: 150px;
+  color: rgba(0, 0, 0, 0.1);
+}
+main #meet-chef .meet-chef #meet-chef-top .meet-chef-top .img-line {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+main #meet-chef .meet-chef #meet-chef-top .meet-chef-top .img-line .line {
+  width: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+main #meet-chef .meet-chef #meet-chef-top .meet-chef-top .img-line .img img {
+  width: 100%;
+}
+main #meet-chef .meet-chef #meet-chef-bottom {
+  position: absolute;
+  top: 60%;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item {
+  width: 30%;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card {
+  text-align: center;
+  position: relative;
+  padding-bottom: 40px;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .title-box {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 0;
+  z-index: 2;
+  background-color: #f2eee8;
+  padding: 25px 0;
+  opacity: 1;
+  visibility: visible;
+  margin-bottom: 0;
+  border-radius: 1px;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .title-box h3 {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 20px;
+  color: #1b1b1b;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .title-box h3 span {
+  font-family: "Noah", sans-serif;
+  font-size: 15px;
+  color: #777;
+  display: grid;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .title-box:before {
+  transition: all ease 0.4s;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-img {
+  position: relative;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-img img {
+  width: 100%;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-img:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  background-color: #1b1b1b;
+  opacity: 0.9;
+  visibility: hidden;
+  transition: all ease 0.4s;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-bottom: 38px;
+  margin-top: 50px;
+  opacity: 0;
+  visibility: hidden;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-content .social {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  transition: all 0.4s;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-content .social a {
+  font-size: 15px;
+  color: #fff;
+  margin: 0 5px;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-content .team-title {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 400;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-content .team-title span {
+  font-family: "Noah", sans-serif;
+  font-size: 15px;
+  color: #c19d60;
+  font-weight: 400;
+  display: grid;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-content :before {
+  transition: all ease 0.4s;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card:hover .team-content {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.2s;
+  margin-top: 1px;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card:hover .team-content .social a {
+  color: #c19d60;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card:hover .title-box {
+  opacity: 0;
+  visibility: hidden;
+  margin-bottom: 80px;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card:hover .team-img::before {
+  height: 100%;
+  visibility: visible;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .owl-dots {
+  display: none;
 }
 @media screen and (max-width: 768px) {
   main {

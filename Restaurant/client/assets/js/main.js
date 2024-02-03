@@ -27,10 +27,10 @@ const main = document.querySelector("main");
 const aside = document.querySelector("aside");
 const navbar = document.querySelector(".navbar");
 main.style.display = "block";
-  aside.style.display = "flex";
+aside.style.display = "flex";
 // setTimeout(() => {
 //   spinner.style.display = "none";
-  
+
 // }, 1000);
 
 // navbar.addEventListener("click", function () {
