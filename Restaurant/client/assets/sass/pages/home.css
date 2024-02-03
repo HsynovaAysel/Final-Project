@@ -758,6 +758,9 @@ main #services .services .services-card .img {
 main #services .services .services-card .img img {
   width: 100%;
 }
+main #features .features {
+  position: relative;
+}
 main #features .features #features-top {
   padding: 200px 0;
   background-color: #1b1b1b;
@@ -793,7 +796,81 @@ main #features .features #features-top .features-top .img-line .img img {
   width: 100%;
 }
 main #features .features #features-bottom {
+  padding: 200px 0;
   background-color: #f2eee8;
+  width: 100%;
+}
+main #features .features #features-bottom .features-bottom {
+  top: 40%;
+  left: 10%;
+  position: absolute;
+  display: flex;
+  gap: 3rem;
+}
+main #features .features #features-bottom .features-bottom .features-card {
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+main #features .features #features-bottom .features-bottom .features-card .features-card-1 {
+  width: 300px;
+  min-height: 400px;
+  height: auto;
+  text-align: center;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+main #features .features #features-bottom .features-bottom .features-card .features-card-1.front {
+  background-color: #000000;
+  background-size: cover;
+  background-position: center;
+  transform: rotateY(0deg);
+}
+main #features .features #features-bottom .features-bottom .features-card .features-card-1.front.img-1 {
+  background-image: url("../../images/card-1.jpg");
+}
+main #features .features #features-bottom .features-bottom .features-card .features-card-1.front.img-2 {
+  background-image: url("../../images/card-2.jpg");
+}
+main #features .features #features-bottom .features-bottom .features-card .features-card-1.front.img-3 {
+  background-image: url("../../images/card-3.jpg");
+}
+main #features .features #features-bottom .features-bottom .features-card .features-card-1.back {
+  background-color: #999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+}
+main #features .features #features-bottom .features-bottom .features-card .features-card-1::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: #0a0a0a;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+}
+main #features .features #features-bottom .features-bottom .features-card .features-card-1 .text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateZ(60px) scale(0.94);
+  z-index: 2;
+}
+main #features .features #features-bottom .features-bottom .features-card .features-card-1 .text .img {
+  width: 80px;
+}
+main #features .features #features-bottom .features-bottom .features-card .features-card-1 .text p {
+  text-align: center;
+}
+main #features .features #features-bottom .features-bottom .features-card:hover .features-card-1.front {
+  transform: rotateY(-180deg);
+}
+main #features .features #features-bottom .features-bottom .features-card:hover .features-card-1.back {
+  transform: rotateY(0deg);
 }
 main #menu-book {
   padding: 100px 0;
@@ -896,13 +973,16 @@ main #menu-book .menu-book .menu-bottom .menu-card-lists .menu-card .menu-conten
   justify-content: space-between;
 }
 main #video {
-  background-image: url("../../images/banner5.jpg");
+  background-image: url("../../images/banner2.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  width: 100%;
   background-attachment: fixed;
 }
-main #video .video {
+main #video .bg-color {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+main #video .bg-color .video {
   height: 50vh;
   display: flex;
   justify-content: center;
@@ -910,24 +990,24 @@ main #video .video {
   gap: 2rem;
   align-items: center;
 }
-main #video .video h2 {
+main #video .bg-color .video h2 {
   color: white;
 }
-main #video .video .video-play-cricle {
+main #video .bg-color .video .video-play-cricle {
   display: flex;
   justify-content: center;
-  width: 95px;
+  width: 100px;
   height: 100px;
 }
-main #video .video .video-play-cricle .video-play {
-  width: 100px;
+main #video .bg-color .video .video-play-cricle .video-play {
+  width: 100%;
   transition: all 1.2s;
 }
-main #video .video .video-play-cricle .video-play img {
+main #video .bg-color .video .video-play-cricle .video-play img {
   width: 100%;
 }
-main #video .video .video-play-cricle .video-play:hover {
-  width: 75px;
+main #video .bg-color .video .video-play-cricle .video-play:hover {
+  width: 75%;
 }
 @media screen and (max-width: 768px) {
   main {
