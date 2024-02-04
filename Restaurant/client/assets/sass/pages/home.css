@@ -1072,8 +1072,8 @@ main #meet-chef .meet-chef #meet-chef-top .meet-chef-top .img-line .img img {
   width: 100%;
 }
 main #meet-chef .meet-chef #meet-chef-bottom {
-  position: absolute;
-  top: 60%;
+  padding: 150px 0;
+  background-color: #fff;
 }
 main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item {
   width: 30%;
@@ -1186,6 +1186,61 @@ main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .it
 }
 main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .owl-dots {
   display: none;
+}
+main #wine-bar .wine-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+main #wine-bar .wine-bar .left {
+  height: 70vh;
+  width: 50%;
+  overflow: hidden;
+}
+main #wine-bar .wine-bar .left .bg-img img {
+  width: 100%;
+  transition: all 0.5s;
+  height: 100%;
+}
+main #wine-bar .wine-bar .left .bg-img img:hover {
+  transform: scale(1.2);
+}
+main #wine-bar .wine-bar .wine-bar-right {
+  background-color: #1b1b1b;
+  width: 50%;
+}
+main #wine-bar .wine-bar .wine-bar-right .right .menu-card {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+main #wine-bar .wine-bar .wine-bar-right .right .menu-card .img {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+main #wine-bar .wine-bar .wine-bar-right .right .menu-card .img img {
+  width: 100%;
+  border-radius: 50%;
+  transition: all 0.5s;
+  height: 100%;
+}
+main #wine-bar .wine-bar .wine-bar-right .right .menu-card .img img:hover {
+  transform: scale(1.2);
+}
+main #wine-bar .wine-bar .wine-bar-right .right .menu-card .menu-content .name-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main #wine-bar .wine-bar .wine-bar-right .right .menu-card .menu-content .name-price .line {
+  border-top: 3px dotted black;
+  width: 40%;
+}
+main #food {
+  padding: 100px 0;
 }
 @media screen and (max-width: 768px) {
   main {
