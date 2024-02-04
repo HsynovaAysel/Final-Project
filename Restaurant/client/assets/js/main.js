@@ -2,7 +2,7 @@ $(".owl-carousel").owlCarousel({
   loop: true,
   responsiveClass: true,
   autoplayTimeout: 10000,
-
+  nav: true,
   smartSpeed: 2000,
   autoplay: true,
   responsive: {

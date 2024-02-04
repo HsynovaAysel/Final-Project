@@ -505,12 +505,12 @@ main header .owl-carousel .owl-item .item .header .bg-color .header-content {
   justify-content: center;
   align-items: center;
 }
-main header .owl-theme .owl-dots {
+main header .owl-carousel .owl-dots {
   position: absolute;
   bottom: 5vh;
   width: 100%;
 }
-main header .owl-theme .owl-dots .owl-dot span {
+main header .owl-carousel .owl-dots .owl-dot span {
   width: 12px;
   height: 12px;
   margin: 0 3px;
@@ -519,20 +519,23 @@ main header .owl-theme .owl-dots .owl-dot span {
   border: 1px solid #c19d60;
   transition: all 0.5s;
 }
-main header .owl-theme .owl-dots .owl-dot:hover span {
+main header .owl-carousel .owl-dots .owl-dot:hover span {
   border-color: #c19d60;
   background-color: #c19d60;
 }
-main header .owl-theme .owl-dots .owl-dot:focus span {
+main header .owl-carousel .owl-dots .owl-dot:focus span {
   border-color: #c19d60;
   background-color: #c19d60;
 }
-main header .owl-theme .owl-dots .owl-dot:active span {
+main header .owl-carousel .owl-dots .owl-dot:active span {
   border-color: #c19d60;
   background-color: #c19d60;
 }
-main header .owl-theme .owl-dots .owl-dot.active span {
+main header .owl-carousel .owl-dots .owl-dot.active span {
   background-color: #c19d60;
+}
+main header .owl-carousel .owl-nav {
+  display: none;
 }
 main #about {
   background-color: #f2eee8;
@@ -741,6 +744,9 @@ main #hourse .hourse .hourse-left .owl-carousel .hourse-content .user .img img {
   width: 100%;
 }
 main #hourse .hourse .hourse-left .owl-carousel .owl-dots {
+  display: none;
+}
+main #hourse .hourse .hourse-left .owl-carousel .owl-nav {
   display: none;
 }
 main #hourse .hourse .hourse-right {
@@ -1241,6 +1247,183 @@ main #wine-bar .wine-bar .wine-bar-right .right .menu-card .menu-content .name-p
 }
 main #food {
   padding: 100px 0;
+}
+main #food .food .food-top {
+  margin-bottom: 50px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+main #food .food .food-top h1 {
+  position: absolute;
+  right: 36%;
+  font-size: 150px;
+  color: rgba(0, 0, 0, 0.1);
+}
+main #food .food .food-top .img-line {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+main #food .food .food-top .img-line .line {
+  width: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+main #food .food .food-top .img-line .img img {
+  width: 100%;
+}
+main #food .food .food-bottom .item {
+  width: 30%;
+  background: #fdfbf8;
+  padding: 40px 20px;
+  transition: 0.5s;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 30px;
+  line-height: 1;
+  text-align: center;
+}
+main #food .food .food-bottom .item h5 {
+  font-size: 24px;
+  color: #1b1b1b;
+  margin-bottom: 10px;
+}
+main #food .food .food-bottom .item span {
+  font-size: 45px;
+  line-height: 1;
+  margin-bottom: 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+main #food .food .food-bottom .item p {
+  margin: 0;
+  color: #1b1b1b;
+}
+main #food .food .food-bottom .item .shape {
+  position: absolute;
+  opacity: 0.4;
+  z-index: -1;
+  bottom: 15px;
+  left: 120px;
+}
+main #food .food .food-bottom .item:hover h5 {
+  color: #c19d60;
+  transition: 0.5s;
+}
+main #food .food .food-bottom .item:hover span {
+  transform: rotate(360deg);
+}
+main #new-menu .owl-carousel .item .new-menu {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+main #new-menu .owl-carousel .item .new-menu.bg-1 {
+  background-image: url("../../images/new-1.jpg");
+}
+main #new-menu .owl-carousel .item .new-menu.bg-2 {
+  background-image: url("../../images/new-2.jpg");
+}
+main #new-menu .owl-carousel .item .new-menu.bg-3 {
+  background-image: url("../../images/new-3.jpg");
+}
+main #new-menu .owl-carousel .item .new-menu .bg-color {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+main #new-menu .owl-carousel .item .new-menu .bg-color .new-menu-content {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main #new-menu .owl-carousel .item .new-menu .bg-color .new-menu-content .new {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #c19d60;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #new-menu .owl-carousel .owl-dots {
+  display: none;
+}
+main #new-menu .owl-carousel .owl-nav {
+  text-align: center;
+  margin-top: 10px;
+  position: absolute !important;
+  top: 45% !important;
+  bottom: auto !important;
+  width: 100%;
+  transform: translateX(-50%);
+  left: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+main #new-menu .owl-carousel .owl-nav .owl-next {
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  background: transparent;
+  border-radius: 100%;
+  color: #fff;
+  font-size: 10px;
+  margin-right: 60px;
+  margin-left: 60px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease-in-out;
+  transform: scale(1);
+}
+main #new-menu .owl-carousel .owl-nav .owl-next span {
+  font-size: 20px;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+main #new-menu .owl-carousel .owl-nav .owl-next:hover {
+  transform: scale(0.9);
+  background: transparent;
+  border: 1px solid #c19d60;
+  color: #fff;
+}
+main #new-menu .owl-carousel .owl-nav .owl-next:hover span {
+  font-size: 15px;
+  color: #c19d60;
+}
+main #new-menu .owl-carousel .owl-nav .owl-prev {
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  background: transparent;
+  border-radius: 100%;
+  color: #fff;
+  font-size: 10px;
+  margin-right: 60px;
+  margin-left: 60px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease-in-out;
+  transform: scale(1);
+}
+main #new-menu .owl-carousel .owl-nav .owl-prev span {
+  font-size: 20px;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+main #new-menu .owl-carousel .owl-nav .owl-prev:hover {
+  transform: scale(0.9);
+  background: transparent;
+  border: 1px solid #c19d60;
+  color: #fff;
+}
+main #new-menu .owl-carousel .owl-nav .owl-prev:hover span {
+  font-size: 15px;
+  color: #c19d60;
 }
 @media screen and (max-width: 768px) {
   main {
