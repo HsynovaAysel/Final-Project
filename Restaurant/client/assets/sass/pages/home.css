@@ -227,7 +227,7 @@ span {
   }
 }
 
-main #features .features #features-bottom .features-bottom .features-card .features-card-1.back .text a, main #hourse .bg-color .hourse .hourse-right .btn, main header .owl-carousel .owl-item .item .header .bg-color .header-content a {
+main footer .footer #footer-top .footer-top .footer-column .subscribe form button, main #features .features #features-bottom .features-bottom .features-card .features-card-1.back .text a, main #hourse .bg-color .hourse .hourse-right .btn, main header .owl-carousel .owl-item .item .header .bg-color .header-content a {
   outline: none;
   border: 1px solid #c19d60;
   font-family: "Noah", sans-serif;
@@ -237,11 +237,12 @@ main #features .features #features-bottom .features-bottom .features-card .featu
   line-height: 35px;
   letter-spacing: 2px;
   color: #fff;
+  cursor: pointer;
   padding: 5px 25px;
   background-color: transparent;
   transition: all 0.5s;
 }
-main #features .features #features-bottom .features-bottom .features-card .features-card-1.back .text a:hover, main #hourse .bg-color .hourse .hourse-right .btn:hover, main header .owl-carousel .owl-item .item .header .bg-color .header-content a:hover {
+main footer .footer #footer-top .footer-top .footer-column .subscribe form button:hover, main #features .features #features-bottom .features-bottom .features-card .features-card-1.back .text a:hover, main #hourse .bg-color .hourse .hourse-right .btn:hover, main header .owl-carousel .owl-item .item .header .bg-color .header-content a:hover {
   background-color: #c19d60;
 }
 
@@ -478,7 +479,7 @@ main {
   display: none;
   position: absolute;
   right: 0;
-  width: 80%;
+  width: 78.5%;
 }
 main header {
   width: 100%;
@@ -809,7 +810,7 @@ main #recommends .recommends .recommends-bottom .recommends-card:hover .content 
   transition: all 0.5s ease-in-out;
 }
 main #hourse {
-  background-image: url("../../images/banner5 (1).jpg");
+  background-image: url("../../images/home/banner5 (1).jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -923,9 +924,9 @@ main #services {
 }
 main #services .services {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 main #services .services .services-card {
   width: 33%;
@@ -990,19 +991,18 @@ main #features .features #features-top .features-top .img-line .img img {
   width: 100%;
 }
 main #features .features #features-bottom {
-  padding: 200px 0;
   background-color: #f2eee8;
 }
 main #features .features #features-bottom .features-bottom {
   width: 100%;
   top: 35%;
   left: 0;
-  position: absolute;
   display: flex;
-  gap: 1rem;
+  justify-content: center;
+  gap: 2rem;
 }
 main #features .features #features-bottom .features-bottom .features-card {
-  width: 29%;
+  width: 30%;
   position: relative;
   transform-style: preserve-3d;
   perspective: 1000px;
@@ -1225,7 +1225,7 @@ main #menu-book .menu-book .menu-bottom .menu-card-lists .menu-card .menu-conten
   width: 40%;
 }
 main #video {
-  background-image: url("../../images/banner2.jpg");
+  background-image: url("../../images/home/banner2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
@@ -1310,11 +1310,9 @@ main #meet-chef .meet-chef #meet-chef-top .meet-chef-top .img-line .img img {
   width: 100%;
 }
 main #meet-chef .meet-chef #meet-chef-bottom {
-  padding: 200px 0;
   background-color: #fff;
 }
 main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom {
-  position: absolute;
   left: 0;
   width: 100%;
   top: 35%;
@@ -1357,7 +1355,7 @@ main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .it
   display: grid;
 }
 main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .title-box:before {
-  transition: all ease 0.4s;
+  transition: all 0.4s;
 }
 main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-img {
   position: relative;
@@ -1379,8 +1377,10 @@ main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .it
 }
 main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content {
   position: absolute;
-  left: 0;
-  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   top: 50%;
   transform: translateY(-50%);
   padding-bottom: 38px;
@@ -1389,7 +1389,8 @@ main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .it
   visibility: hidden;
 }
 main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content p {
-  width: 90%;
+  width: 80%;
+  text-align: center;
   margin: 16px 0;
 }
 main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content h4 {
@@ -1397,9 +1398,6 @@ main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .it
   margin: 16px 0;
 }
 main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .social {
-  position: absolute;
-  left: 0;
-  width: 100%;
   transition: all 0.4s;
 }
 main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .social a {
@@ -1525,6 +1523,7 @@ main #wine-bar .wine-bar .wine-bar-right .right .menu-card .menu-content .line {
   width: 40%;
 }
 main #food {
+  background-color: #f2eee8;
   padding: 100px 0;
 }
 main #food .food .food-top {
@@ -1532,37 +1531,52 @@ main #food .food .food-top {
   position: relative;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 main #food .food .food-top h1 {
+  text-align: center;
   font-family: "Pinyon Script", cursive;
   position: absolute;
-  right: 36%;
-  font-size: 150px;
-  color: rgba(0, 0, 0, 0.1);
+  font-size: 140px;
+  color: rgba(0, 0, 0, 0.05);
 }
 main #food .food .food-top .img-line {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
 }
 main #food .food .food-top .img-line .line {
   width: 50px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+main #food .food .food-top .img-line .img {
+  width: 20px;
 }
 main #food .food .food-top .img-line .img img {
   width: 100%;
 }
+main #food .food .food-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 main #food .food .food-bottom .item {
-  width: 30%;
+  width: 32%;
   background: #fdfbf8;
-  padding: 40px 20px;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
   transition: 0.5s;
   position: relative;
   z-index: 1;
-  margin-bottom: 30px;
   line-height: 1;
   text-align: center;
 }
@@ -1579,6 +1593,7 @@ main #food .food .food-bottom .item span {
   transition: 0.5s;
 }
 main #food .food .food-bottom .item p {
+  max-width: 85%;
   margin: 0;
   color: #1b1b1b;
 }
@@ -1586,8 +1601,8 @@ main #food .food .food-bottom .item .shape {
   position: absolute;
   opacity: 0.4;
   z-index: -1;
-  bottom: 15px;
-  left: 120px;
+  bottom: 20%;
+  left: 30%;
 }
 main #food .food .food-bottom .item:hover h5 {
   color: #c19d60;
@@ -1602,13 +1617,13 @@ main #new-menu .owl-carousel .item .new-menu {
   background-repeat: no-repeat;
 }
 main #new-menu .owl-carousel .item .new-menu.bg-1 {
-  background-image: url("../../images/new-1.jpg");
+  background-image: url("../../images/home/new-1.jpg");
 }
 main #new-menu .owl-carousel .item .new-menu.bg-2 {
-  background-image: url("../../images/new-2.jpg");
+  background-image: url("../../images/home/new-2.jpg");
 }
 main #new-menu .owl-carousel .item .new-menu.bg-3 {
-  background-image: url("../../images/new-3.jpg");
+  background-image: url("../../images/home/new-3.jpg");
 }
 main #new-menu .owl-carousel .item .new-menu .bg-color {
   background-color: rgba(0, 0, 0, 0.6);
@@ -1619,6 +1634,7 @@ main #new-menu .owl-carousel .item .new-menu .bg-color .new-menu-content {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 1rem;
 }
 main #new-menu .owl-carousel .item .new-menu .bg-color .new-menu-content .new {
   width: 50px;
@@ -1636,14 +1652,15 @@ main #new-menu .owl-carousel .owl-dots {
 main #new-menu .owl-carousel .owl-nav {
   text-align: center;
   margin-top: 10px;
-  position: absolute !important;
-  top: 45% !important;
-  bottom: auto !important;
+  position: absolute;
+  top: 45%;
+  bottom: auto;
   width: 100%;
   transform: translateX(-50%);
   left: 50%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 main #new-menu .owl-carousel .owl-nav .owl-next {
   width: 50px;
@@ -1706,7 +1723,7 @@ main #new-menu .owl-carousel .owl-nav .owl-prev:hover span {
   color: #c19d60;
 }
 main #new-events .new-events #new-events-top {
-  padding: 200px 0;
+  padding: 130px 0 200px 0;
   background-color: #1b1b1b;
 }
 main #new-events .new-events #new-events-top .new-events-top {
@@ -1714,44 +1731,60 @@ main #new-events .new-events #new-events-top .new-events-top {
   position: relative;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 main #new-events .new-events #new-events-top .new-events-top h1 {
-  position: absolute;
-  right: 36%;
-  font-size: 150px;
-  color: rgba(255, 255, 255, 0.1);
+  text-align: center;
   font-family: "Pinyon Script", cursive;
+  position: absolute;
+  font-size: 130px;
+  color: rgba(255, 255, 255, 0.05);
 }
 main #new-events .new-events #new-events-top .new-events-top h2 {
   color: white;
 }
 main #new-events .new-events #new-events-top .new-events-top .img-line {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
 }
 main #new-events .new-events #new-events-top .new-events-top .img-line .line {
-  width: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+main #new-events .new-events #new-events-top .new-events-top .img-line .img {
+  width: 20px;
 }
 main #new-events .new-events #new-events-top .new-events-top .img-line .img img {
   width: 100%;
 }
-main #new-events #new-events-bottom .owl-carousel .item {
-  width: 30%;
-  position: relative;
-  margin-bottom: 0px;
+main #new-events #new-events-bottom .owl-carousel .owl-item .item {
+  width: 100%;
   overflow: hidden;
 }
-main #new-events #new-events-bottom .owl-carousel .item .img img {
+main #new-events #new-events-bottom .owl-carousel .owl-item .item .new-events-card-lists {
+  display: flex;
+  justify-content: space-between;
+  align-items: unset;
+  overflow: hidden;
+}
+main #new-events #new-events-bottom .owl-carousel .owl-item .item .new-events-card-lists .new-events-card {
+  width: 33%;
+  position: relative;
+  overflow: hidden;
+}
+main #new-events #new-events-bottom .owl-carousel .owl-item .item .new-events-card-lists .new-events-card .img {
+  overflow: hidden;
+}
+main #new-events #new-events-bottom .owl-carousel .owl-item .item .new-events-card-lists .new-events-card .img img {
   width: 100%;
   height: 100%;
   transition: all 0.5s;
 }
-main #new-events #new-events-bottom .owl-carousel .item .date {
+main #new-events #new-events-bottom .owl-carousel .owl-item .item .new-events-card-lists .new-events-card .date {
   display: inline-block;
   position: absolute;
   top: 20px;
@@ -1762,15 +1795,11 @@ main #new-events #new-events-bottom .owl-carousel .item .date {
   padding: 5px 10px;
   text-align: center;
 }
-main #new-events #new-events-bottom .owl-carousel .item .date span {
-  font-family: "Noah", sans-serif;
+main #new-events #new-events-bottom .owl-carousel .owl-item .item .new-events-card-lists .new-events-card .date span {
   display: block;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   color: #fff;
 }
-main #new-events #new-events-bottom .owl-carousel .item .date span i {
+main #new-events #new-events-bottom .owl-carousel .owl-item .item .new-events-card-lists .new-events-card .date span i {
   font-family: "Libre Caslon Display", serif;
   display: block;
   font-size: 20px;
@@ -1778,45 +1807,37 @@ main #new-events #new-events-bottom .owl-carousel .item .date span i {
   color: #fff;
   letter-spacing: 1px;
 }
-main #new-events #new-events-bottom .owl-carousel .item .con {
+main #new-events #new-events-bottom .owl-carousel .owl-item .item .new-events-card-lists .new-events-card .con {
   margin: -165px 20px 90px;
   padding: 20px 20px 30px 20px;
   background-color: #f2eee8;
   border: 1px solid #f2eee8;
-  border-radius: 0;
   transition: 0.2s cubic-bezier(0.3, 0.58, 0.55, 1);
   bottom: -90px;
   position: relative;
 }
-main #new-events #new-events-bottom .owl-carousel .item .con .category {
-  font-family: "Noah", sans-serif;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 400;
-  margin-bottom: 5px;
-  letter-spacing: 3px;
-}
-main #new-events #new-events-bottom .owl-carousel .item .con .category h5 {
+main #new-events #new-events-bottom .owl-carousel .owl-item .item .new-events-card-lists .new-events-card .con h5 {
   color: #1b1b1b;
   font-size: 24px;
   margin-bottom: 0px;
 }
-main #new-events #new-events-bottom .owl-carousel .item .con .category p {
+main #new-events #new-events-bottom .owl-carousel .owl-item .item .new-events-card-lists .new-events-card .con p {
   color: #fff;
   font-size: 17px;
 }
-main #new-events #new-events-bottom .owl-carousel .item .con .category i {
+main #new-events #new-events-bottom .owl-carousel .owl-item .item .new-events-card-lists .new-events-card .con i {
   color: #fff;
   font-size: 20px;
 }
-main #new-events #new-events-bottom .owl-carousel .item:hover .img img {
+main #new-events #new-events-bottom .owl-carousel .owl-item .item .new-events-card-lists .new-events-card:hover .img img {
   transform: scale(1.09, 1.09);
   transition: all 1s ease;
 }
-main #new-events #new-events-bottom .owl-carousel .item:hover .con {
+main #new-events #new-events-bottom .owl-carousel .owl-item .item .new-events-card-lists .new-events-card:hover .con {
   bottom: 0;
 }
 main #new-events #new-events-bottom .owl-carousel .owl-dots {
+  margin: 20px 0;
   width: 100%;
 }
 main #new-events #new-events-bottom .owl-carousel .owl-dots .owl-dot span {
@@ -1843,53 +1864,94 @@ main #new-events #new-events-bottom .owl-carousel .owl-nav {
   display: none;
 }
 main #reservation {
-  background-image: url("../../images/banner-3.jpg");
+  background-image: url("../../images/home/banner-3.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 main #reservation .bg-color {
-  background-color: rgba(0, 0, 0, 0.5);
+  padding: 100px 0;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 main #reservation .bg-color .reservation {
-  height: 60vh;
+  display: flex;
+  gap: 1rem;
+}
+main #reservation .bg-color .reservation .reservation-content {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main #reservation .bg-color .reservation .reservation-content .star-icon i {
+  font-size: 13px;
+  color: #c19d60;
+}
+main #reservation .bg-color .reservation .reservation-content h4 {
+  font-size: 32px;
+  color: #fff;
+}
+main #reservation .bg-color .reservation .reservation-content .reservation-about {
+  display: flex;
+  gap: 1rem;
+}
+main #reservation .bg-color .reservation .reservation-content .reservation-about .icon img {
+  width: 100%;
+}
+main #reservation .bg-color .reservation .reservation-content .reservation-about h4 {
+  font-size: 27px;
 }
 main #logo {
   background-color: #1b1b1b;
-  padding: 50px 100px;
+  padding: 50px 0 0 0;
 }
 main #logo .owl-carousel {
-  width: 35%;
+  width: 45%;
 }
 main #logo .owl-carousel .owl-item {
   margin-left: 25px;
 }
-main #logo .owl-carousel .owl-item .item {
+main #logo .owl-carousel .owl-item .item .all-logos {
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1.5rem;
 }
-main #logo .owl-carousel .owl-item .item .logo {
+main #logo .owl-carousel .owl-item .item .all-logos .logo {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 20%;
+  height: 100px;
   border-radius: 50%;
   height: 50px;
   transition: all 0.8s;
 }
-main #logo .owl-carousel .owl-item .item .logo.img-1 {
-  background-image: url("../../images/wine1 (1).jpg");
+main #logo .owl-carousel .owl-item .item .all-logos .logo.img-1 {
+  background-image: url("../../images/home/logo-1.png");
 }
-main #logo .owl-carousel .owl-item .item .logo .bg-color {
+main #logo .owl-carousel .owl-item .item .all-logos .logo.img-2 {
+  background-image: url("../../images/home/logo-2.png");
+}
+main #logo .owl-carousel .owl-item .item .all-logos .logo.img-3 {
+  background-image: url("../../images/home/logo-3.png");
+}
+main #logo .owl-carousel .owl-item .item .all-logos .logo.img-4 {
+  background-image: url("../../images/home/logo-4.png");
+}
+main #logo .owl-carousel .owl-item .item .all-logos .logo.img-5 {
+  background-image: url("../../images/home/logo-5.png");
+}
+main #logo .owl-carousel .owl-item .item .all-logos .logo .bg-color {
   width: 100%;
   border-radius: 50%;
-  height: 50px;
-  background-color: rgba(119, 119, 119, 0.8);
+  height: 100%;
+  background-color: rgba(119, 119, 119, 0.5);
   transition: all 0.8s;
 }
-main #logo .owl-carousel .owl-item .item .logo:hover .bg-color {
+main #logo .owl-carousel .owl-item .item .all-logos .logo:hover .bg-color {
   background-color: rgba(119, 119, 119, 0);
 }
 main #logo .owl-carousel .owl-dots {
@@ -1906,6 +1968,7 @@ main footer .footer #footer-top {
 main footer .footer #footer-top .footer-top {
   display: flex;
   justify-content: space-between;
+  align-items: unset;
 }
 main footer .footer #footer-top .footer-top .footer-column {
   width: 26%;
@@ -1917,8 +1980,7 @@ main footer .footer #footer-top .footer-top .footer-column h3 {
   margin-bottom: 20px;
 }
 main footer .footer #footer-top .footer-top .footer-column p {
-  font-size: 15px;
-  color: #777;
+  font-size: 13px;
 }
 main footer .footer #footer-top .footer-top .footer-column .footer-language {
   width: 70%;
@@ -1941,11 +2003,11 @@ main footer .footer #footer-top .footer-top .footer-column .footer-language sele
   width: 100%;
   height: 50px;
   padding: 0 30px;
-  border: 1px solid #777;
+  border: 1px solid #c19d60;
   color: #777;
 }
 main footer .footer #footer-top .footer-top .footer-column .footer-language select option {
-  color: #fff;
+  color: black;
 }
 main footer .footer #footer-top .footer-top .footer-column.footer-contact {
   position: relative;
@@ -1956,13 +2018,11 @@ main footer .footer #footer-top .footer-top .footer-column.footer-contact h3 {
 }
 main footer .footer #footer-top .footer-top .footer-column.footer-contact p {
   font-size: 15px;
-  color: #777;
   padding-bottom: 20px;
 }
 main footer .footer #footer-top .footer-top .footer-column.footer-contact .footer-contact-info .footer-contact-phone {
   font-family: "Libre Caslon Display", serif;
   font-size: 24px;
-  color: #fff;
   font-weight: 400;
   display: block;
   transition: all 0.5s ease;
@@ -1996,12 +2056,14 @@ main footer .footer #footer-top .footer-top .footer-column.footer-contact .foote
 }
 main footer .footer #footer-top .footer-top .footer-column.footer-contact .footer-about-social-list {
   display: flex;
+  justify-content: unset;
   align-items: center;
   gap: 1rem;
   margin-top: 20px;
 }
 main footer .footer #footer-top .footer-top .footer-column.footer-contact .footer-about-social-list a {
   display: flex;
+  justify-content: unset;
   align-items: center;
   color: #fff;
   font-size: 15px;
@@ -2017,8 +2079,10 @@ main footer .footer #footer-top .footer-top .footer-column .subscribe form {
   position: relative;
 }
 main footer .footer #footer-top .footer-top .footer-column .subscribe form input {
+  width: 100%;
+  padding: 15px 0px 15px 20px;
+  height: 100%;
   width: 80%;
-  padding: 14px 0 14px 60px;
   background-color: transparent;
   border: 1px solid #c19d60;
   color: #777;
@@ -2032,20 +2096,9 @@ main footer .footer #footer-top .footer-top .footer-column .subscribe form input
 }
 main footer .footer #footer-top .footer-top .footer-column .subscribe form button {
   background-color: #c19d60;
-  padding: 12px 18px;
-  outline: none;
-  color: #fff;
-  border: none;
+  padding: 5.5px 15px;
   position: absolute;
-  top: 4px;
-  right: 5px;
-  cursor: pointer;
-  font-family: "Noah", sans-serif;
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-weight: 400;
-  transition: all 0.5s;
+  right: 0;
 }
 main footer .footer #footer-top .footer-top .footer-column .subscribe form button:hover {
   background-color: #fff;
@@ -2058,7 +2111,6 @@ main footer .footer #footer-bottom {
 }
 main footer .footer #footer-bottom .footer-bottom p {
   font-size: 13px;
-  color: #777;
   text-align: center;
   transition: all 500ms ease;
 }
@@ -2170,5 +2222,58 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
   }
   main #wine-bar .wine-bar .wine-bar-right .right {
     padding: unset;
+  }
+  main #food .food .food-bottom {
+    flex-direction: column;
+    flex: unset;
+  }
+  main #food .food .food-bottom .item {
+    width: 100%;
+  }
+  main #food .food .food-bottom .item .shape {
+    bottom: 20%;
+    left: 40%;
+  }
+  main #new-events .new-events #new-events-top {
+    padding: 100px 0 50px 0;
+  }
+  main #new-events .new-events #new-events-bottom {
+    background-color: #1b1b1b;
+    padding-bottom: 50px;
+  }
+  main #new-events .new-events #new-events-bottom .owl-carousel .owl-item .item .new-events-card-lists {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  main #new-events .new-events #new-events-bottom .owl-carousel .owl-item .item .new-events-card-lists .new-events-card {
+    width: 100%;
+  }
+  main #reservation .bg-color .reservation {
+    flex-direction: column;
+  }
+  main #reservation .bg-color .reservation .reservation-content {
+    width: 100%;
+  }
+  main #reservation .bg-color .reservation .reservation-content .reservation-box {
+    width: 100%;
+  }
+  main #logo .owl-carousel {
+    width: 100%;
+  }
+  main #logo .owl-carousel .owl-item .item .all-logos .logo {
+    height: 100px;
+    width: 25%;
+  }
+  main footer .footer #footer-top .footer-top {
+    flex-direction: column;
+  }
+  main footer .footer #footer-top .footer-top .footer-column {
+    width: 100%;
+  }
+  main footer .footer #footer-top .footer-top .footer-column .subscribe form input {
+    width: 90.5%;
+  }
+  main footer .footer #footer-bottom .footer-bottom p {
+    text-align: unset;
   }
 }/*# sourceMappingURL=home.css.map */
