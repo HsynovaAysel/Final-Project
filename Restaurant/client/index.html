@@ -49,15 +49,29 @@
   <body>
     <!-- <div class="spinner-loader">
       <div id="spinner">
-      <svg class="spinner-webkit" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 54 54"><path d="M28.14,44a3.26,3.26,0,0,1,.53,1.63l.3,4.93a1.42,1.42,0,0,0,1.66,1.31A25.85,25.85,0,0,0,52.18,26.38v0A25.84,25.84,0,1,0,22.05,51.83a1.43,1.43,0,0,0,1.66-1.31L24,45.6a3.74,3.74,0,0,1,1.7-2.84l6.52-5.18a7.06,7.06,0,0,0,2.61-5.71L33.43,9.11A.16.16,0,0,0,33.26,9L32.18,9A1.4,1.4,0,0,0,30.9,10.4v15a1.46,1.46,0,0,1-1.46,1.46h0A1.46,1.46,0,0,1,28,25.45V10.79a1.65,1.65,0,0,0-1.65-1.65h0a1.65,1.65,0,0,0-1.65,1.65V25.45a1.46,1.46,0,0,1-1.46,1.46h0a1.46,1.46,0,0,1-1.46-1.46v-15A1.4,1.4,0,0,0,20.5,9L19.42,9a.16.16,0,0,0-.17.15L17.84,31.87a7.06,7.06,0,0,0,2.61,5.71l5.89,4.68"/></path></svg>
+        <svg class="spinner-webkit" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 54 54"><path d="M28.14,44a3.26,3.26,0,0,1,.53,1.63l.3,4.93a1.42,1.42,0,0,0,1.66,1.31A25.85,25.85,0,0,0,52.18,26.38v0A25.84,25.84,0,1,0,22.05,51.83a1.43,1.43,0,0,0,1.66-1.31L24,45.6a3.74,3.74,0,0,1,1.7-2.84l6.52-5.18a7.06,7.06,0,0,0,2.61-5.71L33.43,9.11A.16.16,0,0,0,33.26,9L32.18,9A1.4,1.4,0,0,0,30.9,10.4v15a1.46,1.46,0,0,1-1.46,1.46h0A1.46,1.46,0,0,1,28,25.45V10.79a1.65,1.65,0,0,0-1.65-1.65h0a1.65,1.65,0,0,0-1.65,1.65V25.45a1.46,1.46,0,0,1-1.46,1.46h0a1.46,1.46,0,0,1-1.46-1.46v-15A1.4,1.4,0,0,0,20.5,9L19.42,9a.16.16,0,0,0-.17.15L17.84,31.87a7.06,7.06,0,0,0,2.61,5.71l5.89,4.68"/></path></svg>
+      </div>
+    </div> -->
+    <div class="paginacontainer">
+      <div class="progress-wrap">
+        <svg
+          class="progress-circle svg-content"
+          width="100%"
+          height="100%"
+          viewBox="-1 -1 102 102"
+        >
+          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+      </div>
+    </div>
 
-      <div class="spinner-ie"></div>
-    </div></div> -->
     <div class="navbar">
+      <!-- <input type=" checkbox"> -->
       <span class="line1"></span>
       <span class="line2"></span>
       <span class="line3"></span>
     </div>
+
     <aside id="candore-aside">
       <div class="candore-logo">
         <a href="index.html">
@@ -68,29 +82,36 @@
       <nav>
         <ul>
           <li class="active">
-            <a href="index.html">HOME <i class="fa-solid fa-angle-down"></i></a>
+            <a href="index.html">HOME </a>
           </li>
           <li><a href="about.html">ABOUT</a></li>
           <li>
-            <a href="menu.html">MENU <i class="fa-solid fa-angle-down"></i></a>
+            <a href="menu.html">MENU</a>
           </li>
           <li><a href="wine.html">WINE</a></li>
           <li>
-            <a href="pages.html"
-              >PAGES <i class="fa-solid fa-angle-down"></i
-            ></a>
+            <a id="pages">PAGES <i class="fa-solid fa-angle-down"></i></a>
+            <ul class="pages">
+              <li><a href="services.html">SERVICES</a></li>
+              <li><a href="favorites.html">FAVORITES</a></li>
+              <li><a href="chefs.html">CHEFS</a></li>
+              <li class="faq-list"><a href="faq.html">FAQ</a></li>
+            </ul>
           </li>
           <li>
-            <a href="blog.html">BLOG <i class="fa-solid fa-angle-down"></i></a>
+            <a href="blog.html">BLOG </a>
           </li>
           <li>
-            <a href="shop.html">SHOP <i class="fa-solid fa-angle-down"></i></a>
+            <a href="shop.html">SHOP </a>
           </li>
           <li><a href="contact.html">CONTACT</a></li>
         </ul>
       </nav>
 
       <div class="candore-footer">
+        <a href="login-signup.html"
+          ><i class="fa-solid fa-right-to-bracket"></i
+        ></a>
         <ul>
           <li>
             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -117,23 +138,27 @@
               <div class="reservation">
                 <a href="tel:8551004444">
                   <div class="call">
-                    <span>Reservation</span>
+                    <span>RESERVATION</span>
                     <h4>855 100 4444</h4>
                     <br />
                   </div>
                   <div class="icon">
-                    <img src="./assets/images/tray (2).png" alt="" srcset="" />
+                    <img
+                      src="./assets/images/home/tray (2).png"
+                      alt=""
+                      srcset=""
+                    />
                   </div>
                 </a>
               </div>
               <div class="bg-color">
                 <div class="container">
                   <div class="header-content">
-                    <h6>Est. 1895</h6>
+                    <h6>E S T . 1 8 9 5</h6>
                     <h1>Welcome to Candóre</h1>
                     <h3>Restaurant & Wine Bar</h3>
                     <h6>1616 Broadway NY, New York</h6>
-                    <a href="#">Check Our Menu</a>
+                    <a href="#">CHECK OUR MENU</a>
                   </div>
                 </div>
               </div>
@@ -144,23 +169,27 @@
               <div class="reservation">
                 <a href="tel:8551004444">
                   <div class="call">
-                    <span>Reservation</span>
+                    <span>RESERVATION</span>
                     <h4>855 100 4444</h4>
                     <br />
                   </div>
                   <div class="icon">
-                    <img src="./assets/images/tray (2).png" alt="" srcset="" />
+                    <img
+                      src="./assets/images/home/tray (2).png"
+                      alt=""
+                      srcset=""
+                    />
                   </div>
                 </a>
               </div>
               <div class="bg-color">
                 <div class="container">
                   <div class="header-content">
-                    <h6>Est. 1895</h6>
+                    <h6>E S T . 1 8 9 5</h6>
                     <h1>Welcome to Candóre</h1>
                     <h3>Restaurant & Wine Bar</h3>
                     <h6>1616 Broadway NY, New York</h6>
-                    <a href="#">Check Our Menu</a>
+                    <a href="#">CHECK OUR MENU</a>
                   </div>
                 </div>
               </div>
@@ -171,23 +200,27 @@
               <div class="reservation">
                 <a href="tel:8551004444">
                   <div class="call">
-                    <span>Reservation</span>
+                    <span>RESERVATION</span>
                     <h4>855 100 4444</h4>
                     <br />
                   </div>
                   <div class="icon">
-                    <img src="./assets/images/tray (2).png" alt="" srcset="" />
+                    <img
+                      src="./assets/images/home/tray (2).png"
+                      alt=""
+                      srcset=""
+                    />
                   </div>
                 </a>
               </div>
               <div class="bg-color">
                 <div class="container">
                   <div class="header-content">
-                    <h6>Est. 1895</h6>
+                    <h6>E S T . 1 8 9 5</h6>
                     <h1>Welcome to Candóre</h1>
                     <h3>Restaurant & Wine Bar</h3>
                     <h6>1616 Broadway NY, New York</h6>
-                    <a href="#">Check Our Menu</a>
+                    <a href="#">CHECK OUR MENU</a>
                   </div>
                 </div>
               </div>
@@ -217,20 +250,22 @@
               </p>
               <a href="tel:8551004444" class="reservation-about">
                 <div class="icon">
-                  <img src="./assets/images/tray.png" alt="" srcset="" />
+                  <img src="./assets/images/home/tray.png" alt="" srcset="" />
                 </div>
                 <div class="call">
-                  <span>Reservation</span>
+                  <span>RESERVATION</span>
                   <h4>855 100 4444</h4>
                   <br />
                 </div>
               </a>
             </div>
-            <div class="img-1">
-              <img src="./assets/images/about2.jpg" alt="" />
-            </div>
-            <div class="img-2">
-              <img src="./assets/images/about.jpg" alt="" />
+            <div class="img">
+              <div class="img-1">
+                <img src="./assets/images/home/about2.jpg" alt="" />
+              </div>
+              <div class="img-2">
+                <img src="./assets/images/home/about.jpg" alt="" />
+              </div>
             </div>
           </div>
         </div>
@@ -239,7 +274,7 @@
         <div class="container">
           <div class="chef">
             <div class="chef-img">
-              <img src="./assets/images/chef.jpg" alt="" />
+              <img src="./assets/images/home/chef.jpg" alt="" />
             </div>
             <div class="chef-content">
               <span>20 YEAR OF EXPERIENCE</span>
@@ -253,11 +288,11 @@
               </p>
               <div class="about-bottom">
                 <div class="img">
-                  <img src="./assets/images/signature.svg" alt="" />
+                  <img src="./assets/images/home/signature.svg" alt="" />
                 </div>
                 <div class="about-name">
-                  <h4>Harold Brown</h4>
-                  <span>Master Chef</span>
+                  <h6>Harold Brown</h6>
+                  <span>MASTER CHEF</span>
                 </div>
               </div>
             </div>
@@ -274,7 +309,7 @@
               <div class="img-line">
                 <div class="line"></div>
                 <div class="img">
-                  <img src="./assets/images/chef.png" alt="" />
+                  <img src="./assets/images/home/chef.png" alt="" />
                 </div>
                 <div class="line"></div>
               </div>
@@ -282,11 +317,11 @@
             <div class="recommends-bottom">
               <div class="recommends-card">
                 <div class="bg-img">
-                  <img src="./assets/images/hamburger.jpg" alt="" />
+                  <img src="./assets/images/home/hamburger.jpg" alt="" />
                 </div>
                 <div class="content">
                   <div class="img">
-                    <img src="./assets/images/card-burger.png" alt="" />
+                    <img src="./assets/images/home/burger.png" alt="" />
                   </div>
                   <span>Food</span>
                   <h4>Rusty’s Burger</h4>
@@ -296,11 +331,11 @@
               </div>
               <div class="recommends-card">
                 <div class="bg-img">
-                  <img src="./assets/images/salad.jpg" alt="" />
+                  <img src="./assets/images/home/salad.jpg" alt="" />
                 </div>
                 <div class="content">
                   <div class="img">
-                    <img src="./assets/images/salad.png" alt="" />
+                    <img src="./assets/images/home/salad.png" alt="" />
                   </div>
                   <span>Salad</span>
                   <h4>Waldorf Salad</h4>
@@ -310,11 +345,11 @@
               </div>
               <div class="recommends-card">
                 <div class="bg-img">
-                  <img src="./assets/images/wine.jpg" alt="" />
+                  <img src="./assets/images/home/wine.jpg" alt="" />
                 </div>
                 <div class="content">
                   <div class="img">
-                    <img src="./assets/images/wine.png" alt="" />
+                    <img src="./assets/images/home/wine.png" alt="" />
                   </div>
                   <span>Wine</span>
                   <h4>Corvo Dal 1824</h4>
@@ -326,6 +361,7 @@
           </div>
         </div>
       </section>
+
       <section id="hourse">
         <div class="container">
           <div class="hourse">
@@ -445,6 +481,35 @@
           </div>
         </div>
       </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
       <section id="services">
         <div class="container">
           <div class="services">
@@ -579,58 +644,58 @@
                     </div>
                   </div>
                   <!-- <div class="features-card">
-                    <div class="features-card-left">
-                      <div class="bg-img">
-                        <div class="box-title">
-                          <div class="img">
-                            <img src="./assets/images/food-tray.png" alt="" />
+                      <div class="features-card-left">
+                        <div class="bg-img">
+                          <div class="box-title">
+                            <div class="img">
+                              <img src="./assets/images/food-tray.png" alt="" />
+                            </div>
+                            <span>Address of Taste</span>
+                            <h4>Fresh Ingredient Meals</h4>
                           </div>
+                        </div>
+                      </div>
+                      <div class="features-card-right">
+                        <div class="square-container2">
                           <span>Address of Taste</span>
                           <h4>Fresh Ingredient Meals</h4>
+                          <p>
+                            Lorem nisl miss nestibulum nec odio duru the aucan ula
+                            orci varius natoque enatau manis dis arturient monte
+                            miss morbine.
+                          </p>
+                          <a href="#">View Menu<span></span></a>
                         </div>
                       </div>
                     </div>
-                    <div class="features-card-right">
-                      <div class="square-container2">
-                        <span>Address of Taste</span>
-                        <h4>Fresh Ingredient Meals</h4>
-                        <p>
-                          Lorem nisl miss nestibulum nec odio duru the aucan ula
-                          orci varius natoque enatau manis dis arturient monte
-                          miss morbine.
-                        </p>
-                        <a href="#">View Menu<span></span></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="features-card">
-                    <div class="features-card-left">
-                      <div class="bg-img">
-                        <div class="box-title">
-                          <div class="img">
-                            <img
-                              src="./assets/images/chef-features (1).png"
-                              alt=""
-                            />
+                    <div class="features-card">
+                      <div class="features-card-left">
+                        <div class="bg-img">
+                          <div class="box-title">
+                            <div class="img">
+                              <img
+                                src="./assets/images/chef-features (1).png"
+                                alt=""
+                              />
+                            </div>
+                            <span>Executive Chefs</span>
+                            <h4>Senior & Talented Chefs</h4>
                           </div>
+                        </div>
+                      </div>
+                      <div class="features-card-right">
+                        <div class="square-container2">
                           <span>Executive Chefs</span>
                           <h4>Senior & Talented Chefs</h4>
+                          <p>
+                            Lorem nisl miss nestibulum nec odio duru the aucan ula
+                            orci varius natoque enatau manis dis arturient monte
+                            miss morbine.
+                          </p>
+                          <a href="#">Our Chefs<span></span></a>
                         </div>
                       </div>
-                    </div>
-                    <div class="features-card-right">
-                      <div class="square-container2">
-                        <span>Executive Chefs</span>
-                        <h4>Senior & Talented Chefs</h4>
-                        <p>
-                          Lorem nisl miss nestibulum nec odio duru the aucan ula
-                          orci varius natoque enatau manis dis arturient monte
-                          miss morbine.
-                        </p>
-                        <a href="#">Our Chefs<span></span></a>
-                      </div>
-                    </div>
-                  </div> -->
+                    </div> -->
                 </div>
               </div>
             </div>
@@ -795,86 +860,96 @@
               <div class="meet-chef-bottom">
                 <div class="owl-carousel owl-theme">
                   <div class="item">
-                    <div class="team-card">
-                      <div class="team-img">
-                        <img src="./assets/images/chef2.jpg" alt="" />
-                      </div>
-                      <div class="team-content">
-                        <h4>Martha Martin</h4>
-                        <p>Executive Chef</p>
-                        <p>
-                          Nulla quis efficitur lacus sulvinar suere ausue in
-                          eduis euro vesatien arcuman ontese auctor ac aleuam
-                          aretra.
-                        </p>
-                        <div class="social">
-                          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                          <a href="#"
-                            ><i class="fa-brands fa-facebook-f"></i
-                          ></a>
-                          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <div class="team-card-lists">
+                      <div class="team-card">
+                        <div class="team-img">
+                          <img src="./assets/images/chef2.jpg" alt="" />
+                        </div>
+                        <div class="team-content">
+                          <h4>Martha Martin</h4>
+                          <p>Executive Chef</p>
+                          <p>
+                            Nulla quis efficitur lacus sulvinar suere ausue in
+                            eduis euro vesatien arcuman ontese auctor ac aleuam
+                            aretra.
+                          </p>
+                          <div class="social">
+                            <a href="#"
+                              ><i class="fa-brands fa-linkedin"></i
+                            ></a>
+                            <a href="#"
+                              ><i class="fa-brands fa-facebook-f"></i
+                            ></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"
+                              ><i class="fa-brands fa-instagram"></i
+                            ></a>
+                          </div>
+                        </div>
+                        <div class="title-box">
+                          <h3>Martha Martin</h3>
+                          <p>Executive Chef</p>
                         </div>
                       </div>
-                      <div class="title-box">
-                        <h3>Martha Martin</h3>
-                        <p>Executive Chef</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="team-card">
-                      <div class="team-img">
-                        <img src="./assets/images/chef1.jpg" alt="" />
-                      </div>
-                      <div class="team-content">
-                        <h4>Martha Martin</h4>
-                        <p>Executive Chef</p>
-                        <p>
-                          Nulla quis efficitur lacus sulvinar suere ausue in
-                          eduis euro vesatien arcuman ontese auctor ac aleuam
-                          aretra.
-                        </p>
-                        <div class="social">
-                          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                          <a href="#"
-                            ><i class="fa-brands fa-facebook-f"></i
-                          ></a>
-                          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                      <div class="team-card">
+                        <div class="team-img">
+                          <img src="./assets/images/chef1.jpg" alt="" />
+                        </div>
+                        <div class="team-content">
+                          <h4>Martha Martin</h4>
+                          <p>Executive Chef</p>
+                          <p>
+                            Nulla quis efficitur lacus sulvinar suere ausue in
+                            eduis euro vesatien arcuman ontese auctor ac aleuam
+                            aretra.
+                          </p>
+                          <div class="social">
+                            <a href="#"
+                              ><i class="fa-brands fa-linkedin"></i
+                            ></a>
+                            <a href="#"
+                              ><i class="fa-brands fa-facebook-f"></i
+                            ></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"
+                              ><i class="fa-brands fa-instagram"></i
+                            ></a>
+                          </div>
+                        </div>
+                        <div class="title-box">
+                          <h3>Martha Martin</h3>
+                          <p>Executive Chef</p>
                         </div>
                       </div>
-                      <div class="title-box">
-                        <h3>Martha Martin</h3>
-                        <p>Executive Chef</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="team-card">
-                      <div class="team-img">
-                        <img src="./assets/images/chef3.jpg" alt="" />
-                      </div>
-                      <div class="team-content">
-                        <h4>Martha Martin</h4>
-                        <p>Executive Chef</p>
-                        <p>
-                          Nulla quis efficitur lacus sulvinar suere ausue in
-                          eduis euro vesatien arcuman ontese auctor ac aleuam
-                          aretra.
-                        </p>
-                        <div class="social">
-                          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                          <a href="#"
-                            ><i class="fa-brands fa-facebook-f"></i
-                          ></a>
-                          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                      <div class="team-card">
+                        <div class="team-img">
+                          <img src="./assets/images/chef3.jpg" alt="" />
                         </div>
-                      </div>
-                      <div class="title-box">
-                        <h3>Martha Martin</h3>
-                        <p>Executive Chef</p>
+                        <div class="team-content">
+                          <h4>Martha Martin</h4>
+                          <p>Executive Chef</p>
+                          <p>
+                            Nulla quis efficitur lacus sulvinar suere ausue in
+                            eduis euro vesatien arcuman ontese auctor ac aleuam
+                            aretra.
+                          </p>
+                          <div class="social">
+                            <a href="#"
+                              ><i class="fa-brands fa-linkedin"></i
+                            ></a>
+                            <a href="#"
+                              ><i class="fa-brands fa-facebook-f"></i
+                            ></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"
+                              ><i class="fa-brands fa-instagram"></i
+                            ></a>
+                          </div>
+                        </div>
+                        <div class="title-box">
+                          <h3>Martha Martin</h3>
+                          <p>Executive Chef</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1073,184 +1148,184 @@
                 </a>
               </div>
               <!-- <div class="reservation-box">
-                <div class="head-box text-center">
-                  <h4>Make A Reservation</h4>
-                </div>
-                <div class="booking-inner clearfix">
-                  <form class="form1 clearfix">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="input1_wrapper">
-                          <label>Your Name</label>
-                          <div class="input2_inner">
-                            <input
-                              type="text"
-                              class="form-control input"
-                              placeholder="Your Name"
-                              required=""
-                            />
+                  <div class="head-box text-center">
+                    <h4>Make A Reservation</h4>
+                  </div>
+                  <div class="booking-inner clearfix">
+                    <form class="form1 clearfix">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="input1_wrapper">
+                            <label>Your Name</label>
+                            <div class="input2_inner">
+                              <input
+                                type="text"
+                                class="form-control input"
+                                placeholder="Your Name"
+                                required=""
+                              />
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="input1_wrapper">
-                          <label>Phone</label>
-                          <div class="input2_inner">
-                            <input
-                              type="text"
-                              class="form-control input"
-                              placeholder="Phone"
-                              required=""
-                            />
+                        <div class="col-md-6">
+                          <div class="input1_wrapper">
+                            <label>Phone</label>
+                            <div class="input2_inner">
+                              <input
+                                type="text"
+                                class="form-control input"
+                                placeholder="Phone"
+                                required=""
+                              />
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="input1_wrapper">
-                          <label>Email Address</label>
-                          <div class="input2_inner">
-                            <input
-                              type="email"
-                              class="form-control input"
-                              placeholder="Email Address"
-                              required=""
-                            />
+                        <div class="col-md-6">
+                          <div class="input1_wrapper">
+                            <label>Email Address</label>
+                            <div class="input2_inner">
+                              <input
+                                type="email"
+                                class="form-control input"
+                                placeholder="Email Address"
+                                required=""
+                              />
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="input1_wrapper">
-                          <label>Date</label>
-                          <div class="input1_inner">
-                            <input
-                              type="text"
-                              class="form-control input datepicker hasDatepicker"
-                              placeholder="Date"
-                              required=""
-                              id="dp1707050830971"
-                            />
+                        <div class="col-md-6">
+                          <div class="input1_wrapper">
+                            <label>Date</label>
+                            <div class="input1_inner">
+                              <input
+                                type="text"
+                                class="form-control input datepicker hasDatepicker"
+                                placeholder="Date"
+                                required=""
+                                id="dp1707050830971"
+                              />
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="select1_wrapper">
-                          <label>Persons</label>
-                          <div class="select1_inner">
-                            <select
-                              class="select2 select select2-hidden-accessible"
-                              style="width: 100%"
-                              data-select2-id="1"
-                              tabindex="-1"
-                              aria-hidden="true"
-                            >
-                              <option value="0" data-select2-id="3">
-                                Persons
-                              </option>
-                              <option value="1">1 Person</option>
-                              <option value="2">2 People</option>
-                              <option value="3">3 People</option>
-                              <option value="4">4 People</option>
-                              <option value="5">5 People</option>
-                              <option value="6">6 People</option>
-                              <option value="7">7 People</option></select
-                            ><span
-                              class="select2 select2-container select2-container--default"
-                              dir="ltr"
-                              data-select2-id="2"
-                              style="width: 100%"
-                              ><span class="selection"
-                                ><span
-                                  class="select2-selection select2-selection--single"
-                                  role="combobox"
-                                  aria-haspopup="true"
-                                  aria-expanded="false"
-                                  tabindex="0"
-                                  aria-labelledby="select2-iwzz-container"
-                                  ><span
-                                    class="select2-selection__rendered"
-                                    id="select2-iwzz-container"
-                                    role="textbox"
-                                    aria-readonly="true"
-                                    title="Persons"
-                                    >Persons</span
-                                  ><span
-                                    class="select2-selection__arrow"
-                                    role="presentation"
-                                    ><b
-                                      role="presentation"
-                                    ></b></span></span></span
-                              ><span
-                                class="dropdown-wrapper"
+                        <div class="col-md-6">
+                          <div class="select1_wrapper">
+                            <label>Persons</label>
+                            <div class="select1_inner">
+                              <select
+                                class="select2 select select2-hidden-accessible"
+                                style="width: 100%"
+                                data-select2-id="1"
+                                tabindex="-1"
                                 aria-hidden="true"
-                              ></span
-                            ></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="select1_wrapper">
-                          <label>Time</label>
-                          <div class="select1_inner">
-                            <select
-                              class="select2 select select2-hidden-accessible"
-                              style="width: 100%"
-                              data-select2-id="4"
-                              tabindex="-1"
-                              aria-hidden="true"
-                            >
-                              <option value="0" data-select2-id="6">
-                                Time
-                              </option>
-                              <option value="1">10:00 am</option>
-                              <option value="2">11:00 am</option>
-                              <option value="3">12:00 pm</option>
-                              <option value="4">14:00 pm</option>
-                              <option value="5">16:00 pm</option>
-                              <option value="6">18:00 pm</option>
-                              <option value="7">20:00 pm</option></select
-                            ><span
-                              class="select2 select2-container select2-container--default"
-                              dir="ltr"
-                              data-select2-id="5"
-                              style="width: 100%"
-                              ><span class="selection"
-                                ><span
-                                  class="select2-selection select2-selection--single"
-                                  role="combobox"
-                                  aria-haspopup="true"
-                                  aria-expanded="false"
-                                  tabindex="0"
-                                  aria-labelledby="select2-kmj9-container"
-                                  ><span
-                                    class="select2-selection__rendered"
-                                    id="select2-kmj9-container"
-                                    role="textbox"
-                                    aria-readonly="true"
-                                    title="Time"
-                                    >Time</span
-                                  ><span
-                                    class="select2-selection__arrow"
-                                    role="presentation"
-                                    ><b
-                                      role="presentation"
-                                    ></b></span></span></span
+                              >
+                                <option value="0" data-select2-id="3">
+                                  Persons
+                                </option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5">5 People</option>
+                                <option value="6">6 People</option>
+                                <option value="7">7 People</option></select
                               ><span
-                                class="dropdown-wrapper"
-                                aria-hidden="true"
-                              ></span
-                            ></span>
+                                class="select2 select2-container select2-container--default"
+                                dir="ltr"
+                                data-select2-id="2"
+                                style="width: 100%"
+                                ><span class="selection"
+                                  ><span
+                                    class="select2-selection select2-selection--single"
+                                    role="combobox"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    tabindex="0"
+                                    aria-labelledby="select2-iwzz-container"
+                                    ><span
+                                      class="select2-selection__rendered"
+                                      id="select2-iwzz-container"
+                                      role="textbox"
+                                      aria-readonly="true"
+                                      title="Persons"
+                                      >Persons</span
+                                    ><span
+                                      class="select2-selection__arrow"
+                                      role="presentation"
+                                      ><b
+                                        role="presentation"
+                                      ></b></span></span></span
+                                ><span
+                                  class="dropdown-wrapper"
+                                  aria-hidden="true"
+                                ></span
+                              ></span>
+                            </div>
                           </div>
                         </div>
+                        <div class="col-md-6">
+                          <div class="select1_wrapper">
+                            <label>Time</label>
+                            <div class="select1_inner">
+                              <select
+                                class="select2 select select2-hidden-accessible"
+                                style="width: 100%"
+                                data-select2-id="4"
+                                tabindex="-1"
+                                aria-hidden="true"
+                              >
+                                <option value="0" data-select2-id="6">
+                                  Time
+                                </option>
+                                <option value="1">10:00 am</option>
+                                <option value="2">11:00 am</option>
+                                <option value="3">12:00 pm</option>
+                                <option value="4">14:00 pm</option>
+                                <option value="5">16:00 pm</option>
+                                <option value="6">18:00 pm</option>
+                                <option value="7">20:00 pm</option></select
+                              ><span
+                                class="select2 select2-container select2-container--default"
+                                dir="ltr"
+                                data-select2-id="5"
+                                style="width: 100%"
+                                ><span class="selection"
+                                  ><span
+                                    class="select2-selection select2-selection--single"
+                                    role="combobox"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    tabindex="0"
+                                    aria-labelledby="select2-kmj9-container"
+                                    ><span
+                                      class="select2-selection__rendered"
+                                      id="select2-kmj9-container"
+                                      role="textbox"
+                                      aria-readonly="true"
+                                      title="Time"
+                                      >Time</span
+                                    ><span
+                                      class="select2-selection__arrow"
+                                      role="presentation"
+                                      ><b
+                                        role="presentation"
+                                      ></b></span></span></span
+                                ><span
+                                  class="dropdown-wrapper"
+                                  aria-hidden="true"
+                                ></span
+                              ></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <button type="submit" class="btn-form1-submit mt-15">
+                            Check Availability
+                          </button>
+                        </div>
                       </div>
-                      <div class="col-md-12">
-                        <button type="submit" class="btn-form1-submit mt-15">
-                          Check Availability
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div> -->
+                    </form>
+                  </div>
+                </div> -->
             </div>
           </div>
         </div>

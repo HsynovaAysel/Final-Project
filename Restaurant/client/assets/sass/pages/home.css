@@ -4,6 +4,8 @@
 */
 * {
   text-decoration: none;
+  outline: none;
+  border: none;
 }
 
 html,
@@ -182,8 +184,8 @@ h5 {
 }
 
 h6 {
-  font-family: "Libre Caslon Display", serif;
-  font-size: 18px;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
   font-weight: 400;
   line-height: 35px;
   color: #fff;
@@ -191,36 +193,90 @@ h6 {
 
 p {
   color: #777777;
-  font-family: "Noto Sans", sans-serif;
-  font-size: 15px;
+  font-family: "Noah", sans-serif;
+  font-size: 13.5px;
   font-weight: 400;
   line-height: 26px;
 }
 
 a {
   color: #fff;
-  font-family: "Noto Sans", sans-serif;
-  font-size: 15px;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
   font-weight: 400;
   line-height: 19px;
 }
 
 span {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noah", sans-serif;
   font-size: 12px;
   font-weight: 400;
-  line-height: 26px;
   color: #c19d60;
+  letter-spacing: 3px;
+  line-height: 1.75em;
+  text-transform: uppercase;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 999px) {
   .container {
     padding: 0 5%;
   }
+}
+
+main header .owl-carousel .owl-item .item .header .bg-color .header-content a {
+  outline: none;
+  border: 1px solid #c19d60;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 35px;
+  color: #fff;
+  padding: 5px 25px;
+  background-color: transparent;
+  transition: all 0.5s;
+}
+main header .owl-carousel .owl-item .item .header .bg-color .header-content a:hover {
+  background-color: #c19d60;
+}
+
+/* #Progress
+================================================== */
+.progress-wrap {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 200ms linear;
+}
+
+.progress-wrap.active-progress {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.progress-wrap svg path {
+  fill: none;
+}
+
+.progress-wrap svg.progress-circle path {
+  stroke: #c19d60;
+  stroke-width: 4;
+  box-sizing: border-box;
+  transition: all 200ms linear;
 }
 
 .spinner-loader {
@@ -297,13 +353,13 @@ svg.spinner-webkit path {
   cursor: pointer;
   width: 40px;
   height: 40px;
-  transition: 0.5s;
+  transition: all 0.5s;
   background: #c19d60;
   margin: 15px 30px;
   border-radius: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   transition: all 0.5s;
   flex-direction: column;
   gap: 4px;
@@ -321,23 +377,38 @@ svg.spinner-webkit path {
   .navbar {
     display: flex;
   }
+  .navbar.menu-icon {
+    left: 230px;
+    gap: unset;
+  }
+  .navbar.menu-icon .line1 {
+    transform: rotate(45deg);
+  }
+  .navbar.menu-icon .line2 {
+    transform: rotate(-45deg);
+  }
+  .navbar.menu-icon .line3 {
+    display: none;
+  }
 }
 
 #candore-aside {
   height: 100vh;
   background: #1b1b1b;
   width: 15%;
-  padding: 20px;
+  padding: 70px 50px;
   position: fixed;
   left: 0;
   top: 0;
   border-right: 1px solid rgba(255, 255, 255, 0.02);
   display: flex;
-  justify-content: center;
-  align-items: unset;
   flex-direction: column;
-  gap: 100px;
+  gap: 90px;
   z-index: 1111;
+  transition: all 0.5s ease;
+}
+#candore-aside .candore-logo {
+  max-width: 200px;
 }
 #candore-aside .candore-logo img {
   width: 100%;
@@ -348,14 +419,25 @@ svg.spinner-webkit path {
   gap: 8px;
 }
 #candore-aside nav ul li {
-  padding-bottom: 17px;
+  padding-bottom: 14px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+#candore-aside nav ul li .faq-list {
+  border: unset;
+  padding: 0;
 }
 #candore-aside nav ul li.active a {
   color: #c19d60;
 }
-#candore-aside nav ul li:hover a {
-  color: #c19d60;
+#candore-aside nav ul li .pages {
+  padding: 15px 0 0 20px;
+  display: none;
+}
+#candore-aside nav ul li .pages.pages-ul {
+  display: block;
+}
+#candore-aside nav ul li .pages li {
+  padding-top: 10px;
 }
 #candore-aside .candore-footer {
   display: flex;
@@ -371,13 +453,10 @@ svg.spinner-webkit path {
   gap: 1rem;
 }
 #candore-aside .candore-footer ul li a i {
-  font-size: 18px;
   color: #c19d60;
+  transition: all 0.5s ease;
 }
 #candore-aside .candore-footer ul li a:hover i {
-  color: #fff;
-}
-#candore-aside .candore-footer ul li a:focus i {
   color: #fff;
 }
 #candore-aside .candore-footer ul li a:active i {
@@ -385,7 +464,11 @@ svg.spinner-webkit path {
 }
 @media screen and (max-width: 768px) {
   #candore-aside {
-    left: -160px;
+    left: -250px;
+    width: 20%;
+  }
+  #candore-aside.aside {
+    left: 0px;
   }
 }
 
@@ -393,7 +476,7 @@ main {
   display: none;
   position: absolute;
   right: 0;
-  width: 85%;
+  width: 78.4%;
 }
 main header {
   width: 100%;
@@ -402,38 +485,40 @@ main header .reservation {
   position: absolute;
   top: 40%;
   right: 0px;
-  z-index: 9999999;
+  z-index: 2;
 }
 main header .reservation a {
   gap: 1rem;
-  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 main header .reservation a .call {
   transform: rotate(-90deg);
 }
 main header .reservation a .call h4 {
   color: #fff;
-}
-main header .reservation a .call span {
-  font-size: 18px;
+  font-size: 25px;
 }
 main header .reservation a .icon {
-  border: 1px solid white;
-  width: 50px;
-  height: 50px;
+  border: 1px solid #c19d60;
+  width: 30px;
+  height: 30px;
   padding: 10px;
   border-radius: 50%;
   margin-top: 40px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   animation: pulse 2s infinite;
+  transition: all 0.5s;
 }
 main header .reservation a .icon img {
-  width: 100%;
+  width: 90%;
+}
+main header .reservation a .icon:hover {
+  border-color: white;
 }
 @keyframes pulse {
   0% {
@@ -481,13 +566,13 @@ main header .owl-carousel .owl-item .item .header {
   width: 100%;
 }
 main header .owl-carousel .owl-item .item .header.bg-1 {
-  background-image: url("../../images/banner-1.jpg");
+  background-image: url("../../images/home/banner-1.jpg");
 }
 main header .owl-carousel .owl-item .item .header.bg-2 {
-  background-image: url("../../images/banner-2.jpg");
+  background-image: url("../../images/home/banner-2.jpg");
 }
 main header .owl-carousel .owl-item .item .header.bg-3 {
-  background-image: url("../../images/banner-3.jpg");
+  background-image: url("../../images/home/banner-3.jpg");
 }
 main header .owl-carousel .owl-item .item .header .bg-color {
   width: 100%;
@@ -501,9 +586,9 @@ main header .owl-carousel .owl-item .item .header .bg-color {
 main header .owl-carousel .owl-item .item .header .bg-color .header-content {
   gap: 1.5rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 main header .owl-carousel .owl-dots {
   position: absolute;
@@ -523,10 +608,6 @@ main header .owl-carousel .owl-dots .owl-dot:hover span {
   border-color: #c19d60;
   background-color: #c19d60;
 }
-main header .owl-carousel .owl-dots .owl-dot:focus span {
-  border-color: #c19d60;
-  background-color: #c19d60;
-}
 main header .owl-carousel .owl-dots .owl-dot:active span {
   border-color: #c19d60;
   background-color: #c19d60;
@@ -539,39 +620,60 @@ main header .owl-carousel .owl-nav {
 }
 main #about {
   background-color: #f2eee8;
-  padding: 100px 50px;
+  padding: 100px 0 180px 0;
 }
 main #about .about {
   width: 100%;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
 }
 main #about .about .about-word {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+main #about .about .about-word p {
+  font-style: italic;
 }
 main #about .about .about-word .reservation-about {
   display: flex;
+  gap: 1rem;
 }
-main #about .about .img-1 {
-  position: relative;
-  top: 50px;
-  width: 25%;
-}
-main #about .about .img-1 img {
+main #about .about .about-word .reservation-about .icon img {
   width: 100%;
 }
-main #about .about .img-2 {
-  width: 25%;
+main #about .about .about-word .reservation-about h4 {
+  color: #000;
+  font-size: 27px;
 }
-main #about .about .img-2 img {
+main #about .about .img {
+  width: 50%;
+  display: flex;
+  gap: 1.5rem;
+}
+main #about .about .img .img-1 {
+  position: relative;
+  top: 90px;
+  width: 50%;
+}
+main #about .about .img .img-1 img {
+  width: 100%;
+}
+main #about .about .img .img-2 {
+  width: 50%;
+}
+main #about .about .img .img-2 img {
   width: 100%;
 }
 main #chef {
-  padding: 100px;
+  padding: 130px 0;
   background-color: #1b1b1b;
 }
 main #chef .chef {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 main #chef .chef .chef-img {
@@ -581,28 +683,33 @@ main #chef .chef .chef-img img {
   width: 100%;
 }
 main #chef .chef .chef-content {
-  width: 50%;
+  width: 40%;
   display: flex;
   flex-direction: column;
+  display: flex;
   justify-content: center;
+  align-items: unset;
+  gap: 1rem;
+}
+main #chef .chef .chef-content h2 {
+  color: #fff;
+}
+main #chef .chef .chef-content p {
+  font-style: italic;
 }
 main #chef .chef .chef-content .about-bottom {
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
   align-items: center;
 }
-main #chef .chef .chef-content .about-bottom h2 {
-  color: #fff;
-}
 main #chef .chef .chef-content .about-bottom .img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
 }
 main #chef .chef .chef-content .about-bottom .img img {
   width: 100%;
 }
 main #recommends {
-  padding: 100px 80px;
+  padding: 100px 0;
   background-color: #f2eee8;
 }
 main #recommends .recommends .recommends-top {
@@ -610,24 +717,29 @@ main #recommends .recommends .recommends-top {
   position: relative;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 main #recommends .recommends .recommends-top h1 {
+  text-align: center;
+  font-family: "Pinyon Script", cursive;
   position: absolute;
-  right: 36%;
-  font-size: 150px;
-  color: rgba(0, 0, 0, 0.1);
+  font-size: 140px;
+  color: rgba(0, 0, 0, 0.05);
 }
 main #recommends .recommends .recommends-top .img-line {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
 }
 main #recommends .recommends .recommends-top .img-line .line {
   width: 50px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+main #recommends .recommends .recommends-top .img-line .img {
+  width: 20px;
 }
 main #recommends .recommends .recommends-top .img-line .img img {
   width: 100%;
@@ -635,12 +747,13 @@ main #recommends .recommends .recommends-top .img-line .img img {
 main #recommends .recommends .recommends-bottom {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
 }
 main #recommends .recommends .recommends-bottom .recommends-card {
   width: 30%;
   position: relative;
   overflow: hidden;
-  margin-bottom: 30px;
 }
 main #recommends .recommends .recommends-bottom .recommends-card .bg-img {
   position: relative;
@@ -656,48 +769,29 @@ main #recommends .recommends .recommends-bottom .recommends-card .content {
   bottom: -55px;
   text-align: center;
   width: 100%;
-  transition: all 0.3s;
+  transition: all 0.5s;
   z-index: 20;
-  height: auto;
   box-sizing: border-box;
   background: linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.1) 2%, rgba(0, 0, 0, 0.75) 90%);
   background: linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.01) 2%, rgba(0, 0, 0, 0.75) 90%);
   background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, 0.01) 2%, rgba(0, 0, 0, 0.75) 90%);
 }
-main #recommends .recommends .recommends-bottom .recommends-card .content span {
-  position: relative;
-  color: #c19d60;
-  font-family: "Noah", sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
 main #recommends .recommends .recommends-bottom .recommends-card .content h4 {
-  position: relative;
   color: #fff;
   font-size: 27px;
+  margin-bottom: 20px;
 }
 main #recommends .recommends .recommends-bottom .recommends-card .content h6 {
-  font-family: "Noah", sans-serif;
-  font-size: 15px;
   font-style: italic;
-  color: #fff;
-  height: 0;
-  overflow: hidden;
   text-align: center;
   transition: all 0.3s ease;
-  display: inline;
 }
 main #recommends .recommends .recommends-bottom .recommends-card .content .line {
   text-align: center;
-  height: 1px;
+  height: 2px;
   width: 60px;
   background-color: #fff;
-  transition-property: all;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
+  transition: all 0.3s ease-in-out;
   margin: 0 auto 30px;
 }
 main #recommends .recommends .recommends-bottom .recommends-card:hover .bg-img img {
@@ -809,6 +903,7 @@ main #features .features #features-top .features-top {
   gap: 1rem;
 }
 main #features .features #features-top .features-top h1 {
+  font-family: "Pinyon Script", cursive;
   position: absolute;
   right: 36%;
   font-size: 150px;
@@ -937,6 +1032,7 @@ main #menu-book .menu-book .menu-top {
   gap: 1rem;
 }
 main #menu-book .menu-book .menu-top h1 {
+  font-family: "Pinyon Script", cursive;
   position: absolute;
   right: 36%;
   font-size: 150px;
@@ -1060,6 +1156,7 @@ main #meet-chef .meet-chef #meet-chef-top .meet-chef-top {
   gap: 1rem;
 }
 main #meet-chef .meet-chef #meet-chef-top .meet-chef-top h1 {
+  font-family: "Pinyon Script", cursive;
   position: absolute;
   right: 36%;
   font-size: 150px;
@@ -1081,15 +1178,26 @@ main #meet-chef .meet-chef #meet-chef-bottom {
   padding: 150px 0;
   background-color: #fff;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item {
-  width: 30%;
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 20%;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item {
+  margin-left: 5px;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists {
+  display: flex;
+  gap: 2rem;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card {
+  width: 30%;
   text-align: center;
   position: relative;
   padding-bottom: 40px;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .title-box {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .title-box {
   position: absolute;
   left: 40px;
   right: 40px;
@@ -1102,27 +1210,27 @@ main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .it
   margin-bottom: 0;
   border-radius: 1px;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .title-box h3 {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .title-box h3 {
   font-family: "Libre Caslon Display", serif;
   font-size: 20px;
   color: #1b1b1b;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .title-box h3 span {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .title-box h3 span {
   font-family: "Noah", sans-serif;
   font-size: 15px;
   color: #777;
   display: grid;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .title-box:before {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .title-box:before {
   transition: all ease 0.4s;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-img {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-img {
   position: relative;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-img img {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-img img {
   width: 100%;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-img:before {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-img:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -1134,7 +1242,7 @@ main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .it
   visibility: hidden;
   transition: all ease 0.4s;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-content {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content {
   position: absolute;
   left: 0;
   right: 0;
@@ -1145,52 +1253,55 @@ main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .it
   opacity: 0;
   visibility: hidden;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-content .social {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .social {
   position: absolute;
   left: 0;
   width: 100%;
   transition: all 0.4s;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-content .social a {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .social a {
   font-size: 15px;
   color: #fff;
   margin: 0 5px;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-content .team-title {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .team-title {
   font-family: "Libre Caslon Display", serif;
   font-size: 24px;
   color: #fff;
   font-weight: 400;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-content .team-title span {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .team-title span {
   font-family: "Noah", sans-serif;
   font-size: 15px;
   color: #c19d60;
   font-weight: 400;
   display: grid;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card .team-content :before {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content :before {
   transition: all ease 0.4s;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card:hover .team-content {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card:hover .team-content {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.2s;
   margin-top: 1px;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card:hover .team-content .social a {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card:hover .team-content .social a {
   color: #c19d60;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card:hover .title-box {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card:hover .title-box {
   opacity: 0;
   visibility: hidden;
   margin-bottom: 80px;
 }
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card:hover .team-img::before {
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card:hover .team-img::before {
   height: 100%;
   visibility: visible;
 }
 main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .owl-dots {
+  display: none;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .owl-nav {
   display: none;
 }
 main #wine-bar .wine-bar {
@@ -1258,6 +1369,7 @@ main #food .food .food-top {
   gap: 1rem;
 }
 main #food .food .food-top h1 {
+  font-family: "Pinyon Script", cursive;
   position: absolute;
   right: 36%;
   font-size: 150px;
@@ -1443,6 +1555,7 @@ main #new-events .new-events #new-events-top .new-events-top h1 {
   right: 36%;
   font-size: 150px;
   color: rgba(255, 255, 255, 0.1);
+  font-family: "Pinyon Script", cursive;
 }
 main #new-events .new-events #new-events-top .new-events-top h2 {
   color: white;
@@ -1692,7 +1805,7 @@ main footer .footer #footer-top .footer-top .footer-column.footer-contact .foote
   color: #777;
   position: relative;
   display: inline-block;
-  transition: all 500ms ease;
+  transition: all 0.5s ease;
 }
 main footer .footer #footer-top .footer-top .footer-column.footer-contact .footer-contact-info .footer-contact-mail:before {
   position: absolute;
@@ -1784,9 +1897,40 @@ main footer .footer #footer-bottom .footer-bottom p {
 main footer .footer #footer-bottom .footer-bottom p:hover {
   color: #c19d60;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   main {
     left: 0;
     width: 100%;
+  }
+  main header .reservation {
+    display: none;
+  }
+  main #about .about {
+    flex-direction: column;
+    align-items: center;
+  }
+  main #about .about .about-word {
+    width: 100%;
+  }
+  main #about .about .img {
+    width: 100%;
+  }
+  main #chef .chef {
+    flex-direction: column;
+  }
+  main #chef .chef .chef-img {
+    width: 100%;
+  }
+  main #chef .chef .chef-content {
+    width: 100%;
+  }
+  main #recommends .recommends .recommends-bottom {
+    flex-direction: column;
+  }
+  main #recommends .recommends .recommends-bottom .recommends-card {
+    width: 100%;
+  }
+  main #recommends .recommends .recommends-bottom .recommends-card .content {
+    bottom: -60px;
   }
 }/*# sourceMappingURL=home.css.map */
