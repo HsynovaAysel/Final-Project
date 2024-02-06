@@ -227,7 +227,7 @@ span {
   }
 }
 
-main footer .footer #footer-top .footer-top .footer-column .subscribe form button, main #features .features #features-bottom .features-bottom .features-card .features-card-1.back .text a, main #hourse .bg-color .hourse .hourse-right .btn, main header .owl-carousel .owl-item .item .header .bg-color .header-content a {
+main footer .footer #footer-top .footer-top .footer-column .subscribe form button, main #reservation .bg-color .reservation .reservation-box form button, main #features .features #features-bottom .features-bottom .features-card .features-card-1.back .text a, main #hourse .bg-color .hourse .hourse-right .btn, main header .owl-carousel .owl-item .item .header .bg-color .header-content a {
   outline: none;
   border: 1px solid #c19d60;
   font-family: "Noah", sans-serif;
@@ -242,7 +242,7 @@ main footer .footer #footer-top .footer-top .footer-column .subscribe form butto
   background-color: transparent;
   transition: all 0.5s;
 }
-main footer .footer #footer-top .footer-top .footer-column .subscribe form button:hover, main #features .features #features-bottom .features-bottom .features-card .features-card-1.back .text a:hover, main #hourse .bg-color .hourse .hourse-right .btn:hover, main header .owl-carousel .owl-item .item .header .bg-color .header-content a:hover {
+main footer .footer #footer-top .footer-top .footer-column .subscribe form button:hover, main #reservation .bg-color .reservation .reservation-box form button:hover, main #features .features #features-bottom .features-bottom .features-card .features-card-1.back .text a:hover, main #hourse .bg-color .hourse .hourse-right .btn:hover, main header .owl-carousel .owl-item .item .header .bg-color .header-content a:hover {
   background-color: #c19d60;
 }
 
@@ -1871,10 +1871,11 @@ main #reservation {
   background-attachment: fixed;
 }
 main #reservation .bg-color {
-  padding: 100px 0;
+  padding: 120px 0;
   background-color: rgba(0, 0, 0, 0.7);
 }
 main #reservation .bg-color .reservation {
+  position: relative;
   display: flex;
   gap: 1rem;
 }
@@ -1901,6 +1902,57 @@ main #reservation .bg-color .reservation .reservation-content .reservation-about
 }
 main #reservation .bg-color .reservation .reservation-content .reservation-about h4 {
   font-size: 27px;
+}
+main #reservation .bg-color .reservation .reservation-box {
+  width: 40%;
+  background-color: #f2eee8;
+  padding: 50px 20px;
+  position: absolute;
+  right: 0px;
+  bottom: -80%;
+}
+main #reservation .bg-color .reservation .reservation-box h2 {
+  text-align: center;
+  font-size: 35px;
+  padding-bottom: 20px;
+}
+main #reservation .bg-color .reservation .reservation-box form {
+  display: flex;
+  justify-content: center;
+  align-items: unset;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-top: 1px solid #c19d60;
+  padding-top: 20px;
+}
+main #reservation .bg-color .reservation .reservation-box form input {
+  width: 40%;
+  padding: 20px 10px;
+}
+main #reservation .bg-color .reservation .reservation-box form input::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+main #reservation .bg-color .reservation .reservation-box form input::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+main #reservation .bg-color .reservation .reservation-box form select {
+  width: 45%;
+  padding: 20px 10px;
+}
+main #reservation .bg-color .reservation .reservation-box form button {
+  background-color: #c19d60;
+  width: 100%;
+}
+main #reservation .bg-color .reservation .reservation-box form button:hover {
+  background-color: transparent;
 }
 main #logo {
   background-color: #1b1b1b;
@@ -2254,7 +2306,17 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
   main #reservation .bg-color .reservation .reservation-content {
     width: 100%;
   }
-  main #reservation .bg-color .reservation .reservation-content .reservation-box {
+  main #reservation .bg-color .reservation .reservation-box {
+    position: unset;
+    width: 90%;
+  }
+  main #reservation .bg-color .reservation .reservation-box form {
+    flex-direction: column;
+  }
+  main #reservation .bg-color .reservation .reservation-box form input {
+    width: 96%;
+  }
+  main #reservation .bg-color .reservation .reservation-box form select {
     width: 100%;
   }
   main #logo .owl-carousel {
