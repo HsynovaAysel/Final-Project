@@ -1042,28 +1042,33 @@ main {
         height: 50vh;
         @include flex();
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
         h2 {
           color: white;
         }
-        .video-play-cricle {
-          @include flex();
+        .video_button {
           width: 100px;
           height: 100px;
-
-          .video-play {
-            width: 100%;
-            transition: all 1.2s;
-            img {
-              border-radius: 50%;
-              width: 100%;
-              transition: all 0.5s;
+          background: rgb(255 222 159 / 20%);
+          @include flex();
+          border-radius: 60px;
+          animation: scrolltop 2s infinite;
+          transition: 0.5s;
+          .video_sec_play {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:#c19d60;
+            border-radius: 40px;
+          }
+          @keyframes scrolltop {
+            0% {
+              box-shadow: 0 0 0 0px rgb(255 222 159 / 30%);
             }
-            &:hover {
-              width: 75px;
-              img {
-                box-shadow: 1px 1px 20px $home-color;
-              }
+            100% {
+              box-shadow: 0 0 0 15px rgb(255 222 159 / 30%);
             }
           }
         }
@@ -1439,6 +1444,16 @@ main {
                 background-color: #c19d60;
                 color: white;
                 @include flex();
+                transform: rotate(-20deg);
+                animation: newMenu 1s ease infinite alternate;
+              }
+              @keyframes newMenu {
+                0% {
+                  transform: rotate(-20deg) scale(1);
+                }
+                100% {
+                  transform: rotate(-20deg) scale(1.1);
+                }
               }
               @include flex();
               flex-direction: column;
@@ -1519,6 +1534,33 @@ main {
               color: #c19d60;
             }
           }
+        }
+      }
+    }
+  }
+  #ticker-section {
+    background: $about-color;
+    padding: 30px;
+    .marquee {
+      display: flex;
+      overflow: hidden;
+      gap: 80px;
+      .marquee_group {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 80px;
+        min-width: 100%;
+        animation: scroll 15s linear infinite;
+      }
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(calc(-100% - 80px));
         }
       }
     }

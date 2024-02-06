@@ -1240,32 +1240,38 @@ main #video .bg-color .video {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 main #video .bg-color .video h2 {
   color: white;
 }
-main #video .bg-color .video .video-play-cricle {
+main #video .bg-color .video .video_button {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 222, 159, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
+  border-radius: 60px;
+  animation: scrolltop 2s infinite;
+  transition: 0.5s;
 }
-main #video .bg-color .video .video-play-cricle .video-play {
-  width: 100%;
-  transition: all 1.2s;
+main #video .bg-color .video .video_button .video_sec_play {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c19d60;
+  border-radius: 40px;
 }
-main #video .bg-color .video .video-play-cricle .video-play img {
-  border-radius: 50%;
-  width: 100%;
-  transition: all 0.5s;
-}
-main #video .bg-color .video .video-play-cricle .video-play:hover {
-  width: 75px;
-}
-main #video .bg-color .video .video-play-cricle .video-play:hover img {
-  box-shadow: 1px 1px 20px #c19d60;
+@keyframes scrolltop {
+  0% {
+    box-shadow: 0 0 0 0px rgba(255, 222, 159, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(255, 222, 159, 0.3);
+  }
 }
 main #meet-chef {
   position: relative;
@@ -1645,6 +1651,16 @@ main #new-menu .owl-carousel .item .new-menu .bg-color .new-menu-content .new {
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: rotate(-20deg);
+  animation: newMenu 1s ease infinite alternate;
+}
+@keyframes newMenu {
+  0% {
+    transform: rotate(-20deg) scale(1);
+  }
+  100% {
+    transform: rotate(-20deg) scale(1.1);
+  }
 }
 main #new-menu .owl-carousel .owl-dots {
   display: none;
@@ -1721,6 +1737,32 @@ main #new-menu .owl-carousel .owl-nav .owl-prev:hover {
 main #new-menu .owl-carousel .owl-nav .owl-prev:hover span {
   font-size: 15px;
   color: #c19d60;
+}
+main #ticker-section {
+  background: #f2eee8;
+  padding: 30px;
+}
+main #ticker-section .marquee {
+  display: flex;
+  overflow: hidden;
+  gap: 80px;
+}
+main #ticker-section .marquee .marquee_group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 80px;
+  min-width: 100%;
+  animation: scroll 15s linear infinite;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 80px));
+  }
 }
 main #new-events .new-events #new-events-top {
   padding: 130px 0 200px 0;
