@@ -265,7 +265,7 @@ main {
       background-repeat: no-repeat;
       background-size: cover;
       width: 100%;
-      background-image: url("../../images/about/about-bgimg.jpg");
+      background-image: url("../../images/menu/menu-bgimg.jpg");
       .bg-color {
         width: 100%;
         padding: 200px 0;
@@ -311,232 +311,75 @@ main {
       }
     }
   }
-  #about {
-    background-color: $about-color;
-    padding: 100px 0 180px 0;
-    .about {
-      width: 100%;
-      display: flex;
-      gap: 2rem;
-      .about-word {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        p {
-          font-style: italic;
-        }
-        .reservation-about {
-          display: flex;
-          gap: 1rem;
-          .icon {
-            img {
-              width: 100%;
-            }
-          }
-          h4 {
-            color: $black-color;
-            font-size: 27px;
-          }
-        }
-      }
-      .about-img {
-        width: 50%;
-        display: flex;
-        gap: 1.5rem;
-        .img-1 {
-          position: relative;
-          top: 90px;
-          // right: 50px;
-          width: 50%;
-          img {
-            width: 100%;
-          }
-        }
-        .img-2 {
-          width: 50%;
-          img {
-            width: 100%;
-          }
-        }
-        &.bg-img-about {
-          transition: 0.5s cubic-bezier(0.7, 0.25, 0.25, 1);
-          animation: element-from-top 1s ease;
-        }
-      }
-      @keyframes element-from-top {
-        0% {
-          opacity: 0;
-          transform: translate(0, -30%);
-        }
-        100% {
-          opacity: 1;
-          transform: translate(0, 0);
-        }
-      }
-    }
-  }
-  #chef {
-    padding: 130px 0;
-    background-color: $text-color;
-    .chef {
-      @include flex();
-      gap: 2rem;
-      .chef-img {
-        width: 40%;
-        img {
-          width: 100%;
-        }
-        &.chef-animation-img {
-          transition: 0.5s cubic-bezier(0.63, 0.25, 0.25, 1);
-          animation: element-from-top 1s ease;
-        }
-      }
-      @keyframes element-from-top {
-        0% {
-          opacity: 0;
-          transform: translate(0, -30%);
-        }
-        100% {
-          opacity: 1;
-          transform: translate(0, 0);
-        }
-      }
-      .chef-content {
-        width: 40%;
-        display: flex;
-        flex-direction: column;
-        @include flex(center, unset);
-        gap: 1rem;
-        h2 {
-          color: $white-color;
-        }
-        p {
-          font-style: italic;
-        }
-        .about-bottom {
-          display: flex;
-          gap: 1rem;
-          align-items: center;
-          .img {
-            width: 80px;
-            img {
-              width: 100%;
-            }
-          }
-        }
-      }
-    }
-  }
-  #recommends {
+  #menu-book {
     padding: 100px 0;
-    background-color: #f2eee8;
-    .recommends {
-      .recommends-top {
-        margin-bottom: 50px;
-        position: relative;
+    background-color: #1b1b1b;
+    .menu-book {
+      position: relative;
+      z-index: 3;
+      .menu-all-button {
         @include flex();
-        flex-direction: column;
-        gap: 1.5rem;
-        h1 {
-          text-align: center;
-          font-family: "Pinyon Script", cursive;
-          position: absolute;
-          font-size: 140px;
-          color: rgba($color: #000000, $alpha: 0.05);
-        }
-        .img-line {
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-bottom: 50px;
+        .menu-button-img {
+          width: 10%;
           @include flex();
-          gap: 1rem;
-          .line {
-            width: 50px;
-            border: 1px solid rgba($color: #000000, $alpha: 0.05);
-          }
+          flex-direction: column;
           .img {
-            width: 20px;
+            opacity: 0.1;
             img {
               width: 100%;
+            }
+          }
+          button {
+            border: none;
+            outline: none;
+            font-family: $font-libre;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 38px;
+            background-color: transparent;
+            color: white;
+            &.button-active {
+              color: $home-color;
             }
           }
         }
       }
-      .recommends-bottom {
-        @include flex(space-between);
-        gap: 2rem;
-        .recommends-card {
-          width: 30%;
-          position: relative;
-          overflow: hidden;
-          .bg-img {
-            position: relative;
-            overflow: hidden;
+      .menu-card-lists {
+        @include flex();
+        flex-wrap: wrap;
+        gap: 1rem;
+        .menu-card {
+          width: 45%;
+          @include flex();
+          gap: 1.5rem;
+          .img {
+            width: 60px;
+            height: 60px;
             img {
-              transition: all 0.5s;
               width: 100%;
+              border-radius: 50%;
             }
           }
-          .content {
-            padding: 30px;
-            position: absolute;
-            bottom: -55px;
-            text-align: center;
-            width: 100%;
-            transition: all 0.5s;
-            z-index: 20;
-            box-sizing: border-box;
-            background: linear-gradient(
-              top,
-              transparent 0,
-              rgba(0, 0, 0, 0.1) 2%,
-              rgba(0, 0, 0, 0.75) 90%
-            );
-            background: linear-gradient(
-              top,
-              transparent 0,
-              rgba(0, 0, 0, 0.01) 2%,
-              rgba(0, 0, 0, 0.75) 90%
-            );
-            background: linear-gradient(
-              to bottom,
-              transparent 0,
-              rgba(0, 0, 0, 0.01) 2%,
-              rgba(0, 0, 0, 0.75) 90%
-            );
-
-            h4 {
-              color: #fff;
-              font-size: 27px;
-              margin-bottom: 20px;
+          .menu-content {
+            @include flex(space-between);
+            gap: 1rem;
+            .name-price {
+              h5 {
+                font-size: 18px;
+              }
+              p {
+                font-style: italic;
+              }
             }
-            h6 {
-              font-style: italic;
-              text-align: center;
-              transition: all 0.3s ease;
+            h4 {
+              font-size: 20px;
             }
             .line {
-              text-align: center;
-              height: 2px;
-              width: 60px;
-              background-color: #fff;
-              transition: all 0.3s ease-in-out;
-              margin: 0 auto 30px;
-            }
-          }
-
-          &:hover {
-            .bg-img {
-              img {
-                filter: none;
-                transform: scale(1.09, 1.09);
-                transition: all 1s ease;
-              }
-            }
-            .content {
-              bottom: 0;
-              .line {
-                width: 100%;
-                transition: all 0.5s ease-in-out;
-              }
+              border-top: 3px dotted black;
+              width: 40%;
             }
           }
         }
@@ -856,49 +699,22 @@ main {
   @media screen and (max-width: 767px) {
     left: 0;
     width: 100%;
+  
    
-    #about {
-      .about {
-        flex-direction: column;
-        align-items: center;
-        .about-word {
-          width: 100%;
-        }
-        .about-img {
-          width: 100%;
-        }
-      }
-    }
-    #chef {
-      .chef {
-        flex-direction: column;
-        .chef-img {
-          width: 100%;
-        }
-        .chef-content {
-          width: 100%;
-        }
-      }
-    }
-    #recommends {
-      .recommends {
-        // .recommends-top{
-        // }
-        .recommends-bottom {
-          flex-direction: column;
-          .recommends-card {
-            width: 100%;
-            .content {
-              bottom: -60px;
-            }
-          }
-        }
-      }
-    }
   
    
     
-   
+    #menu-book {
+      .menu-book {
+          .menu-card-lists {
+            flex: unset;
+            flex-direction: column;
+            .menu-card {
+              width: 100%;
+            }
+          }
+      }
+    }
    
    
    

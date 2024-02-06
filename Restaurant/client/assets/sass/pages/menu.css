@@ -485,7 +485,7 @@ main header .header {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  background-image: url("../../images/about/about-bgimg.jpg");
+  background-image: url("../../images/menu/menu-bgimg.jpg");
 }
 main header .header .bg-color {
   width: 100%;
@@ -531,221 +531,88 @@ main header .header .bg-color .header-content .down-icon i {
     transform: translate3d(0, -4px, 0);
   }
 }
-main #about {
-  background-color: #f2eee8;
-  padding: 100px 0 180px 0;
-}
-main #about .about {
-  width: 100%;
-  display: flex;
-  gap: 2rem;
-}
-main #about .about .about-word {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-main #about .about .about-word p {
-  font-style: italic;
-}
-main #about .about .about-word .reservation-about {
-  display: flex;
-  gap: 1rem;
-}
-main #about .about .about-word .reservation-about .icon img {
-  width: 100%;
-}
-main #about .about .about-word .reservation-about h4 {
-  color: #000;
-  font-size: 27px;
-}
-main #about .about .about-img {
-  width: 50%;
-  display: flex;
-  gap: 1.5rem;
-}
-main #about .about .about-img .img-1 {
-  position: relative;
-  top: 90px;
-  width: 50%;
-}
-main #about .about .about-img .img-1 img {
-  width: 100%;
-}
-main #about .about .about-img .img-2 {
-  width: 50%;
-}
-main #about .about .about-img .img-2 img {
-  width: 100%;
-}
-main #about .about .about-img.bg-img-about {
-  transition: 0.5s cubic-bezier(0.7, 0.25, 0.25, 1);
-  animation: element-from-top 1s ease;
-}
-@keyframes element-from-top {
-  0% {
-    opacity: 0;
-    transform: translate(0, -30%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-}
-main #chef {
-  padding: 130px 0;
+main #menu-book {
+  padding: 100px 0;
   background-color: #1b1b1b;
 }
-main #chef .chef {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-main #chef .chef .chef-img {
-  width: 40%;
-}
-main #chef .chef .chef-img img {
-  width: 100%;
-}
-main #chef .chef .chef-img.chef-animation-img {
-  transition: 0.5s cubic-bezier(0.63, 0.25, 0.25, 1);
-  animation: element-from-top 1s ease;
-}
-@keyframes element-from-top {
-  0% {
-    opacity: 0;
-    transform: translate(0, -30%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-}
-main #chef .chef .chef-content {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: unset;
-  gap: 1rem;
-}
-main #chef .chef .chef-content h2 {
-  color: #fff;
-}
-main #chef .chef .chef-content p {
-  font-style: italic;
-}
-main #chef .chef .chef-content .about-bottom {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-main #chef .chef .chef-content .about-bottom .img {
-  width: 80px;
-}
-main #chef .chef .chef-content .about-bottom .img img {
-  width: 100%;
-}
-main #recommends {
-  padding: 100px 0;
-  background-color: #f2eee8;
-}
-main #recommends .recommends .recommends-top {
-  margin-bottom: 50px;
+main #menu-book .menu-book {
   position: relative;
+  z-index: 3;
+}
+main #menu-book .menu-book .menu-all-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 50px;
+}
+main #menu-book .menu-book .menu-all-button .menu-button-img {
+  width: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+main #menu-book .menu-book .menu-all-button .menu-button-img .img {
+  opacity: 0.1;
+}
+main #menu-book .menu-book .menu-all-button .menu-button-img .img img {
+  width: 100%;
+}
+main #menu-book .menu-book .menu-all-button .menu-button-img button {
+  border: none;
+  outline: none;
+  font-family: "Libre Caslon Display", serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 38px;
+  background-color: transparent;
+  color: white;
+}
+main #menu-book .menu-book .menu-all-button .menu-button-img button.button-active {
+  color: #c19d60;
+}
+main #menu-book .menu-book .menu-card-lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+main #menu-book .menu-book .menu-card-lists .menu-card {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1.5rem;
 }
-main #recommends .recommends .recommends-top h1 {
-  text-align: center;
-  font-family: "Pinyon Script", cursive;
-  position: absolute;
-  font-size: 140px;
-  color: rgba(0, 0, 0, 0.05);
+main #menu-book .menu-book .menu-card-lists .menu-card .img {
+  width: 60px;
+  height: 60px;
 }
-main #recommends .recommends .recommends-top .img-line {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-main #recommends .recommends .recommends-top .img-line .line {
-  width: 50px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-main #recommends .recommends .recommends-top .img-line .img {
-  width: 20px;
-}
-main #recommends .recommends .recommends-top .img-line .img img {
+main #menu-book .menu-book .menu-card-lists .menu-card .img img {
   width: 100%;
+  border-radius: 50%;
 }
-main #recommends .recommends .recommends-bottom {
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
-main #recommends .recommends .recommends-bottom .recommends-card {
-  width: 30%;
-  position: relative;
-  overflow: hidden;
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .name-price h5 {
+  font-size: 18px;
 }
-main #recommends .recommends .recommends-bottom .recommends-card .bg-img {
-  position: relative;
-  overflow: hidden;
-}
-main #recommends .recommends .recommends-bottom .recommends-card .bg-img img {
-  transition: all 0.5s;
-  width: 100%;
-}
-main #recommends .recommends .recommends-bottom .recommends-card .content {
-  padding: 30px;
-  position: absolute;
-  bottom: -55px;
-  text-align: center;
-  width: 100%;
-  transition: all 0.5s;
-  z-index: 20;
-  box-sizing: border-box;
-  background: linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.1) 2%, rgba(0, 0, 0, 0.75) 90%);
-  background: linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.01) 2%, rgba(0, 0, 0, 0.75) 90%);
-  background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, 0.01) 2%, rgba(0, 0, 0, 0.75) 90%);
-}
-main #recommends .recommends .recommends-bottom .recommends-card .content h4 {
-  color: #fff;
-  font-size: 27px;
-  margin-bottom: 20px;
-}
-main #recommends .recommends .recommends-bottom .recommends-card .content h6 {
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .name-price p {
   font-style: italic;
-  text-align: center;
-  transition: all 0.3s ease;
 }
-main #recommends .recommends .recommends-bottom .recommends-card .content .line {
-  text-align: center;
-  height: 2px;
-  width: 60px;
-  background-color: #fff;
-  transition: all 0.3s ease-in-out;
-  margin: 0 auto 30px;
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content h4 {
+  font-size: 20px;
 }
-main #recommends .recommends .recommends-bottom .recommends-card:hover .bg-img img {
-  filter: none;
-  transform: scale(1.09, 1.09);
-  transition: all 1s ease;
-}
-main #recommends .recommends .recommends-bottom .recommends-card:hover .content {
-  bottom: 0;
-}
-main #recommends .recommends .recommends-bottom .recommends-card:hover .content .line {
-  width: 100%;
-  transition: all 0.5s ease-in-out;
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .line {
+  border-top: 3px dotted black;
+  width: 40%;
 }
 main #reservation {
   background-image: url("../../images/home/banner-3.jpg");
@@ -1059,33 +926,12 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
     left: 0;
     width: 100%;
   }
-  main #about .about {
-    flex-direction: column;
-    align-items: center;
-  }
-  main #about .about .about-word {
-    width: 100%;
-  }
-  main #about .about .about-img {
-    width: 100%;
-  }
-  main #chef .chef {
+  main #menu-book .menu-book .menu-card-lists {
+    flex: unset;
     flex-direction: column;
   }
-  main #chef .chef .chef-img {
+  main #menu-book .menu-book .menu-card-lists .menu-card {
     width: 100%;
-  }
-  main #chef .chef .chef-content {
-    width: 100%;
-  }
-  main #recommends .recommends .recommends-bottom {
-    flex-direction: column;
-  }
-  main #recommends .recommends .recommends-bottom .recommends-card {
-    width: 100%;
-  }
-  main #recommends .recommends .recommends-bottom .recommends-card .content {
-    bottom: -60px;
   }
   main #reservation .bg-color .reservation {
     flex-direction: column;
@@ -1125,4 +971,4 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
   main footer .footer #footer-bottom .footer-bottom p {
     text-align: unset;
   }
-}/*# sourceMappingURL=about.css.map */
+}/*# sourceMappingURL=menu.css.map */

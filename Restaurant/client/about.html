@@ -1,1 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./assets/owlcarousel/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/owlcarousel/assets/owl.theme.default.min.css"
+    />
+    <!-- <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous"
+        /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pinyon+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/sass/pages/about.css" />
+    <title>Document</title>
+    <script defer src="./assets/vendors/jquery.min.js"></script>
+    <script defer src="./assets/owlcarousel/owl.carousel.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+    ></script>
+    <!-- <script
+          defer
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+          crossorigin="anonymous"
+        ></script> -->
+    <script defer src="./assets/js/main.js"></script>
+  </head>
+  <body>
+    <!-- <div class="spinner-loader">
+      <div id="spinner">
+        <svg class="spinner-webkit" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 54 54"><path d="M28.14,44a3.26,3.26,0,0,1,.53,1.63l.3,4.93a1.42,1.42,0,0,0,1.66,1.31A25.85,25.85,0,0,0,52.18,26.38v0A25.84,25.84,0,1,0,22.05,51.83a1.43,1.43,0,0,0,1.66-1.31L24,45.6a3.74,3.74,0,0,1,1.7-2.84l6.52-5.18a7.06,7.06,0,0,0,2.61-5.71L33.43,9.11A.16.16,0,0,0,33.26,9L32.18,9A1.4,1.4,0,0,0,30.9,10.4v15a1.46,1.46,0,0,1-1.46,1.46h0A1.46,1.46,0,0,1,28,25.45V10.79a1.65,1.65,0,0,0-1.65-1.65h0a1.65,1.65,0,0,0-1.65,1.65V25.45a1.46,1.46,0,0,1-1.46,1.46h0a1.46,1.46,0,0,1-1.46-1.46v-15A1.4,1.4,0,0,0,20.5,9L19.42,9a.16.16,0,0,0-.17.15L17.84,31.87a7.06,7.06,0,0,0,2.61,5.71l5.89,4.68"/></path></svg>
+      </div>
+    </div> -->
+    <div class="paginacontainer">
+      <div class="progress-wrap">
+        <svg
+          class="progress-circle svg-content"
+          width="100%"
+          height="100%"
+          viewBox="-1 -1 102 102"
+        >
+          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+      </div>
+    </div>
 
+    <div class="navbar">
+      <span class="line1"></span>
+      <span class="line2"></span>
+      <span class="line3"></span>
+    </div>
+    <aside id="candore-aside">
+      <div class="candore-logo">
+        <a href="index.html">
+          <img src="./assets/images/logo (3).png" alt="" />
+        </a>
+      </div>
+
+      <nav>
+        <ul>
+          <li class="active">
+            <a href="index.html">HOME </a>
+          </li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li>
+            <a href="menu.html">MENU</a>
+          </li>
+          <li><a href="wine.html">WINE</a></li>
+          <li>
+            <a id="pages">PAGES <i class="fa-solid fa-angle-down"></i></a>
+            <ul class="pages">
+              <li><a href="services.html">SERVICES</a></li>
+              <li><a href="favorites.html">FAVORITES</a></li>
+              <li><a href="chefs.html">CHEFS</a></li>
+              <li class="faq-list"><a href="faq.html">FAQ</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="blog.html">BLOG </a>
+          </li>
+          <li>
+            <a href="shop.html">SHOP </a>
+          </li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <div class="candore-footer">
+        <a href="login-signup.html"
+          ><i class="fa-solid fa-right-to-bracket"></i
+        ></a>
+        <ul>
+          <li>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </li>
+        </ul>
+        <p>© 2023 Candóre by DuruThemes</p>
+      </div>
+    </aside>
+    <main>
+      <header>
+        <div class="header">
+          <div class="bg-color">
+            <div class="container">
+              <div class="header-content">
+                <h6>WHO ARE WE</h6>
+                <h1>About Us</h1>
+                <h3>Our History</h3>
+                <a href="#about" class="down-icon"
+                  ><i class="fa-solid fa-down-long"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section id="about">
+        <div class="container">
+          <div class="about">
+            <div class="about-word">
+              <span>CANDÓRE RESTAURANT</span>
+              <h2>Few Words About Us</h2>
+              <p>
+                Restaurant vulputate massa sit amet ravida haretra nuam enim mi
+                obortis eset uctus enec accumsan eu justo aliquam sit amet
+                auctor orci donec vitae vehicula risus duise nunc sapien,
+                accumsan id mauris ac ullamcorper rutrum asiquam congue nie
+                ipsum auctor frinilla donec finibus sapien ut leo cursus
+                ullamco.
+              </p>
+              <p>
+                Wine porta laoreet ante, luctus maximus ipsum blandit eget.
+                Integer mollis eniman metus, eget consequat enim commodo eduis
+                id magna arcu duis nec elit praesent convallis et justo nec
+                tristique sapien quis.
+              </p>
+              <a href="tel:8551004444" class="reservation-about">
+                <div class="icon">
+                  <img src="./assets/images/home/tray.png" alt="" srcset="" />
+                </div>
+                <div class="call">
+                  <span>RESERVATION</span>
+                  <h4>855 100 4444</h4>
+                  <br />
+                </div>
+              </a>
+            </div>
+            <div class="about-img">
+              <div class="img-1">
+                <img src="./assets/images/home/about2.jpg" alt="" />
+              </div>
+              <div class="img-2">
+                <img src="./assets/images/home/about.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="chef">
+        <div class="container">
+          <div class="chef">
+            <div class="chef-img">
+              <img src="./assets/images/home/chef.jpg" alt="" />
+            </div>
+            <div class="chef-content">
+              <span>20 YEAR OF EXPERIENCE</span>
+              <h2>Big Chef's Menu</h2>
+              <p>
+                Restaurant vulputate massa ons amet ravida haretra nuam the
+                drana miss uctus enec accumsan eu justo aliquam sit amet auctor
+                orci done vitae vehicula risus duise nunc sapien, accumsan id
+                mauris rutrum asiquam congue nie ipsum auctor frinilla finibus
+                sapien.
+              </p>
+              <div class="about-bottom">
+                <div class="img">
+                  <img src="./assets/images/home/signature.svg" alt="" />
+                </div>
+                <div class="about-name">
+                  <h6>Harold Brown</h6>
+                  <span>MASTER CHEF</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="recommends">
+        <div class="container">
+          <div class="recommends">
+            <div class="recommends-top">
+              <h1>Menu</h1>
+              <span>Should to Try</span>
+              <h2>Chef Recommends</h2>
+              <div class="img-line">
+                <div class="line"></div>
+                <div class="img">
+                  <img src="./assets/images/home/chef.png" alt="" />
+                </div>
+                <div class="line"></div>
+              </div>
+            </div>
+            <div class="recommends-bottom">
+              <div class="recommends-card">
+                <div class="bg-img">
+                  <img src="./assets/images/home/hamburger.jpg" alt="" />
+                </div>
+                <div class="content">
+                  <div class="img">
+                    <img src="./assets/images/home/burger.png" alt="" />
+                  </div>
+                  <span>Food</span>
+                  <h4>Rusty’s Burger</h4>
+                  <div class="line"></div>
+                  <h6>Smoked pulled beef ribls, bbq sauce...</h6>
+                </div>
+              </div>
+              <div class="recommends-card">
+                <div class="bg-img">
+                  <img src="./assets/images/home/salad.jpg" alt="" />
+                </div>
+                <div class="content">
+                  <div class="img">
+                    <img src="./assets/images/home/salad.png" alt="" />
+                  </div>
+                  <span>Salad</span>
+                  <h4>Waldorf Salad</h4>
+                  <div class="line"></div>
+                  <h6>Smoked pulled beef ribs, bbq sauce...</h6>
+                </div>
+              </div>
+              <div class="recommends-card">
+                <div class="bg-img">
+                  <img src="./assets/images/home/wine.jpg" alt="" />
+                </div>
+                <div class="content">
+                  <div class="img">
+                    <img src="./assets/images/home/wine.png" alt="" />
+                  </div>
+                  <span>Wine</span>
+                  <h4>Corvo Dal 1824</h4>
+                  <div class="line"></div>
+                  <h6>Smoked pulled beef ribs, bbq sauce...</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="reservation">
+        <div class="bg-color">
+          <div class="container">
+            <div class="reservation">
+              <div class="reservation-content">
+                <div class="star-icon">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <h4>
+                  A modern restaurant with a menu that will make your mouth
+                  water.
+                </h4>
+                <a href="tel:8551004444" class="reservation-about">
+                  <div class="icon">
+                    <img src="./assets/images/home/tray.png" alt="" srcset="" />
+                  </div>
+                  <div class="call">
+                    <span>RESERVATION</span>
+                    <h4>855 100 4444</h4>
+                    <br />
+                  </div>
+                </a>
+                <h6>
+                  <i class="fa-solid fa-check"></i> Call us, it's toll-free.
+                </h6>
+              </div>
+              <div class="reservation-box">
+                <h2>Make A Reservation</h2>
+                <form>
+                  <input type="text" placeholder="Your Name" required="" />
+                  <input type="text" placeholder="Phone" required="" />
+                  <input type="email" placeholder="Email Address" required="" />
+                  <input type="text" placeholder="Date" required="" />
+                  <select>
+                    <option value="0">Persons</option>
+                    <option value="1">1 Person</option>
+                    <option value="2">2 People</option>
+                    <option value="3">3 People</option>
+                    <option value="4">4 People</option>
+                    <option value="5">5 People</option>
+                    <option value="6">6 People</option>
+                    <option value="7">7 People</option>
+                  </select>
+                  <select>
+                    <option value="0">Time</option>
+                    <option value="1">10:00 am</option>
+                    <option value="2">11:00 am</option>
+                    <option value="3">12:00 pm</option>
+                    <option value="4">14:00 pm</option>
+                    <option value="5">16:00 pm</option>
+                    <option value="6">18:00 pm</option>
+                    <option value="7">20:00 pm</option>
+                  </select>
+                  <button type="submit">Check Availability</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="logo">
+        <div class="container">
+          <div class="owl-carousel owl-theme">
+            <div class="item">
+              <div class="all-logos">
+                <div class="logo img-1">
+                  <div class="bg-color"></div>
+                </div>
+                <div class="logo img-2">
+                  <div class="bg-color"></div>
+                </div>
+                <div class="logo img-3">
+                  <div class="bg-color"></div>
+                </div>
+                <div class="logo img-4">
+                  <div class="bg-color"></div>
+                </div>
+                <div class="logo img-5">
+                  <div class="bg-color"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="footer">
+          <div id="footer-top">
+            <div class="container">
+              <div class="footer-top">
+                <div class="footer-column">
+                  <h3>About Us</h3>
+                  <p>
+                    Restaurant metus dibus eudui aolicitudin istique lacus in
+                    the vestibulum congue est vitae maximus duru ne lacus in
+                    massa tristique aharetra ne ut isum.
+                  </p>
+                  <div class="footer-language">
+                    <i class="fa-solid fa-globe"></i>
+                    <select>
+                      <option value="#0">English</option>
+                      <option value="#0">Russian</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="footer-column footer-contact">
+                  <h3>Contact Info</h3>
+                  <p>
+                    1616 Broadway NY, New York 10001 <br />United States of
+                    America
+                  </p>
+                  <div class="footer-contact-info">
+                    <a a href="tel:855 100 4444" class="footer-contact-phone"
+                      >855 100 4444</a
+                    >
+                    <a
+                      a
+                      href="mailto:info@candore.com"
+                      class="footer-contact-mail"
+                      >info@candore.com</a
+                    >
+                  </div>
+                  <div class="footer-about-social-list">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                  </div>
+                </div>
+
+                <div class="footer-column">
+                  <h3>Subscribe</h3>
+                  <div class="subscribe">
+                    <p>
+                      Want to be notified when we launch a new template or an
+                      udpate. Just sign up and we'll send you a notification by
+                      email.
+                    </p>
+                    <form>
+                      <input
+                        type="text"
+                        name="search"
+                        placeholder="Your email"
+                        required=""
+                      />
+                      <button>Subscribe</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="footer-bottom">
+            <div class="container">
+              <div class="footer-bottom">
+                <p>© Copyright 2023 by DuruThemes.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
