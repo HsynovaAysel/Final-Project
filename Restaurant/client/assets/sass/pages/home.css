@@ -1812,6 +1812,10 @@ main #new-events .new-events #new-events-top .new-events-top h1 {
   font-size: 130px;
   color: rgba(255, 255, 255, 0.05);
 }
+main #new-events .new-events #new-events-top .new-events-top span {
+  display: flex;
+  justify-content: center;
+}
 main #new-events .new-events #new-events-top .new-events-top h2 {
   color: white;
 }
@@ -2019,7 +2023,7 @@ main #reservation .bg-color .reservation .reservation-box form select {
 }
 main #reservation .bg-color .reservation .reservation-box form button {
   background-color: #c19d60;
-  width: 100%;
+  width: 95%;
 }
 main #reservation .bg-color .reservation .reservation-box form button:hover {
   background-color: transparent;

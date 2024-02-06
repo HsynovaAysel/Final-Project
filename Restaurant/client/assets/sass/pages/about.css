@@ -747,6 +747,210 @@ main #recommends .recommends .recommends-bottom .recommends-card:hover .content 
   width: 100%;
   transition: all 0.5s ease-in-out;
 }
+main #meet-chef {
+  position: relative;
+}
+main #meet-chef .meet-chef #meet-chef-top {
+  padding: 100px 0 50px 0;
+  background-color: #1b1b1b;
+}
+main #meet-chef .meet-chef #meet-chef-top .meet-chef-top {
+  margin-bottom: 50px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+main #meet-chef .meet-chef #meet-chef-top .meet-chef-top h1 {
+  text-align: center;
+  font-family: "Pinyon Script", cursive;
+  position: absolute;
+  font-size: 130px;
+  color: rgba(255, 255, 255, 0.05);
+}
+main #meet-chef .meet-chef #meet-chef-top .meet-chef-top h2 {
+  color: white;
+}
+main #meet-chef .meet-chef #meet-chef-top .meet-chef-top .img-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+main #meet-chef .meet-chef #meet-chef-top .meet-chef-top .img-line .line {
+  width: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+main #meet-chef .meet-chef #meet-chef-top .meet-chef-top .img-line .img {
+  width: 20px;
+}
+main #meet-chef .meet-chef #meet-chef-top .meet-chef-top .img-line .img img {
+  width: 100%;
+}
+main #meet-chef .meet-chef #meet-chef-bottom {
+  background-color: #1b1b1b;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom {
+  width: 100%;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item {
+  margin-left: 5px;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists {
+  display: flex;
+  gap: 2rem;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card {
+  width: 30%;
+  text-align: center;
+  position: relative;
+  padding-bottom: 40px;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .title-box {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 0;
+  z-index: 2;
+  background-color: #f2eee8;
+  padding: 25px 0;
+  opacity: 1;
+  visibility: visible;
+  margin-bottom: 0;
+  border-radius: 1px;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .title-box h3 {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 20px;
+  color: #1b1b1b;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .title-box h3 span {
+  font-family: "Noah", sans-serif;
+  font-size: 15px;
+  color: #777;
+  display: grid;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .title-box:before {
+  transition: all 0.4s;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-img {
+  position: relative;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-img img {
+  width: 100%;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-img:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  background-color: #1b1b1b;
+  opacity: 0.9;
+  visibility: hidden;
+  transition: all ease 0.4s;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-bottom: 38px;
+  margin-top: 50px;
+  opacity: 0;
+  visibility: hidden;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content p {
+  width: 80%;
+  text-align: center;
+  margin: 16px 0;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content h4 {
+  color: white;
+  margin: 16px 0;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .social {
+  transition: all 0.4s;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .social a {
+  font-size: 15px;
+  margin: 0 5px;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .social a i {
+  color: #fff;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .social a i:hover {
+  color: #c19d60;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .team-title {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 400;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .team-title span {
+  font-family: "Noah", sans-serif;
+  font-size: 15px;
+  color: #c19d60;
+  font-weight: 400;
+  display: grid;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content :before {
+  transition: all ease 0.4s;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card:hover .team-content {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.2s;
+  margin-top: 1px;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card:hover .title-box {
+  opacity: 0;
+  visibility: hidden;
+  margin-bottom: 80px;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card:hover .team-img::before {
+  height: 100%;
+  visibility: visible;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .owl-dots {
+  display: none;
+}
+main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .owl-nav {
+  display: none;
+}
+main #ticker {
+  background: #1b1b1b;
+  padding: 30px;
+}
+main #ticker .marquee {
+  display: flex;
+  overflow: hidden;
+  gap: 80px;
+}
+main #ticker .marquee .marquee_group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 80px;
+  min-width: 100%;
+  animation: scroll 15s linear infinite;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 80px));
+  }
+}
 main #reservation {
   background-image: url("../../images/home/banner-3.jpg");
   background-position: center;
@@ -833,7 +1037,7 @@ main #reservation .bg-color .reservation .reservation-box form select {
 }
 main #reservation .bg-color .reservation .reservation-box form button {
   background-color: #c19d60;
-  width: 100%;
+  width: 95%;
 }
 main #reservation .bg-color .reservation .reservation-box form button:hover {
   background-color: transparent;
@@ -1086,6 +1290,22 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
   }
   main #recommends .recommends .recommends-bottom .recommends-card .content {
     bottom: -60px;
+  }
+  main #meet-chef .meet-chef #meet-chef-top {
+    padding: 100px 0 50px 0;
+  }
+  main #meet-chef .meet-chef #meet-chef-bottom {
+    background-color: #1b1b1b;
+    padding: 0 0 30px 0;
+  }
+  main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom {
+    position: unset;
+  }
+  main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists {
+    flex-direction: column;
+  }
+  main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card {
+    width: 100%;
   }
   main #reservation .bg-color .reservation {
     flex-direction: column;

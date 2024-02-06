@@ -749,6 +749,82 @@ main #wine-bar .wine-bar .wine-bar-right .right .menu-card .menu-content .line {
   border-top: 3px dotted black;
   width: 40%;
 }
+main #slider {
+  padding: 100px 0 250px 0;
+  background: #f2eee8;
+  width: 100%;
+  overflow: hidden;
+}
+main #slider .wine-top {
+  padding-bottom: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+main #slider .wine-top h1 {
+  text-align: center;
+  font-family: "Pinyon Script", cursive;
+  position: absolute;
+  font-size: 140px;
+  color: rgba(0, 0, 0, 0.05);
+}
+main #slider .wine-top .img-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+main #slider .wine-top .img-line .line {
+  width: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+main #slider .wine-top .img-line .img {
+  width: 20px;
+}
+main #slider .wine-top .img-line .img img {
+  width: 100%;
+}
+main #slider .slider {
+  position: relative;
+  left: 45%;
+  width: 15%;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: rotate 30s linear infinite;
+}
+main #slider .slider span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(320px);
+  -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.2666666667));
+}
+main #slider .slider span img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 2s;
+}
+@keyframes rotate {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
 main #reservation {
   background-image: url("../../images/home/banner-3.jpg");
   background-position: center;
@@ -835,7 +911,7 @@ main #reservation .bg-color .reservation .reservation-box form select {
 }
 main #reservation .bg-color .reservation .reservation-box form button {
   background-color: #c19d60;
-  width: 100%;
+  width: 95%;
 }
 main #reservation .bg-color .reservation .reservation-box form button:hover {
   background-color: transparent;
@@ -1077,6 +1153,12 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
   }
   main #menu-book .menu-book .menu-card-lists .menu-card {
     width: 100%;
+  }
+  main #slider {
+    padding: 100px 0 150px 0;
+  }
+  main #slider .slider span {
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(200px);
   }
   main #wine-bar .wine-bar {
     flex-direction: column;

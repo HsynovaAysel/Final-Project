@@ -525,6 +525,79 @@ main {
       }
     }
   }
+  #slider {
+    padding: 100px 0 250px 0;
+    background: $about-color;
+    width: 100%;
+    overflow: hidden;
+    .wine-top {
+      padding-bottom: 100px;
+
+      position: relative;
+      @include flex();
+      flex-direction: column;
+      gap: 1.5rem;
+      h1 {
+        text-align: center;
+        font-family: "Pinyon Script", cursive;
+        position: absolute;
+        font-size: 140px;
+        color: rgba($color: #000000, $alpha: 0.05);
+      }
+      .img-line {
+        @include flex();
+        gap: 1rem;
+        .line {
+          width: 50px;
+          border: 1px solid rgba($color: #000000, $alpha: 0.05);
+        }
+        .img {
+          width: 20px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .slider {
+      position: relative;
+      left: 45%;
+      width: 15%;
+      height: 200px;
+      transform-style: preserve-3d;
+      animation: rotate 30s linear infinite;
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-origin: center;
+        transform-style: preserve-3d;
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(320px);
+        -webkit-box-reflect: below 0px
+          linear-gradient(transparent, transparent, #0004);
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+          transition: 2s;
+        }
+      }
+    }
+    @keyframes rotate {
+      0% {
+        transform: perspective(1000px) rotateY(0deg);
+      }
+      100% {
+        transform: perspective(1000px) rotateY(360deg);
+      }
+    }
+  }
   #reservation {
     background-image: url("../../images/home/banner-3.jpg");
     background-position: center;
@@ -602,7 +675,7 @@ main {
             button {
               @extend %btn;
               background-color: $home-color;
-              width: 100%;
+              width: 95%;
               &:hover {
                 background-color: transparent;
                 color: $home-color;
@@ -860,6 +933,14 @@ main {
           .menu-card {
             width: 100%;
           }
+        }
+      }
+    }
+    #slider {
+      padding: 100px 0 150px 0;
+      .slider {
+        span {
+          transform: rotateY(calc(var(--i) * 45deg)) translateZ(200px);
         }
       }
     }

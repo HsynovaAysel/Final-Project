@@ -1611,6 +1611,10 @@ main {
             font-size: 130px;
             color: rgba($color: #fff, $alpha: 0.05);
           }
+          span{
+            display: flex;
+            justify-content: center;
+          }
           h2 {
             color: white;
           }
@@ -1830,7 +1834,7 @@ main {
             button {
               @extend %btn;
               background-color: $home-color;
-              width: 100%;
+              width: 95%;
               &:hover {
                 background-color: transparent;
                 color: $home-color;
