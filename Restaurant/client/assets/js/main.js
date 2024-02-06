@@ -69,6 +69,8 @@ const candoreAside = document.querySelector("#candore-aside");
 const navbar = document.querySelector(".navbar");
 const pagesList = document.querySelector("#pages");
 const pagesUl = document.querySelector(".pages");
+const chefBgImg = document.querySelector(".chef-img");
+const aboutImg = document.querySelector(".about-img");
 main.style.display = "block";
 candoreAside.style.display = "flex";
 // setTimeout(() => {
@@ -81,5 +83,10 @@ navbar.addEventListener("click", function () {
   navbar.classList.toggle("menu-icon");
 });
 pagesList.addEventListener("click", function () {
-  pagesUl.classList.toggle('pages-ul')
+  pagesUl.classList.toggle("pages-ul");
+});
+
+window.addEventListener("scroll", function () {
+  chefBgImg.classList.toggle("chef-animation-img", this.window.scrollY > "750");
+  aboutImg.classList.toggle("bg-img-about", this.window.scrollY > "100");
 });

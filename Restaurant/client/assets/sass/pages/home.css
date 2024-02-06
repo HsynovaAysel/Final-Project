@@ -650,24 +650,38 @@ main #about .about .about-word .reservation-about h4 {
   color: #000;
   font-size: 27px;
 }
-main #about .about .img {
+main #about .about .about-img {
   width: 50%;
   display: flex;
   gap: 1.5rem;
 }
-main #about .about .img .img-1 {
+main #about .about .about-img .img-1 {
   position: relative;
   top: 90px;
   width: 50%;
 }
-main #about .about .img .img-1 img {
+main #about .about .about-img .img-1 img {
   width: 100%;
 }
-main #about .about .img .img-2 {
+main #about .about .about-img .img-2 {
   width: 50%;
 }
-main #about .about .img .img-2 img {
+main #about .about .about-img .img-2 img {
   width: 100%;
+}
+main #about .about .about-img.bg-img-about {
+  transition: 0.5s cubic-bezier(0.7, 0.25, 0.25, 1);
+  animation: element-from-top 1s ease;
+}
+@keyframes element-from-top {
+  0% {
+    opacity: 0;
+    transform: translate(0, -30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }
 main #chef {
   padding: 130px 0;
@@ -684,6 +698,20 @@ main #chef .chef .chef-img {
 }
 main #chef .chef .chef-img img {
   width: 100%;
+}
+main #chef .chef .chef-img.chef-animation-img {
+  transition: 0.5s cubic-bezier(0.63, 0.25, 0.25, 1);
+  animation: element-from-top 1s ease;
+}
+@keyframes element-from-top {
+  0% {
+    opacity: 0;
+    transform: translate(0, -30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }
 main #chef .chef .chef-content {
   width: 40%;
@@ -1738,16 +1766,16 @@ main #new-menu .owl-carousel .owl-nav .owl-prev:hover span {
   font-size: 15px;
   color: #c19d60;
 }
-main #ticker-section {
+main #ticker {
   background: #f2eee8;
   padding: 30px;
 }
-main #ticker-section .marquee {
+main #ticker .marquee {
   display: flex;
   overflow: hidden;
   gap: 80px;
 }
-main #ticker-section .marquee .marquee_group {
+main #ticker .marquee .marquee_group {
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -1995,6 +2023,7 @@ main #reservation .bg-color .reservation .reservation-box form button {
 }
 main #reservation .bg-color .reservation .reservation-box form button:hover {
   background-color: transparent;
+  color: #c19d60;
 }
 main #logo {
   background-color: #1b1b1b;
@@ -2226,7 +2255,7 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
   main #about .about .about-word {
     width: 100%;
   }
-  main #about .about .img {
+  main #about .about .about-img {
     width: 100%;
   }
   main #chef .chef {
