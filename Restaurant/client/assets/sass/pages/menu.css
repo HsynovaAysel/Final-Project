@@ -221,7 +221,7 @@ span {
   max-width: 1000px;
   margin: 0 auto;
 }
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1250px) {
   .container {
     padding: 0 5%;
   }
@@ -484,6 +484,7 @@ main header .header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   width: 100%;
   background-image: url("../../images/menu/menu-bgimg.jpg");
 }
@@ -502,6 +503,9 @@ main header .header .bg-color .header-content {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+main header .header .bg-color .header-content h6 {
+  letter-spacing: 10px;
 }
 main header .header .bg-color .header-content .down-icon {
   display: flex;
@@ -1043,6 +1047,9 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
     width: 96%;
   }
   main #reservation .bg-color .reservation .reservation-box form select {
+    width: 100%;
+  }
+  main #reservation .bg-color .reservation .reservation-box form button {
     width: 100%;
   }
   main #logo .owl-carousel {

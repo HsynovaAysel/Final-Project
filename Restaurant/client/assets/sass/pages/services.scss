@@ -268,6 +268,7 @@ main {
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+      background-attachment: fixed;
       width: 100%;
       background-image: url("../../images/services/banner5.jpg");
       .bg-color {
@@ -280,7 +281,10 @@ main {
           gap: 1.5rem;
           @include flex();
           flex-direction: column;
-
+         
+          h6{
+            letter-spacing: 10px
+          }
           .down-icon {
             @include flex();
             width: 40px;

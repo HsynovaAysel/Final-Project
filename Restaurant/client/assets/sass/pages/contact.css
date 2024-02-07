@@ -227,7 +227,7 @@ span {
   }
 }
 
-main footer .footer #footer-top .footer-top .footer-column .subscribe form button, main #reservation .bg-color .reservation .reservation-box form button {
+main footer .footer #footer-top .footer-top .footer-column .subscribe form button, main #reservation .bg-color .reservation .reservation-box form button, main #message .message .reservation-box form button {
   outline: none;
   border: 1px solid #c19d60;
   font-family: "Noah", sans-serif;
@@ -242,7 +242,7 @@ main footer .footer #footer-top .footer-top .footer-column .subscribe form butto
   background-color: transparent;
   transition: all 0.5s;
 }
-main footer .footer #footer-top .footer-top .footer-column .subscribe form button:hover, main #reservation .bg-color .reservation .reservation-box form button:hover {
+main footer .footer #footer-top .footer-top .footer-column .subscribe form button:hover, main #reservation .bg-color .reservation .reservation-box form button:hover, main #message .message .reservation-box form button:hover {
   background-color: #c19d60;
 }
 
@@ -486,7 +486,7 @@ main header .header {
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
-  background-image: url("../../images/chefs/5.jpg");
+  background-image: url("../../images/contact/banner12.jpg");
 }
 main header .header .bg-color {
   width: 100%;
@@ -505,7 +505,7 @@ main header .header .bg-color .header-content {
   flex-direction: column;
 }
 main header .header .bg-color .header-content h6 {
-  letter-spacing: 10px;
+  letter-spacing: 15px;
 }
 main header .header .bg-color .header-content .down-icon {
   display: flex;
@@ -535,414 +535,129 @@ main header .header .bg-color .header-content .down-icon i {
     transform: translate3d(0, -4px, 0);
   }
 }
-main #about {
-  background-color: #f2eee8;
-  padding: 100px 0 180px 0;
+main #services {
+  padding: 130px 0;
 }
-main #about .about {
-  width: 100%;
+main #services .services {
   display: flex;
-  gap: 2rem;
-}
-main #about .about .about-word {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-main #about .about .about-word p {
-  font-style: italic;
-}
-main #about .about .about-word .reservation-about {
-  display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 1rem;
 }
-main #about .about .about-word .reservation-about .icon img {
-  width: 100%;
-}
-main #about .about .about-word .reservation-about h4 {
-  color: #000;
-  font-size: 27px;
-}
-main #about .about .about-img {
-  width: 50%;
-  display: flex;
-  gap: 1.5rem;
-}
-main #about .about .about-img .img-1 {
-  position: relative;
-  top: 90px;
-  width: 50%;
-}
-main #about .about .about-img .img-1 img {
-  width: 100%;
-}
-main #about .about .about-img .img-2 {
-  width: 50%;
-}
-main #about .about .about-img .img-2 img {
-  width: 100%;
-}
-main #about .about .about-img.bg-img-about {
-  transition: 0.5s cubic-bezier(0.7, 0.25, 0.25, 1);
-  animation: element-from-top 1s ease;
-}
-@keyframes element-from-top {
-  0% {
-    opacity: 0;
-    transform: translate(0, -30%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-}
-main #chef {
-  padding: 130px 0;
-  background-color: #1b1b1b;
-}
-main #chef .chef {
+main #services .services .services-card {
+  padding: 25px 0;
+  background-color: #f2eee8;
+  width: 33%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
-main #chef .chef .chef-img {
-  width: 40%;
+main #services .services .services-card .img {
+  width: 50px;
 }
-main #chef .chef .chef-img img {
+main #services .services .services-card .img img {
   width: 100%;
 }
-main #chef .chef .chef-img.chef-animation-img {
-  transition: 0.5s cubic-bezier(0.63, 0.25, 0.25, 1);
-  animation: element-from-top 1s ease;
+main #services .services .services-card .services-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
-@keyframes element-from-top {
-  0% {
-    opacity: 0;
-    transform: translate(0, -30%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
+main #services .services .services-card .services-content h4 {
+  color: black;
+  font-size: 23px;
 }
-main #chef .chef .chef-content {
+main #services .services .services-card .services-content .phone {
+  color: #c19d60;
+  font-family: "Libre Caslon Display", serif;
+  font-size: 20px;
+}
+main #message {
+  padding: 100px 0;
+}
+main #message .message {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+main #message .message .reservation-content {
   width: 40%;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+main #message .message .reservation-content h4 {
+  font-size: 50px;
+  color: black;
+}
+main #message .message .reservation-box {
+  z-index: 1;
+  width: 50%;
+  background-color: #f2eee8;
+  padding: 50px 20px;
+  position: absolute;
+  right: 0px;
+  bottom: -200px;
+}
+main #message .message .reservation-box form {
   display: flex;
   justify-content: center;
   align-items: unset;
   gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 20px;
 }
-main #chef .chef .chef-content h2 {
-  color: #fff;
+main #message .message .reservation-box form input {
+  width: 40%;
+  padding: 20px 10px;
 }
-main #chef .chef .chef-content p {
-  font-style: italic;
+main #message .message .reservation-box form input::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
 }
-main #chef .chef .chef-content .about-bottom {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+main #message .message .reservation-box form input::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
 }
-main #chef .chef .chef-content .about-bottom .img {
-  width: 80px;
+main #message .message .reservation-box form textarea {
+  width: 90%;
+  padding: 40px 5px;
 }
-main #chef .chef .chef-content .about-bottom .img img {
-  width: 100%;
+main #message .message .reservation-box form textarea::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
 }
-main #card-group {
-  padding: 100px 0;
-  background-color: #f2eee8;
+main #message .message .reservation-box form textarea::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
 }
-main #card-group .menu-top {
-  margin-bottom: 50px;
+main #message .message .reservation-box form button {
+  background-color: #c19d60;
+  width: 95%;
+}
+main #message .message .reservation-box form button:hover {
+  background-color: transparent;
+  color: #c19d60;
+}
+main #map {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 1.5rem;
 }
-main #card-group .menu-top h1 {
-  text-align: center;
-  font-family: "Pinyon Script", cursive;
-  position: absolute;
-  font-size: 140px;
-  color: rgba(0, 0, 0, 0.05);
-}
-main #card-group .menu-top .img-line {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-main #card-group .menu-top .img-line .line {
-  width: 50px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-main #card-group .menu-top .img-line .img {
-  width: 20px;
-}
-main #card-group .menu-top .img-line .img img {
+main #map .map iframe {
   width: 100%;
-}
-main #card-group .card-group {
-  display: flex;
-  gap: 25px;
-}
-main #card-group .card-group .card {
-  width: 33%;
   height: 400px;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: all 0.8s;
-  cursor: pointer;
-  position: relative;
-}
-main #card-group .card-group .card img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  pointer-events: none;
-  transition: all 0.8s;
-}
-main #card-group .card-group .card .layer {
-  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
-  position: absolute;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: all 0.8s;
-}
-main #card-group .card-group .card .info {
-  transition: all 0.8s;
-  position: absolute;
-  opacity: 0;
-  z-index: 5;
-  bottom: -50%;
-  padding: 15px;
-}
-main #card-group .card-group .card p {
-  margin: 20px 0;
-}
-main #card-group .card-group .card:hover > .layer {
-  opacity: 1;
-}
-main #card-group .card-group .card:hover > .info {
-  opacity: 1;
-  bottom: 0;
-}
-main #card-group .card-group:hover > .card:not(:hover) {
-  filter: blur(2.5px);
-}
-main #meet-chef {
-  position: relative;
-}
-main #meet-chef .meet-chef #meet-chef-top {
-  padding: 100px 0 50px 0;
-  background-color: #1b1b1b;
-}
-main #meet-chef .meet-chef #meet-chef-top .meet-chef-top {
-  margin-bottom: 50px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-main #meet-chef .meet-chef #meet-chef-top .meet-chef-top h1 {
-  text-align: center;
-  font-family: "Pinyon Script", cursive;
-  position: absolute;
-  font-size: 130px;
-  color: rgba(255, 255, 255, 0.05);
-}
-main #meet-chef .meet-chef #meet-chef-top .meet-chef-top h2 {
-  color: white;
-}
-main #meet-chef .meet-chef #meet-chef-top .meet-chef-top .img-line {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-main #meet-chef .meet-chef #meet-chef-top .meet-chef-top .img-line .line {
-  width: 60px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-main #meet-chef .meet-chef #meet-chef-top .meet-chef-top .img-line .img {
-  width: 20px;
-}
-main #meet-chef .meet-chef #meet-chef-top .meet-chef-top .img-line .img img {
-  width: 100%;
-}
-main #meet-chef .meet-chef #meet-chef-bottom {
-  background-color: #1b1b1b;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom {
-  width: 100%;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item {
-  margin-left: 5px;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists {
-  display: flex;
-  gap: 2rem;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card {
-  width: 30%;
-  text-align: center;
-  position: relative;
-  padding-bottom: 40px;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .title-box {
-  position: absolute;
-  left: 40px;
-  right: 40px;
-  bottom: 0;
-  z-index: 2;
-  background-color: #f2eee8;
-  padding: 25px 0;
-  opacity: 1;
-  visibility: visible;
-  margin-bottom: 0;
-  border-radius: 1px;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .title-box h3 {
-  font-family: "Libre Caslon Display", serif;
-  font-size: 20px;
-  color: #1b1b1b;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .title-box h3 span {
-  font-family: "Noah", sans-serif;
-  font-size: 15px;
-  color: #777;
-  display: grid;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .title-box:before {
-  transition: all 0.4s;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-img {
-  position: relative;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-img img {
-  width: 100%;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-img:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 0;
-  width: 100%;
-  background-color: #1b1b1b;
-  opacity: 0.9;
-  visibility: hidden;
-  transition: all ease 0.4s;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  top: 50%;
-  transform: translateY(-50%);
-  padding-bottom: 38px;
-  margin-top: 50px;
-  opacity: 0;
-  visibility: hidden;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content p {
-  width: 80%;
-  text-align: center;
-  margin: 16px 0;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content h4 {
-  color: white;
-  margin: 16px 0;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .social {
-  transition: all 0.4s;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .social a {
-  font-size: 15px;
-  margin: 0 5px;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .social a i {
-  color: #fff;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .social a i:hover {
-  color: #c19d60;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .team-title {
-  font-family: "Libre Caslon Display", serif;
-  font-size: 24px;
-  color: #fff;
-  font-weight: 400;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content .team-title span {
-  font-family: "Noah", sans-serif;
-  font-size: 15px;
-  color: #c19d60;
-  font-weight: 400;
-  display: grid;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .team-content :before {
-  transition: all ease 0.4s;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card:hover .team-content {
-  opacity: 1;
-  visibility: visible;
-  transition-delay: 0.2s;
-  margin-top: 1px;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card:hover .title-box {
-  opacity: 0;
-  visibility: hidden;
-  margin-bottom: 80px;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card:hover .team-img::before {
-  height: 100%;
-  visibility: visible;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .owl-dots {
-  display: none;
-}
-main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .owl-nav {
-  display: none;
-}
-main #ticker {
-  background: #1b1b1b;
-  padding: 50px 0;
-}
-main #ticker .marquee {
-  display: flex;
-  overflow: hidden;
-  gap: 80px;
-}
-main #ticker .marquee .marquee_group {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 80px;
-  min-width: 100%;
-  animation: scroll 15s linear infinite;
-}
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-100% - 80px));
-  }
 }
 main #reservation {
   background-image: url("../../images/home/banner-3.jpg");
@@ -1256,45 +971,35 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
     left: 0;
     width: 100%;
   }
-  main #about .about {
-    flex-direction: column;
-    align-items: center;
-  }
-  main #about .about .about-word {
-    width: 100%;
-  }
-  main #about .about .about-img {
-    width: 100%;
-  }
-  main #chef .chef {
+  main #services .services {
     flex-direction: column;
   }
-  main #chef .chef .chef-img {
+  main #services .services .services-card {
     width: 100%;
   }
-  main #chef .chef .chef-content {
-    width: 100%;
+  main #services .services .services-card .img {
+    width: 80px;
   }
-  main #card-group .card-group {
+  main #message .message {
     flex-direction: column;
   }
-  main #card-group .card-group .card {
+  main #message .message .reservation-content {
     width: 100%;
   }
-  main #meet-chef .meet-chef #meet-chef-top {
-    padding: 100px 0 50px 0;
-  }
-  main #meet-chef .meet-chef #meet-chef-bottom {
-    background-color: #1b1b1b;
-    padding: 0 0 30px 0;
-  }
-  main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom {
+  main #message .message .reservation-box {
     position: unset;
+    width: 90%;
   }
-  main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists {
+  main #message .message .reservation-box form {
     flex-direction: column;
   }
-  main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card {
+  main #message .message .reservation-box form input {
+    width: 96%;
+  }
+  main #message .message .reservation-box form textarea {
+    width: 100%;
+  }
+  main #message .message .reservation-box form button {
     width: 100%;
   }
   main #reservation .bg-color .reservation {
@@ -1338,4 +1043,4 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
   main footer .footer #footer-bottom .footer-bottom p {
     text-align: unset;
   }
-}/*# sourceMappingURL=chefs.css.map */
+}/*# sourceMappingURL=contact.css.map */

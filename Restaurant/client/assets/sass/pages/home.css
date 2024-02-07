@@ -221,7 +221,7 @@ span {
   max-width: 1000px;
   margin: 0 auto;
 }
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1250px) {
   .container {
     padding: 0 5%;
   }
@@ -2392,6 +2392,9 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
     width: 96%;
   }
   main #reservation .bg-color .reservation .reservation-box form select {
+    width: 100%;
+  }
+  main #reservation .bg-color .reservation .reservation-box form button {
     width: 100%;
   }
   main #logo .owl-carousel {
