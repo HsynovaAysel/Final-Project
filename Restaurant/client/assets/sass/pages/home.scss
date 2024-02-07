@@ -468,7 +468,7 @@ main {
           }
         }
         &.bg-img-about {
-          transition: 0.5s cubic-bezier(0.70, 0.25, 0.25, 1);
+          transition: 0.5s cubic-bezier(0.7, 0.25, 0.25, 1);
           animation: element-from-top 1s ease;
         }
       }
@@ -1568,7 +1568,7 @@ main {
   }
   #ticker {
     background: $about-color;
-    padding: 30px;
+    padding: 50px 0;
     .marquee {
       display: flex;
       overflow: hidden;
@@ -1611,7 +1611,7 @@ main {
             font-size: 130px;
             color: rgba($color: #fff, $alpha: 0.05);
           }
-          span{
+          span {
             display: flex;
             justify-content: center;
           }

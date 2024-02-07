@@ -1768,7 +1768,7 @@ main #new-menu .owl-carousel .owl-nav .owl-prev:hover span {
 }
 main #ticker {
   background: #f2eee8;
-  padding: 30px;
+  padding: 50px 0;
 }
 main #ticker .marquee {
   display: flex;
