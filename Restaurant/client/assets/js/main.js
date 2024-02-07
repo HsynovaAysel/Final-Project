@@ -71,6 +71,15 @@ const pagesList = document.querySelector("#pages");
 const pagesUl = document.querySelector(".pages");
 const chefBgImg = document.querySelector(".chef-img");
 const aboutImg = document.querySelector(".about-img");
+const faqs = document.querySelectorAll(".faq");
+
+faqs.forEach((item) => {
+  item.addEventListener("click", function () {
+    document.querySelector(".accordion-active")?.classList.remove("accordion-active");
+    item.classList.toggle("accordion-active");
+  });
+});
+
 main.style.display = "block";
 candoreAside.style.display = "flex";
 // setTimeout(() => {

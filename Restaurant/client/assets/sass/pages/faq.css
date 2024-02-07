@@ -1,1 +1,1020 @@
-/*# sourceMappingURL=faq.css.map */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+* {
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 70px;
+  color: #fff;
+}
+
+h2 {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 48px;
+  color: #1b1b1b;
+}
+
+h3 {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 53px;
+  color: #c19d60;
+}
+
+h4 {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 38px;
+  color: #c19d60;
+}
+
+h5 {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 34px;
+  color: #fff;
+}
+
+h6 {
+  font-family: "Noah", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 35px;
+  color: #fff;
+}
+
+p {
+  color: #777777;
+  font-family: "Noah", sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+a {
+  color: #fff;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+span {
+  font-family: "Noah", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #c19d60;
+  letter-spacing: 3px;
+  line-height: 1.75em;
+  text-transform: uppercase;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1250px) {
+  .container {
+    padding: 0 5%;
+  }
+}
+
+main footer .footer #footer-top .footer-top .footer-column .subscribe form button, main #reservation .bg-color .reservation .reservation-box form button, main #food .food .food-bottom .item button {
+  outline: none;
+  border: 1px solid #c19d60;
+  font-family: "Noah", sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: 2px;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px 25px;
+  background-color: transparent;
+  transition: all 0.5s;
+}
+main footer .footer #footer-top .footer-top .footer-column .subscribe form button:hover, main #reservation .bg-color .reservation .reservation-box form button:hover, main #food .food .food-bottom .item button:hover {
+  background-color: #c19d60;
+}
+
+/* #Progress
+================================================== */
+.progress-wrap {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 200ms linear;
+}
+
+.progress-wrap.active-progress {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.progress-wrap svg path {
+  fill: none;
+}
+
+.progress-wrap svg.progress-circle path {
+  stroke: #c19d60;
+  stroke-width: 4;
+  box-sizing: border-box;
+  transition: all 200ms linear;
+}
+
+.spinner-loader {
+  height: 100vh;
+  display: block;
+  background-color: white;
+}
+.spinner-loader #spinner {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: wait;
+}
+
+svg.spinner-webkit {
+  width: 80px;
+  height: 80px;
+}
+svg.spinner-webkit path {
+  stroke-dasharray: 329;
+  stroke-dashoffset: 0;
+  stroke: #c19d60;
+  stroke-width: 1.8px;
+  animation: draw 4s ease-in-out infinite;
+  fill: transparent;
+  fill-opacity: 0;
+}
+@keyframes draw {
+  100% {
+    stroke-dasharray: 329;
+    stroke-dashoffset: 658;
+  }
+}
+
+.spinner-ie {
+  width: 32px;
+  height: 32px;
+  top: 8px;
+  left: 8px;
+  position: absolute;
+  display: none;
+  animation: spin 0.5s linear infinite;
+  border: 2px solid transparent;
+  border-top: 2px solid #c19d60;
+  border-left: 2px solid #c19d60;
+  border-radius: 50px;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .spinner-webkit {
+    display: none;
+  }
+  .spinner-ie {
+    display: block;
+  }
+}
+.navbar {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 999999;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  transition: all 0.5s;
+  background: #c19d60;
+  margin: 15px 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  flex-direction: column;
+  gap: 4px;
+  display: none;
+}
+.navbar span {
+  transition: all 0.5s;
+  border: 1px solid white;
+  width: 20px;
+}
+.navbar:hover {
+  gap: 8px;
+}
+@media screen and (max-width: 767px) {
+  .navbar {
+    display: flex;
+  }
+  .navbar.menu-icon {
+    left: 230px;
+    gap: unset;
+  }
+  .navbar.menu-icon .line1 {
+    transform: rotate(45deg);
+  }
+  .navbar.menu-icon .line2 {
+    transform: rotate(-45deg);
+  }
+  .navbar.menu-icon .line3 {
+    display: none;
+  }
+}
+
+#candore-aside {
+  height: 100vh;
+  background: #1b1b1b;
+  width: 15%;
+  padding: 70px 50px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  z-index: 1111;
+  transition: all 0.5s ease;
+}
+#candore-aside .candore-logo {
+  max-width: 200px;
+}
+#candore-aside .candore-logo img {
+  width: 100%;
+}
+#candore-aside nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#candore-aside nav ul li {
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+#candore-aside nav ul li .faq-list {
+  border: unset;
+  padding: 0;
+}
+#candore-aside nav ul li.active a {
+  color: #c19d60;
+}
+#candore-aside nav ul li .pages {
+  padding: 15px 0 0 20px;
+  display: none;
+}
+#candore-aside nav ul li .pages.pages-ul {
+  display: block;
+}
+#candore-aside nav ul li .pages li {
+  padding-top: 10px;
+}
+#candore-aside .candore-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#candore-aside .candore-footer p {
+  font-size: 12px;
+  color: #999;
+}
+#candore-aside .candore-footer ul {
+  display: flex;
+  gap: 1rem;
+}
+#candore-aside .candore-footer ul li a i {
+  color: #c19d60;
+  transition: all 0.5s ease;
+}
+#candore-aside .candore-footer ul li a:hover i {
+  color: #fff;
+}
+#candore-aside .candore-footer ul li a:active i {
+  color: #fff;
+}
+@media screen and (max-width: 768px) {
+  #candore-aside {
+    left: -250px;
+    width: 20%;
+  }
+  #candore-aside.aside {
+    left: 0px;
+  }
+}
+
+main {
+  display: none;
+  position: absolute;
+  right: 0;
+  width: 78.5%;
+}
+main header .header {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  background-image: url("../../images/home/banner-3.jpg");
+}
+main header .header .bg-color {
+  width: 100%;
+  padding: 200px 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main header .header .bg-color .header-content {
+  gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main header .header .bg-color .header-content h6 {
+  letter-spacing: 10px;
+}
+main header .header .bg-color .header-content .down-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 20px;
+  border-radius: 50%;
+  border: 1px solid #c19d60;
+  animation: bounce 2s infinite;
+}
+main header .header .bg-color .header-content .down-icon i {
+  color: #c19d60;
+}
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+main #accordion {
+  padding: 50px 0 100px 0;
+  background-color: #1b1b1b;
+}
+main #accordion .acordion .faq {
+  margin-top: 20px;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid white;
+  cursor: pointer;
+}
+main #accordion .acordion .faq .question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main #accordion .acordion .faq .question svg {
+  transition: 1.4s ease-in;
+}
+main #accordion .acordion .faq .question h5 {
+  color: white;
+  font-size: 20px;
+}
+main #accordion .acordion .faq .answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: 1.4s ease;
+}
+main #accordion .acordion .faq .answer p {
+  letter-spacing: 0;
+  padding-top: 5px;
+}
+main #accordion .acordion .faq.accordion-active .answer {
+  max-height: 100px;
+  animation: fade 1s ease-in-out;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+main #food {
+  background-color: #f2eee8;
+  padding: 100px 0;
+}
+main #food .food .food-top {
+  margin-bottom: 50px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+main #food .food .food-top h1 {
+  text-align: center;
+  font-family: "Pinyon Script", cursive;
+  position: absolute;
+  font-size: 140px;
+  color: rgba(0, 0, 0, 0.05);
+}
+main #food .food .food-top .img-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+main #food .food .food-top .img-line .line {
+  width: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+main #food .food .food-top .img-line .img {
+  width: 20px;
+}
+main #food .food .food-top .img-line .img img {
+  width: 100%;
+}
+main #food .food .food-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+main #food .food .food-bottom .item {
+  width: 32%;
+  background: white;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+main #food .food .food-bottom .item h5 {
+  font-size: 24px;
+  color: #1b1b1b;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e9e7e5;
+}
+main #food .food .food-bottom .item h2 {
+  color: #c19d60;
+}
+main #food .food .food-bottom .item p {
+  width: 70%;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+main #food .food .food-bottom .item .chef-text {
+  text-decoration: line-through;
+}
+main #food .food .food-bottom .item button {
+  background-color: #000000;
+  border-color: black;
+}
+main #food .food .food-bottom .item button:hover {
+  background-color: transparent;
+  color: black;
+}
+main #reservation {
+  background-image: url("../../images/home/banner-3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+main #reservation .bg-color {
+  padding: 120px 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+main #reservation .bg-color .reservation {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+main #reservation .bg-color .reservation .reservation-content {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main #reservation .bg-color .reservation .reservation-content .star-icon i {
+  font-size: 13px;
+  color: #c19d60;
+}
+main #reservation .bg-color .reservation .reservation-content h4 {
+  font-size: 32px;
+  color: #fff;
+}
+main #reservation .bg-color .reservation .reservation-content .reservation-about {
+  display: flex;
+  gap: 1rem;
+}
+main #reservation .bg-color .reservation .reservation-content .reservation-about .icon img {
+  width: 100%;
+}
+main #reservation .bg-color .reservation .reservation-content .reservation-about h4 {
+  font-size: 27px;
+}
+main #reservation .bg-color .reservation .reservation-box {
+  width: 40%;
+  background-color: #f2eee8;
+  padding: 50px 20px;
+  position: absolute;
+  right: 0px;
+  bottom: -80%;
+}
+main #reservation .bg-color .reservation .reservation-box h2 {
+  text-align: center;
+  font-size: 35px;
+  padding-bottom: 20px;
+}
+main #reservation .bg-color .reservation .reservation-box form {
+  display: flex;
+  justify-content: center;
+  align-items: unset;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-top: 1px solid #c19d60;
+  padding-top: 20px;
+}
+main #reservation .bg-color .reservation .reservation-box form input {
+  width: 40%;
+  padding: 20px 10px;
+}
+main #reservation .bg-color .reservation .reservation-box form input::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+main #reservation .bg-color .reservation .reservation-box form input::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+main #reservation .bg-color .reservation .reservation-box form select {
+  width: 45%;
+  padding: 20px 10px;
+}
+main #reservation .bg-color .reservation .reservation-box form button {
+  background-color: #c19d60;
+  width: 95%;
+}
+main #reservation .bg-color .reservation .reservation-box form button:hover {
+  background-color: transparent;
+  color: #c19d60;
+}
+main #logo {
+  background-color: #1b1b1b;
+  padding: 50px 0 0 0;
+}
+main #logo .owl-carousel {
+  width: 45%;
+}
+main #logo .owl-carousel .owl-item {
+  margin-left: 25px;
+}
+main #logo .owl-carousel .owl-item .item .all-logos {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+main #logo .owl-carousel .owl-item .item .all-logos .logo {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20%;
+  height: 100px;
+  border-radius: 50%;
+  height: 50px;
+  transition: all 0.8s;
+}
+main #logo .owl-carousel .owl-item .item .all-logos .logo.img-1 {
+  background-image: url("../../images/home/logo-1.png");
+}
+main #logo .owl-carousel .owl-item .item .all-logos .logo.img-2 {
+  background-image: url("../../images/home/logo-2.png");
+}
+main #logo .owl-carousel .owl-item .item .all-logos .logo.img-3 {
+  background-image: url("../../images/home/logo-3.png");
+}
+main #logo .owl-carousel .owl-item .item .all-logos .logo.img-4 {
+  background-image: url("../../images/home/logo-4.png");
+}
+main #logo .owl-carousel .owl-item .item .all-logos .logo.img-5 {
+  background-image: url("../../images/home/logo-5.png");
+}
+main #logo .owl-carousel .owl-item .item .all-logos .logo .bg-color {
+  width: 100%;
+  border-radius: 50%;
+  height: 100%;
+  background-color: rgba(119, 119, 119, 0.5);
+  transition: all 0.8s;
+}
+main #logo .owl-carousel .owl-item .item .all-logos .logo:hover .bg-color {
+  background-color: rgba(119, 119, 119, 0);
+}
+main #logo .owl-carousel .owl-dots {
+  display: none;
+}
+main #logo .owl-carousel .owl-nav {
+  display: none;
+}
+main footer .footer #footer-top {
+  padding: 90px 0 60px 0;
+  background-color: #1b1b1b;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+main footer .footer #footer-top .footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: unset;
+}
+main footer .footer #footer-top .footer-top .footer-column {
+  width: 26%;
+  margin-bottom: 30px;
+}
+main footer .footer #footer-top .footer-top .footer-column h3 {
+  font-size: 30px;
+  color: #c19d60;
+  margin-bottom: 20px;
+}
+main footer .footer #footer-top .footer-top .footer-column p {
+  font-size: 13px;
+}
+main footer .footer #footer-top .footer-top .footer-column .footer-language {
+  width: 70%;
+  margin-top: 30px;
+  position: relative;
+}
+main footer .footer #footer-top .footer-top .footer-column .footer-language i {
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  font-size: 20px;
+  opacity: 0.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+main footer .footer #footer-top .footer-top .footer-column .footer-language select {
+  height: 52px;
+  background: transparent;
+  color: #777;
+  border: 1px solid #c19d60;
+  width: 100%;
+  height: 50px;
+  padding: 0 30px;
+  border: 1px solid #c19d60;
+  color: #777;
+}
+main footer .footer #footer-top .footer-top .footer-column .footer-language select option {
+  color: black;
+}
+main footer .footer #footer-top .footer-top .footer-column.footer-contact {
+  position: relative;
+  display: block;
+}
+main footer .footer #footer-top .footer-top .footer-column.footer-contact h3 {
+  margin-bottom: 20px;
+}
+main footer .footer #footer-top .footer-top .footer-column.footer-contact p {
+  font-size: 15px;
+  padding-bottom: 20px;
+}
+main footer .footer #footer-top .footer-top .footer-column.footer-contact .footer-contact-info .footer-contact-phone {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 24px;
+  font-weight: 400;
+  display: block;
+  transition: all 0.5s ease;
+}
+main footer .footer #footer-top .footer-top .footer-column.footer-contact .footer-contact-info .footer-contact-mail {
+  font-size: 15px;
+  line-height: 3em;
+  color: #777;
+  position: relative;
+  display: inline-block;
+  transition: all 0.5s ease;
+}
+main footer .footer #footer-top .footer-top .footer-column.footer-contact .footer-contact-info .footer-contact-mail:before {
+  position: absolute;
+  bottom: 9px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #c19d60;
+  content: "";
+  transition: all 0.5s ease;
+}
+main footer .footer #footer-top .footer-top .footer-column.footer-contact .footer-contact-info:hover .footer-contact-phone {
+  color: #c19d60;
+}
+main footer .footer #footer-top .footer-top .footer-column.footer-contact .footer-contact-info:hover .footer-contact-mail {
+  color: #fff;
+}
+main footer .footer #footer-top .footer-top .footer-column.footer-contact .footer-contact-info:hover .footer-contact-mail:before {
+  background-color: #777;
+}
+main footer .footer #footer-top .footer-top .footer-column.footer-contact .footer-about-social-list {
+  display: flex;
+  justify-content: unset;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 20px;
+}
+main footer .footer #footer-top .footer-top .footer-column.footer-contact .footer-about-social-list a {
+  display: flex;
+  justify-content: unset;
+  align-items: center;
+  color: #fff;
+  font-size: 15px;
+  background-color: transparent;
+  transition: all 0.5s ease;
+}
+main footer .footer #footer-top .footer-top .footer-column.footer-contact .footer-about-social-list a:hover {
+  background-color: transparent;
+  color: #c19d60;
+}
+main footer .footer #footer-top .footer-top .footer-column .subscribe form {
+  margin-top: 30px;
+  position: relative;
+}
+main footer .footer #footer-top .footer-top .footer-column .subscribe form input {
+  width: 100%;
+  padding: 15px 0px 15px 20px;
+  height: 100%;
+  width: 80%;
+  background-color: transparent;
+  border: 1px solid #c19d60;
+  color: #777;
+  margin-bottom: 15px;
+}
+main footer .footer #footer-top .footer-top .footer-column .subscribe form input::-moz-placeholder {
+  color: #777;
+}
+main footer .footer #footer-top .footer-top .footer-column .subscribe form input::placeholder {
+  color: #777;
+}
+main footer .footer #footer-top .footer-top .footer-column .subscribe form button {
+  background-color: #c19d60;
+  padding: 5.5px 15px;
+  position: absolute;
+  right: 0;
+}
+main footer .footer #footer-top .footer-top .footer-column .subscribe form button:hover {
+  background-color: #fff;
+  color: #1b1b1b;
+}
+main footer .footer #footer-bottom {
+  background-color: #1b1b1b;
+  padding: 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+main footer .footer #footer-bottom .footer-bottom p {
+  font-size: 13px;
+  text-align: center;
+  transition: all 500ms ease;
+}
+main footer .footer #footer-bottom .footer-bottom p:hover {
+  color: #c19d60;
+}
+@media screen and (max-width: 767px) {
+  main {
+    left: 0;
+    width: 100%;
+  }
+  main #food .food .food-bottom {
+    flex-direction: column;
+  }
+  main #food .food .food-bottom .item {
+    width: 100%;
+  }
+  main #reservation .bg-color .reservation {
+    flex-direction: column;
+  }
+  main #reservation .bg-color .reservation .reservation-content {
+    width: 100%;
+  }
+  main #reservation .bg-color .reservation .reservation-box {
+    position: unset;
+    width: 90%;
+  }
+  main #reservation .bg-color .reservation .reservation-box form {
+    flex-direction: column;
+  }
+  main #reservation .bg-color .reservation .reservation-box form input {
+    width: 96%;
+  }
+  main #reservation .bg-color .reservation .reservation-box form select {
+    width: 100%;
+  }
+  main #logo .owl-carousel {
+    width: 100%;
+  }
+  main #logo .owl-carousel .owl-item .item .all-logos .logo {
+    height: 100px;
+    width: 25%;
+  }
+  main footer .footer #footer-top .footer-top {
+    flex-direction: column;
+  }
+  main footer .footer #footer-top .footer-top .footer-column {
+    width: 100%;
+  }
+  main footer .footer #footer-top .footer-top .footer-column .subscribe form input {
+    width: 90.5%;
+  }
+  main footer .footer #footer-bottom .footer-bottom p {
+    text-align: unset;
+  }
+}/*# sourceMappingURL=faq.css.map */

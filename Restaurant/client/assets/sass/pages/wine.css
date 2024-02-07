@@ -678,6 +678,9 @@ main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .line {
   border-top: 3px dotted black;
   width: 40%;
 }
+main #wine-bar {
+  background-color: #1b1b1b;
+}
 main #wine-bar .wine-bar {
   width: 100%;
   display: flex;
@@ -700,7 +703,6 @@ main #wine-bar .wine-bar .left .bg-img img:hover {
   transform: scale(1.2);
 }
 main #wine-bar .wine-bar .wine-bar-right {
-  background-color: #1b1b1b;
   width: 50%;
 }
 main #wine-bar .wine-bar .wine-bar-right .right {

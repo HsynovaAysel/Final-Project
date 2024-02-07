@@ -977,11 +977,11 @@ main #services .services .services-card .services-content h4 {
   font-size: 28px;
 }
 main #features .features {
+  background-color: #1b1b1b;
   position: relative;
 }
 main #features .features #features-top {
-  padding: 130px 0 200px 0;
-  background-color: #1b1b1b;
+  padding: 100px 0 50px 0;
 }
 main #features .features #features-top .features-top {
   margin-bottom: 50px;
@@ -1019,12 +1019,10 @@ main #features .features #features-top .features-top .img-line .img img {
   width: 100%;
 }
 main #features .features #features-bottom {
-  background-color: #f2eee8;
+  padding-bottom: 50px;
 }
 main #features .features #features-bottom .features-bottom {
   width: 100%;
-  top: 35%;
-  left: 0;
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -1302,11 +1300,12 @@ main #video .bg-color .video .video_button .video_sec_play {
   }
 }
 main #meet-chef {
+  padding: 100px 0;
   position: relative;
+  background-color: #1b1b1b;
 }
 main #meet-chef .meet-chef #meet-chef-top {
-  padding: 130px 0 200px 0;
-  background-color: #1b1b1b;
+  padding-bottom: p 0 50px 0;
 }
 main #meet-chef .meet-chef #meet-chef-top .meet-chef-top {
   margin-bottom: 50px;
@@ -1343,11 +1342,7 @@ main #meet-chef .meet-chef #meet-chef-top .meet-chef-top .img-line .img {
 main #meet-chef .meet-chef #meet-chef-top .meet-chef-top .img-line .img img {
   width: 100%;
 }
-main #meet-chef .meet-chef #meet-chef-bottom {
-  background-color: #fff;
-}
 main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom {
-  left: 0;
   width: 100%;
   top: 35%;
 }
@@ -1481,6 +1476,9 @@ main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .ow
 main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .owl-nav {
   display: none;
 }
+main #wine-bar {
+  background-color: #1b1b1b;
+}
 main #wine-bar .wine-bar {
   width: 100%;
   display: flex;
@@ -1503,7 +1501,6 @@ main #wine-bar .wine-bar .left .bg-img img:hover {
   transform: scale(1.2);
 }
 main #wine-bar .wine-bar .wine-bar-right {
-  background-color: #1b1b1b;
   width: 50%;
 }
 main #wine-bar .wine-bar .wine-bar-right .right {
@@ -1792,9 +1789,12 @@ main #ticker .marquee .marquee_group {
     transform: translateX(calc(-100% - 80px));
   }
 }
-main #new-events .new-events #new-events-top {
-  padding: 130px 0 200px 0;
+main #new-events {
+  padding: 100px 0;
   background-color: #1b1b1b;
+}
+main #new-events .new-events #new-events-top {
+  padding-bottom: 50px;
 }
 main #new-events .new-events #new-events-top .new-events-top {
   margin-bottom: 50px;
@@ -2304,7 +2304,6 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
     padding: 100px 0 50px 0;
   }
   main #features .features #features-bottom {
-    background-color: #1b1b1b;
     padding: unset;
   }
   main #features .features #features-bottom .features-bottom {
@@ -2321,11 +2320,13 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
   main #menu-book .menu-book .menu-bottom .menu-card-lists .menu-card {
     width: 100%;
   }
+  main #meet-chef {
+    padding: unset;
+  }
   main #meet-chef .meet-chef #meet-chef-top {
     padding: 100px 0 50px 0;
   }
   main #meet-chef .meet-chef #meet-chef-bottom {
-    background-color: #1b1b1b;
     padding: 0 0 100px 0;
   }
   main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom {
@@ -2361,11 +2362,13 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
     bottom: 20%;
     left: 40%;
   }
+  main #new-events {
+    padding: unset;
+  }
   main #new-events .new-events #new-events-top {
     padding: 100px 0 50px 0;
   }
   main #new-events .new-events #new-events-bottom {
-    background-color: #1b1b1b;
     padding-bottom: 50px;
   }
   main #new-events .new-events #new-events-bottom .owl-carousel .owl-item .item .new-events-card-lists {

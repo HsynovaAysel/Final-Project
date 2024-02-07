@@ -772,6 +772,7 @@ main #reservation-box .reservation-box form button:hover {
   color: #c19d60;
 }
 main #wine-bar .wine-bar {
+  background-color: #1b1b1b;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -793,7 +794,6 @@ main #wine-bar .wine-bar .left .bg-img img:hover {
   transform: scale(1.2);
 }
 main #wine-bar .wine-bar .wine-bar-right {
-  background-color: #1b1b1b;
   width: 50%;
 }
 main #wine-bar .wine-bar .wine-bar-right .right {
@@ -804,6 +804,47 @@ main #wine-bar .wine-bar .wine-bar-right .right {
 }
 main #wine-bar .wine-bar .wine-bar-right .right h2 {
   color: white;
+}
+main #wine-bar .wine-bar .wine-bar-right .accordion-wine .faq {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid white;
+  cursor: pointer;
+}
+main #wine-bar .wine-bar .wine-bar-right .accordion-wine .faq .question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main #wine-bar .wine-bar .wine-bar-right .accordion-wine .faq .question svg {
+  transition: 1.4s ease-in;
+}
+main #wine-bar .wine-bar .wine-bar-right .accordion-wine .faq .question h5 {
+  color: white;
+  font-size: 20px;
+}
+main #wine-bar .wine-bar .wine-bar-right .accordion-wine .faq .answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: 1.4s ease;
+}
+main #wine-bar .wine-bar .wine-bar-right .accordion-wine .faq .answer p {
+  letter-spacing: 0;
+  padding-top: 5px;
+}
+main #wine-bar .wine-bar .wine-bar-right .accordion-wine .faq.accordion-active .answer {
+  max-height: 100px;
+  animation: fade 1s ease-in-out;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 main #food {
   background-color: #f2eee8;

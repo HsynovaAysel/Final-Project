@@ -457,6 +457,7 @@ main {
     }
   }
   #wine-bar {
+    background-color: #1b1b1b;
     .wine-bar {
       width: 100%;
       @include flex(space-between, unset);
@@ -476,7 +477,7 @@ main {
         }
       }
       .wine-bar-right {
-        background-color: #1b1b1b;
+      
         width: 50%;
         .right {
           padding: 50px;

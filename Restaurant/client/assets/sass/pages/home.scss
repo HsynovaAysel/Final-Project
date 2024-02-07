@@ -793,10 +793,11 @@ main {
   }
   #features {
     .features {
+      background-color: #1b1b1b;
       position: relative;
       #features-top {
-        padding: 130px 0 200px 0;
-        background-color: #1b1b1b;
+        padding: 100px 0 50px 0;
+
         .features-top {
           margin-bottom: 50px;
           position: relative;
@@ -830,13 +831,10 @@ main {
         }
       }
       #features-bottom {
-        // padding: 200px 0;
-        background-color: #f2eee8;
+        padding-bottom: 50px;
         .features-bottom {
           width: 100%;
-          top: 35%;
-          left: 0;
-          // position: absolute;
+
           display: flex;
           justify-content: center;
           gap: 2rem;
@@ -1104,11 +1102,12 @@ main {
     }
   }
   #meet-chef {
+    padding: 100px 0;
     position: relative;
+    background-color: #1b1b1b;
     .meet-chef {
       #meet-chef-top {
-        padding: 130px 0 200px 0;
-        background-color: #1b1b1b;
+        padding-bottom: p 0 50px 0;
         .meet-chef-top {
           margin-bottom: 50px;
           position: relative;
@@ -1143,11 +1142,7 @@ main {
       }
 
       #meet-chef-bottom {
-        // padding: 200px 0;
-        background-color: #fff;
         .meet-chef-bottom {
-          // position: absolute;
-          left: 0;
           width: 100%;
           top: 35%;
           .owl-carousel {
@@ -1288,6 +1283,7 @@ main {
     }
   }
   #wine-bar {
+    background-color: #1b1b1b;
     .wine-bar {
       width: 100%;
       @include flex(space-between, unset);
@@ -1307,7 +1303,6 @@ main {
         }
       }
       .wine-bar-right {
-        background-color: #1b1b1b;
         width: 50%;
         .right {
           padding: 50px;
@@ -1594,10 +1589,11 @@ main {
     }
   }
   #new-events {
+    padding: 100px 0;
+    background-color: #1b1b1b;
     .new-events {
       #new-events-top {
-        padding: 130px 0 200px 0;
-        background-color: #1b1b1b;
+        padding-bottom: 50px;
         .new-events-top {
           margin-bottom: 50px;
           position: relative;
@@ -2145,7 +2141,6 @@ main {
           padding: 100px 0 50px 0;
         }
         #features-bottom {
-          background-color: #1b1b1b;
           padding: unset;
           .features-bottom {
             position: unset;
@@ -2172,12 +2167,12 @@ main {
       }
     }
     #meet-chef {
+      padding: unset;
       .meet-chef {
         #meet-chef-top {
           padding: 100px 0 50px 0;
         }
         #meet-chef-bottom {
-          background-color: #1b1b1b;
           padding: 0 0 100px 0;
           .meet-chef-bottom {
             position: unset;
@@ -2226,12 +2221,13 @@ main {
       }
     }
     #new-events {
+    padding: unset;
       .new-events {
         #new-events-top {
           padding: 100px 0 50px 0;
         }
         #new-events-bottom {
-          background-color: #1b1b1b;
+          
           padding-bottom: 50px;
           .owl-carousel {
             .owl-item {
@@ -2267,7 +2263,7 @@ main {
               select {
                 width: 100%;
               }
-              button{
+              button {
                 width: 100%;
               }
             }
