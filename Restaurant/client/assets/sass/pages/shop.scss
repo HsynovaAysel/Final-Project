@@ -320,7 +320,101 @@ main {
       }
     }
   }
+  #shop {
+    padding: 100px;
+    background-color: #1b1b1b;
+    .shop {
+      gap: 1rem;
+      @include flex(center, unset);
+      .shop-table {
+        width: 60%;
 
+        table {
+          border: 1px solid #c19d60;
+          width: 100%;
+          tr {
+            th {
+              padding: 10px 0;
+              text-align: center;
+              border: 1px solid #c19d60;
+              background-color: #272727;
+            }
+            td {
+              padding: 10px 0;
+
+              text-align: center;
+              border: 1px solid #c19d60;
+
+              img {
+                width: 50px;
+              }
+
+              p {
+                font-size: 16px;
+              }
+              span {
+                font-size: 20px;
+              }
+              &.btn {
+                border: unset;
+                @include flex();
+                .dec-inc-btn {
+                  display: flex;
+                  flex-direction: column;
+                }
+              }
+
+              h5 {
+                font-size: 18px;
+                color: #c19d60;
+              }
+            }
+            button {
+              background-color: transparent;
+              font-size: 20px;
+              color: #fff;
+            }
+          }
+        }
+      }
+      .shop-box {
+        width: 30%;
+        background-color: #272727;
+        padding: 30px;
+        h5 {
+          font-size: 20px;
+        }
+        table {
+          margin-top: 20px;
+          border: 1px solid #c19d60;
+          width: 100%;
+          tr {
+            td {
+              padding: 10px 0;
+              text-align: center;
+              border: 1px solid #c19d60;
+              p {
+                font-size: 15px;
+              }
+              h5 {
+                font-size: 18px;
+                color: #c19d60;
+              }
+            }
+          }
+        }
+        button {
+          margin-top: 20px;
+          @extend %btn;
+          width: 100%;
+          background-color: #c19d60;
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
   #reservation {
     background-image: url("../../images/home/banner-3.jpg");
     background-position: center;
@@ -634,7 +728,17 @@ main {
   @media screen and (max-width: 767px) {
     left: 0;
     width: 100%;
-
+    #shop {
+      .shop {
+        flex-direction: column;
+        .shop-table {
+          width: 100%;
+        }
+        .shop-box {
+          width: 87%;
+        }
+      }
+    }
     #reservation {
       .bg-color {
         .reservation {

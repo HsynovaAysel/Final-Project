@@ -2221,13 +2221,12 @@ main {
       }
     }
     #new-events {
-    padding: unset;
+      padding: unset;
       .new-events {
         #new-events-top {
           padding: 100px 0 50px 0;
         }
         #new-events-bottom {
-          
           padding-bottom: 50px;
           .owl-carousel {
             .owl-item {
