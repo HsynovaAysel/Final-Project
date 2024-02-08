@@ -1312,7 +1312,8 @@ main {
           h2 {
             color: white;
           }
-          .menu-card {
+          .wine-card-list{
+             .menu-card {
             width: 100%;
             gap: 1.5rem;
             @include flex(unset, center);
@@ -1351,6 +1352,8 @@ main {
               }
             }
           }
+          }
+         
         }
       }
     }

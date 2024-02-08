@@ -320,7 +320,50 @@ main {
       }
     }
   }
-
+  #favorites {
+    padding: 100px 0;
+    background-color: $about-color;
+    .favorites {
+      @include flex();
+      flex-wrap: wrap;
+      gap: 1rem;
+      .favorites-card {
+        // height: 100px;
+        width: 30%;
+        background-color: #1b1b1b;
+        .img {
+          img {
+            width: 100%;
+          }
+        }
+        .content {
+          @include flex(center, unset);
+          flex-direction: column;
+          gap: 0.5rem;
+          padding: 20px;
+          h4{
+            font-size: 25px;
+          }
+          p {
+            font-style: italic;
+          }
+          .icon {
+            display: flex;
+            gap: 1rem;
+            .fa-heart {
+              color: red;
+            }
+            .fa-cart-shopping {
+              color: white;
+            }
+            .fa-magnifying-glass {
+              color: #c19d60;
+            }
+          }
+        }
+      }
+    }
+  }
   #reservation {
     background-image: url("../../images/home/banner-3.jpg");
     background-position: center;
@@ -634,7 +677,16 @@ main {
   @media screen and (max-width: 767px) {
     left: 0;
     width: 100%;
+#favorites{
+  .favorites{
+    flex-direction: column;
+    flex-wrap: unset;
 
+    .favorites-card{
+      width: 100%;
+    }
+  }
+}
     #reservation {
       .bg-color {
         .reservation {

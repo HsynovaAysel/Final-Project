@@ -1511,44 +1511,44 @@ main #wine-bar .wine-bar .wine-bar-right .right {
 main #wine-bar .wine-bar .wine-bar-right .right h2 {
   color: white;
 }
-main #wine-bar .wine-bar .wine-bar-right .right .menu-card {
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card {
   width: 100%;
   gap: 1.5rem;
   display: flex;
   justify-content: unset;
   align-items: center;
 }
-main #wine-bar .wine-bar .wine-bar-right .right .menu-card .img {
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .img {
   width: 60px;
   height: 60px;
   overflow: hidden;
   border-radius: 50%;
 }
-main #wine-bar .wine-bar .wine-bar-right .right .menu-card .img img {
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .img img {
   width: 100%;
   border-radius: 50%;
   transition: all 0.5s;
   height: 100%;
 }
-main #wine-bar .wine-bar .wine-bar-right .right .menu-card .img img:hover {
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .img img:hover {
   transform: scale(1.2);
 }
-main #wine-bar .wine-bar .wine-bar-right .right .menu-card .menu-content {
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
 }
-main #wine-bar .wine-bar .wine-bar-right .right .menu-card .menu-content .name-price h5 {
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .name-price h5 {
   font-size: 18px;
 }
-main #wine-bar .wine-bar .wine-bar-right .right .menu-card .menu-content .name-price p {
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .name-price p {
   font-style: italic;
 }
-main #wine-bar .wine-bar .wine-bar-right .right .menu-card .menu-content h4 {
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content h4 {
   font-size: 20px;
 }
-main #wine-bar .wine-bar .wine-bar-right .right .menu-card .menu-content .line {
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .line {
   border-top: 3px dotted black;
   width: 40%;
 }

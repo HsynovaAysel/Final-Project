@@ -226,7 +226,7 @@ span {
   }
 }
 
-main footer .footer #footer-top .footer-top .footer-column .subscribe form button, main #reservation .bg-color .reservation .reservation-box form button, main #shop .shop .shop-box button {
+main footer .footer #footer-top .footer-top .footer-column .subscribe form button, main #reservation .bg-color .reservation .reservation-box form button {
   outline: none;
   border: 1px solid #c19d60;
   font-family: "Noah", sans-serif;
@@ -241,7 +241,7 @@ main footer .footer #footer-top .footer-top .footer-column .subscribe form butto
   background-color: transparent;
   transition: all 0.5s;
 }
-main footer .footer #footer-top .footer-top .footer-column .subscribe form button:hover, main #reservation .bg-color .reservation .reservation-box form button:hover, main #shop .shop .shop-box button:hover {
+main footer .footer #footer-top .footer-top .footer-column .subscribe form button:hover, main #reservation .bg-color .reservation .reservation-box form button:hover {
   background-color: #c19d60;
 }
 
@@ -535,94 +535,6 @@ main header .header .bg-color .header-content .down-icon i {
   90% {
     transform: translate3d(0, -4px, 0);
   }
-}
-main #shop {
-  padding: 100px;
-  background-color: #1b1b1b;
-}
-main #shop .shop {
-  gap: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: unset;
-}
-main #shop .shop .shop-table {
-  width: 60%;
-}
-main #shop .shop .shop-table table {
-  border: 1px solid #c19d60;
-  width: 100%;
-}
-main #shop .shop .shop-table table tr th {
-  padding: 10px 0;
-  text-align: center;
-  border: 1px solid #c19d60;
-  background-color: #272727;
-}
-main #shop .shop .shop-table table tr td {
-  padding: 10px 0;
-  text-align: center;
-  border: 1px solid #c19d60;
-}
-main #shop .shop .shop-table table tr td img {
-  width: 50px;
-}
-main #shop .shop .shop-table table tr td p {
-  font-size: 16px;
-}
-main #shop .shop .shop-table table tr td span {
-  font-size: 20px;
-}
-main #shop .shop .shop-table table tr td.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-main #shop .shop .shop-table table tr td.btn .dec-inc-btn {
-  display: flex;
-  flex-direction: column;
-}
-main #shop .shop .shop-table table tr td h5 {
-  font-size: 18px;
-  color: #c19d60;
-}
-main #shop .shop .shop-table table tr button {
-  background-color: transparent;
-  font-size: 20px;
-  color: #fff;
-}
-main #shop .shop .shop-box {
-  width: 30%;
-  background-color: #272727;
-  padding: 30px;
-}
-main #shop .shop .shop-box h5 {
-  font-size: 20px;
-}
-main #shop .shop .shop-box table {
-  margin-top: 20px;
-  border: 1px solid #c19d60;
-  width: 100%;
-}
-main #shop .shop .shop-box table tr td {
-  padding: 10px 0;
-  text-align: center;
-  border: 1px solid #c19d60;
-}
-main #shop .shop .shop-box table tr td p {
-  font-size: 15px;
-}
-main #shop .shop .shop-box table tr td h5 {
-  font-size: 18px;
-  color: #c19d60;
-}
-main #shop .shop .shop-box button {
-  margin-top: 20px;
-  width: 100%;
-  background-color: #c19d60;
-}
-main #shop .shop .shop-box button:hover {
-  background-color: transparent;
 }
 main #reservation {
   background-image: url("../../images/home/banner-3.jpg");
@@ -936,15 +848,6 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
     left: 0;
     width: 100%;
   }
-  main #shop .shop {
-    flex-direction: column;
-  }
-  main #shop .shop .shop-table {
-    width: 100%;
-  }
-  main #shop .shop .shop-box {
-    width: 87%;
-  }
   main #reservation .bg-color .reservation {
     flex-direction: column;
   }
@@ -983,4 +886,4 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
   main footer .footer #footer-bottom .footer-bottom p {
     text-align: unset;
   }
-}/*# sourceMappingURL=shop.css.map */
+}/*# sourceMappingURL=details.css.map */

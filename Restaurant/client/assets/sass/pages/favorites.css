@@ -536,6 +536,51 @@ main header .header .bg-color .header-content .down-icon i {
     transform: translate3d(0, -4px, 0);
   }
 }
+main #favorites {
+  padding: 100px 0;
+  background-color: #f2eee8;
+}
+main #favorites .favorites {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+main #favorites .favorites .favorites-card {
+  width: 30%;
+  background-color: #1b1b1b;
+}
+main #favorites .favorites .favorites-card .img img {
+  width: 100%;
+}
+main #favorites .favorites .favorites-card .content {
+  display: flex;
+  justify-content: center;
+  align-items: unset;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 20px;
+}
+main #favorites .favorites .favorites-card .content h4 {
+  font-size: 25px;
+}
+main #favorites .favorites .favorites-card .content p {
+  font-style: italic;
+}
+main #favorites .favorites .favorites-card .content .icon {
+  display: flex;
+  gap: 1rem;
+}
+main #favorites .favorites .favorites-card .content .icon .fa-heart {
+  color: red;
+}
+main #favorites .favorites .favorites-card .content .icon .fa-cart-shopping {
+  color: white;
+}
+main #favorites .favorites .favorites-card .content .icon .fa-magnifying-glass {
+  color: #c19d60;
+}
 main #reservation {
   background-image: url("../../images/home/banner-3.jpg");
   background-position: center;
@@ -846,6 +891,13 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
 @media screen and (max-width: 767px) {
   main {
     left: 0;
+    width: 100%;
+  }
+  main #favorites .favorites {
+    flex-direction: column;
+    flex-wrap: unset;
+  }
+  main #favorites .favorites .favorites-card {
     width: 100%;
   }
   main #reservation .bg-color .reservation {
