@@ -677,6 +677,19 @@ main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .line {
   border-top: 3px dotted black;
   width: 40%;
 }
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .icon {
+  display: flex;
+  gap: 1rem;
+}
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .icon .fa-heart {
+  color: red;
+}
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .icon .fa-cart-shopping {
+  color: white;
+}
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .icon .fa-magnifying-glass {
+  color: #c19d60;
+}
 main #wine-bar {
   background-color: #1b1b1b;
 }
@@ -753,6 +766,19 @@ main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu
 main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .line {
   border-top: 3px dotted black;
   width: 40%;
+}
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .icon {
+  display: flex;
+  gap: 1rem;
+}
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .icon .fa-heart {
+  color: red;
+}
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .icon .fa-cart-shopping {
+  color: white;
+}
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .icon .fa-magnifying-glass {
+  color: #c19d60;
 }
 main #slider {
   padding: 100px 0 250px 0;

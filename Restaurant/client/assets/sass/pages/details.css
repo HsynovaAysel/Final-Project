@@ -536,6 +536,47 @@ main header .header .bg-color .header-content .down-icon i {
     transform: translate3d(0, -4px, 0);
   }
 }
+main #details {
+  padding: 100px 0;
+  background-color: #1b1b1b;
+}
+main #details .details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+main #details .details .img {
+  width: 50%;
+  overflow: hidden;
+}
+main #details .details .img img {
+  width: 100%;
+  transition: all 0.8s ease-in-out;
+}
+main #details .details .img:hover img {
+  transform: scale(1.1);
+}
+main #details .details .content {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main #details .details .content p {
+  font-size: 18px;
+  font-style: italic;
+}
+main #details .details .content .icon {
+  display: flex;
+  gap: 1rem;
+}
+main #details .details .content .icon .fa-heart {
+  color: red;
+}
+main #details .details .content .icon .fa-cart-shopping {
+  color: white;
+}
 main #reservation {
   background-image: url("../../images/home/banner-3.jpg");
   background-position: center;
@@ -846,6 +887,15 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
 @media screen and (max-width: 767px) {
   main {
     left: 0;
+    width: 100%;
+  }
+  main #details .details {
+    flex-direction: column;
+  }
+  main #details .details .img {
+    width: 100%;
+  }
+  main #details .details .content {
     width: 100%;
   }
   main #reservation .bg-color .reservation {

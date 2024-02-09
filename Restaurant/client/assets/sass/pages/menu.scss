@@ -385,6 +385,19 @@ main {
               border-top: 3px dotted black;
               width: 40%;
             }
+            .icon {
+              display: flex;
+              gap: 1rem;
+              .fa-heart {
+                color: red;
+              }
+              .fa-cart-shopping {
+                color: white;
+              }
+              .fa-magnifying-glass {
+                color: #c19d60;
+              }
+            }
           }
         }
       }

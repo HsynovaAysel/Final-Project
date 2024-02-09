@@ -277,8 +277,8 @@ main {
           gap: 1.5rem;
           @include flex();
           flex-direction: column;
-          h6{
-            letter-spacing: 10px
+          h6 {
+            letter-spacing: 10px;
           }
           .down-icon {
             @include flex();
@@ -451,6 +451,19 @@ main {
               border-top: 3px dotted black;
               width: 40%;
             }
+            .icon {
+              display: flex;
+              gap: 1rem;
+              .fa-heart {
+                color: red;
+              }
+              .fa-cart-shopping {
+                color: white;
+              }
+              .fa-magnifying-glass {
+                color: #c19d60;
+              }
+            }
           }
         }
       }
@@ -477,7 +490,6 @@ main {
         }
       }
       .wine-bar-right {
-      
         width: 50%;
         .right {
           padding: 50px;
@@ -487,48 +499,60 @@ main {
           h2 {
             color: white;
           }
-          .wine-card-list{
-           .menu-card {
-            width: 100%;
-            gap: 1.5rem;
-            @include flex(unset, center);
-            .img {
-              width: 60px;
-              height: 60px;
-              overflow: hidden;
-              border-radius: 50%;
-              img {
-                width: 100%;
+          .wine-card-list {
+            .menu-card {
+              width: 100%;
+              gap: 1.5rem;
+              @include flex(unset, center);
+              .img {
+                width: 60px;
+                height: 60px;
+                overflow: hidden;
                 border-radius: 50%;
-                transition: all 0.5s;
-                height: 100%;
-                &:hover {
-                  transform: scale(1.2);
+                img {
+                  width: 100%;
+                  border-radius: 50%;
+                  transition: all 0.5s;
+                  height: 100%;
+                  &:hover {
+                    transform: scale(1.2);
+                  }
+                }
+              }
+              .menu-content {
+                @include flex(space-between);
+                gap: 1rem;
+                .name-price {
+                  h5 {
+                    font-size: 18px;
+                  }
+                  p {
+                    font-style: italic;
+                  }
+                }
+                h4 {
+                  font-size: 20px;
+                }
+                .line {
+                  border-top: 3px dotted black;
+                  width: 40%;
+                }
+                .icon {
+                  display: flex;
+                  gap: 1rem;
+                  .fa-heart {
+                    color: red;
+                  }
+                  .fa-cart-shopping {
+                    color: white;
+                  }
+                  .fa-magnifying-glass {
+                    color: #c19d60;
+                  }
                 }
               }
             }
-            .menu-content {
-              @include flex(space-between);
-              gap: 1rem;
-              .name-price {
-                h5 {
-                  font-size: 18px;
-                }
-                p {
-                  font-style: italic;
-                }
-              }
-              h4 {
-                font-size: 20px;
-              }
-              .line {
-                border-top: 3px dotted black;
-                width: 40%;
-              }
-            }
-          } 
           }
-          
         }
       }
     }
@@ -985,7 +1009,7 @@ main {
               select {
                 width: 100%;
               }
-              button{
+              button {
                 width: 100%;
               }
             }

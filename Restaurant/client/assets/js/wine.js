@@ -69,18 +69,27 @@ const candoreAside = document.querySelector("#candore-aside");
 const navbar = document.querySelector(".navbar");
 const pagesList = document.querySelector("#pages");
 const pagesUl = document.querySelector(".pages");
-const chefBgImg = document.querySelector(".chef-img");
-const aboutImg = document.querySelector(".about-img");
-const faqs = document.querySelectorAll(".faq");
 
-faqs.forEach((item) => {
-  item.addEventListener("click", function () {
-    document
-      .querySelector(".accordion-active")
-      ?.classList.remove("accordion-active");
-    item.classList.toggle("accordion-active");
-  });
-});
+let BASE_URL = "http://localhost:8080/menus";
+let menuCardLists = document.querySelector(".menu-card-lists");
+let menuAllData = null;
+
+async function getALLData() {
+  let res = await axios(`${BASE_URL}`);
+  console.log(res.data);
+  menuAllData = res.data;
+
+  let filteredWine = menuAllData.filter(
+    (item) => item.category.toLocaleLowerCase() === "wine"
+  );
+
+  drawWineCard(filteredWine);
+  drawCards(filteredWine)
+}
+getALLData();
+let favorites = getFromlocalStorage();
+
+
 
 main.style.display = "block";
 candoreAside.style.display = "flex";
@@ -96,85 +105,45 @@ navbar.addEventListener("click", function () {
 pagesList.addEventListener("click", function () {
   pagesUl.classList.toggle("pages-ul");
 });
-
-window.addEventListener("scroll", function () {
-  chefBgImg.classList.toggle("chef-animation-img", this.window.scrollY > "750");
-  aboutImg.classList.toggle("bg-img-about", this.window.scrollY > "100");
-});
-let BASE_URL = "http://localhost:8080/menus";
-let menuCardLists = document.querySelector(".menu-card-lists");
-let menuAllData = null;
-
-async function getALLData() {
-  let res = await axios(`${BASE_URL}`);
-  console.log(res.data);
-  menuAllData = res.data;
-
-  let filtered = menuAllData.filter(
-    (item) => item.category.toLocaleLowerCase() === "starters"
-  );
-  let filteredWine = menuAllData.filter(
-    (item) => item.category.toLocaleLowerCase() === "wine"
-  );
-  drawCards(filtered);
-  drawWineCard(filteredWine);
-}
-getALLData();
-let favorites = getFromlocalStorage();
-function drawCards(array) {
-  menuCardLists.innerHTML = "";
-  array.forEach((el) => {
-    let find = favorites.find((item) => item._id == el._id);
-
-    menuCardLists.innerHTML += `
-
-
-    <div class="menu-card">
-    <div class="img">
-    <img src="${el.image}" alt="" />
-    </div>
-    <div class="menu-content">
-      <div class="name-price">
-      <h5>${el.title}</h5>
-        <p class="descriptions">
-        ${el.description}
-        </p>
-      </div>
-      <div class="line"></div>
-      <h4>${el.price}$</h4>
-      <div class="icon">
-              <i class="${
-                find ? "fa-solid fa-heart" : "fa-regular fa-heart"
-              }" onclick=favs(this,"${el._id}")></i>
-               <i class="fa-solid fa-cart-shopping" onclick=cart("${
-                 el._id
-               }")></i> 
-              <a href="details.html?id=${
-                el._id
-              }"><i class="fa-solid fa-magnifying-glass"></i></a>
-              </div>
-  
-    </div>
-  </div>                
-        `;
-  });
-}
-
-menuBtnAll = document.querySelectorAll(".menu-button");
-menuBtnAll.forEach((item) =>
-  item.addEventListener("click", function () {
-    document.querySelector(".button-active").classList.remove("button-active");
-    this.classList.add("button-active");
-    let filtered = menuAllData.filter(
-      (item) =>
-        item.category.toLocaleLowerCase() === this.innerText.toLocaleLowerCase()
-    );
-    drawCards(filtered);
-  })
-);
-
 let wineCardLists = document.querySelector(".wine-card-list");
-
+function drawCards(array) {
+    menuCardLists.innerHTML = "";
+    array.forEach((el) => {
+      let find = favorites.find((item) => item._id == el._id);
+  
+      menuCardLists.innerHTML += `
+  
+  
+      <div class="menu-card">
+      <div class="img">
+      <img src="${el.image}" alt="" />
+      </div>
+      <div class="menu-content">
+        <div class="name-price">
+        <h5>${el.title}</h5>
+          <p class="descriptions">
+          ${el.description}
+          </p>
+        </div>
+        <div class="line"></div>
+        <h4>${el.price}$</h4>
+        <div class="icon">
+                <i class="${
+                  find ? "fa-solid fa-heart" : "fa-regular fa-heart"
+                }" onclick=favs(this,"${el._id}")></i>
+                 <i class="fa-solid fa-cart-shopping" onclick=cart("${
+                   el._id
+                 }")></i> 
+                <a href="details.html?id=${
+                  el._id
+                }"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
+    
+      </div>
+    </div>                
+          `;
+    });
+  }
 function drawWineCard(array) {
   wineCardLists.innerHTML = "";
   array.forEach((el) => {

@@ -139,7 +139,7 @@ function cart(id) {
   if (index === -1) {
     basket.push({ count: 1, obj: find });
   } else {
-    // basket[index].count += 1;
+    basket[index].count += 1;
   }
 
   setTolocalStorageBasket(basket);

@@ -1242,12 +1242,25 @@ main #menu-book .menu-book .menu-bottom .menu-card-lists .menu-card .menu-conten
 main #menu-book .menu-book .menu-bottom .menu-card-lists .menu-card .menu-content .name-price p {
   font-style: italic;
 }
-main #menu-book .menu-book .menu-bottom .menu-card-lists .menu-card .menu-content h4 {
-  font-size: 20px;
-}
 main #menu-book .menu-book .menu-bottom .menu-card-lists .menu-card .menu-content .line {
-  border-top: 3px dotted black;
+  border-top: 3px dotted #999;
   width: 40%;
+}
+main #menu-book .menu-book .menu-bottom .menu-card-lists .menu-card .menu-content h4 {
+  font-size: 25px;
+}
+main #menu-book .menu-book .menu-bottom .menu-card-lists .menu-card .menu-content .icon {
+  display: flex;
+  gap: 1rem;
+}
+main #menu-book .menu-book .menu-bottom .menu-card-lists .menu-card .menu-content .icon .fa-heart {
+  color: red;
+}
+main #menu-book .menu-book .menu-bottom .menu-card-lists .menu-card .menu-content .icon .fa-cart-shopping {
+  color: white;
+}
+main #menu-book .menu-book .menu-bottom .menu-card-lists .menu-card .menu-content .icon .fa-magnifying-glass {
+  color: #c19d60;
 }
 main #video {
   background-image: url("../../images/home/banner2.jpg");
@@ -1551,6 +1564,19 @@ main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu
 main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .line {
   border-top: 3px dotted black;
   width: 40%;
+}
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .icon {
+  display: flex;
+  gap: 1rem;
+}
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .icon .fa-heart {
+  color: red;
+}
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .icon .fa-cart-shopping {
+  color: white;
+}
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .icon .fa-magnifying-glass {
+  color: #c19d60;
 }
 main #food {
   background-color: #f2eee8;
