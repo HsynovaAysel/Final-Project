@@ -281,6 +281,12 @@ let rezervDateInput = document.querySelector("#rezerv-date");
 let rezervTimeInput = document.querySelector("#rezerv-time");
 let rezervPersonSelect = document.querySelector("#rezerv-person");
 let reservsData = null;
+
+console.log(moment().format().slice(0, 10));
+
+rezervDateInput.min = moment().format().slice(0, 10);
+rezervDateInput.max = "2024-2-20";
+
 async function getRezervsData() {
   let res = await axios(`http://localhost:8080/rezervs`);
   console.log(res.data);
@@ -298,15 +304,13 @@ rezervForm.addEventListener("submit", async function (e) {
     phone: rezervPhoneInput.value,
     person: rezervPersonSelect.value,
   };
-  // console.log(rezervDateInput.value);
-  let bool = reservsData.find(
-    (item) =>
-      rezervTimeInput.value == item.time ||
-      rezervDateInput.value == item.date.slice(0, 10)
+
+  let date = reservsData.filter(
+    (item) => rezervDateInput.value == item.date.slice(0, 10)
   );
-  console.log(bool);
+  let time = date.find((item) => rezervTimeInput.value == item.time);
   if (login === "true") {
-    if (!bool) {
+    if (!time) {
       await axios.post(`http://localhost:8080/rezervs`, rezervsObj);
     } else {
       alert("bu vaxta bos yer yoxdur.");

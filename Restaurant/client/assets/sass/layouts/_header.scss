@@ -1,0 +1,143 @@
+.navbar {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 999999;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  transition: all 0.5s;
+  background: #c19d60;
+  margin: 15px 30px;
+  border-radius: 50%;
+  @include flex();
+  transition: all 0.5s;
+  flex-direction: column;
+  gap: 4px;
+  display: none;
+  span {
+    transition: all 0.5s;
+    border: 1px solid white;
+    width: 20px;
+  }
+  &:hover {
+    gap: 8px;
+  }
+  @media screen and (max-width: 767px) {
+    display: flex;
+    &.menu-icon {
+      left: 230px;
+      gap: unset;
+      .line1 {
+        position: absolute;
+        transform: rotate(45deg);
+      }
+      .line2 {
+        position: absolute;
+        transform: rotate(-45deg);
+      }
+      .line3 {
+        display: none;
+      }
+    }
+  }
+}
+
+#candore-aside {
+  height: 100vh;
+  background: #1b1b1b;
+  width: 15%;
+  padding: 70px 50px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  z-index: 1111;
+  transition: all 0.5s ease;
+
+  // display: none;
+  .candore-logo {
+    // padding: 0 30px;
+    max-width: 200px;
+    img {
+      width: 100%;
+    }
+  }
+  nav {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      li {
+        padding-bottom: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+        .faq-list {
+          border: unset;
+          padding: 0;
+        }
+        &.active {
+          a {
+            color: #c19d60;
+          }
+        }
+        // &:hover {
+        //   a {
+        //     color: #c19d60;
+        //   }
+        // }
+        .pages {
+          padding: 15px 0 0 20px;
+          display: none;
+          &.pages-ul {
+            display: block;
+          }
+          li {
+            padding-top: 10px;
+          }
+        }
+      }
+    }
+  }
+  .candore-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    p {
+      font-size: 12px;
+      color: #999;
+    }
+    ul {
+      display: flex;
+      gap: 1rem;
+      li {
+        a {
+          i {
+            color: #c19d60;
+            transition: all 0.5s ease;
+          }
+          &:hover {
+            i {
+              color: #fff;
+            }
+          }
+
+          &:active {
+            i {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    left: -250px;
+    width: 20%;
+    &.aside {
+      left: 0px;
+    }
+  }
+}

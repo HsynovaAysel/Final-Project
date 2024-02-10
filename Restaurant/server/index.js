@@ -10,6 +10,7 @@ const usersRouter = require("./routes/usersRoute");
 const messagesRouter = require("./routes/messageRoute");
 const vakansRouter = require("./routes/vakanRouter");
 const teamRouter = require("./routes/teamRouter");
+const announcementRouter = require("./routes/announcementRouter");
 
 const DB_URL = `mongodb+srv://gd7uz3mha:aysel123@cluster0.zkehcew.mongodb.net/`;
 
@@ -22,6 +23,7 @@ app.use("/users", usersRouter);
 app.use("/messages", messagesRouter);
 app.use("/vakans", vakansRouter);
 app.use("/team", teamRouter);
+app.use("/announcement", announcementRouter);
 mongoose
   .connect(DB_URL)
   .then(() => {

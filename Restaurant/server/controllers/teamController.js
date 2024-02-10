@@ -1,54 +1,54 @@
 const Team= require("../models/teamModel");
 
-//get all users
-const getAllUsers = async (req, res) => {
+//get all team
+const getAllTeam = async (req, res) => { 
   try {
-    const users = await Users.find({});
-    res.send(users).status(200);
+    const team = await Team.find({});
+    res.send(team).status(200);
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
 };
 
-//get user by id
+//get team by id
 
-const getUserById = async (req, res) => {
+const getTeamById = async (req, res) => {
   const { id } = req.params;
   try {
-    const user = await Users.findById(id);
-    res.send(user).status(200);
+    const team = await Team.findById(id);
+    res.send(team).status(200);
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
 };
 
-//delete user by id
+//delete team by id
 
-const deleteUserById = async (req, res) => {
+const deleteTeamById = async (req, res) => {
   const { id } = req.params;
   try {
-    const deletedUser = await Users.findByIdAndDelete(id);
-    const users = await Users.find({});
+    const deletedTeam = await Team.findByIdAndDelete(id);
+    const team = await Team.find({});
     
     res.status(200).json({
       message: "success",
-      deletedUser: deletedUser,
-      allUsers: users,
+      deletedTeam: deletedTeam,
+      allTeams: team,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
 };
 
-//post new user
+//post new team
 
-const addNewUser = async (req, res) => {
-  const newUser = new Users({ ...req.body });
+const addNewTeam = async (req, res) => {
+  const newTeam = new Team({ ...req.body });
   try {
-    await newUser.save();
+    await newTeam.save();
     res.status(201).send({
       message: "created succesfully!",
-      data: newUser,
+      data: newTeam,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });
@@ -57,14 +57,14 @@ const addNewUser = async (req, res) => {
 
 // update data, put
 
-const updateUserById = async (req, res) => {
+const updateTeamById = async (req, res) => {
   const { id } = req.params;
   try {
-    await Users.findByIdAndUpdate(id, { ...req.body });
-    const updatedUser = await Users.findById(id);
+    await Team.findByIdAndUpdate(id, { ...req.body });
+    const updatedTeam = await Team.findById(id);
     res.status(200).send({
       message: "updated succesfully!",
-      data: updatedUser,
+      data: updatedTeam,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });
@@ -72,9 +72,9 @@ const updateUserById = async (req, res) => {
 };
 
 module.exports = {
-  getAllUser,
-  getUserById,
-  deleteUserById,
-  addNewUser,
-  updateUserById,
+  getAllTeam,
+  getTeamById,
+  deleteTeamById,
+  addNewTeam,
+  updateTeamById,
 };
