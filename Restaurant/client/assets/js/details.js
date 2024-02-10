@@ -69,6 +69,8 @@ const candoreAside = document.querySelector("#candore-aside");
 const navbar = document.querySelector(".navbar");
 const pagesList = document.querySelector("#pages");
 const pagesUl = document.querySelector(".pages");
+let logOut = document.querySelector(".fa-right-to-bracket");
+let login = localStorage.getItem("login");
 pagesList.addEventListener("click", function () {
   pagesUl.classList.toggle("pages-ul");
 });
@@ -127,15 +129,19 @@ async function getDataById() {
 getDataById();
 
 function favs(icon, id) {
-  if (icon.className === "fa-regular fa-heart") {
-    icon.className = "fa-solid fa-heart";
+  if (login === "true") {
+    if (icon.className === "fa-regular fa-heart") {
+      icon.className = "fa-solid fa-heart";
 
-    favorites.push(detailsData);
+      favorites.push(detailsData);
+    } else {
+      icon.className = "fa-regular fa-heart";
+      favorites = favorites.filter((item) => item._id != id);
+    }
+    setTolocalStorage(favorites);
   } else {
-    icon.className = "fa-regular fa-heart";
-    favorites = favorites.filter((item) => item._id != id);
+    window.location = "login-signup.html";
   }
-  setTolocalStorage(favorites);
 }
 function setTolocalStorage(array) {
   localStorage.setItem("favorites", JSON.stringify(array));
@@ -147,17 +153,21 @@ function getFromlocalStorage() {
 let basket = getFromlocalStorageBasket();
 
 function cart(id) {
-  console.log(id);
-  // let find = favorites.find((item) => item._id == id);
-  // console.log(find);
-  let index = basket.findIndex((item) => item.obj._id === id);
-  if (index === -1) {
-    basket.push({ count: 1, obj: detailsData });
-  } else {
-    basket[index].count += 1;
-  }
+  if (login === "true") {
+    console.log(id);
+    // let find = favorites.find((item) => item._id == id);
+    // console.log(find);
+    let index = basket.findIndex((item) => item.obj._id === id);
+    if (index === -1) {
+      basket.push({ count: 1, obj: detailsData });
+    } else {
+      basket[index].count += 1;
+    }
 
-  setTolocalStorageBasket(basket);
+    setTolocalStorageBasket(basket);
+  } else {
+    window.location = "login-signup.html";
+  }
 }
 
 function setTolocalStorageBasket(array) {
@@ -166,3 +176,52 @@ function setTolocalStorageBasket(array) {
 function getFromlocalStorageBasket() {
   return JSON.parse(localStorage.getItem("basket")) ?? [];
 }
+let rezervForm = document.querySelector(".form-rezerv");
+let rezervNameInput = document.querySelector("#rezerv-name");
+let rezervPhoneInput = document.querySelector("#rezerv-phone");
+let rezervEmailInput = document.querySelector("#rezerv-email");
+let rezervDateInput = document.querySelector("#rezerv-date");
+let rezervTimeInput = document.querySelector("#rezerv-time");
+let rezervPersonSelect = document.querySelector("#rezerv-person");
+let reservsData = null;
+async function getRezervsData() {
+  let res = await axios(`http://localhost:8080/rezervs`);
+  console.log(res.data);
+  reservsData = res.data;
+}
+getRezervsData();
+rezervForm.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  let rezervsObj = {
+    userName: rezervNameInput.value,
+    email: rezervEmailInput.value,
+    date: rezervDateInput.value,
+    time: rezervTimeInput.value,
+    phone: rezervPhoneInput.value,
+    person: rezervPersonSelect.value,
+  };
+  // console.log(rezervDateInput.value);
+  let bool = reservsData.find(
+    (item) =>
+      rezervTimeInput.value == item.time ||
+      rezervDateInput.value == item.date.slice(0, 10)
+  );
+  console.log(bool);
+  if (login === "true") {
+    if (!bool) {
+      await axios.post(`http://localhost:8080/rezervs`, rezervsObj);
+    } else {
+      alert("bu vaxta bos yer yoxdur.");
+    }
+  } else {
+    window.location = "login-signup.html";
+  }
+
+  (rezervNameInput.value = ""),
+    (rezervEmailInput.value = ""),
+    (rezervDateInput.value = ""),
+    (rezervTimeInput.value = ""),
+    (rezervPhoneInput.value = ""),
+    (rezervPersonSelect.value = "");
+});

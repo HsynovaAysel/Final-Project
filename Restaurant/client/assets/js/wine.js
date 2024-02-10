@@ -70,26 +70,6 @@ const navbar = document.querySelector(".navbar");
 const pagesList = document.querySelector("#pages");
 const pagesUl = document.querySelector(".pages");
 
-let BASE_URL = "http://localhost:8080/menus";
-let menuCardLists = document.querySelector(".menu-card-lists");
-let menuAllData = null;
-
-async function getALLData() {
-  let res = await axios(`${BASE_URL}`);
-  console.log(res.data);
-  menuAllData = res.data;
-
-  let filteredWine = menuAllData.filter(
-    (item) => item.category.toLocaleLowerCase() === "wine"
-  );
-
-  drawWineCard(filteredWine);
-  drawCards(filteredWine)
-}
-getALLData();
-let favorites = getFromlocalStorage();
-
-
 
 main.style.display = "block";
 candoreAside.style.display = "flex";
@@ -105,13 +85,37 @@ navbar.addEventListener("click", function () {
 pagesList.addEventListener("click", function () {
   pagesUl.classList.toggle("pages-ul");
 });
+let logOut = document.querySelector(".fa-right-to-bracket");
+logOut.addEventListener("click", function () {
+  localStorage.setItem("login", false);
+});
+
+let BASE_URL = "http://localhost:8080/menus";
+let menuCardLists = document.querySelector(".menu-card-lists");
+let menuAllData = null;
+
+async function getALLData() {
+  let res = await axios(`${BASE_URL}`);
+  console.log(res.data);
+  menuAllData = res.data;
+
+  let filteredWine = menuAllData.filter(
+    (item) => item.category.toLocaleLowerCase() === "wine"
+  );
+
+  drawWineCard(filteredWine);
+  drawCards(filteredWine);
+}
+getALLData();
+let favorites = getFromlocalStorage();
+
 let wineCardLists = document.querySelector(".wine-card-list");
 function drawCards(array) {
-    menuCardLists.innerHTML = "";
-    array.forEach((el) => {
-      let find = favorites.find((item) => item._id == el._id);
-  
-      menuCardLists.innerHTML += `
+  menuCardLists.innerHTML = "";
+  array.forEach((el) => {
+    let find = favorites.find((item) => item._id == el._id);
+
+    menuCardLists.innerHTML += `
   
   
       <div class="menu-card">
@@ -142,8 +146,8 @@ function drawCards(array) {
       </div>
     </div>                
           `;
-    });
-  }
+  });
+}
 function drawWineCard(array) {
   wineCardLists.innerHTML = "";
   array.forEach((el) => {
@@ -183,8 +187,10 @@ function drawWineCard(array) {
         `;
   });
 }
+
+let login = localStorage.getItem("login");
 function favs(icon, id) {
-  if (icon.className === "fa-regular fa-heart") {
+  if (login === "true") { if (icon.className === "fa-regular fa-heart") {
     icon.className = "fa-solid fa-heart";
     let find = menuAllData.find((item) => item._id == id);
     favorites.push(find);
@@ -192,7 +198,10 @@ function favs(icon, id) {
     icon.className = "fa-regular fa-heart";
     favorites = favorites.filter((item) => item._id != id);
   }
-  setTolocalStorage(favorites);
+  setTolocalStorage(favorites);}else{
+    window.location = "login-signup.html";
+  }
+ 
 }
 function setTolocalStorage(array) {
   localStorage.setItem("favorites", JSON.stringify(array));
@@ -204,17 +213,22 @@ function getFromlocalStorage() {
 let basket = getFromlocalStorageBasket();
 
 function cart(id) {
-  console.log(id);
-  let find = menuAllData.find((item) => item._id == id);
-  // console.log(find);
-  let index = basket.findIndex((item) => item.obj._id === id);
-  if (index === -1) {
-    basket.push({ count: 1, obj: find });
-  } else {
-    basket[index].count += 1;
-  }
 
-  setTolocalStorageBasket(basket);
+  if (login === "true") {
+    console.log(id);
+    let find = menuAllData.find((item) => item._id == id);
+    // console.log(find);
+    let index = basket.findIndex((item) => item.obj._id === id);
+    if (index === -1) {
+      basket.push({ count: 1, obj: find });
+    } else {
+      basket[index].count += 1;
+    }
+
+    setTolocalStorageBasket(basket);
+  } else {
+    window.location = "login-signup.html";
+  }
 }
 
 function setTolocalStorageBasket(array) {
@@ -223,3 +237,55 @@ function setTolocalStorageBasket(array) {
 function getFromlocalStorageBasket() {
   return JSON.parse(localStorage.getItem("basket")) ?? [];
 }
+logOut.addEventListener("click", function () {
+  localStorage.setItem("login", false);
+});
+let rezervForm = document.querySelector(".form-rezerv");
+let rezervNameInput = document.querySelector("#rezerv-name");
+let rezervPhoneInput = document.querySelector("#rezerv-phone");
+let rezervEmailInput = document.querySelector("#rezerv-email");
+let rezervDateInput = document.querySelector("#rezerv-date");
+let rezervTimeInput = document.querySelector("#rezerv-time");
+let rezervPersonSelect = document.querySelector("#rezerv-person");
+let reservsData = null;
+async function getRezervsData() {
+  let res = await axios(`http://localhost:8080/rezervs`);
+  console.log(res.data);
+  reservsData = res.data;
+}
+getRezervsData();
+rezervForm.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  let rezervsObj = {
+    userName: rezervNameInput.value,
+    email: rezervEmailInput.value,
+    date: rezervDateInput.value,
+    time: rezervTimeInput.value,
+    phone: rezervPhoneInput.value,
+    person: rezervPersonSelect.value,
+  };
+  // console.log(rezervDateInput.value);
+  let bool = reservsData.find(
+    (item) =>
+      rezervTimeInput.value == item.time ||
+      rezervDateInput.value == item.date.slice(0, 10)
+  );
+  console.log(bool);
+  if (login === "true") {
+    if (!bool) {
+      await axios.post(`http://localhost:8080/rezervs`, rezervsObj);
+    } else {
+      alert("bu vaxta bos yer yoxdur.");
+    }
+  } else {
+    window.location = "login-signup.html";
+  }
+
+  (rezervNameInput.value = ""),
+    (rezervEmailInput.value = ""),
+    (rezervDateInput.value = ""),
+    (rezervTimeInput.value = ""),
+    (rezervPhoneInput.value = ""),
+    (rezervPersonSelect.value = "");
+});

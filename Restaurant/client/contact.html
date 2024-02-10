@@ -44,7 +44,7 @@
           integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
           crossorigin="anonymous"
         ></script> -->
-    <script defer src="./assets/js/main.js"></script>
+    <script defer src="./assets/js/contact.js"></script>
   </head>
   <body>
     <!-- <div class="spinner-loader">
@@ -107,9 +107,10 @@
       </nav>
 
       <div class="candore-footer">
-        <a href="login-signup.html"
-          ><i class="fa-solid fa-right-to-bracket"></i
-        ></a>
+        <div class="icon d-flex">
+          <a href="login-signup.html"><i class="fa-solid fa-user-plus"></i></a>
+          <a href="index.html"><i class="fa-solid fa-right-to-bracket"></i></a>
+        </div>
         <ul>
           <li>
             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -189,15 +190,34 @@
               </p>
             </div>
             <div class="reservation-box">
-              <form>
-                <input type="text" placeholder="Name" required="" />
-                <input type="text" placeholder="Phone" required="" />
-                <input type="email" placeholder="e-Mail" required="" />
-                <input type="text" placeholder="Subject" required="" />
+              <form class="message-form">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  required=""
+                  id="name-message"
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone"
+                  required=""
+                  id="phone-message"
+                />
+                <input
+                  type="email"
+                  placeholder="e-Mail"
+                  required=""
+                  id="email-message"
+                />
+                <input
+                  type="text"
+                  placeholder="Subject"
+                  required=""
+                  id="subject-message"
+                />
                 <textarea
                   name=""
-                  id=""
-                
+                  id="textarea-message"
                   placeholder="Message"
                 ></textarea>
                 <button type="submit" class="btn btn1">Send Message</button>
@@ -249,34 +269,51 @@
               </div>
               <div class="reservation-box">
                 <h2>Make A Reservation</h2>
-                <form>
-                  <input type="text" placeholder="Your Name" required="" />
-                  <input type="text" placeholder="Phone" required="" />
-                  <input type="email" placeholder="Email Address" required="" />
-                  <input type="text" placeholder="Date" required="" />
-                  <select>
-                    <option value="0">Persons</option>
-                    <option value="1">1 Person</option>
-                    <option value="2">2 People</option>
-                    <option value="3">3 People</option>
-                    <option value="4">4 People</option>
-                    <option value="5">5 People</option>
-                    <option value="6">6 People</option>
-                    <option value="7">7 People</option>
+                <form class="form-rezerv">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                    id="rezerv-name"
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Phone"
+                    required
+                    id="rezerv-phone"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    required
+                    id="rezerv-email"
+                  />
+                  <input
+                    type="date"
+                    placeholder="Date"
+                    required
+                    min="2024-01-01"
+                    max="2024-01-31"
+                    id="rezerv-date"
+                  />
+                  <select id="rezerv-person">
+                    <option value="" disabled selected>Persons</option>
+                    <option value="1 Person">1 Person</option>
+                    <option value="2 People">2 People</option>
+                    <option value="3 People">3 People</option>
+                    <option value="4 People">4 People</option>
+                    <option value="5 People">5 People</option>
+                    <option value="6 People">6 People</option>
+                    <option value="7 People ">7 People</option>
                   </select>
-                  <select>
-                    <option value="0">Time</option>
-                    <option value="1">10:00 am</option>
-                    <option value="2">11:00 am</option>
-                    <option value="3">12:00 pm</option>
-                    <option value="4">14:00 pm</option>
-                    <option value="5">16:00 pm</option>
-                    <option value="6">18:00 pm</option>
-                    <option value="7">20:00 pm</option>
-                  </select>
-                  <button type="submit" class="btn btn1">
-                    Check Availability
-                  </button>
+                  <input
+                    type="time"
+                    placeholder="Time"
+                    required
+                    id="rezerv-time"
+                  />
+
+                  <button type="submit">Check Availability</button>
                 </form>
               </div>
             </div>

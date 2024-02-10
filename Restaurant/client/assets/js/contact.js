@@ -23,7 +23,6 @@ $(".owl-carousel").owlCarousel({
 });
 
 //Scroll back to top
-
 (function ($) {
   "use strict";
 
@@ -69,15 +68,12 @@ const candoreAside = document.querySelector("#candore-aside");
 const navbar = document.querySelector(".navbar");
 const pagesList = document.querySelector("#pages");
 const pagesUl = document.querySelector(".pages");
-const chefBgImg = document.querySelector(".chef-img");
-const aboutImg = document.querySelector(".about-img");
 
 let logOut = document.querySelector(".fa-right-to-bracket");
-let login = localStorage.getItem("login");
-
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
+
 main.style.display = "block";
 candoreAside.style.display = "flex";
 // setTimeout(() => {
@@ -92,10 +88,33 @@ navbar.addEventListener("click", function () {
 pagesList.addEventListener("click", function () {
   pagesUl.classList.toggle("pages-ul");
 });
-
-window.addEventListener("scroll", function () {
-  chefBgImg.classList.toggle("chef-animation-img", this.window.scrollY > "700");
-  aboutImg.classList.toggle("bg-img-about", this.window.scrollY > "100");
+let login = localStorage.getItem("login");
+let messageForm = document.querySelector("form.message-form");
+let nameMessageInput = document.querySelector("#name-message");
+let phoneMessageInput = document.querySelector("#phone-message");
+let emailMessageInput = document.querySelector("#email-message");
+let subjectMessageInput = document.querySelector("#subject-message");
+let textareaMessageInput = document.querySelector("#textarea-message");
+messageForm.addEventListener("submit", async function (e) {
+  e.preventDefault();
+  console.log(nameMessageInput.value);
+  let messageObj = {
+    userName: nameMessageInput.value,
+    email: emailMessageInput.value,
+    subject: subjectMessageInput.value,
+    phone: phoneMessageInput.value,
+    message: textareaMessageInput.value,
+  };
+  if (login === "true") {
+    await axios.post(`http://localhost:8080/messages`, messageObj);
+  } else {
+    window.location = "login-signup.html";
+  }
+  (nameMessageInput.value = ""),
+    (emailMessageInput.value = ""),
+    (subjectMessageInput.value = ""),
+    (phoneMessageInput.value = ""),
+    (textareaMessageInput.value = "");
 });
 
 let rezervForm = document.querySelector(".form-rezerv");
@@ -106,7 +125,6 @@ let rezervDateInput = document.querySelector("#rezerv-date");
 let rezervTimeInput = document.querySelector("#rezerv-time");
 let rezervPersonSelect = document.querySelector("#rezerv-person");
 let reservsData = null;
-
 async function getRezervsData() {
   let res = await axios(`http://localhost:8080/rezervs`);
   console.log(res.data);

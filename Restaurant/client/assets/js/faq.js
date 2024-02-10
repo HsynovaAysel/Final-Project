@@ -23,7 +23,6 @@ $(".owl-carousel").owlCarousel({
 });
 
 //Scroll back to top
-
 (function ($) {
   "use strict";
 
@@ -69,15 +68,21 @@ const candoreAside = document.querySelector("#candore-aside");
 const navbar = document.querySelector(".navbar");
 const pagesList = document.querySelector("#pages");
 const pagesUl = document.querySelector(".pages");
-const chefBgImg = document.querySelector(".chef-img");
-const aboutImg = document.querySelector(".about-img");
-
-let logOut = document.querySelector(".fa-right-to-bracket");
+const faqs = document.querySelectorAll(".faq");
 let login = localStorage.getItem("login");
-
+let logOut = document.querySelector(".fa-right-to-bracket");
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
+faqs.forEach((item) => {
+  item.addEventListener("click", function () {
+    document
+      .querySelector(".accordion-active")
+      ?.classList.remove("accordion-active");
+    item.classList.toggle("accordion-active");
+  });
+});
+
 main.style.display = "block";
 candoreAside.style.display = "flex";
 // setTimeout(() => {
@@ -92,12 +97,6 @@ navbar.addEventListener("click", function () {
 pagesList.addEventListener("click", function () {
   pagesUl.classList.toggle("pages-ul");
 });
-
-window.addEventListener("scroll", function () {
-  chefBgImg.classList.toggle("chef-animation-img", this.window.scrollY > "700");
-  aboutImg.classList.toggle("bg-img-about", this.window.scrollY > "100");
-});
-
 let rezervForm = document.querySelector(".form-rezerv");
 let rezervNameInput = document.querySelector("#rezerv-name");
 let rezervPhoneInput = document.querySelector("#rezerv-phone");
@@ -106,7 +105,6 @@ let rezervDateInput = document.querySelector("#rezerv-date");
 let rezervTimeInput = document.querySelector("#rezerv-time");
 let rezervPersonSelect = document.querySelector("#rezerv-person");
 let reservsData = null;
-
 async function getRezervsData() {
   let res = await axios(`http://localhost:8080/rezervs`);
   console.log(res.data);

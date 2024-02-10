@@ -146,9 +146,13 @@ svg.spinner-webkit {
       left: 230px;
       gap: unset;
       .line1 {
+    position: absolute;
+
         transform: rotate(45deg);
       }
       .line2 {
+    position: absolute;
+
         transform: rotate(-45deg);
       }
       .line3 {

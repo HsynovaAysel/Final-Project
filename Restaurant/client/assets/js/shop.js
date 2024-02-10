@@ -69,6 +69,11 @@ const candoreAside = document.querySelector("#candore-aside");
 const navbar = document.querySelector(".navbar");
 const pagesList = document.querySelector("#pages");
 const pagesUl = document.querySelector(".pages");
+let logOut = document.querySelector(".fa-right-to-bracket");
+let login = localStorage.getItem("login");
+logOut.addEventListener("click", function () {
+  localStorage.setItem("login", false);
+});
 pagesList.addEventListener("click", function () {
   pagesUl.classList.toggle("pages-ul");
 });
@@ -116,33 +121,44 @@ function drawTableShop(array) {
 drawTableShop(basket);
 
 function inc(id) {
-  let index = basket.findIndex((item) => item.obj._id == id);
-  if (basket[index].count > 1) {
-    basket[index].count -= 1;
-    drawTableShop(basket);
-    setTolocalStorageBasket(basket);
-    drawTableBox();
+  if (login === "true") {
+    let index = basket.findIndex((item) => item.obj._id == id);
+    if (basket[index].count > 1) {
+      basket[index].count -= 1;
+      drawTableShop(basket);
+      setTolocalStorageBasket(basket);
+      drawTableBox();
+    }
+  } else {
+    window.location = "login-signup.html";
   }
 }
 function dec(id) {
-  let index = basket.findIndex((item) => item.obj._id == id);
-  basket[index].count += 1;
-  drawTableShop(basket);
-  setTolocalStorageBasket(basket);
-  drawTableBox();
+  if (login === "true") {
+    let index = basket.findIndex((item) => item.obj._id == id);
+    basket[index].count += 1;
+    drawTableShop(basket);
+    setTolocalStorageBasket(basket);
+    drawTableBox();
+  } else {
+    window.location = "login-signup.html";
+  }
 }
 
 function trash(btn, id) {
-  basket = basket.filter((item) => item.obj._id != id);
-  btn.closest("tr").remove();
-  setTolocalStorageBasket(basket);
-  drawTableShop(basket);
-  drawTableBox();
+  if (login === "true") {
+    basket = basket.filter((item) => item.obj._id != id);
+    btn.closest("tr").remove();
+    setTolocalStorageBasket(basket);
+    drawTableShop(basket);
+    drawTableBox();
+  } else {
+    window.location = "login-signup.html";
+  }
 }
 
-
 function drawTableBox() {
-    boxBody.innerHTML = "";
+  boxBody.innerHTML = "";
   boxBody.innerHTML = `
     <tr>
     <td><p>Cart Subtotal:</p></td>
@@ -167,3 +183,53 @@ function getFromlocalStorageBasket() {
   return JSON.parse(localStorage.getItem("basket")) ?? [];
 }
 setTolocalStorageBasket(basket);
+
+let rezervForm = document.querySelector(".form-rezerv");
+let rezervNameInput = document.querySelector("#rezerv-name");
+let rezervPhoneInput = document.querySelector("#rezerv-phone");
+let rezervEmailInput = document.querySelector("#rezerv-email");
+let rezervDateInput = document.querySelector("#rezerv-date");
+let rezervTimeInput = document.querySelector("#rezerv-time");
+let rezervPersonSelect = document.querySelector("#rezerv-person");
+let reservsData = null;
+async function getRezervsData() {
+  let res = await axios(`http://localhost:8080/rezervs`);
+  console.log(res.data);
+  reservsData = res.data;
+}
+getRezervsData();
+rezervForm.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  let rezervsObj = {
+    userName: rezervNameInput.value,
+    email: rezervEmailInput.value,
+    date: rezervDateInput.value,
+    time: rezervTimeInput.value,
+    phone: rezervPhoneInput.value,
+    person: rezervPersonSelect.value,
+  };
+  // console.log(rezervDateInput.value);
+  let bool = reservsData.find(
+    (item) =>
+      rezervTimeInput.value == item.time ||
+      rezervDateInput.value == item.date.slice(0, 10)
+  );
+  console.log(bool);
+  if (login === "true") {
+    if (!bool) {
+      await axios.post(`http://localhost:8080/rezervs`, rezervsObj);
+    } else {
+      alert("bu vaxta bos yer yoxdur.");
+    }
+  } else {
+    window.location = "login-signup.html";
+  }
+
+  (rezervNameInput.value = ""),
+    (rezervEmailInput.value = ""),
+    (rezervDateInput.value = ""),
+    (rezervTimeInput.value = ""),
+    (rezervPhoneInput.value = ""),
+    (rezervPersonSelect.value = "");
+});
