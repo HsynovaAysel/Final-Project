@@ -71,6 +71,11 @@ const pagesList = document.querySelector("#pages");
 const pagesUl = document.querySelector(".pages");
 let logOut = document.querySelector(".fa-right-to-bracket");
 let login = localStorage.getItem("login");
+if (login === "false") {
+  logOut.style.display = "none";
+} else {
+  logOut.style.display = "inline-block";
+}
 pagesList.addEventListener("click", function () {
   pagesUl.classList.toggle("pages-ul");
 });

@@ -146,9 +146,11 @@ svg.spinner-webkit {
       left: 230px;
       gap: unset;
       .line1 {
+        position: absolute;
         transform: rotate(45deg);
       }
       .line2 {
+        position: absolute;
         transform: rotate(-45deg);
       }
       .line3 {
@@ -345,7 +347,7 @@ main {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        p{
+        p {
           font-size: 18px;
           font-style: italic;
         }
@@ -358,7 +360,6 @@ main {
           .fa-cart-shopping {
             color: white;
           }
-         
         }
       }
     }
@@ -676,17 +677,17 @@ main {
   @media screen and (max-width: 767px) {
     left: 0;
     width: 100%;
-#details{
-  .details{
-    flex-direction: column;
-    .img{
-      width: 100%;
+    #details {
+      .details {
+        flex-direction: column;
+        .img {
+          width: 100%;
+        }
+        .content {
+          width: 100%;
+        }
+      }
     }
-    .content{
-      width: 100%;
-    }
-  }
-}
     #reservation {
       .bg-color {
         .reservation {

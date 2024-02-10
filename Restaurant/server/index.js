@@ -8,6 +8,8 @@ const menusRouter = require("./routes/menusRouter");
 const rezervRouter = require("./routes/rezervRoute");
 const usersRouter = require("./routes/usersRoute");
 const messagesRouter = require("./routes/messageRoute");
+const vakansRouter = require("./routes/vakanRouter");
+const teamRouter = require("./routes/teamRouter");
 
 const DB_URL = `mongodb+srv://gd7uz3mha:aysel123@cluster0.zkehcew.mongodb.net/`;
 
@@ -18,6 +20,8 @@ app.use("/menus", menusRouter);
 app.use("/rezervs", rezervRouter);
 app.use("/users", usersRouter);
 app.use("/messages", messagesRouter);
+app.use("/vakans", vakansRouter);
+app.use("/team", teamRouter);
 mongoose
   .connect(DB_URL)
   .then(() => {

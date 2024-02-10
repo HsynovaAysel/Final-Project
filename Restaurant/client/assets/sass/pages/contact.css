@@ -382,9 +382,11 @@ svg.spinner-webkit path {
     gap: unset;
   }
   .navbar.menu-icon .line1 {
+    position: absolute;
     transform: rotate(45deg);
   }
   .navbar.menu-icon .line2 {
+    position: absolute;
     transform: rotate(-45deg);
   }
   .navbar.menu-icon .line3 {

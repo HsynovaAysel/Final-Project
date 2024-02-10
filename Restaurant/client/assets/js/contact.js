@@ -68,11 +68,16 @@ const candoreAside = document.querySelector("#candore-aside");
 const navbar = document.querySelector(".navbar");
 const pagesList = document.querySelector("#pages");
 const pagesUl = document.querySelector(".pages");
-
+let login = localStorage.getItem("login");
 let logOut = document.querySelector(".fa-right-to-bracket");
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
+if (login === "false") {
+  logOut.style.display = "none";
+} else {
+  logOut.style.display = "inline-block";
+}
 
 main.style.display = "block";
 candoreAside.style.display = "flex";
@@ -88,7 +93,7 @@ navbar.addEventListener("click", function () {
 pagesList.addEventListener("click", function () {
   pagesUl.classList.toggle("pages-ul");
 });
-let login = localStorage.getItem("login");
+
 let messageForm = document.querySelector("form.message-form");
 let nameMessageInput = document.querySelector("#name-message");
 let phoneMessageInput = document.querySelector("#phone-message");

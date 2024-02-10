@@ -74,6 +74,12 @@ let logOut = document.querySelector(".fa-right-to-bracket");
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
+let login = localStorage.getItem("login");
+if (login === "false") {
+  logOut.style.display = "none";
+} else {
+  logOut.style.display = "inline-block";
+}
 faqs.forEach((item) => {
   item.addEventListener("click", function () {
     document
@@ -97,7 +103,7 @@ navbar.addEventListener("click", function () {
 pagesList.addEventListener("click", function () {
   pagesUl.classList.toggle("pages-ul");
 });
-let login = localStorage.getItem("login");
+
 let rezervForm = document.querySelector(".form-rezerv");
 let rezervNameInput = document.querySelector("#rezerv-name");
 let rezervPhoneInput = document.querySelector("#rezerv-phone");

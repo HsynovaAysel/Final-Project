@@ -70,7 +70,6 @@ const navbar = document.querySelector(".navbar");
 const pagesList = document.querySelector("#pages");
 const pagesUl = document.querySelector(".pages");
 
-
 main.style.display = "block";
 candoreAside.style.display = "flex";
 // setTimeout(() => {
@@ -89,6 +88,12 @@ let logOut = document.querySelector(".fa-right-to-bracket");
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
+let login = localStorage.getItem("login");
+if (login === "false") {
+  logOut.style.display = "none";
+} else {
+  logOut.style.display = "inline-block";
+}
 
 let BASE_URL = "http://localhost:8080/menus";
 let menuCardLists = document.querySelector(".menu-card-lists");
@@ -188,20 +193,20 @@ function drawWineCard(array) {
   });
 }
 
-let login = localStorage.getItem("login");
 function favs(icon, id) {
-  if (login === "true") { if (icon.className === "fa-regular fa-heart") {
-    icon.className = "fa-solid fa-heart";
-    let find = menuAllData.find((item) => item._id == id);
-    favorites.push(find);
+  if (login === "true") {
+    if (icon.className === "fa-regular fa-heart") {
+      icon.className = "fa-solid fa-heart";
+      let find = menuAllData.find((item) => item._id == id);
+      favorites.push(find);
+    } else {
+      icon.className = "fa-regular fa-heart";
+      favorites = favorites.filter((item) => item._id != id);
+    }
+    setTolocalStorage(favorites);
   } else {
-    icon.className = "fa-regular fa-heart";
-    favorites = favorites.filter((item) => item._id != id);
-  }
-  setTolocalStorage(favorites);}else{
     window.location = "login-signup.html";
   }
- 
 }
 function setTolocalStorage(array) {
   localStorage.setItem("favorites", JSON.stringify(array));
@@ -213,7 +218,6 @@ function getFromlocalStorage() {
 let basket = getFromlocalStorageBasket();
 
 function cart(id) {
-
   if (login === "true") {
     console.log(id);
     let find = menuAllData.find((item) => item._id == id);

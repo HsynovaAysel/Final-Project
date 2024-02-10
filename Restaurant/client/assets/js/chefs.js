@@ -71,7 +71,11 @@ const pagesUl = document.querySelector(".pages");
 const chefBgImg = document.querySelector(".chef-img");
 let logOut = document.querySelector(".fa-right-to-bracket");
 let login = localStorage.getItem("login");
-
+if (login === "false") {
+  logOut.style.display = "none";
+} else {
+  logOut.style.display = "inline-block";
+}
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
@@ -143,4 +147,3 @@ rezervForm.addEventListener("submit", async function (e) {
     (rezervPhoneInput.value = ""),
     (rezervPersonSelect.value = "");
 });
-

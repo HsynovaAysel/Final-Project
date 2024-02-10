@@ -226,7 +226,7 @@ span {
   }
 }
 
-main footer .footer #footer-top .footer-top .footer-column .subscribe form button, main #reservation .bg-color .reservation .reservation-box form button, main #food .food .food-bottom .item button {
+main footer .footer #footer-top .footer-top .footer-column .subscribe form button, main #reservation .bg-color .reservation .reservation-box form button, main #vakan .vakan .vakan-left form button {
   outline: none;
   border: 1px solid #c19d60;
   font-family: "Noah", sans-serif;
@@ -241,12 +241,10 @@ main footer .footer #footer-top .footer-top .footer-column .subscribe form butto
   background-color: transparent;
   transition: all 0.5s;
 }
-main footer .footer #footer-top .footer-top .footer-column .subscribe form button:hover, main #reservation .bg-color .reservation .reservation-box form button:hover, main #food .food .food-bottom .item button:hover {
+main footer .footer #footer-top .footer-top .footer-column .subscribe form button:hover, main #reservation .bg-color .reservation .reservation-box form button:hover, main #vakan .vakan .vakan-left form button:hover {
   background-color: #c19d60;
 }
 
-/* #Progress
-================================================== */
 .progress-wrap {
   position: fixed;
   right: 30px;
@@ -489,7 +487,7 @@ main header .header {
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
-  background-image: url("../../images/home/banner-3.jpg");
+  background-image: url("../../images/1 (2).jpg");
 }
 main header .header .bg-color {
   width: 100%;
@@ -538,129 +536,149 @@ main header .header .bg-color .header-content .down-icon i {
     transform: translate3d(0, -4px, 0);
   }
 }
-main #accordion {
-  padding: 50px 0 100px 0;
-  background-color: #1b1b1b;
+main #vakan {
+  padding: 100px 0;
+  background-color: #f2eee8;
 }
-main #accordion .acordion .faq {
-  margin-top: 20px;
-  padding-bottom: 2rem;
-  border-bottom: 2px solid white;
-  cursor: pointer;
-}
-main #accordion .acordion .faq .question {
+main #vakan .vakan {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
-main #accordion .acordion .faq .question svg {
-  transition: 1.4s ease-in;
+main #vakan .vakan .vakan-left {
+  padding: 50px 20px;
+  background-color: #1b1b1b;
+  width: 40%;
 }
-main #accordion .acordion .faq .question h5 {
-  color: white;
-  font-size: 20px;
+main #vakan .vakan .vakan-left h3 {
+  margin-bottom: 20px;
 }
-main #accordion .acordion .faq .answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: 1.4s ease;
+main #vakan .vakan .vakan-left form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
-main #accordion .acordion .faq .answer p {
-  letter-spacing: 0;
-  padding-top: 5px;
-}
-main #accordion .acordion .faq.accordion-active .answer {
-  max-height: 100px;
-  animation: fade 1s ease-in-out;
-}
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-main #food {
-  background-color: #f2eee8;
-  padding: 100px 0;
-}
-main #food .food .food-top {
-  margin-bottom: 50px;
+main #vakan .vakan .vakan-left form #cv-label {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 1.5rem;
+  width: 40%;
+  padding: 15px 12px;
+  background-color: #fff;
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
 }
-main #food .food .food-top h1 {
-  text-align: center;
-  font-family: "Pinyon Script", cursive;
+main #vakan .vakan .vakan-left form input {
+  width: 40%;
+  padding: 20px 12px;
+}
+main #vakan .vakan .vakan-left form input::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+main #vakan .vakan .vakan-left form input::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+main #vakan .vakan .vakan-left form input#cv-vakan {
   position: absolute;
-  font-size: 140px;
-  color: rgba(0, 0, 0, 0.05);
+  visibility: hidden;
 }
-main #food .food .food-top .img-line {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+main #vakan .vakan .vakan-left form select {
+  padding: 20px 10px;
+  width: 46%;
 }
-main #food .food .food-top .img-line .line {
-  width: 50px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+main #vakan .vakan .vakan-left form select::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
 }
-main #food .food .food-top .img-line .img {
-  width: 20px;
+main #vakan .vakan .vakan-left form select::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
 }
-main #food .food .food-top .img-line .img img {
-  width: 100%;
+main #vakan .vakan .vakan-left form textarea {
+  padding: 20px 10px;
+  width: 91%;
 }
-main #food .food .food-bottom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+main #vakan .vakan .vakan-left form textarea::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
 }
-main #food .food .food-bottom .item {
-  width: 32%;
-  background: white;
-  padding: 50px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 1rem;
-  text-align: center;
+main #vakan .vakan .vakan-left form textarea::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
 }
-main #food .food .food-bottom .item h5 {
-  font-size: 24px;
-  color: #1b1b1b;
-  margin-bottom: 10px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e9e7e5;
+main #vakan .vakan .vakan-left form button {
+  background-color: #c19d60;
+  width: 96%;
 }
-main #food .food .food-bottom .item h2 {
+main #vakan .vakan .vakan-left form button:hover {
+  background-color: transparent;
   color: #c19d60;
 }
-main #food .food .food-bottom .item p {
-  width: 70%;
-  font-size: 14px;
-  letter-spacing: 1px;
+main #vakan .vakan .vakan-right {
+  width: 50%;
 }
-main #food .food .food-bottom .item .chef-text {
-  text-decoration: line-through;
+main #vakan .vakan .vakan-right .owl-carousel .vakan-content {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
 }
-main #food .food .food-bottom .item button {
-  background-color: #000000;
-  border-color: black;
+main #vakan .vakan .vakan-right .owl-carousel .vakan-content .star-icon i {
+  font-size: 13px;
+  color: #c19d60;
 }
-main #food .food .food-bottom .item button:hover {
-  background-color: transparent;
-  color: black;
+main #vakan .vakan .vakan-right .owl-carousel .vakan-content p {
+  font-style: italic;
+  font-size: 20px;
+}
+main #vakan .vakan .vakan-right .owl-carousel .vakan-content .user {
+  display: flex;
+  gap: 1rem;
+}
+main #vakan .vakan .vakan-right .owl-carousel .vakan-content .user .img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid #c19d60;
+  padding: 2px;
+}
+main #vakan .vakan .vakan-right .owl-carousel .vakan-content .user .img img {
+  border-radius: 50%;
+  width: 100%;
+}
+main #vakan .vakan .vakan-right .owl-carousel .vakan-content .user .name h6 {
+  color: #1b1b1b;
+  font-size: 15px;
+}
+main #vakan .vakan .vakan-right .owl-carousel .owl-dots {
+  display: none;
+}
+main #vakan .vakan .vakan-right .owl-carousel .owl-nav {
+  display: none;
 }
 main #reservation {
   background-image: url("../../images/home/banner-3.jpg");
@@ -974,48 +992,71 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
     left: 0;
     width: 100%;
   }
-  main #food .food .food-bottom {
+  main #vakan .vakan {
     flex-direction: column;
+    justify-content: center;
   }
-  main #food .food .food-bottom .item {
+  main #vakan .vakan .vakan-left {
     width: 100%;
   }
-  main #reservation .bg-color .reservation {
+  main #vakan .vakan .vakan-left form {
+    flex-wrap: unset;
     flex-direction: column;
   }
-  main #reservation .bg-color .reservation .reservation-content {
+  main #vakan .vakan .vakan-left form textarea {
+    width: 93%;
+  }
+  main #vakan .vakan .vakan-left form select {
+    width: 96%;
+  }
+  main #vakan .vakan .vakan-left form input {
+    width: 92%;
+  }
+  main #vakan .vakan .vakan-left form #cv-label {
+    width: 92%;
+  }
+  main #vakan .vakan .vakan-right {
     width: 100%;
   }
-  main #reservation .bg-color .reservation .reservation-box {
+  main #vakan #reservation .bg-color .reservation {
+    flex-direction: column;
+  }
+  main #vakan #reservation .bg-color .reservation .reservation-content {
+    width: 100%;
+  }
+  main #vakan #reservation .bg-color .reservation .reservation-box {
     position: unset;
     width: 90%;
   }
-  main #reservation .bg-color .reservation .reservation-box form {
+  main #vakan #reservation .bg-color .reservation .reservation-box form {
     flex-direction: column;
   }
-  main #reservation .bg-color .reservation .reservation-box form input {
+  main #vakan #reservation .bg-color .reservation .reservation-box form input {
     width: 96%;
   }
-  main #reservation .bg-color .reservation .reservation-box form select {
+  main #vakan #reservation .bg-color .reservation .reservation-box form select {
     width: 100%;
   }
-  main #logo .owl-carousel {
+  main #vakan #reservation .bg-color .reservation .reservation-box form button {
     width: 100%;
   }
-  main #logo .owl-carousel .owl-item .item .all-logos .logo {
+  main #vakan #logo .owl-carousel {
+    width: 100%;
+  }
+  main #vakan #logo .owl-carousel .owl-item .item .all-logos .logo {
     height: 100px;
     width: 25%;
   }
-  main footer .footer #footer-top .footer-top {
+  main #vakan footer .footer #footer-top .footer-top {
     flex-direction: column;
   }
-  main footer .footer #footer-top .footer-top .footer-column {
+  main #vakan footer .footer #footer-top .footer-top .footer-column {
     width: 100%;
   }
-  main footer .footer #footer-top .footer-top .footer-column .subscribe form input {
+  main #vakan footer .footer #footer-top .footer-top .footer-column .subscribe form input {
     width: 90.5%;
   }
-  main footer .footer #footer-bottom .footer-bottom p {
+  main #vakan footer .footer #footer-bottom .footer-bottom p {
     text-align: unset;
   }
-}/*# sourceMappingURL=faq.css.map */
+}/*# sourceMappingURL=vakan.css.map */

@@ -74,6 +74,11 @@ let logOut = document.querySelector(".fa-right-to-bracket");
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
+if (login === "false") {
+  logOut.style.display = "none";
+} else {
+  logOut.style.display = "inline-block";
+}
 faqs.forEach((item) => {
   item.addEventListener("click", function () {
     document

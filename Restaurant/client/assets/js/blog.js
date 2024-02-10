@@ -74,6 +74,11 @@ logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
 let login = localStorage.getItem("login");
+if (login === "false") {
+  logOut.style.display = "none";
+} else {
+  logOut.style.display = "inline-block";
+}
 main.style.display = "block";
 candoreAside.style.display = "flex";
 // setTimeout(() => {

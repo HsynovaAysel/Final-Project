@@ -73,7 +73,12 @@ let logOut = document.querySelector(".fa-right-to-bracket");
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
-
+let login = localStorage.getItem("login");
+if (login === "false") {
+  logOut.style.display = "none";
+} else {
+  logOut.style.display = "inline-block";
+}
 main.style.display = "block";
 candoreAside.style.display = "flex";
 // setTimeout(() => {
@@ -101,9 +106,8 @@ async function getALLData() {
   let filtered = menuAllData.filter(
     (item) => item.category.toLocaleLowerCase() === "starters"
   );
- 
+
   drawCards(filtered);
-  
 }
 getALLData();
 let favorites = getFromlocalStorage();
@@ -159,7 +163,6 @@ menuBtnAll.forEach((item) =>
   })
 );
 
-let login = localStorage.getItem("login");
 function favs(icon, id) {
   if (login === "true") {
     if (icon.className === "fa-regular fa-heart") {
