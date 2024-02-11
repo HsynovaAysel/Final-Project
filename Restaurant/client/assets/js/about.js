@@ -158,3 +158,6 @@ rezervForm.addEventListener("submit", async function (e) {
 // downIcon.addEventListener("click", function () {
 //   shopElem.scrollIntoView({ behavior: "smooth", block: "center" });
 // });
+const count = document.querySelector(".count-basket");
+let basketCount = JSON.parse(localStorage.getItem("basketCount")) ?? 0;
+count.innerText = basketCount;

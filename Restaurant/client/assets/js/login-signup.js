@@ -13,7 +13,7 @@ let formSignin = document.querySelector("form.sign-in");
 let emailInputSignin = document.querySelector("#email-signin");
 let passwordInputSignin = document.querySelector("#password-signin");
 
-let BASE_URL = "http://localhost:8080/users";
+let BASE_URL = "http://localhost:8080";
 let usersAllData = null;
 async function getALLData() {
   let res = await axios(`${BASE_URL}`);
@@ -29,30 +29,57 @@ formSignUp.addEventListener("submit", async function (e) {
     userName: nameInputSignup.value,
   };
 
-  await axios.post(`${BASE_URL}`, users);
-  // emailInputSignup.value=''
-  //  passwordInputSignup.value=''
-  //  nameInputSignup.value=''
-});
-
-
-
-formSignin.addEventListener("submit", function (e) {
-  e.preventDefault();
-  let user = usersAllData.find(
-    (item) =>
-      item.password === passwordInputSignin.value &&
-      item.email === emailInputSignin.value
-  );
-//   console.log(user);
-//   console.log(passwordInputSignin.value);
-  if(user){
-    window.location="index.html"
-    localStorage.setItem('login',true)
-  }else{
-    alert('bele bir istifadeci yoxdur')
+  try {
+    const response = await axios.post(`${BASE_URL}/signUp`, users);
+    if (response.status === 200) {
+      window.location = "login-signup.html";
+    }
+  } catch (error) {
+    alert("bu mail artiq istifade olunub");
   }
-  // passwordInputSignin.value=''
-  // emailInputSignin.value=''
+  emailInputSignup.value=''
+   passwordInputSignup.value=''
+   nameInputSignup.value=''
 });
 
+formSignin.addEventListener("submit", async function (e) {
+  e.preventDefault();
+  let users = {
+    email: emailInputSignin.value,
+    password: passwordInputSignin.value,
+  };
+  // console.log(obj);
+  try {
+    const response = await axios.post(`${BASE_URL}/signIn`, users);
+    console.log(response);
+    if (response.status === 200) {
+      window.location = "index.html";
+      localStorage.setItem("login", true);
+    }
+  } catch (error) {
+    alert("bele bir istifadeci yoxdur");
+  }
+
+  passwordInputSignin.value=''
+  emailInputSignin.value=''
+});
+
+let eyeAllIcon = document.querySelectorAll(".fa-eye");
+eyeAllIcon.forEach((eyeIcon) => {
+  // passwordInputSignin.type = "password";
+  // eyeIcon.classList.add("fa-solid fa-eye")
+  // passwordInputSignup.type = "password";
+  eyeIcon.addEventListener("click", function () {
+    passwordInputSignin.type = "password";
+    passwordInputSignup.type = "password";
+    if (this.className === "fa-solid fa-eye") {
+      passwordInputSignin.type = "text";
+      passwordInputSignup.type = "text";
+      this.className = "fa-solid fa-eye-slash";
+    } else {
+      passwordInputSignin.type = "password";
+      passwordInputSignup.type = "password";
+      this.className = "fa-solid fa-eye";
+    }
+  });
+});

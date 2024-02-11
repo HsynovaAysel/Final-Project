@@ -19,7 +19,7 @@ app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use("/menus", menusRouter);
 app.use("/rezervs", rezervRouter);
-app.use("/users", usersRouter);
+app.use("/", usersRouter);
 app.use("/messages", messagesRouter);
 app.use("/vakans", vakansRouter);
 app.use("/team", teamRouter);

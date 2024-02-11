@@ -1,0 +1,243 @@
+@import "../assets/sass/base/reset";
+@import "../assets/sass/utils/variables";
+@import "../assets/sass/base/typograpy";
+@import "../assets/sass/utils/mixins";
+@import "../assets/sass/components/buttons";
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1199px) {
+    padding: 0 5%;
+  }
+}
+
+header {
+  padding: 30px 0;
+  background-color: #1b1b1b;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      width: 150px;
+      img {
+        width: 100%;
+      }
+    }
+    .icons {
+      i {
+        cursor: pointer;
+        font-size: 20px;
+      }
+    }
+  }
+}
+.home-icon {
+  margin: 20px 0;
+  width: 30px;
+  height: 30px;
+  background-color: #1b1b1b;
+  color: $home-color;
+  font-size: 20px;
+ @include flex();
+//  position: fixed;
+//  top: 100px;
+//  left: 100px;
+//  z-index: -1;
+  cursor: pointer;
+}
+#candore {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15%;
+  height: 100vh;
+  background-color: #1b1b1b;
+  border-right: 1px solid rgba(255, 255, 255, 0.02);
+  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  left: -350px;
+  transition: all 0.5s ease;
+  .fa-x {
+    cursor: pointer;
+    top: 20px;
+    right: 15px;
+    position: absolute;
+    color: white;
+    font-size: 20px;
+  }
+  .logo {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+    .img {
+      width: 150px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  nav {
+    ul {
+      flex-direction: column;
+      display: flex;
+      gap: 1rem;
+      li {
+        a {
+          transition: all 0.5s;
+          display: flex;
+          gap: 0.5rem;
+          font-size: 18px;
+        }
+        &:hover {
+          a {
+            color: $home-color;
+          }
+        }
+      }
+    }
+  }
+  &.aside {
+    left: 0px;
+  }
+}
+// #banner {
+//   .banner {
+
+//   }
+// }
+
+#customer {
+  .customer {
+    .customer-form {
+      padding: 50px 0 0 0;
+      background-color: #1b1b1b;
+      display: flex;
+      flex-direction: column;
+      @include flex();
+      gap: 1rem;
+
+      input {
+        width: 50%;
+        padding: 20px 0;
+        &::placeholder {
+          color: black;
+          font-family: $font-noto;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 26px;
+        }
+      }
+
+      button {
+        @extend %btn;
+        background-color: $home-color;
+        width: 100%;
+        &:hover {
+          background-color: transparent;
+          color: $home-color;
+        }
+      }
+    }
+  }
+  .customer-table {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #1b1b1b;
+    text-align: center;
+    border-collapse: collapse;
+    thead {
+      tr {
+        th {
+          border: 1px solid $home-color;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          .fa-trash {
+            color: red;
+          }
+          .fa-pen-to-square {
+            color: blue;
+          }
+          h5 {
+            font-size: 20px;
+          }
+          border: 1px solid $home-color;
+        }
+      }
+    }
+  }
+}
+#reservation {
+  .reservation {
+    .reservation-form {
+      padding: 50px 0 0 0;
+      background-color: #1b1b1b;
+      display: flex;
+      flex-direction: column;
+      @include flex();
+      gap: 1rem;
+
+      input {
+        width: 50%;
+        padding: 20px 0;
+        &::placeholder {
+          color: black;
+          font-family: $font-noto;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 26px;
+        }
+      }
+      select {
+        width: 50%;
+        padding: 20px 0;
+      }
+      button {
+        @extend %btn;
+        background-color: $home-color;
+        width: 100%;
+        &:hover {
+          background-color: transparent;
+          color: $home-color;
+        }
+      }
+    }
+  }
+  .reservation-table {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #1b1b1b;
+    text-align: center;
+    border-collapse: collapse;
+    thead {
+      tr {
+        th {
+          border: 1px solid $home-color;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          .fa-trash {
+            color: red;
+          }
+          .fa-pen-to-square {
+            color: blue;
+          }
+          h5 {
+            font-size: 20px;
+          }
+          border: 1px solid $home-color;
+        }
+      }
+    }
+  }
+}

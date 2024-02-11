@@ -153,3 +153,6 @@ rezervForm.addEventListener("submit", async function (e) {
     (rezervPhoneInput.value = ""),
     (rezervPersonSelect.value = "");
 });
+const count = document.querySelector(".count-basket");
+let basketCount = JSON.parse(localStorage.getItem("basketCount")) ?? 0;
+count.innerText = basketCount;

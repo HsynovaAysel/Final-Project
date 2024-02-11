@@ -1,0 +1,453 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+* {
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 70px;
+  color: #fff;
+}
+
+h2 {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 48px;
+  color: #1b1b1b;
+}
+
+h3 {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 53px;
+  color: #c19d60;
+}
+
+h4 {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 38px;
+  color: #c19d60;
+}
+
+h5 {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 34px;
+  color: #fff;
+}
+
+h6 {
+  font-family: "Noah", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 35px;
+  color: #fff;
+}
+
+p {
+  color: #777777;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+a {
+  color: #fff;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+span {
+  font-family: "Noah", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #c19d60;
+  letter-spacing: 3px;
+  line-height: 1.75em;
+  text-transform: uppercase;
+}
+
+#reservation .reservation .reservation-form button, #customer .customer .customer-form button {
+  outline: none;
+  border: 1px solid #c19d60;
+  font-family: "Noah", sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: 2px;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px 25px;
+  background-color: transparent;
+  transition: all 0.5s;
+}
+#reservation .reservation .reservation-form button:hover, #customer .customer .customer-form button:hover {
+  background-color: #c19d60;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1199px) {
+  .container {
+    padding: 0 5%;
+  }
+}
+
+header {
+  padding: 30px 0;
+  background-color: #1b1b1b;
+}
+header .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header .logo {
+  width: 150px;
+}
+header .header .logo img {
+  width: 100%;
+}
+header .header .icons i {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.home-icon {
+  margin: 20px 0;
+  width: 30px;
+  height: 30px;
+  background-color: #1b1b1b;
+  color: #c19d60;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#candore {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15%;
+  height: 100vh;
+  background-color: #1b1b1b;
+  border-right: 1px solid rgba(255, 255, 255, 0.02);
+  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  left: -350px;
+  transition: all 0.5s ease;
+}
+#candore .fa-x {
+  cursor: pointer;
+  top: 20px;
+  right: 15px;
+  position: absolute;
+  color: white;
+  font-size: 20px;
+}
+#candore .logo {
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+#candore .logo .img {
+  width: 150px;
+}
+#candore .logo .img img {
+  width: 100%;
+}
+#candore nav ul {
+  flex-direction: column;
+  display: flex;
+  gap: 1rem;
+}
+#candore nav ul li a {
+  transition: all 0.5s;
+  display: flex;
+  gap: 0.5rem;
+  font-size: 18px;
+}
+#candore nav ul li:hover a {
+  color: #c19d60;
+}
+#candore.aside {
+  left: 0px;
+}
+
+#customer .customer .customer-form {
+  padding: 50px 0 0 0;
+  background-color: #1b1b1b;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#customer .customer .customer-form input {
+  width: 50%;
+  padding: 20px 0;
+}
+#customer .customer .customer-form input::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#customer .customer .customer-form input::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#customer .customer .customer-form button {
+  background-color: #c19d60;
+  width: 100%;
+}
+#customer .customer .customer-form button:hover {
+  background-color: transparent;
+  color: #c19d60;
+}
+#customer .customer-table {
+  margin-top: 50px;
+  width: 100%;
+  background-color: #1b1b1b;
+  text-align: center;
+  border-collapse: collapse;
+}
+#customer .customer-table thead tr th {
+  border: 1px solid #c19d60;
+}
+#customer .customer-table tbody tr td {
+  border: 1px solid #c19d60;
+}
+#customer .customer-table tbody tr td .fa-trash {
+  color: red;
+}
+#customer .customer-table tbody tr td .fa-pen-to-square {
+  color: blue;
+}
+#customer .customer-table tbody tr td h5 {
+  font-size: 20px;
+}
+
+#reservation .reservation .reservation-form {
+  padding: 50px 0 0 0;
+  background-color: #1b1b1b;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#reservation .reservation .reservation-form input {
+  width: 50%;
+  padding: 20px 0;
+}
+#reservation .reservation .reservation-form input::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#reservation .reservation .reservation-form input::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#reservation .reservation .reservation-form select {
+  width: 50%;
+  padding: 20px 0;
+}
+#reservation .reservation .reservation-form button {
+  background-color: #c19d60;
+  width: 100%;
+}
+#reservation .reservation .reservation-form button:hover {
+  background-color: transparent;
+  color: #c19d60;
+}
+#reservation .reservation-table {
+  margin-top: 50px;
+  width: 100%;
+  background-color: #1b1b1b;
+  text-align: center;
+  border-collapse: collapse;
+}
+#reservation .reservation-table thead tr th {
+  border: 1px solid #c19d60;
+}
+#reservation .reservation-table tbody tr td {
+  border: 1px solid #c19d60;
+}
+#reservation .reservation-table tbody tr td .fa-trash {
+  color: red;
+}
+#reservation .reservation-table tbody tr td .fa-pen-to-square {
+  color: blue;
+}
+#reservation .reservation-table tbody tr td h5 {
+  font-size: 20px;
+}/*# sourceMappingURL=admin.css.map */

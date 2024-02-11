@@ -28,7 +28,7 @@ body {
   padding: 50px 30px 0;
 }
 .sign-in {
-  -webkit-transition-timing-function: ease-out;
+  // -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
 .cont.s--signup .sign-in {
@@ -227,4 +227,18 @@ button {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
+}
+
+.password-eye {
+  position: relative;
+  .fa-eye {
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
+  .fa-eye-slash {
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
 }

@@ -331,11 +331,12 @@ let basket = getFromlocalStorageBasket();
 function countBasket(arr) {
   let basketCount = arr.reduce((acc, cur) => acc + cur.count, 0);
   count.innerText = basketCount;
+  setTolocalStorageBasketCount(basketCount);
 }
 countBasket(basket);
 
 function setTolocalStorageBasketCount(array) {
-  localStorage.setItem("basketCount", JSON.stringify(arr));
+  localStorage.setItem("basketCount", JSON.stringify(array));
 }
 function getFromlocalStorageBasketCount() {
   return JSON.parse(localStorage.getItem("basketCount")) ?? 0;

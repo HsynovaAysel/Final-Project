@@ -148,7 +148,15 @@ const count = document.querySelector(".count-basket");
 function countBasket(arr) {
   let basketCount = arr.reduce((acc, cur) => acc + cur.count, 0);
   count.innerText = basketCount;
+  setTolocalStorageBasketCount(basketCount);
 }
+function setTolocalStorageBasketCount(array) {
+  localStorage.setItem("basketCount", JSON.stringify(array));
+}
+function getFromlocalStorageBasketCount() {
+  return JSON.parse(localStorage.getItem("basketCount")) ?? 0;
+}
+
 countBasket(basket);
 function cart(id) {
   console.log(id);
@@ -161,7 +169,7 @@ function cart(id) {
     } else {
       basket[index].count += 1;
     }
-    countBasket(basket)
+    countBasket(basket);
     setTolocalStorageBasket(basket);
   } else {
     window.location = "login-signup.html";
@@ -174,7 +182,6 @@ function setTolocalStorageBasket(array) {
 function getFromlocalStorageBasket() {
   return JSON.parse(localStorage.getItem("basket")) ?? [];
 }
-
 
 let rezervForm = document.querySelector(".form-rezerv");
 let rezervNameInput = document.querySelector("#rezerv-name");
