@@ -1,3 +1,13 @@
+a {
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+}
+i {
+  cursor: pointer;
+}
+
 .navbar {
   position: fixed;
   left: 0px;
@@ -54,7 +64,7 @@
   border-right: 1px solid rgba(255, 255, 255, 0.02);
   display: flex;
   flex-direction: column;
-  gap: 90px;
+  gap: 70px;
   z-index: 1111;
   transition: all 0.5s ease;
 
@@ -89,10 +99,19 @@
         //   }
         // }
         .pages {
-          padding: 15px 0 0 20px;
-          display: none;
+          position: relative;
+          z-index: -1;
+          padding: 0 0 0 10px;
+          // display: none;
+          transition: all 0.5s;
+          height: 0;
+          opacity: 0;
           &.pages-ul {
-            display: block;
+            z-index: 1;
+            padding: 15px 0 0 10px;
+            // display: block;
+            height: 230px;
+            opacity: 1;
           }
           li {
             padding-top: 10px;
@@ -105,6 +124,21 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    .aside-icons {
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      .user-icon {
+        display: flex;
+        gap: 15px;
+      }
+
+      .count-basket {
+        border-radius: 50%;
+        background-color: red;
+        padding: 0 4px;
+      }
+    }
     p {
       font-size: 12px;
       color: #999;

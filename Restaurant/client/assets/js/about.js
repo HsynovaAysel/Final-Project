@@ -152,3 +152,9 @@ rezervForm.addEventListener("submit", async function (e) {
     (rezervPhoneInput.value = ""),
     (rezervPersonSelect.value = "");
 });
+// let downIcon = document.querySelector(".fa-down-long");
+// let shopElem = document.querySelector("footer");
+
+// downIcon.addEventListener("click", function () {
+//   shopElem.scrollIntoView({ behavior: "smooth", block: "center" });
+// });

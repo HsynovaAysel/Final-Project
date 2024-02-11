@@ -245,6 +245,18 @@ main footer .footer #footer-top .footer-top .footer-column .subscribe form butto
   background-color: #c19d60;
 }
 
+a {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+i {
+  cursor: pointer;
+}
+
 .navbar {
   position: fixed;
   left: 0px;
@@ -305,7 +317,7 @@ main footer .footer #footer-top .footer-top .footer-column .subscribe form butto
   border-right: 1px solid rgba(255, 255, 255, 0.02);
   display: flex;
   flex-direction: column;
-  gap: 90px;
+  gap: 70px;
   z-index: 1111;
   transition: all 0.5s ease;
 }
@@ -332,11 +344,18 @@ main footer .footer #footer-top .footer-top .footer-column .subscribe form butto
   color: #c19d60;
 }
 #candore-aside nav ul li .pages {
-  padding: 15px 0 0 20px;
-  display: none;
+  position: relative;
+  z-index: -1;
+  padding: 0 0 0 10px;
+  transition: all 0.5s;
+  height: 0;
+  opacity: 0;
 }
 #candore-aside nav ul li .pages.pages-ul {
-  display: block;
+  z-index: 1;
+  padding: 15px 0 0 10px;
+  height: 230px;
+  opacity: 1;
 }
 #candore-aside nav ul li .pages li {
   padding-top: 10px;
@@ -345,6 +364,20 @@ main footer .footer #footer-top .footer-top .footer-column .subscribe form butto
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+#candore-aside .candore-footer .aside-icons {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+#candore-aside .candore-footer .aside-icons .user-icon {
+  display: flex;
+  gap: 15px;
+}
+#candore-aside .candore-footer .aside-icons .count-basket {
+  border-radius: 50%;
+  background-color: red;
+  padding: 0 4px;
 }
 #candore-aside .candore-footer p {
   font-size: 12px;
@@ -1164,6 +1197,7 @@ main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .it
   padding-bottom: 40px;
 }
 main #meet-chef .meet-chef #meet-chef-bottom .meet-chef-bottom .owl-carousel .item .team-card-lists .team-card .title-box {
+  transition: 0.4s;
   position: absolute;
   left: 40px;
   right: 40px;

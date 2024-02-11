@@ -1,3 +1,82 @@
+document
+  .querySelectorAll(".lvideo")
+  .forEach((d) => d.addEventListener("click", playVideos));
+const body = document.body;
+
+function playVideos(e) {
+  lvideo(e.currentTarget.dataset.url);
+
+  body.classList.add("lvideo-active");
+
+  var lvideoWrap = document.createElement("DIV");
+  lvideoWrap.setAttribute("id", "lvideo-wrap");
+  document.body.appendChild(lvideoWrap);
+
+  // console.log(this.dataset.url)
+  // console.log(this.dataset.video)
+
+  const wrapper = document.getElementById("lvideo-wrap");
+  wrapper.classList.add("active");
+
+  const url = this.dataset.url;
+
+  const startModal = `<span onclick="lvideoClose();" class="lvideo-overlay"></span> <div class="lvideo-container">`;
+  const finishModal = `</div><button onclick="lvideoClose();" class="lvideo-close">x</button>`;
+
+  // if (url.indexOf("youtube") !== -1) {
+  if (url.indexOf("youtube") !== -1 || url.indexOf("youtu") !== -1) {
+    //console.log("is youtube")
+
+    const ytUrl = [this.dataset.url];
+
+    var i,
+      r,
+      regExp =
+        /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
+
+    for (i = 0; i < ytUrl.length; ++i) {
+      r = ytUrl[i].match(regExp);
+      //console.log(r[1])
+
+      document.getElementById(
+        "lvideo-wrap"
+      ).innerHTML = `${startModal}<iframe width="560" height="315" title="YouTube Video" src='https://www.youtube.com/embed/${r[1]}?rel=0&autoplay=1&mute=1&loop=1&playlist=${r[1]}' frameborder="0" allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>${finishModal}`;
+    }
+  } else if (url.indexOf("vimeo") !== -1) {
+    // console.log("is Vimeo")
+
+    const vimeoURL = this.dataset.url;
+    const regExp = /https:\/\/(www\.)?vimeo.com\/(\d+)($|\/)/;
+
+    const match = vimeoURL.match(regExp);
+
+    if (match) {
+      document.getElementById(
+        "lvideo-wrap"
+      ).innerHTML = `${startModal}<iframe title="Vimeo" src="https://player.vimeo.com/video/${match[2]}?autoplay=1&loop=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>${finishModal}`;
+    } else {
+      alert("Not a Vimeo!  URL example:\n https://vimeo.com/120206922");
+    }
+  } else if (url.indexOf("mp4") !== -1 || url.indexOf("m4v") !== -1) {
+    document.getElementById(
+      "lvideo-wrap"
+    ).innerHTML = `${startModal}<video controls loop playsinline autoplay><source src='${this.dataset.url}' type="video/mp4"></video>${finishModal}`;
+  } else {
+    alert("No video link found.");
+  }
+}
+
+// CLOSE MODAL LVIDEO
+const lvideoClose = () => {
+  body.classList.remove("lvideo-active");
+
+  const wrapper = document.getElementById("lvideo-wrap");
+  wrapper.parentNode.removeChild(wrapper);
+};
+
+// LAUNCH
+function lvideo() {}
+
 $(".owl-carousel").owlCarousel({
   loop: true,
   responsiveClass: true,
@@ -110,6 +189,8 @@ window.addEventListener("scroll", function () {
   chefBgImg.classList.toggle("chef-animation-img", this.window.scrollY > "750");
   aboutImg.classList.toggle("bg-img-about", this.window.scrollY > "100");
 });
+const count = document.querySelector(".count-basket");
+
 let BASE_URL = "http://localhost:8080/menus";
 let menuCardLists = document.querySelector(".menu-card-lists");
 let menuAllData = null;
@@ -145,13 +226,12 @@ function drawCards(array) {
     <div class="menu-content">
       <div class="name-price">
       <h5>${el.title}</h5>
-        <p class="descriptions">
-        ${el.description}
-        </p>
+      <h4>${el.price}$</h4>
       </div>
       <div class="line"></div>
-      <h4>${el.price}$</h4>
-      <div class="icon">
+      <div class="desc-icon"> <p class="descriptions">
+      ${el.description.slice(0, 30)}...
+      </p><div class="icon">
               <i class="${
                 find ? "fa-solid fa-heart" : "fa-regular fa-heart"
               }" onclick=favs(this,"${el._id}")></i>
@@ -161,7 +241,9 @@ function drawCards(array) {
               <a href="details.html?id=${
                 el._id
               }"><i class="fa-solid fa-magnifying-glass"></i></a>
-              </div>
+              </div></div>
+     
+      
   
     </div>
   </div>                
@@ -199,14 +281,12 @@ function drawWineCard(array) {
     <div class="menu-content">
       <div class="name-price">
       <h5>${el.title}</h5>
-        <p class="descriptions">
-        ${el.description}
-        </p>
+      <h4>${el.price}$</h4>
       </div>
       <div class="line"></div>
-    
-      <h4>${el.price}$</h4>
-      <div class="icon">
+      <div class="desc-icon"> <p class="descriptions">
+      ${el.description.slice(0, 30)}...
+      </p><div class="icon">
               <i class="${
                 find ? "fa-solid fa-heart" : "fa-regular fa-heart"
               }" onclick=favs(this,"${el._id}")></i>
@@ -216,7 +296,7 @@ function drawWineCard(array) {
               <a href="details.html?id=${
                 el._id
               }"><i class="fa-solid fa-magnifying-glass"></i></a>
-              </div>
+              </div></div>
   
     </div>
   </div>                
@@ -248,6 +328,19 @@ function getFromlocalStorage() {
 
 let basket = getFromlocalStorageBasket();
 
+function countBasket(arr) {
+  let basketCount = arr.reduce((acc, cur) => acc + cur.count, 0);
+  count.innerText = basketCount;
+}
+countBasket(basket);
+
+function setTolocalStorageBasketCount(array) {
+  localStorage.setItem("basketCount", JSON.stringify(arr));
+}
+function getFromlocalStorageBasketCount() {
+  return JSON.parse(localStorage.getItem("basketCount")) ?? 0;
+}
+
 function cart(id) {
   if (login === "true") {
     console.log(id);
@@ -259,7 +352,7 @@ function cart(id) {
     } else {
       basket[index].count += 1;
     }
-
+    countBasket(basket);
     setTolocalStorageBasket(basket);
   } else {
     window.location = "login-signup.html";
@@ -285,7 +378,7 @@ let reservsData = null;
 console.log(moment().format().slice(0, 10));
 
 rezervDateInput.min = moment().format().slice(0, 10);
-rezervDateInput.max = "2024-2-20";
+rezervDateInput.max = "2024-12-31";
 
 async function getRezervsData() {
   let res = await axios(`http://localhost:8080/rezervs`);

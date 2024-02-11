@@ -2,11 +2,12 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const announcementsSchema = new Schema(
   {
-    title: { type: String, required: true },
-    description: { type: String, required: true },
-    image: { type: String, required: true },
-    category: { type: String, required: true },
-    price: { type: Number, required: true },
+    job: { type: String, required: true },
+    salary: { type: String, required: true },
+    hours: { type: String, required: true },
+    city: { type: String, required: true },
+    contact: { type: String, required: true },
+    age: { type: String, required: true },
   },
   { timestamps: true }
 );

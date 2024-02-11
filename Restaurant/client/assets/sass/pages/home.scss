@@ -6,6 +6,96 @@
 @import "../components/buttons";
 @import "../layouts/header";
 @import "../layouts/footer";
+
+#lvideo-wrap {
+  position: fixed;
+  height: 100dvh;
+  z-index: 9991;
+  opacity: 0;
+  visibility: hidden;
+  &,
+  &:after,
+  .lvideo-overlay {
+    left: 0;
+    top: 0;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+  }
+  .lvideo-container {
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  video,
+  iframe {
+    border-radius: 12px;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #000;
+
+    z-index: 10;
+    box-shadow: 0 0 19px rgba(0, 0, 0, 0.16);
+    display: block;
+    max-width: 1280px;
+    height: auto;
+    width: 90%;
+    aspect-ratio: 16 / 9;
+  }
+  .lvideo-close {
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    width: 42px;
+    height: 42px;
+    border-radius: 100%;
+    border: solid 2px rgba($color: #000000, $alpha: 0.5);
+    padding: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 150;
+    &:before,
+    &:after {
+      content: "";
+      width: 60%;
+      height: 3px;
+      background-color: rgba($color: #000000, $alpha: 0.5);
+      position: absolute;
+      transition: all 0.3s ease-in-out;
+    }
+    &:before {
+      transform: rotate(42deg);
+    }
+    &:after {
+      transform: rotate(-42deg);
+    }
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: rgba($color: #000000, $alpha: 0.5);
+      &:before,
+      &:after {
+        background-color: #fff;
+      }
+    }
+  }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+
+    &:after {
+      opacity: 0.5;
+    }
+  }
+}
+
 /* #Progress
 ================================================== */
 
@@ -114,8 +204,6 @@ svg.spinner-webkit {
     display: block;
   }
 }
-
-
 
 main {
   display: none;
@@ -862,6 +950,7 @@ main {
               }
             }
             button {
+              transition: all 0.8s ease;
               border: none;
               outline: none;
               font-family: $font-libre;
@@ -884,6 +973,7 @@ main {
             width: 45%;
             @include flex();
             gap: 1.5rem;
+            transition: all 0.8s;
             .img {
               width: 60px;
               height: 60px;
@@ -893,35 +983,53 @@ main {
               }
             }
             .menu-content {
-              @include flex(space-between);
-              gap: 1rem;
               .name-price {
+                display: flex;
+                justify-content: space-between;
                 h5 {
                   font-size: 18px;
                 }
-                p {
-                  font-style: italic;
+                h4 {
+                  font-size: 25px;
                 }
               }
 
               .line {
-                border-top: 3px dotted #999;
-                width: 40%;
+                margin: 5px 0;
+                border-top: 1px dotted #999;
+                width: 350px;
               }
-              h4 {
-                font-size: 25px;
+              .desc-icon {
+                @include flex(space-between);
+                p {
+                  font-style: italic;
+                }
+                .icon {
+                  transition: all 0.5s;
+                  position: relative;
+                  z-index: -1;
+                  opacity: 0;
+                  display: flex;
+                  gap: 1rem;
+                  .fa-heart {
+                    color: red;
+                  }
+                  .fa-cart-shopping {
+                    color: white;
+                  }
+                  .fa-magnifying-glass {
+                    color: #c19d60;
+                  }
+                }
               }
-              .icon {
-                display: flex;
-                gap: 1rem;
-                .fa-heart {
-                  color: red;
-                }
-                .fa-cart-shopping {
-                  color: white;
-                }
-                .fa-magnifying-glass {
-                  color: #c19d60;
+            }
+            &:hover {
+              .menu-content {
+                .desc-icon {
+                  .icon {
+                    z-index: 5;
+                    opacity: 1;
+                  }
                 }
               }
             }
@@ -1031,6 +1139,7 @@ main {
                   position: relative;
                   padding-bottom: 40px;
                   .title-box {
+                    transition: 0.4s;
                     position: absolute;
                     left: 40px;
                     right: 40px;
@@ -1207,34 +1316,53 @@ main {
                 }
               }
               .menu-content {
-                @include flex(space-between);
-                gap: 1rem;
                 .name-price {
+                  display: flex;
+                  justify-content: space-between;
                   h5 {
                     font-size: 18px;
                   }
+                  h4 {
+                    font-size: 25px;
+                  }
+                }
+
+                .line {
+                  margin: 5px 0;
+                  border-top: 1px dotted #999;
+                  width: 350px;
+                }
+                .desc-icon {
+                  @include flex(space-between);
                   p {
                     font-style: italic;
                   }
-                }
-                h4 {
-                  font-size: 20px;
-                }
-                .line {
-                  border-top: 3px dotted black;
-                  width: 40%;
-                }
-                .icon {
-                  display: flex;
-                  gap: 1rem;
-                  .fa-heart {
-                    color: red;
+                  .icon {
+                    transition: all 0.5s;
+                    position: relative;
+                    z-index: -1;
+                    opacity: 0;
+                    display: flex;
+                    gap: 1rem;
+                    .fa-heart {
+                      color: red;
+                    }
+                    .fa-cart-shopping {
+                      color: white;
+                    }
+                    .fa-magnifying-glass {
+                      color: #c19d60;
+                    }
                   }
-                  .fa-cart-shopping {
-                    color: white;
-                  }
-                  .fa-magnifying-glass {
-                    color: #c19d60;
+                }
+              }
+              &:hover {
+                .menu-content {
+                  .desc-icon {
+                    .icon {
+                      opacity: 1;
+                      z-index: 5;
+                    }
                   }
                 }
               }
@@ -1824,6 +1952,5 @@ main {
         }
       }
     }
-    
   }
 }

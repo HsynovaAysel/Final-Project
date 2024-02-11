@@ -11,12 +11,6 @@
       rel="stylesheet"
       href="./assets/owlcarousel/assets/owl.theme.default.min.css"
     />
-    <!-- <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -32,6 +26,7 @@
     />
     <link rel="stylesheet" href="./assets/sass/pages/home.css" />
     <title>Document</title>
+
     <script defer src="./assets/vendors/jquery.min.js"></script>
     <script defer src="./assets/owlcarousel/owl.carousel.js"></script>
     <script
@@ -44,13 +39,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-
-    <!-- <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script> -->
     <script defer src="./assets/js/main.js"></script>
   </head>
   <body>
@@ -102,7 +90,7 @@
                 <path
                   d="M3 3L21 21L39 3"
                   stroke="white"
-                  stroke-width="5"
+                  stroke-width="3"
                   stroke-linecap="round"
                 /></svg
             ></a>
@@ -125,9 +113,19 @@
       </nav>
 
       <div class="candore-footer">
-        <div class="icon d-flex">
-          <a href="login-signup.html"><i class="fa-solid fa-user-plus"></i></a>
-          <a href="index.html"><i class="fa-solid fa-right-to-bracket"></i></a>
+        <div class="aside-icons">
+          <div class="user-icon">
+            <a href="login-signup.html"
+              ><i class="fa-solid fa-user-plus"></i
+            ></a>
+            <a href="index.html"
+              ><i class="fa-solid fa-right-to-bracket"></i
+            ></a>
+          </div>
+          <a href="shop.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <sup class="count-basket">0</sup></a
+          >
         </div>
 
         <ul>
@@ -732,7 +730,11 @@
               <h2>Watch Our Video</h2>
 
               <div class="video_button">
-                <a href="https://www.youtube.com/watch?v=xPPLbEFbCAo">
+                <a
+
+                  class="lvideo play-btn-animated"
+                  data-url="https://www.youtube.com/watch?v=xPPLbEFbCAo"
+                >
                   <div class="video_sec_play">
                     <svg
                       width="40"
@@ -1299,6 +1301,8 @@
                     type="time"
                     placeholder="Time"
                     required
+                    min="08:00"
+                    max="23:59"
                     id="rezerv-time"
                   />
 

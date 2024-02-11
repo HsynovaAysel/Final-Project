@@ -186,7 +186,12 @@ function getFromlocalStorage() {
 }
 
 let basket = getFromlocalStorageBasket();
-
+const count = document.querySelector(".count-basket");
+function countBasket(arr) {
+  let basketCount = arr.reduce((acc, cur) => acc + cur.count, 0);
+  count.innerText = basketCount;
+}
+countBasket(basket);
 function cart(id) {
   if (login === "true") {
     console.log(id);
@@ -198,7 +203,7 @@ function cart(id) {
     } else {
       basket[index].count += 1;
     }
-
+countBasket(basket)
     setTolocalStorageBasket(basket);
   } else {
     window.location = "login-signup.html";

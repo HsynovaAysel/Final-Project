@@ -245,6 +245,18 @@ main #vakan .vakan .vakan-left form button:hover, main footer .footer #footer-to
   background-color: #c19d60;
 }
 
+a {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+i {
+  cursor: pointer;
+}
+
 .navbar {
   position: fixed;
   left: 0px;
@@ -305,7 +317,7 @@ main #vakan .vakan .vakan-left form button:hover, main footer .footer #footer-to
   border-right: 1px solid rgba(255, 255, 255, 0.02);
   display: flex;
   flex-direction: column;
-  gap: 90px;
+  gap: 70px;
   z-index: 1111;
   transition: all 0.5s ease;
 }
@@ -332,11 +344,18 @@ main #vakan .vakan .vakan-left form button:hover, main footer .footer #footer-to
   color: #c19d60;
 }
 #candore-aside nav ul li .pages {
-  padding: 15px 0 0 20px;
-  display: none;
+  position: relative;
+  z-index: -1;
+  padding: 0 0 0 10px;
+  transition: all 0.5s;
+  height: 0;
+  opacity: 0;
 }
 #candore-aside nav ul li .pages.pages-ul {
-  display: block;
+  z-index: 1;
+  padding: 15px 0 0 10px;
+  height: 230px;
+  opacity: 1;
 }
 #candore-aside nav ul li .pages li {
   padding-top: 10px;
@@ -345,6 +364,20 @@ main #vakan .vakan .vakan-left form button:hover, main footer .footer #footer-to
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+#candore-aside .candore-footer .aside-icons {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+#candore-aside .candore-footer .aside-icons .user-icon {
+  display: flex;
+  gap: 15px;
+}
+#candore-aside .candore-footer .aside-icons .count-basket {
+  border-radius: 50%;
+  background-color: red;
+  padding: 0 4px;
 }
 #candore-aside .candore-footer p {
   font-size: 12px;
@@ -1040,6 +1073,29 @@ main #vakan .vakan .vakan-right .owl-carousel .owl-dots {
 }
 main #vakan .vakan .vakan-right .owl-carousel .owl-nav {
   display: none;
+}
+main #announcement {
+  background-color: #1b1b1b;
+  padding: 100px 0;
+}
+main #announcement .announcement h2 {
+  color: #c19d60;
+  margin-bottom: 50px;
+  text-align: center;
+}
+main #announcement .announcement .announcement-tabel {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+main #announcement .announcement .announcement-tabel thead tr th {
+  border: 1px solid #c19d60;
+}
+main #announcement .announcement .announcement-tabel tbody tr td {
+  border: 1px solid #c19d60;
+}
+main #announcement .announcement .announcement-tabel tbody tr td h5 {
+  font-size: 20px;
 }
 @media screen and (max-width: 767px) {
   main {

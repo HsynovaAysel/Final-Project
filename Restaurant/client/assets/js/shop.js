@@ -99,13 +99,20 @@ let shopBody = document.querySelector(".shop-table table tbody");
 let boxBody = document.querySelector(".shop-box table tbody");
 let subTotalArray = basket.map((item) => item.count * item.obj.price);
 let subTotal = subTotalArray.reduce((sum, el) => sum + el);
+const count = document.querySelector(".count-basket");
+function countBasket(arr) {
+  let basketCount = arr.reduce((acc, cur) => acc + cur.count, 0);
+  count.innerText = basketCount;
+}
+countBasket(basket);
+
 function drawTableShop(array) {
   shopBody.innerHTML = "";
   array.forEach((el) => {
     shopBody.innerHTML += `
 <tr>
 <td>
-  <img src="${el.obj.image}" alt="" />
+  <div class="img"><img src="${el.obj.image}" alt="" /></div>
 </td>
 <td><p>${el.obj.title}</p></td>
 <td><h5>$${el.obj.price}</h5></td>
@@ -133,6 +140,7 @@ function inc(id) {
       basket[index].count -= 1;
       drawTableShop(basket);
       setTolocalStorageBasket(basket);
+      countBasket(basket);
       drawTableBox();
     }
   } else {
@@ -145,6 +153,7 @@ function dec(id) {
     basket[index].count += 1;
     drawTableShop(basket);
     setTolocalStorageBasket(basket);
+    countBasket(basket);
     drawTableBox();
   } else {
     window.location = "login-signup.html";
@@ -157,6 +166,7 @@ function trash(btn, id) {
     btn.closest("tr").remove();
     setTolocalStorageBasket(basket);
     drawTableShop(basket);
+    countBasket(basket);
     drawTableBox();
   } else {
     window.location = "login-signup.html";

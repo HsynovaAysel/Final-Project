@@ -302,7 +302,39 @@ main {
       }
     }
   }
-
+  #announcement {
+    background-color: #1b1b1b;
+    padding: 100px 0;
+    .announcement {
+      h2 {
+        color: $home-color;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+      .announcement-tabel {
+        width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+        thead {
+          tr {
+            th {
+              border: 1px solid $home-color;
+            }
+          }
+        }
+        tbody {
+          tr {
+            td {
+              h5 {
+                font-size: 20px;
+              }
+              border: 1px solid $home-color;
+            }
+          }
+        }
+      }
+    }
+  }
   @media screen and (max-width: 767px) {
     left: 0;
     width: 100%;

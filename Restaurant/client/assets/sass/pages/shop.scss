@@ -185,52 +185,68 @@ main {
       gap: 1rem;
       @include flex(center, unset);
       .shop-table {
-        width: 60%;
+        width: 70%;
 
         table {
-          border: 1px solid #c19d60;
+          border-collapse: collapse;
           width: 100%;
-          tr {
-            th {
-              padding: 10px 0;
-              text-align: center;
-              border: 1px solid #c19d60;
-              background-color: #272727;
+          thead {
+            tr {
+              th {
+                padding: 10px 0;
+                text-align: center;
+                border: 1px solid #c19d60;
+                background-color: #272727;
+              }
             }
-            td {
-              padding: 10px 0;
+          }
+          tbody {
+            tr {
+              td {
+                position: relative;
+                // padding: 10px 0;
+                text-align: center;
+                border: 1px solid #c19d60;
+                .img {
+                  top: 12%;
+                  left: 10%;
+                  position: absolute;
+                  width: 40px;
+                  img {
+                    width: 100%;
+                  }
+                }
 
-              text-align: center;
-              border: 1px solid #c19d60;
+                p {
+                  font-size: 16px;
+                }
+                span {
+                  
+                  width: 30px;
+                  font-size: 20px;
+                }
+                &.btn {
+                  // border: unset;
+                  @include flex();
+                  .dec-inc-btn {
+                    width: 50px;
+                    display: flex;
+                    flex-direction: column;
+                  }
+                }
 
-              img {
-                width: 50px;
-              }
-
-              p {
-                font-size: 16px;
-              }
-              span {
-                font-size: 20px;
-              }
-              &.btn {
-                // border: unset;
-                @include flex();
-                .dec-inc-btn {
-                  display: flex;
-                  flex-direction: column;
+                h5 {
+                  
+                  width: 50px;
+                  font-size: 15px;
+                  color: #c19d60;
                 }
               }
-
-              h5 {
-                font-size: 18px;
-                color: #c19d60;
+              button {
+                background-color: transparent;
+                font-size: 20px;
+                color: #fff;
               }
-            }
-            button {
-              background-color: transparent;
-              font-size: 20px;
-              color: #fff;
             }
           }
         }

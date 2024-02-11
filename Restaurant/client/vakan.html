@@ -88,7 +88,16 @@
           </li>
           <li><a href="wine.html">WINE</a></li>
           <li>
-            <a id="pages">PAGES <i class="fa-solid fa-angle-down"></i></a>
+            <a id="pages"
+              >PAGES
+              <svg width="15" height="10" viewBox="0 0 42 25">
+                <path
+                  d="M3 3L21 21L39 3"
+                  stroke="white"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                /></svg
+            ></a>
             <ul class="pages">
               <li><a href="services.html">SERVICES</a></li>
               <li><a href="favorites.html">FAVORITES</a></li>
@@ -108,9 +117,19 @@
       </nav>
 
       <div class="candore-footer">
-        <div class="icon d-flex">
-          <a href="login-signup.html"><i class="fa-solid fa-user-plus"></i></a>
-          <a href="index.html"><i class="fa-solid fa-right-to-bracket"></i></a>
+        <div class="aside-icons">
+          <div class="user-icon">
+            <a href="login-signup.html"
+              ><i class="fa-solid fa-user-plus"></i
+            ></a>
+            <a href="index.html"
+              ><i class="fa-solid fa-right-to-bracket"></i
+            ></a>
+          </div>
+          <a href="shop.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <sup class="count-basket">0</sup></a
+          >
         </div>
         <ul>
           <li>
@@ -138,7 +157,7 @@
                 <h6>WHO ARE WE</h6>
                 <h1>Vacancy</h1>
                 <h3>Our History</h3>
-                <a href="#about" class="down-icon"
+                <a href="#vakan" class="down-icon"
                   ><i class="fa-solid fa-down-long"></i
                 ></a>
               </div>
@@ -292,26 +311,27 @@
       <section id="announcement">
         <div class="container">
           <div class="announcement">
-            <table>
+            <h2>Announcement</h2>
+            <table class="announcement-tabel">
               <thead>
                 <tr>
-                  <th>Job</th>
-                  <th>Salary</th>
-                  <th>Working Hours</th>
-                  <th>City</th>
-                  <th>Contact</th>
-                  <th>Age</th>
+                  <th><h4>Job</h4></th>
+                  <th><h4>Salary</h4></th>
+                  <th><h4>Working Hours</h4></th>
+                  <th><h4>City</h4></th>
+                  <th><h4>Contact</h4></th>
+                  <th><h4>Age</h4></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>hij</td>
-                  <td>hij</td>
-                  <td>hij</td>
-                  <td>hij</td>
-                  <td>hij</td>
-                  <td>hij</td>
-                </tr>
+              <tbody class="announcement-body">
+                <!-- <tr>
+                  <td><h5>mlml</h5></td>
+                  <td><h5>mlml</h5></td>
+                  <td><h5>mm,kml</h5></td>
+                  <td><h5>mlklmm</h5></td>
+                  <td><h5>mlml</h5></td>
+                  <td><h5>mmlm</h5></td>
+                </tr> -->
               </tbody>
             </table>
           </div>
@@ -392,7 +412,6 @@
                     required
                     id="rezerv-time"
                   />
-
                   <button type="submit">Check Availability</button>
                 </form>
               </div>

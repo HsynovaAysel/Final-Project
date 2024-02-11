@@ -245,6 +245,18 @@ main #shop .shop .shop-box button:hover, main footer .footer #footer-top .footer
   background-color: #c19d60;
 }
 
+a {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+i {
+  cursor: pointer;
+}
+
 .navbar {
   position: fixed;
   left: 0px;
@@ -305,7 +317,7 @@ main #shop .shop .shop-box button:hover, main footer .footer #footer-top .footer
   border-right: 1px solid rgba(255, 255, 255, 0.02);
   display: flex;
   flex-direction: column;
-  gap: 90px;
+  gap: 70px;
   z-index: 1111;
   transition: all 0.5s ease;
 }
@@ -332,11 +344,18 @@ main #shop .shop .shop-box button:hover, main footer .footer #footer-top .footer
   color: #c19d60;
 }
 #candore-aside nav ul li .pages {
-  padding: 15px 0 0 20px;
-  display: none;
+  position: relative;
+  z-index: -1;
+  padding: 0 0 0 10px;
+  transition: all 0.5s;
+  height: 0;
+  opacity: 0;
 }
 #candore-aside nav ul li .pages.pages-ul {
-  display: block;
+  z-index: 1;
+  padding: 15px 0 0 10px;
+  height: 230px;
+  opacity: 1;
 }
 #candore-aside nav ul li .pages li {
   padding-top: 10px;
@@ -345,6 +364,20 @@ main #shop .shop .shop-box button:hover, main footer .footer #footer-top .footer
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+#candore-aside .candore-footer .aside-icons {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+#candore-aside .candore-footer .aside-icons .user-icon {
+  display: flex;
+  gap: 15px;
+}
+#candore-aside .candore-footer .aside-icons .count-basket {
+  border-radius: 50%;
+  background-color: red;
+  padding: 0 4px;
 }
 #candore-aside .candore-footer p {
   font-size: 12px;
@@ -910,46 +943,55 @@ main #shop .shop {
   align-items: unset;
 }
 main #shop .shop .shop-table {
-  width: 60%;
+  width: 70%;
 }
 main #shop .shop .shop-table table {
-  border: 1px solid #c19d60;
+  border-collapse: collapse;
   width: 100%;
 }
-main #shop .shop .shop-table table tr th {
+main #shop .shop .shop-table table thead tr th {
   padding: 10px 0;
   text-align: center;
   border: 1px solid #c19d60;
   background-color: #272727;
 }
-main #shop .shop .shop-table table tr td {
-  padding: 10px 0;
+main #shop .shop .shop-table table tbody tr td {
+  position: relative;
   text-align: center;
   border: 1px solid #c19d60;
 }
-main #shop .shop .shop-table table tr td img {
-  width: 50px;
+main #shop .shop .shop-table table tbody tr td .img {
+  top: 12%;
+  left: 10%;
+  position: absolute;
+  width: 40px;
 }
-main #shop .shop .shop-table table tr td p {
+main #shop .shop .shop-table table tbody tr td .img img {
+  width: 100%;
+}
+main #shop .shop .shop-table table tbody tr td p {
   font-size: 16px;
 }
-main #shop .shop .shop-table table tr td span {
+main #shop .shop .shop-table table tbody tr td span {
+  width: 30px;
   font-size: 20px;
 }
-main #shop .shop .shop-table table tr td.btn {
+main #shop .shop .shop-table table tbody tr td.btn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main #shop .shop .shop-table table tr td.btn .dec-inc-btn {
+main #shop .shop .shop-table table tbody tr td.btn .dec-inc-btn {
+  width: 50px;
   display: flex;
   flex-direction: column;
 }
-main #shop .shop .shop-table table tr td h5 {
-  font-size: 18px;
+main #shop .shop .shop-table table tbody tr td h5 {
+  width: 50px;
+  font-size: 15px;
   color: #c19d60;
 }
-main #shop .shop .shop-table table tr button {
+main #shop .shop .shop-table table tbody tr button {
   background-color: transparent;
   font-size: 20px;
   color: #fff;

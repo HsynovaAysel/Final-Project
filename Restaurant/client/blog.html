@@ -89,11 +89,20 @@
           </li>
           <li><a href="wine.html">WINE</a></li>
           <li>
-            <a id="pages">PAGES <i class="fa-solid fa-angle-down"></i></a>
+            <a id="pages"
+              >PAGES
+              <svg width="15" height="10" viewBox="0 0 42 25">
+                <path
+                  d="M3 3L21 21L39 3"
+                  stroke="white"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                /></svg
+            ></a>
             <ul class="pages">
               <li><a href="services.html">SERVICES</a></li>
               <li><a href="favorites.html">FAVORITES</a></li>
-              <li ><a href="vakan.html">VACANCY</a></li>
+              <li><a href="vakan.html">VACANCY</a></li>
               <li><a href="chefs.html">CHEFS</a></li>
               <li class="faq-list"><a href="faq.html">FAQ</a></li>
             </ul>
@@ -109,9 +118,19 @@
       </nav>
 
       <div class="candore-footer">
-        <div class="icon d-flex">
-          <a href="login-signup.html"><i class="fa-solid fa-user-plus"></i></a>
-          <a href="index.html"><i class="fa-solid fa-right-to-bracket"></i></a>
+        <div class="aside-icons">
+          <div class="user-icon">
+            <a href="login-signup.html"
+              ><i class="fa-solid fa-user-plus"></i
+            ></a>
+            <a href="index.html"
+              ><i class="fa-solid fa-right-to-bracket"></i
+            ></a>
+          </div>
+          <a href="shop.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <sup class="count-basket">0</sup></a
+          >
         </div>
         <ul>
           <li>
@@ -271,7 +290,6 @@
                     type="date"
                     placeholder="Date"
                     required
-                   
                     min="2024-01-01"
                     max="2024-01-31"
                     id="rezerv-date"

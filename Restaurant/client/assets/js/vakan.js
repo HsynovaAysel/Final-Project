@@ -208,3 +208,25 @@ const uploadImage = async (event) => {
 cvVakanInput.addEventListener("change", (e) => {
   uploadImage(e);
 });
+let announcementTbody = document.querySelector(".announcement-body");
+async function getAllAnnouncementData() {
+  let res = await axios(`http://localhost:8080/announcement`);
+  drawAnnouncementTabel(res.data);
+}
+getAllAnnouncementData();
+
+function drawAnnouncementTabel(array) {
+  announcementTbody.innerHTML = "";
+  array.forEach((el) => {
+    announcementTbody.innerHTML += `
+    <tr>
+    <td><h5>${el.job}</h5></td>
+    <td><h5>${el.salary}</h5></td>
+    <td><h5>${el.hours}</h5></td>
+    <td><h5>${el.city}</h5></td>
+    <td><h5>${el.contact}</h5></td>
+    <td><h5>${el.age}</h5></td>
+  </tr>
+    `;
+  });
+}
