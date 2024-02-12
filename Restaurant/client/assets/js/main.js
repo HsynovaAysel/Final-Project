@@ -142,6 +142,9 @@ $(".owl-carousel").owlCarousel({
     });
   });
 })(jQuery);
+
+
+
 const spinner = document.querySelector(".spinner-loader");
 const main = document.querySelector("main");
 const candoreAside = document.querySelector("#candore-aside");
@@ -191,13 +194,13 @@ window.addEventListener("scroll", function () {
 });
 const count = document.querySelector(".count-basket");
 
-let BASE_URL = "http://localhost:8080/menus";
+let BASE_URL = "http://localhost:8080";
 let menuCardLists = document.querySelector(".menu-card-lists");
 let menuAllData = null;
 
 async function getALLData() {
-  let res = await axios(`${BASE_URL}`);
-  console.log(res.data);
+  let res = await axios(`${BASE_URL}/menus`);
+  // console.log(res.data);
   menuAllData = res.data;
 
   let filtered = menuAllData.filter(
@@ -344,7 +347,7 @@ function getFromlocalStorageBasketCount() {
 
 function cart(id) {
   if (login === "true") {
-    console.log(id);
+    // console.log(id);
     let find = menuAllData.find((item) => item._id == id);
     // console.log(find);
     let index = basket.findIndex((item) => item.obj._id === id);
@@ -376,14 +379,16 @@ let rezervTimeInput = document.querySelector("#rezerv-time");
 let rezervPersonSelect = document.querySelector("#rezerv-person");
 let reservsData = null;
 
-console.log(moment().format().slice(0, 10));
+// console.log(moment().format().slice(0, 10));
 
 rezervDateInput.min = moment().format().slice(0, 10);
 rezervDateInput.max = "2024-12-31";
+rezervDateInput.value=moment().format().slice(0, 10)
+rezervTimeInput.value=moment().format().slice(11,16)
 
 async function getRezervsData() {
-  let res = await axios(`http://localhost:8080/rezervs`);
-  console.log(res.data);
+  let res = await axios(`${BASE_URL}/rezervs`);
+  // console.log(res.data);
   reservsData = res.data;
 }
 getRezervsData();
@@ -405,7 +410,7 @@ rezervForm.addEventListener("submit", async function (e) {
   let time = date.find((item) => rezervTimeInput.value == item.time);
   if (login === "true") {
     if (!time) {
-      await axios.post(`http://localhost:8080/rezervs`, rezervsObj);
+      await axios.post(`${BASE_URL}/rezervs`, rezervsObj);
     } else {
       alert("bu vaxta bos yer yoxdur.");
     }

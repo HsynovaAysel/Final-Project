@@ -119,14 +119,12 @@ rezervForm.addEventListener("submit", async function (e) {
     person: rezervPersonSelect.value,
   };
   // console.log(rezervDateInput.value);
-  let bool = reservsData.find(
-    (item) =>
-      rezervTimeInput.value == item.time ||
-      rezervDateInput.value == item.date.slice(0, 10)
+  let date = reservsData.filter(
+    (item) => rezervDateInput.value == item.date.slice(0, 10)
   );
-  console.log(bool);
+  let time = date.find((item) => rezervTimeInput.value == item.time);
   if (login === "true") {
-    if (!bool) {
+    if (!time) {
       await axios.post(`http://localhost:8080/rezervs`, rezervsObj);
     } else {
       alert("bu vaxta bos yer yoxdur.");

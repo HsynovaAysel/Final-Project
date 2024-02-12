@@ -226,6 +226,210 @@ span {
   }
 }
 
+#lvideo-wrap {
+  position: fixed;
+  height: 100dvh;
+  z-index: 9991;
+  opacity: 0;
+  visibility: hidden;
+}
+#lvideo-wrap, #lvideo-wrap:after,
+#lvideo-wrap .lvideo-overlay {
+  left: 0;
+  top: 0;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+#lvideo-wrap .lvideo-container {
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#lvideo-wrap video,
+#lvideo-wrap iframe {
+  border-radius: 12px;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #000;
+  z-index: 10;
+  box-shadow: 0 0 19px rgba(0, 0, 0, 0.16);
+  display: block;
+  max-width: 1280px;
+  height: auto;
+  width: 90%;
+  aspect-ratio: 16/9;
+}
+#lvideo-wrap .lvideo-close {
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  width: 42px;
+  height: 42px;
+  border-radius: 100%;
+  border: solid 2px rgba(0, 0, 0, 0.5);
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 150;
+}
+#lvideo-wrap .lvideo-close:before, #lvideo-wrap .lvideo-close:after {
+  content: "";
+  width: 60%;
+  height: 3px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+#lvideo-wrap .lvideo-close:before {
+  transform: rotate(42deg);
+}
+#lvideo-wrap .lvideo-close:after {
+  transform: rotate(-42deg);
+}
+#lvideo-wrap .lvideo-close:focus {
+  outline: none;
+}
+#lvideo-wrap .lvideo-close:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#lvideo-wrap .lvideo-close:hover:before, #lvideo-wrap .lvideo-close:hover:after {
+  background-color: #fff;
+}
+#lvideo-wrap.active {
+  opacity: 1;
+  visibility: visible;
+}
+#lvideo-wrap.active:after {
+  opacity: 0.5;
+}
+
+/* #Progress
+================================================== */
+.progress-wrap {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 200ms linear;
+}
+
+.progress-wrap.active-progress {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.progress-wrap svg path {
+  fill: none;
+}
+
+.progress-wrap svg.progress-circle path {
+  stroke: #c19d60;
+  stroke-width: 4;
+  box-sizing: border-box;
+  transition: all 200ms linear;
+}
+
+.progress-wrap i {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  /* content: '\f062'; */
+  text-align: center;
+  line-height: 46px;
+  font-size: 18px;
+  color: #c19d60;
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  z-index: 1;
+  transition: all 200ms linear;
+}
+
+.spinner-loader {
+  height: 100vh;
+  display: block;
+  background-color: white;
+}
+.spinner-loader #spinner {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: wait;
+}
+
+svg.spinner-webkit {
+  width: 80px;
+  height: 80px;
+}
+svg.spinner-webkit path {
+  stroke-dasharray: 329;
+  stroke-dashoffset: 0;
+  stroke: #c19d60;
+  stroke-width: 1.8px;
+  animation: draw 4s ease-in-out infinite;
+  fill: transparent;
+  fill-opacity: 0;
+}
+@keyframes draw {
+  100% {
+    stroke-dasharray: 329;
+    stroke-dashoffset: 658;
+  }
+}
+
+.spinner-ie {
+  width: 32px;
+  height: 32px;
+  top: 8px;
+  left: 8px;
+  position: absolute;
+  display: none;
+  animation: spin 0.5s linear infinite;
+  border: 2px solid transparent;
+  border-top: 2px solid #c19d60;
+  border-left: 2px solid #c19d60;
+  border-radius: 50px;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .spinner-webkit {
+    display: none;
+  }
+  .spinner-ie {
+    display: block;
+  }
+}
 main footer .footer #footer-top .footer-top .footer-column .subscribe form button, main #reservation .bg-color .reservation .reservation-box form button {
   outline: none;
   border: 1px solid #c19d60;
@@ -768,125 +972,6 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
   }
 }
 
-.progress-wrap {
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  height: 46px;
-  width: 46px;
-  cursor: pointer;
-  display: block;
-  border-radius: 50px;
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
-  z-index: 10000;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(15px);
-  transition: all 200ms linear;
-}
-
-.progress-wrap.active-progress {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.progress-wrap svg path {
-  fill: none;
-}
-
-.progress-wrap svg.progress-circle path {
-  stroke: #c19d60;
-  stroke-width: 4;
-  box-sizing: border-box;
-  transition: all 200ms linear;
-}
-
-.progress-wrap i {
-  position: absolute;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  /* content: '\f062'; */
-  text-align: center;
-  line-height: 46px;
-  font-size: 18px;
-  color: #c19d60;
-  left: 0;
-  top: 0;
-  height: 46px;
-  width: 46px;
-  cursor: pointer;
-  display: block;
-  z-index: 1;
-  transition: all 200ms linear;
-}
-
-.spinner-loader {
-  height: 100vh;
-  display: block;
-  background-color: white;
-}
-.spinner-loader #spinner {
-  width: 52px;
-  height: 52px;
-  position: absolute;
-  display: block;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  cursor: wait;
-}
-
-svg.spinner-webkit {
-  width: 80px;
-  height: 80px;
-}
-svg.spinner-webkit path {
-  stroke-dasharray: 329;
-  stroke-dashoffset: 0;
-  stroke: #c19d60;
-  stroke-width: 1.8px;
-  animation: draw 4s ease-in-out infinite;
-  fill: transparent;
-  fill-opacity: 0;
-}
-@keyframes draw {
-  100% {
-    stroke-dasharray: 329;
-    stroke-dashoffset: 658;
-  }
-}
-
-.spinner-ie {
-  width: 32px;
-  height: 32px;
-  top: 8px;
-  left: 8px;
-  position: absolute;
-  display: none;
-  animation: spin 0.5s linear infinite;
-  border: 2px solid transparent;
-  border-top: 2px solid #c19d60;
-  border-left: 2px solid #c19d60;
-  border-radius: 50px;
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .spinner-webkit {
-    display: none;
-  }
-  .spinner-ie {
-    display: block;
-  }
-}
 main {
   display: none;
   position: absolute;
@@ -900,7 +985,7 @@ main header .header {
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
-  background-image: url("../../images/wine/wine-img1.jpg");
+  background-image: url("../../images/wine/rev-landing-img-01.jpg");
 }
 main header .header .bg-color {
   width: 100%;
@@ -1064,6 +1149,7 @@ main #menu-book .menu-book .menu-card-lists .menu-card {
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
+  transition: all 0.8s;
 }
 main #menu-book .menu-book .menu-card-lists .menu-card .img {
   width: 60px;
@@ -1073,37 +1159,49 @@ main #menu-book .menu-book .menu-card-lists .menu-card .img img {
   width: 100%;
   border-radius: 50%;
 }
-main #menu-book .menu-book .menu-card-lists .menu-card .menu-content {
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .name-price {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
 }
 main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .name-price h5 {
   font-size: 18px;
 }
-main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .name-price p {
-  font-style: italic;
-}
-main #menu-book .menu-book .menu-card-lists .menu-card .menu-content h4 {
-  font-size: 20px;
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .name-price h4 {
+  font-size: 25px;
 }
 main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .line {
-  border-top: 3px dotted black;
-  width: 40%;
+  margin: 5px 0;
+  border-top: 1px dotted #999;
 }
-main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .icon {
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .desc-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .desc-icon p {
+  font-style: italic;
+}
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .desc-icon .icon {
+  margin-left: 10px;
+  transition: all 0.5s;
+  position: relative;
+  z-index: -1;
+  opacity: 0;
   display: flex;
   gap: 1rem;
 }
-main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .icon .fa-heart {
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .desc-icon .icon .fa-heart {
   color: red;
 }
-main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .icon .fa-cart-shopping {
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .desc-icon .icon .fa-cart-shopping {
   color: white;
 }
-main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .icon .fa-magnifying-glass {
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .desc-icon .icon .fa-magnifying-glass {
   color: #c19d60;
+}
+main #menu-book .menu-book .menu-card-lists .menu-card:hover .menu-content .desc-icon .icon {
+  z-index: 5;
+  opacity: 1;
 }
 main #wine-bar {
   background-color: #1b1b1b;
@@ -1163,37 +1261,49 @@ main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .img 
 main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .img img:hover {
   transform: scale(1.2);
 }
-main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content {
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .name-price {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
 }
 main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .name-price h5 {
   font-size: 18px;
 }
-main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .name-price p {
-  font-style: italic;
-}
-main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content h4 {
-  font-size: 20px;
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .name-price h4 {
+  font-size: 25px;
 }
 main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .line {
-  border-top: 3px dotted black;
-  width: 40%;
+  margin: 5px 0;
+  border-top: 1px dotted #999;
 }
-main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .icon {
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .desc-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .desc-icon p {
+  font-style: italic;
+}
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .desc-icon .icon {
+  margin-left: 10px;
+  transition: all 0.5s;
+  position: relative;
+  z-index: -1;
+  opacity: 0;
   display: flex;
   gap: 1rem;
 }
-main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .icon .fa-heart {
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .desc-icon .icon .fa-heart {
   color: red;
 }
-main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .icon .fa-cart-shopping {
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .desc-icon .icon .fa-cart-shopping {
   color: white;
 }
-main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .icon .fa-magnifying-glass {
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card .menu-content .desc-icon .icon .fa-magnifying-glass {
   color: #c19d60;
+}
+main #wine-bar .wine-bar .wine-bar-right .right .wine-card-list .menu-card:hover .menu-content .desc-icon .icon {
+  opacity: 1;
+  z-index: 5;
 }
 main #slider {
   padding: 100px 0 250px 0;
@@ -1276,6 +1386,9 @@ main #slider .slider span img {
     left: 0;
     width: 100%;
   }
+  main header {
+    text-align: center;
+  }
   main #about .about {
     flex-direction: column;
     align-items: center;
@@ -1286,6 +1399,9 @@ main #slider .slider span img {
   main #about .about .about-img {
     width: 100%;
   }
+  main #menu-book .menu-book .menu-top h1 {
+    font-size: 100px;
+  }
   main #menu-book .menu-book .menu-card-lists {
     flex: unset;
     flex-direction: column;
@@ -1295,6 +1411,9 @@ main #slider .slider span img {
   }
   main #slider {
     padding: 100px 0 150px 0;
+  }
+  main #slider .wine-top h1 {
+    font-size: 100px;
   }
   main #slider .slider span {
     transform: rotateY(calc(var(--i) * 45deg)) translateZ(200px);

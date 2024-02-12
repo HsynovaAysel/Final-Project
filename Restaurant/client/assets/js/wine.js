@@ -63,6 +63,7 @@ $(".owl-carousel").owlCarousel({
     });
   });
 })(jQuery);
+
 const spinner = document.querySelector(".spinner-loader");
 const main = document.querySelector("main");
 const candoreAside = document.querySelector("#candore-aside");
@@ -95,12 +96,12 @@ if (login === "false") {
   logOut.style.display = "inline-block";
 }
 
-let BASE_URL = "http://localhost:8080/menus";
+let BASE_URL = "http://localhost:8080";
 let menuCardLists = document.querySelector(".menu-card-lists");
 let menuAllData = null;
 
 async function getALLData() {
-  let res = await axios(`${BASE_URL}`);
+  let res = await axios(`${BASE_URL}/menus`);
   console.log(res.data);
   menuAllData = res.data;
 
@@ -128,25 +129,25 @@ function drawCards(array) {
       <img src="${el.image}" alt="" />
       </div>
       <div class="menu-content">
-        <div class="name-price">
-        <h5>${el.title}</h5>
-          <p class="descriptions">
-          ${el.description}
-          </p>
-        </div>
-        <div class="line"></div>
-        <h4>${el.price}$</h4>
-        <div class="icon">
-                <i class="${
-                  find ? "fa-solid fa-heart" : "fa-regular fa-heart"
-                }" onclick=favs(this,"${el._id}")></i>
-                 <i class="fa-solid fa-cart-shopping" onclick=cart("${
-                   el._id
-                 }")></i> 
-                <a href="details.html?id=${
-                  el._id
-                }"><i class="fa-solid fa-magnifying-glass"></i></a>
-                </div>
+      <div class="name-price">
+      <h5>${el.title}</h5>
+      <h4>${el.price}$</h4>
+      </div>
+      <div class="line"></div>
+      <div class="desc-icon"> <p class="descriptions">
+      ${el.description.slice(0, 30)}...
+      </p><div class="icon">
+              <i class="${
+                find ? "fa-solid fa-heart" : "fa-regular fa-heart"
+              }" onclick=favs(this,"${el._id}")></i>
+               <i class="fa-solid fa-cart-shopping" onclick=cart("${
+                 el._id
+               }")></i> 
+              <a href="details.html?id=${
+                el._id
+              }"><i class="fa-solid fa-magnifying-glass"></i></a>
+              </div></div>
+     
     
       </div>
     </div>                
@@ -168,14 +169,12 @@ function drawWineCard(array) {
     <div class="menu-content">
       <div class="name-price">
       <h5>${el.title}</h5>
-        <p class="descriptions">
-        ${el.description}
-        </p>
+      <h4>${el.price}$</h4>
       </div>
       <div class="line"></div>
-    
-      <h4>${el.price}$</h4>
-      <div class="icon">
+      <div class="desc-icon"> <p class="descriptions">
+      ${el.description.slice(0, 30)}...
+      </p><div class="icon">
               <i class="${
                 find ? "fa-solid fa-heart" : "fa-regular fa-heart"
               }" onclick=favs(this,"${el._id}")></i>
@@ -185,7 +184,8 @@ function drawWineCard(array) {
               <a href="details.html?id=${
                 el._id
               }"><i class="fa-solid fa-magnifying-glass"></i></a>
-              </div>
+              </div></div>
+     
   
     </div>
   </div>                
@@ -221,7 +221,6 @@ function countBasket(arr) {
   let basketCount = arr.reduce((acc, cur) => acc + cur.count, 0);
   count.innerText = basketCount;
   setTolocalStorageBasketCount(basketCount);
-
 }
 countBasket(basket);
 function setTolocalStorageBasketCount(array) {
@@ -242,7 +241,7 @@ function cart(id) {
     } else {
       basket[index].count += 1;
     }
-    countBasket(basket)
+    countBasket(basket);
     setTolocalStorageBasket(basket);
   } else {
     window.location = "login-signup.html";
@@ -258,6 +257,7 @@ function getFromlocalStorageBasket() {
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
+
 let rezervForm = document.querySelector(".form-rezerv");
 let rezervNameInput = document.querySelector("#rezerv-name");
 let rezervPhoneInput = document.querySelector("#rezerv-phone");
@@ -266,8 +266,13 @@ let rezervDateInput = document.querySelector("#rezerv-date");
 let rezervTimeInput = document.querySelector("#rezerv-time");
 let rezervPersonSelect = document.querySelector("#rezerv-person");
 let reservsData = null;
+
+rezervDateInput.min = moment().format().slice(0, 10);
+rezervDateInput.max = "2024-12-31";
+rezervDateInput.value = moment().format().slice(0, 10);
+rezervTimeInput.value=moment().format().slice(11,16)
 async function getRezervsData() {
-  let res = await axios(`http://localhost:8080/rezervs`);
+  let res = await axios(`${BASE_URL}/rezervs`);
   console.log(res.data);
   reservsData = res.data;
 }
@@ -284,15 +289,13 @@ rezervForm.addEventListener("submit", async function (e) {
     person: rezervPersonSelect.value,
   };
   // console.log(rezervDateInput.value);
-  let bool = reservsData.find(
-    (item) =>
-      rezervTimeInput.value == item.time ||
-      rezervDateInput.value == item.date.slice(0, 10)
+  let date = reservsData.filter(
+    (item) => rezervDateInput.value == item.date.slice(0, 10)
   );
-  console.log(bool);
+  let time = date.find((item) => rezervTimeInput.value == item.time);
   if (login === "true") {
-    if (!bool) {
-      await axios.post(`http://localhost:8080/rezervs`, rezervsObj);
+    if (!time) {
+      await axios.post(`${BASE_URL}/rezervs`, rezervsObj);
     } else {
       alert("bu vaxta bos yer yoxdur.");
     }
