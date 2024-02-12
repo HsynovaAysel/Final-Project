@@ -9,12 +9,18 @@ homeIcon.addEventListener("click", function () {
 xMarkIcon.addEventListener("click", function () {
   aside.classList.remove("aside");
 });
+if (!localStorage.getItem("isAdmin")) {
+  window.location = "../login-signup.html";
+}
+let logOut = document.querySelector(".fa-right-from-bracket");
 
+logOut.addEventListener('click',function(){
+    localStorage.removeItem("isAdmin");
+})
 let form = document.querySelector("form");
 let tbody = document.querySelector("tbody");
 let nameInput = document.querySelector("#name-input");
 let emailInput = document.querySelector("#email-input");
-let passwordInput = document.querySelector("#password-input");
 
 let BASE_URL = "http://localhost:8080/users";
 let editId = null;
@@ -22,14 +28,10 @@ let editStatus = null;
 let errorText = document.querySelector(".error");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  let bool =
-    nameInput.value === "" ||
-    passwordInput.value === "" ||
-    emailInput.value === "";
+  let bool = nameInput.value === "" || emailInput.value === "";
   let obj = {
     userName: nameInput.value,
     email: emailInput.value,
-    password: passwordInput.value,
   };
   if (!bool) {
     if (!editStatus) {
@@ -43,7 +45,6 @@ form.addEventListener("submit", function (event) {
   }
   nameInput.value = "";
   emailInput.value = "";
-  passwordInput.value = "";
 });
 let userAllData = null;
 let userAllDataCopy = null;
@@ -62,7 +63,6 @@ function drawTabel(array) {
     <tr>
     <td><h5>${el.userName}</h5></td>
     <td><h5>${el.email}</h5></td>
-    
     <td><i class="fa-solid fa-trash" onclick=removeData("${el._id}",this)></i></td>
     <td><i class="fa-solid fa-pen-to-square" onclick=updateData("${el._id}")></i></td>
   </tr>
@@ -70,21 +70,23 @@ function drawTabel(array) {
   });
 }
 async function postData(obj) {
-  await axios.post(`${BASE_URL}`, obj);
+  const response = await axios.post(`${BASE_URL}`, obj);
+  // console.log(response);
+  drawTabel(response.data.allData);
 }
 async function patchData(id, obj) {
-  await axios.put(`${BASE_URL}/${id}`, obj);
+  let response = await axios.put(`${BASE_URL}/${id}`, obj);
+  drawTabel(response.data.allData);
 }
 
 let addBtn = document.querySelector(".add");
 function updateData(id) {
   let find = userAllData.find((item) => item._id == id);
-  console.log(id);
+  // console.log(id);
   editId = id;
   editStatus = true;
   nameInput.value = find.userName;
   emailInput.value = find.email;
-  passwordInput.value = find.password;
   addBtn.innerText = "Edit";
 }
 

@@ -15,12 +15,12 @@ let passwordInputSignin = document.querySelector("#password-signin");
 
 let BASE_URL = "http://localhost:8080";
 let usersAllData = null;
-async function getALLData() {
-  let res = await axios(`${BASE_URL}`);
-  console.log(res.data);
-  usersAllData = res.data;
-}
-getALLData();
+// async function getALLData() {
+//   let res = await axios(`${BASE_URL}`);
+//   console.log(res.data);
+//   usersAllData = res.data;
+// }
+// getALLData();
 formSignUp.addEventListener("submit", async function (e) {
   e.preventDefault();
   let users = {
@@ -37,9 +37,9 @@ formSignUp.addEventListener("submit", async function (e) {
   } catch (error) {
     alert("bu mail artiq istifade olunub");
   }
-  emailInputSignup.value=''
-   passwordInputSignup.value=''
-   nameInputSignup.value=''
+  emailInputSignup.value = "";
+  passwordInputSignup.value = "";
+  nameInputSignup.value = "";
 });
 
 formSignin.addEventListener("submit", async function (e) {
@@ -53,15 +53,20 @@ formSignin.addEventListener("submit", async function (e) {
     const response = await axios.post(`${BASE_URL}/signIn`, users);
     console.log(response);
     if (response.status === 200) {
-      window.location = "index.html";
-      localStorage.setItem("login", true);
+      if (!response.data.userInfo.isAdmin) {
+        window.location.href = "../client/index.html";
+        localStorage.setItem("login", true);
+      } else {
+        localStorage.setItem("isAdmin", true);
+        window.location.href = "../client/admin/admin.html";
+      }
     }
   } catch (error) {
     alert("bele bir istifadeci yoxdur");
   }
 
-  passwordInputSignin.value=''
-  emailInputSignin.value=''
+  passwordInputSignin.value = "";
+  emailInputSignin.value = "";
 });
 
 let eyeAllIcon = document.querySelectorAll(".fa-eye");

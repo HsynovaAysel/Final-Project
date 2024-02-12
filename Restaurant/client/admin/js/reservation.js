@@ -9,7 +9,14 @@ homeIcon.addEventListener("click", function () {
 xMarkIcon.addEventListener("click", function () {
   aside.classList.remove("aside");
 });
+if (!localStorage.getItem("isAdmin")) {
+  window.location = "../login-signup.html";
+}
+let logOut = document.querySelector(".fa-right-from-bracket");
 
+logOut.addEventListener('click',function(){
+    localStorage.removeItem("isAdmin");
+})
 let form = document.querySelector("form");
 let tbody = document.querySelector("tbody");
 let nameInput = document.querySelector("#name-input");

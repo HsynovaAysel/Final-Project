@@ -36,7 +36,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script> -->
-    <script defer src="./js/customers.js"></script>
+    <script defer src="./js/vacancy.js"></script>
   </head>
   <body>
     <header>
@@ -107,38 +107,49 @@
         </ul>
       </nav>
     </aside>
-    <section id="customer">
+    <section id="vacancy">
       <div class="container">
-        <div class="customer">
+        <div class="vacancy">
           <div class="home-icon">
             <i class="fa-solid fa-bars"></i>
           </div>
-         
-            <form action="" class="customer-form">
-              <input
-                type="text"
-                id="name-input"
-                placeholder="User Name"
-                required
-              />
-              <input
-                type="text"
-                id="email-input"
-                placeholder="User Email"
-                required
-              />
-              <input
-                type="text"
-                id="password-input"
-                placeholder="User Password"
-                required
-              />
-              <p class="error"></p>
-              <button type="submit" class="add">Add</button>
-            </form>
-       
 
-          <table class="customer-table">
+          <form action="" class="vacancy-form">
+            <input type="file" id="cv-input" placeholder="CV" />
+            <input
+              type="text"
+              id="lastname-input"
+              placeholder="User Lastname"
+              required
+            />
+            <input
+              type="text"
+              id="firstname-input"
+              placeholder="User Fistname"
+              required
+            />
+            <input
+              type="text"
+              id="email-input"
+              placeholder="User Email"
+              required
+            />
+            <input type="text" id="phone-input" placeholder="Phone" required />
+            <input type="number" id="age-input" placeholder="Age" required />
+            <input type="text" id="job-input" placeholder="Job" required />
+            <input type="text" id="city-input" placeholder="City" required />
+            <textarea
+              name=""
+              id="experience-input"
+              placeholder="Experience"
+              required
+            ></textarea>
+
+            <p class="error"></p>
+            <button type="submit" class="add">Add</button>
+          </form>
+
+          <table class="vacancy-table">
             <thead>
               <th><h4>CV</h4></th>
               <th><h4>User Name</h4></th>
@@ -146,7 +157,8 @@
               <th><h4>User Phone</h4></th>
               <th><h4>User Age</h4></th>
               <th><h4>Job</h4></th>
-              <th><h4>Country,City</h4></th>
+              <th><h4>City</h4></th>
+              <th><h4>Experience</h4></th>
               <th><h4>Delete</h4></th>
               <th><h4>Edit</h4></th>
             </thead>

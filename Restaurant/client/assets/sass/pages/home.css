@@ -887,6 +887,25 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
   transition: all 200ms linear;
 }
 
+.progress-wrap i {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  /* content: '\f062'; */
+  text-align: center;
+  line-height: 46px;
+  font-size: 18px;
+  color: #c19d60;
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  z-index: 1;
+  transition: all 200ms linear;
+}
+
 .spinner-loader {
   height: 100vh;
   display: block;

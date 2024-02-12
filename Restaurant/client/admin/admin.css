@@ -216,7 +216,7 @@ span {
   text-transform: uppercase;
 }
 
-#reservation .reservation .reservation-form button, #customer .customer .customer-form button {
+#reservation .reservation .reservation-form button, #vacancy .vacancy .vacancy-form button, #category .category .category-form button, #customer .customer .customer-form button {
   outline: none;
   border: 1px solid #c19d60;
   font-family: "Noah", sans-serif;
@@ -231,7 +231,7 @@ span {
   background-color: transparent;
   transition: all 0.5s;
 }
-#reservation .reservation .reservation-form button:hover, #customer .customer .customer-form button:hover {
+#reservation .reservation .reservation-form button:hover, #vacancy .vacancy .vacancy-form button:hover, #category .category .category-form button:hover, #customer .customer .customer-form button:hover {
   background-color: #c19d60;
 }
 
@@ -386,6 +386,155 @@ header .header .icons i {
   color: blue;
 }
 #customer .customer-table tbody tr td h5 {
+  font-size: 20px;
+}
+
+#category .category .menu-all-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 50px;
+}
+#category .category .menu-all-button .menu-button-img {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#category .category .menu-all-button .menu-button-img button {
+  width: 100px;
+  transition: all 0.8s ease;
+  border: none;
+  outline: none;
+  font-family: "Libre Caslon Display", serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 38px;
+  background-color: #1b1b1b;
+  color: #c19d60;
+  border: 1px solid #c19d60;
+}
+#category .category .menu-all-button .menu-button-img button.button-active {
+  color: white;
+}
+#category .category .category-form {
+  padding: 50px 0 0 0;
+  background-color: #1b1b1b;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#category .category .category-form input {
+  width: 50%;
+  padding: 20px 0;
+}
+#category .category .category-form input::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#category .category .category-form input::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#category .category .category-form button {
+  background-color: #c19d60;
+  width: 100%;
+}
+#category .category .category-form button:hover {
+  background-color: transparent;
+  color: #c19d60;
+}
+#category .category-table {
+  margin-top: 50px;
+  width: 100%;
+  background-color: #1b1b1b;
+  text-align: center;
+  border-collapse: collapse;
+}
+#category .category-table thead tr th {
+  border: 1px solid #c19d60;
+}
+#category .category-table tbody tr td {
+  border: 1px solid #c19d60;
+}
+#category .category-table tbody tr td .fa-trash {
+  color: red;
+}
+#category .category-table tbody tr td .fa-pen-to-square {
+  color: blue;
+}
+#category .category-table tbody tr td h5 {
+  font-size: 20px;
+}
+
+#vacancy .vacancy .vacancy-form {
+  padding: 50px 0 0 0;
+  background-color: #1b1b1b;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#vacancy .vacancy .vacancy-form input {
+  width: 50%;
+  padding: 20px 0;
+}
+#vacancy .vacancy .vacancy-form input::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#vacancy .vacancy .vacancy-form input::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#vacancy .vacancy .vacancy-form button {
+  background-color: #c19d60;
+  width: 100%;
+}
+#vacancy .vacancy .vacancy-form button:hover {
+  background-color: transparent;
+  color: #c19d60;
+}
+#vacancy .vacancy-table {
+  margin-top: 50px;
+  width: 100%;
+  background-color: #1b1b1b;
+  text-align: center;
+  border-collapse: collapse;
+}
+#vacancy .vacancy-table thead tr th {
+  border: 1px solid #c19d60;
+}
+#vacancy .vacancy-table tbody tr td {
+  border: 1px solid #c19d60;
+}
+#vacancy .vacancy-table tbody tr td .fa-trash {
+  color: red;
+}
+#vacancy .vacancy-table tbody tr td .fa-pen-to-square {
+  color: blue;
+}
+#vacancy .vacancy-table tbody tr td h5 {
   font-size: 20px;
 }
 

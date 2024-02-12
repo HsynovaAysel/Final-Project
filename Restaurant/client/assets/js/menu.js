@@ -157,7 +157,7 @@ menuBtnAll.forEach((item) =>
     this.classList.add("button-active");
     let filtered = menuAllData.filter(
       (item) =>
-        item.category.toLocaleLowerCase() === this.innerText.toLocaleLowerCase()
+        item.category.toLocaleLowerCase() === this.innerText.toLocaleLowerCase() 
     );
     drawCards(filtered);
   })

@@ -40,11 +40,11 @@ header {
   background-color: #1b1b1b;
   color: $home-color;
   font-size: 20px;
- @include flex();
-//  position: fixed;
-//  top: 100px;
-//  left: 100px;
-//  z-index: -1;
+  @include flex();
+  //  position: fixed;
+  //  top: 100px;
+  //  left: 100px;
+  //  z-index: -1;
   cursor: pointer;
 }
 #candore {
@@ -144,6 +144,165 @@ header {
     }
   }
   .customer-table {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #1b1b1b;
+    text-align: center;
+    border-collapse: collapse;
+    thead {
+      tr {
+        th {
+          border: 1px solid $home-color;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          .fa-trash {
+            color: red;
+          }
+          .fa-pen-to-square {
+            color: blue;
+          }
+          h5 {
+            font-size: 20px;
+          }
+          border: 1px solid $home-color;
+        }
+      }
+    }
+  }
+}
+#category {
+  .category {
+
+    .menu-all-button {
+      @include flex();
+      flex-wrap: wrap;
+      gap: 3rem;
+      margin-bottom: 50px;
+      .menu-button-img {
+        width: 10%;
+        @include flex();
+        flex-direction: column;
+       
+        button {
+          width: 100px;
+          transition: all 0.8s ease;
+          border: none;
+          outline: none;
+          font-family: $font-libre;
+          font-size: 22px;
+          font-weight: 400;
+          line-height: 38px;
+          background-color: #1b1b1b;
+          color:$home-color ;
+          border: 1px solid $home-color;
+          &.button-active {
+            color: white;
+          }
+        }
+      }
+    }
+
+
+    .category-form {
+      padding: 50px 0 0 0;
+      background-color: #1b1b1b;
+      display: flex;
+      flex-direction: column;
+      @include flex();
+      gap: 1rem;
+
+      input {
+        width: 50%;
+        padding: 20px 0;
+        &::placeholder {
+          color: black;
+          font-family: $font-noto;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 26px;
+        }
+      }
+
+      button {
+        @extend %btn;
+        background-color: $home-color;
+        width: 100%;
+        &:hover {
+          background-color: transparent;
+          color: $home-color;
+        }
+      }
+    }
+  }
+  .category-table {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #1b1b1b;
+    text-align: center;
+    border-collapse: collapse;
+    thead {
+      tr {
+        th {
+          border: 1px solid $home-color;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          .fa-trash {
+            color: red;
+          }
+          .fa-pen-to-square {
+            color: blue;
+          }
+          h5 {
+            font-size: 20px;
+          }
+          border: 1px solid $home-color;
+        }
+      }
+    }
+  }
+}
+#vacancy {
+  .vacancy {
+    .vacancy-form {
+      padding: 50px 0 0 0;
+      background-color: #1b1b1b;
+      display: flex;
+      flex-direction: column;
+      @include flex();
+      gap: 1rem;
+
+      input {
+        width: 50%;
+        padding: 20px 0;
+        &::placeholder {
+          color: black;
+          font-family: $font-noto;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 26px;
+        }
+      }
+
+      button {
+        @extend %btn;
+        background-color: $home-color;
+        width: 100%;
+        &:hover {
+          background-color: transparent;
+          color: $home-color;
+        }
+      }
+    }
+  }
+  .vacancy-table {
     margin-top: 50px;
     width: 100%;
     background-color: #1b1b1b;

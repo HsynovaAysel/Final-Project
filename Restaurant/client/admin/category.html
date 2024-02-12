@@ -36,7 +36,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script> -->
-    <script defer src="./js/customers.js"></script>
+    <script defer src="./js/category.js"></script>
   </head>
   <body>
     <header>
@@ -107,41 +107,74 @@
         </ul>
       </nav>
     </aside>
-    <section id="customer">
+    <section id="category">
       <div class="container">
-        <div class="customer">
+        <div class="category">
           <div class="home-icon">
             <i class="fa-solid fa-bars"></i>
           </div>
-         
-            <form action="" class="customer-form">
-              <input
-                type="text"
-                id="name-input"
-                placeholder="User Name"
-                required
-              />
-              <input
-                type="text"
-                id="email-input"
-                placeholder="User Email"
-                required
-              />
-              <input
-                type="text"
-                id="password-input"
-                placeholder="User Password"
-                required
-              />
-              <p class="error"></p>
-              <button type="submit" class="add">Add</button>
-            </form>
-       
+          <div class="menu-all-button">
+            <div class="menu-button-img">
+              <button class="menu-button button-active ">All</button>
+            </div>
+            <div class="menu-button-img">
+              <button class="menu-button">Starters</button>
+            </div>
+            <div class="menu-button-img">
+              <button class="menu-button">Mains</button>
+            </div>
+            <div class="menu-button-img">
+              <button class="menu-button">Salads</button>
+            </div>
+            <div class="menu-button-img">
+              <button class="menu-button">Desserts</button>
+            </div>
+            <div class="menu-button-img">
+              <button class="menu-button">Wine</button>
+            </div>
+          </div>
+          <form action="" class="category-form">
+            <input
+              type="file"
+              id="item-input"
+              placeholder="Item Image"
+          
+            />
+            <input
+              type="text"
+              id="category-input"
+              placeholder="Item Category"
+          
+            />
+            <input
+              type="text"
+              id="name-input"
+              placeholder="Item Name"
+              required
+            />
+            <input
+              type="text"
+              id="description-input"
+              placeholder="Iteam Description"
+              required
+            />
+            <input
+              type="number"
+              id="price-input"
+              min="1"
+              placeholder="Iteam Price"
+              required
+            />
+            <p class="error"></p>
+            <button type="submit" class="add">Add</button>
+          </form>
 
-          <table class="customer-table">
+          <table class="category-table">
             <thead>
-              <th><h4>User Name</h4></th>
-              <th><h4>User Email</h4></th>
+              <th><h4>Item</h4></th>
+              <th><h4>Item Name</h4></th>
+              <th><h4>Description</h4></th>
+              <th><h4>Price</h4></th>
               <th><h4>Delete</h4></th>
               <th><h4>Edit</h4></th>
             </thead>

@@ -9,7 +9,7 @@ const vakansSchema = new Schema(
     age: { type: Number, required: true },
     job: { type: String, required: true },
     city: { type: String, required: true },
-    cv: { type: String, required: true },
+    cv: { type: String},
     experience: { type: String, required: true },
   },
   { timestamps: true }

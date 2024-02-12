@@ -10,7 +10,7 @@ const signUp = async (req, res) => {
     if (user) {
       res.status(400).send({ message: "this email already used" });
     } else {
-      const newUser = new Users(req.body);
+      const newUser = new Users({ ...req.body, isAdmin: false });
       try {
         await newUser.save();
         res.status(201).send({
@@ -36,9 +36,17 @@ const signIn = async (req, res) => {
       password: password,
     });
     if (!user) {
-      return res.status(400).send({ message: "email ve ya password yanlisdir" });
+      return res
+        .status(400)
+        .send({ message: "email ve ya password yanlisdir" });
     }
-    res.status(200).send({message:"succesfully login!!!"})
+    res.status(200).send({
+      message: "succesfully login!!!",
+      userInfo: {
+        isAdmin: user.isAdmin,
+        userName: user.userName,
+      },
+    });
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
@@ -89,9 +97,11 @@ const addNewUser = async (req, res) => {
   const newUser = new Users({ ...req.body });
   try {
     await newUser.save();
+    const allUsers = await Users.find({});
     res.status(201).send({
       message: "created succesfully!",
       data: newUser,
+      allData: allUsers,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });
@@ -105,9 +115,11 @@ const updateUserById = async (req, res) => {
   try {
     await Users.findByIdAndUpdate(id, { ...req.body });
     const updatedUser = await Users.findById(id);
+    const allUsers = await Users.find({});
     res.status(200).send({
       message: "updated succesfully!",
       data: updatedUser,
+      allData: allUsers,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });
@@ -121,5 +133,5 @@ module.exports = {
   addNewUser,
   updateUserById,
   signUp,
-  signIn
+  signIn,
 };
