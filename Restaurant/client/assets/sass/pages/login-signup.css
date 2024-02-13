@@ -1,7 +1,20 @@
-body {
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1199px) {
+  .container {
+    padding: 0 5%;
+  }
+}
+#cont {
   display: flex;
-  justify-content: center;
   align-items: center;
+  background-image: url("../../images/bg-about-us.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   height: 100vh;
 }
 
@@ -11,15 +24,15 @@ body {
   position: relative;
   width: 900px;
   height: 550px;
-  background: #fff;
-  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3), 10px 10px 15px rgba(70, 70, 70, 0.15), inset -10px -10px 15px rgba(255, 255, 255, 0.3), inset 10px 10px 15px rgba(70, 70, 70, 0.15);
+  background: transparent;
+  box-shadow: -10px -10px 15px rgba(70, 70, 70, 0.15), 10px 10px 15px rgba(70, 70, 70, 0.15), inset -10px -10px 15px rgba(70, 70, 70, 0.15), inset 10px 10px 15px rgba(70, 70, 70, 0.15);
 }
 
 .form {
   position: relative;
   width: 640px;
   height: 100%;
-  transition: transform 1.2s ease-in-out;
+  transition: 1.2s ease-in-out;
   padding: 50px 30px 0;
 }
 
@@ -30,13 +43,14 @@ body {
 .cont.s--signup .sign-in {
   transition-timing-function: ease-in-out;
   transition-duration: 1.2s;
-  transform: translate3d(640px, 0, 0);
+  transform: translate3d(840px, 0, 0);
 }
 
 h2 {
   width: 100%;
   font-size: 26px;
   text-align: center;
+  color: #cfcfcf;
 }
 
 label {
@@ -61,12 +75,14 @@ button {
 }
 
 input {
+  caret-color: white;
+  color: white;
   display: block;
   width: 100%;
   margin-top: 5px;
   padding-bottom: 5px;
   font-size: 16px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   text-align: center;
 }
 
@@ -103,8 +119,8 @@ button {
   width: 900px;
   height: 100%;
   padding-left: 260px;
-  background: #fff;
-  transition: transform 1.2s ease-in-out;
+  background: transparent;
+  transition: 1.2s ease-in-out;
 }
 
 .cont.s--signup .sub-cont {
@@ -148,7 +164,7 @@ button {
   padding: 0 20px;
   text-align: center;
   color: #fff;
-  transition: transform 1.2s ease-in-out;
+  transition: 1.2s ease-in-out;
 }
 
 .cont.s--signup .img__text.m--up {
@@ -186,7 +202,7 @@ button {
   align-items: center;
   width: 100%;
   height: 100%;
-  transition: transform 1.2s;
+  transition: 1.2s;
 }
 
 .cont.s--signup .img__btn span.m--up {
@@ -227,12 +243,18 @@ button {
   position: relative;
 }
 .password-eye .fa-eye {
+  color: white;
   position: absolute;
   top: 10px;
   right: 0;
 }
 .password-eye .fa-eye-slash {
+  color: white;
   position: absolute;
   top: 10px;
   right: 0;
+}
+
+.error {
+  color: red;
 }/*# sourceMappingURL=login-signup.css.map */

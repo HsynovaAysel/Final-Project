@@ -12,31 +12,45 @@ let passwordInputSignup = document.querySelector("#password-signup");
 let formSignin = document.querySelector("form.sign-in");
 let emailInputSignin = document.querySelector("#email-signin");
 let passwordInputSignin = document.querySelector("#password-signin");
-
+let errorText = document.querySelector(".error");
 let BASE_URL = "http://localhost:8080";
 let usersAllData = null;
-// async function getALLData() {
-//   let res = await axios(`${BASE_URL}`);
-//   console.log(res.data);
-//   usersAllData = res.data;
-// }
-// getALLData();
+
 formSignUp.addEventListener("submit", async function (e) {
   e.preventDefault();
   let users = {
-    email: emailInputSignup.value,
+    email: emailInputSignup.value.toLocaleLowerCase(),
     password: passwordInputSignup.value,
     userName: nameInputSignup.value,
   };
 
-  try {
+  if (passwordInputSignup.value.length>=8) {
+   try {
     const response = await axios.post(`${BASE_URL}/signUp`, users);
     if (response.status === 200) {
       window.location = "login-signup.html";
     }
   } catch (error) {
-    alert("bu mail artiq istifade olunub");
+    Toastify({
+      text: "bu mail artiq istifade olunub",
+      duration: 3000,
+      newWindow: true,
+      gravity: "top", // `top` or `bottom`
+      positionLeft: false, // `true` or `false`
+      backgroundColor: "#ff0000",
+    }).showToast();
   }
+  }else{
+    Toastify({
+      text: "simvol sayi 8den cox olmalidir ",
+      duration: 3000,
+      newWindow: true,
+      gravity: "top", // `top` or `bottom`
+      positionLeft: false, // `true` or `false`
+      backgroundColor: "#ff0000",
+    }).showToast();
+  }
+  
   emailInputSignup.value = "";
   passwordInputSignup.value = "";
   nameInputSignup.value = "";
@@ -45,7 +59,7 @@ formSignUp.addEventListener("submit", async function (e) {
 formSignin.addEventListener("submit", async function (e) {
   e.preventDefault();
   let users = {
-    email: emailInputSignin.value,
+    email: emailInputSignin.value.toLocaleLowerCase(),
     password: passwordInputSignin.value,
   };
   // console.log(obj);
@@ -54,15 +68,22 @@ formSignin.addEventListener("submit", async function (e) {
     console.log(response);
     if (response.status === 200) {
       if (!response.data.userInfo.isAdmin) {
-        window.location.href = "../client/index.html";
+        window.location.href = "index.html";
         localStorage.setItem("login", true);
       } else {
         localStorage.setItem("isAdmin", true);
-        window.location.href = "../client/admin/admin.html";
+        window.location.href = "admin/admin.html";
       }
     }
   } catch (error) {
-    alert("bele bir istifadeci yoxdur");
+    Toastify({
+      text: "bele bir istifadeci yoxdur",
+      duration: 3000,
+      newWindow: true,
+      gravity: "top", // `top` or `bottom`
+      positionLeft: false, // `true` or `false`
+      backgroundColor: "#ff0000",
+    }).showToast();
   }
 
   passwordInputSignin.value = "";
@@ -71,9 +92,6 @@ formSignin.addEventListener("submit", async function (e) {
 
 let eyeAllIcon = document.querySelectorAll(".fa-eye");
 eyeAllIcon.forEach((eyeIcon) => {
-  // passwordInputSignin.type = "password";
-  // eyeIcon.classList.add("fa-solid fa-eye")
-  // passwordInputSignup.type = "password";
   eyeIcon.addEventListener("click", function () {
     passwordInputSignin.type = "password";
     passwordInputSignup.type = "password";

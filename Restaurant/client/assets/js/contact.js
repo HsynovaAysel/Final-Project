@@ -161,7 +161,14 @@ rezervForm.addEventListener("submit", async function (e) {
     if (!time) {
       await axios.post(`${BASE_URL}/rezervs`, rezervsObj);
     } else {
-      alert("bu vaxta bos yer yoxdur.");
+      Toastify({
+        text: "bu vaxta bos yer yoxdur. ",
+        duration: 3000,
+        newWindow: true,
+        gravity: "top", // `top` or `bottom`
+        positionLeft: false, // `true` or `false`
+        backgroundColor: "#ff0000",
+      }).showToast();
     }
   } else {
     window.location = "login-signup.html";

@@ -1,7 +1,20 @@
-body {
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media screen and (max-width:1199px) {
+  .container {
+    padding: 0 5%;
+  }
+}
+#cont {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
+  background-image: url("../../images/bg-about-us.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   height: 100vh;
 }
 
@@ -11,38 +24,32 @@ body {
   position: relative;
   width: 900px;
   height: 550px;
-  background: #fff;
-  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3),
+  background: transparent;
+  box-shadow: -10px -10px 15px rgba(70, 70, 70, 0.15),
     10px 10px 15px rgba(70, 70, 70, 0.15),
-    inset -10px -10px 15px rgba(255, 255, 255, 0.3),
+    inset -10px -10px 15px rgba(70, 70, 70, 0.15),
     inset 10px 10px 15px rgba(70, 70, 70, 0.15);
 }
 .form {
   position: relative;
   width: 640px;
   height: 100%;
-  -webkit-transition: -webkit-transform 1.2s ease-in-out;
-  transition: -webkit-transform 1.2s ease-in-out;
-  transition: transform 1.2s ease-in-out;
-  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+  transition: 1.2s ease-in-out;
   padding: 50px 30px 0;
 }
 .sign-in {
-  // -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
 .cont.s--signup .sign-in {
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-  -webkit-transition-duration: 1.2s;
   transition-duration: 1.2s;
-  -webkit-transform: translate3d(640px, 0, 0);
-  transform: translate3d(640px, 0, 0);
+  transform: translate3d(840px, 0, 0);
 }
 h2 {
   width: 100%;
   font-size: 26px;
   text-align: center;
+  color: #cfcfcf;
 }
 
 label {
@@ -64,14 +71,17 @@ button {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 input {
+    caret-color: white;
+  color: white;
   display: block;
   width: 100%;
   margin-top: 5px;
   padding-bottom: 5px;
   font-size: 16px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba($color: #fff, $alpha: 0.4);
   text-align: center;
 }
+
 .forgot-pass {
   margin-top: 15px;
   text-align: center;
@@ -102,14 +112,10 @@ button {
   width: 900px;
   height: 100%;
   padding-left: 260px;
-  background: #fff;
-  -webkit-transition: -webkit-transform 1.2s ease-in-out;
-  transition: -webkit-transform 1.2s ease-in-out;
-  transition: transform 1.2s ease-in-out;
-  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+  background: transparent;
+  transition: 1.2s ease-in-out;
 }
 .cont.s--signup .sub-cont {
-  -webkit-transform: translate3d(-640px, 0, 0);
   transform: translate3d(-640px, 0, 0);
 }
 .img {
@@ -132,12 +138,10 @@ button {
   background-image: url(ext.jpg);
   opacity: 0.8;
   background-size: cover;
-  -webkit-transition: -webkit-transform 1.2s ease-in-out;
+
   transition: transform 1.2s ease-in-out;
-  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
 }
 .cont.s--signup .img:before {
-  -webkit-transform: translate3d(640px, 0, 0);
   transform: translate3d(640px, 0, 0);
 }
 .img__text {
@@ -149,21 +153,15 @@ button {
   padding: 0 20px;
   text-align: center;
   color: #fff;
-  -webkit-transition: -webkit-transform 1.2s ease-in-out;
-  transition: -webkit-transform 1.2s ease-in-out;
-  transition: transform 1.2s ease-in-out;
-  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+  transition: 1.2s ease-in-out;
 }
 .cont.s--signup .img__text.m--up {
-  -webkit-transform: translateX(520px);
   transform: translateX(520px);
 }
 .img__text.m--in {
-  -webkit-transform: translateX(-520px);
   transform: translateX(-520px);
 }
 .cont.s--signup .img__text.m--in {
-  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 .img__btn {
@@ -183,29 +181,20 @@ button {
   position: absolute;
   left: 0;
   top: 0;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   align-items: center;
   width: 100%;
   height: 100%;
-  -webkit-transition: -webkit-transform 1.2s;
-  transition: -webkit-transform 1.2s;
-  transition: transform 1.2s;
-  transition: transform 1.2s, -webkit-transform 1.2s;
+  transition: 1.2s;
 }
 .cont.s--signup .img__btn span.m--up {
-  -webkit-transform: translateY(72px);
   transform: translateY(72px);
 }
 .img__btn span.m--in {
-  -webkit-transform: translateY(-72px);
   transform: translateY(-72px);
 }
 .cont.s--signup .img__btn span.m--in {
-  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 .img__btn:after {
@@ -232,13 +221,18 @@ button {
 .password-eye {
   position: relative;
   .fa-eye {
+    color: white;
     position: absolute;
     top: 10px;
     right: 0;
   }
   .fa-eye-slash {
+    color: white;
     position: absolute;
     top: 10px;
     right: 0;
   }
+}
+.error {
+  color: red;
 }

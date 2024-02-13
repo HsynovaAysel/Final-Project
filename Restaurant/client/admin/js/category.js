@@ -10,7 +10,7 @@ xMarkIcon.addEventListener("click", function () {
   aside.classList.remove("aside");
 });
 if (!localStorage.getItem("isAdmin")) {
-    window.location = "../login-signup.html";
+    window.location = "login-signup.html";
   }
   let logOut = document.querySelector(".fa-right-from-bracket");
   

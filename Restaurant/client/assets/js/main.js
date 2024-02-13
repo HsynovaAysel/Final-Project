@@ -143,8 +143,6 @@ $(".owl-carousel").owlCarousel({
   });
 })(jQuery);
 
-
-
 const spinner = document.querySelector(".spinner-loader");
 const main = document.querySelector("main");
 const candoreAside = document.querySelector("#candore-aside");
@@ -383,8 +381,8 @@ let reservsData = null;
 
 rezervDateInput.min = moment().format().slice(0, 10);
 rezervDateInput.max = "2024-12-31";
-rezervDateInput.value=moment().format().slice(0, 10)
-rezervTimeInput.value=moment().format().slice(11,16)
+rezervDateInput.value = moment().format().slice(0, 10);
+rezervTimeInput.value = moment().format().slice(11, 16);
 
 async function getRezervsData() {
   let res = await axios(`${BASE_URL}/rezervs`);
@@ -412,7 +410,14 @@ rezervForm.addEventListener("submit", async function (e) {
     if (!time) {
       await axios.post(`${BASE_URL}/rezervs`, rezervsObj);
     } else {
-      alert("bu vaxta bos yer yoxdur.");
+      Toastify({
+        text: "bu vaxta bos yer yoxdur. ",
+        duration: 3000,
+        newWindow: true,
+        gravity: "top", // `top` or `bottom`
+        positionLeft: false, // `true` or `false`
+        backgroundColor: "#ff0000",
+      }).showToast();
     }
   } else {
     window.location = "login-signup.html";
@@ -425,3 +430,7 @@ rezervForm.addEventListener("submit", async function (e) {
     (rezervPhoneInput.value = ""),
     (rezervPersonSelect.value = "");
 });
+
+// if (window.location.pathname=='*') {
+//   window.location="error.html";
+// }
