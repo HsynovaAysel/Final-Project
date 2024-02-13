@@ -48,9 +48,11 @@ const addNewMenu = async (req, res) => {
   const newMenu = new Menus({ ...req.body });
   try {
     await newMenu.save();
+    const menus = await Menus.find({});
     res.status(201).send({
       message: "created succesfully!",
       data: newMenu,
+      allMenus: menus,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });
@@ -64,9 +66,11 @@ const updateMenuById = async (req, res) => {
   try {
     await Menus.findByIdAndUpdate(id, { ...req.body });
     const updateMenu = await Menus.findById(id);
+    const menus = await Menus.find({});
     res.status(200).send({
       message: "updated succesfully!",
       data: updateMenu,
+      allMenus: menus,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });

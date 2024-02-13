@@ -15,7 +15,27 @@ let passwordInputSignin = document.querySelector("#password-signin");
 let errorText = document.querySelector(".error");
 let BASE_URL = "http://localhost:8080";
 let usersAllData = null;
-
+  
+function toastifySuccesful(text) {
+  Toastify({
+    text: text,
+    duration: 3000,
+    newWindow: true,
+    gravity: "top", // `top` or `bottom`
+    positionLeft: true, // `true` or `false`
+    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)"
+  }).showToast();
+}
+function toastifyError(text) {
+  Toastify({
+    text: text,
+    duration: 3000,
+    newWindow: true,
+    gravity: "top", // `top` or `bottom`
+    positionLeft: false, // `true` or `false`
+    backgroundColor: "#ff0000",
+  }).showToast();
+}
 formSignUp.addEventListener("submit", async function (e) {
   e.preventDefault();
   let users = {
@@ -27,28 +47,14 @@ formSignUp.addEventListener("submit", async function (e) {
   if (passwordInputSignup.value.length>=8) {
    try {
     const response = await axios.post(`${BASE_URL}/signUp`, users);
-    if (response.status === 200) {
-      window.location = "login-signup.html";
+    if (response.status === 201) {
+      toastifySuccesful('succesfully created')
     }
   } catch (error) {
-    Toastify({
-      text: "bu mail artiq istifade olunub",
-      duration: 3000,
-      newWindow: true,
-      gravity: "top", // `top` or `bottom`
-      positionLeft: false, // `true` or `false`
-      backgroundColor: "#ff0000",
-    }).showToast();
+  toastifyError("bu mail artiq istifade olunub")
   }
   }else{
-    Toastify({
-      text: "simvol sayi 8den cox olmalidir ",
-      duration: 3000,
-      newWindow: true,
-      gravity: "top", // `top` or `bottom`
-      positionLeft: false, // `true` or `false`
-      backgroundColor: "#ff0000",
-    }).showToast();
+   toastifyError("simvol sayi 8den cox olmalidir ")
   }
   
   emailInputSignup.value = "";
@@ -72,18 +78,12 @@ formSignin.addEventListener("submit", async function (e) {
         localStorage.setItem("login", true);
       } else {
         localStorage.setItem("isAdmin", true);
+        localStorage.setItem("userName", response.data.userInfo.userName);
         window.location.href = "admin/admin.html";
       }
     }
   } catch (error) {
-    Toastify({
-      text: "bele bir istifadeci yoxdur",
-      duration: 3000,
-      newWindow: true,
-      gravity: "top", // `top` or `bottom`
-      positionLeft: false, // `true` or `false`
-      backgroundColor: "#ff0000",
-    }).showToast();
+   toastifyError("bele bir istifadeci yoxdur")
   }
 
   passwordInputSignin.value = "";

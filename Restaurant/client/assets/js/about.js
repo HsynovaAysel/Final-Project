@@ -71,7 +71,7 @@ const navbar = document.querySelector(".navbar");
 const pagesList = document.querySelector("#pages");
 const pagesUl = document.querySelector(".pages");
 const chefBgImg = document.querySelector(".chef-img");
-const aboutImg = document.querySelector(".about-img");
+
 
 let logOut = document.querySelector(".fa-right-to-bracket");
 let login = localStorage.getItem("login");
@@ -99,8 +99,8 @@ pagesList.addEventListener("click", function () {
 });
 
 window.addEventListener("scroll", function () {
-  chefBgImg.classList.toggle("chef-animation-img", this.window.scrollY > "700");
-  aboutImg.classList.toggle("bg-img-about", this.window.scrollY > "100");
+  chefBgImg.classList.toggle("chef-animation-img", this.window.scrollY > "600");
+
 });
 let BASE_URL = "http://localhost:8080";
 let rezervForm = document.querySelector(".form-rezerv");

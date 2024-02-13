@@ -28,11 +28,11 @@ const deleteRezervById = async (req, res) => {
   const { id } = req.params;
   try {
     const deletedRezerv = await Rezervs.findByIdAndDelete(id);
-    const rezervs = Rezervs.find({});
+    // const rezervs = Rezervs.find({});
     res.status(200).json({
       message: "success",
       deletedrezerv: deletedRezerv,
-      allRezervs: rezervs,
+      // allRezervs: rezervs,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });
@@ -45,9 +45,11 @@ const addNewRezerv = async (req, res) => {
   const newRezerv = new Rezervs({ ...req.body });
   try {
     await newRezerv.save();
+    // const allRezervs = Rezervs.find({});
     res.status(201).send({
       message: "created succesfully!",
       data: newRezerv,
+      // allRezervs: allRezervs,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });
@@ -61,9 +63,11 @@ const updateRezervById = async (req, res) => {
   try {
     await Rezervs.findByIdAndUpdate(id, { ...req.body });
     const updatedRezerv = await Rezervs.findById(id);
+    // const rezervs = Rezervs.find({});
     res.status(200).send({
       message: "updated succesfully!",
       data: updatedRezerv,
+      // allRezervs: rezervs,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });

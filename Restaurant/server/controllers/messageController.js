@@ -48,9 +48,11 @@ const addNewMessage = async (req, res) => {
   const newMessage = new Messages({ ...req.body });
   try {
     await newMessage.save();
+    const messages = await Messages.find({});
     res.status(201).send({
       message: "created succesfully!",
       data: newMessage,
+      allMessages: messages,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });
@@ -64,9 +66,11 @@ const updateMessageById = async (req, res) => {
   try {
     await Messages.findByIdAndUpdate(id, { ...req.body });
     const updateMessage = await Messages.findById(id);
+    const messages = await Messages.find({});
     res.status(200).send({
       message: "updated succesfully!",
       data: updateMessage,
+      allMessages: messages,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });

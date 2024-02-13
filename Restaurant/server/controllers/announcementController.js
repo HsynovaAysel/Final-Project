@@ -45,9 +45,11 @@ const addNewAnnouncement = async (req, res) => {
   const newAnnouncement = new Announcements({ ...req.body });
   try {
     await newAnnouncement.save();
+    const announcements = Announcements.find({});
     res.status(201).send({
       message: "created succesfully!",
       data: newAnnouncement,
+      allAnnouncements: announcements,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });
@@ -61,9 +63,11 @@ const updateAnnouncementById = async (req, res) => {
   try {
     await Announcements.findByIdAndUpdate(id, { ...req.body });
     const updatedAnnouncement = await Announcements.findById(id);
+    const announcements = Announcements.find({});
     res.status(200).send({
       message: "updated succesfully!",
       data: updatedAnnouncement,
+      allAnnouncements: announcements,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });

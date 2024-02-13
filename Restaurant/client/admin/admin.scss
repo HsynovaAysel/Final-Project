@@ -3,6 +3,10 @@
 @import "../assets/sass/base/typograpy";
 @import "../assets/sass/utils/mixins";
 @import "../assets/sass/components/buttons";
+@import "../assets/sass/components/spinner-modal-scroll";
+i{
+  cursor: pointer;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -11,8 +15,15 @@
     padding: 0 5%;
   }
 }
-
+body {
+  background-color: $about-color;
+}
 header {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  position: fixed;
   padding: 30px 0;
   background-color: #1b1b1b;
   .header {
@@ -26,11 +37,34 @@ header {
       }
     }
     .icons {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      .menu-icon {
+        width: 30px;
+        height: 30px;
+        color: $home-color;
+        font-size: 20px;
+        @include flex();
+        visibility: hidden;
+        cursor: pointer;
+        &.menu-scroll {
+          visibility: visible;
+        }
+      }
       i {
         cursor: pointer;
         font-size: 20px;
+        &.fa-right-from-bracket{
+          color: white;
+          
+        }
       }
     }
+  }
+  &.header-scroll {
+    background-color: rgba($color: #1b1b1b, $alpha: 0.9);
   }
 }
 .home-icon {
@@ -41,12 +75,17 @@ header {
   color: $home-color;
   font-size: 20px;
   @include flex();
-  //  position: fixed;
-  //  top: 100px;
-  //  left: 100px;
-  //  z-index: -1;
   cursor: pointer;
+  visibility: visible;
+  &.home-scroll {
+    visibility: hidden;
+  }
 }
+// #banner {
+//   .banner {
+
+//   }
+// }
 #candore {
   position: fixed;
   top: 0;
@@ -61,6 +100,7 @@ header {
   gap: 70px;
   left: -350px;
   transition: all 0.5s ease;
+  z-index: 5;
   .fa-x {
     cursor: pointer;
     top: 20px;
@@ -104,51 +144,86 @@ header {
     left: 0px;
   }
 }
-// #banner {
-//   .banner {
-
-//   }
-// }
 
 #customer {
+  padding: 100px 0 50px 0;
   .customer {
-    .customer-form {
-      padding: 50px 0 0 0;
-      background-color: #1b1b1b;
+    #customer-form {
       display: flex;
       flex-direction: column;
-      @include flex();
-      gap: 1rem;
-
-      input {
-        width: 50%;
-        padding: 20px 0;
-        &::placeholder {
-          color: black;
-          font-family: $font-noto;
-          font-size: 14px;
-          font-weight: 400;
-          line-height: 26px;
+      justify-content: center;
+      align-items: center;
+      .customer-form {
+        h1 {
+          font-size: 60px;
+          margin-bottom: 20px;
         }
-      }
+        width: 50%;
+        padding: 50px 0 50px 0;
+        background-color: #1b1b1b;
+        display: flex;
+        flex-direction: column;
+        @include flex();
+        gap: 1rem;
 
-      button {
-        @extend %btn;
-        background-color: $home-color;
-        width: 100%;
-        &:hover {
-          background-color: transparent;
-          color: $home-color;
+        input {
+          width: 90%;
+          padding: 20px 0 20px 10px;
+          &::placeholder {
+            color: black;
+            font-family: $font-noto;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 26px;
+          }
+        }
+
+        button {
+          @extend %btn;
+          background-color: $home-color;
+
+          width: 92%;
+          &:hover {
+            background-color: transparent;
+            color: $home-color;
+          }
         }
       }
     }
   }
+  .search-input {
+    width: 30%;
+    margin-top: 50px;
+    position: relative;
+    border: 1px solid $home-color;
+    padding: 10px;
+    input {
+      background-color: transparent;
+      width: 100%;
+      &::placeholder {
+        color: black;
+        font-family: $font-noto;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 26px;
+      }
+    }
+    i {
+      top: 30%;
+      right: 5px;
+      position: absolute;
+      color: $home-color;
+    }
+  } h2 {
+      text-align: center;
+    }
   .customer-table {
     margin-top: 50px;
     width: 100%;
     background-color: #1b1b1b;
     text-align: center;
     border-collapse: collapse;
+   
     thead {
       tr {
         th {
@@ -175,8 +250,8 @@ header {
   }
 }
 #category {
+  padding: 100px 0 50px 0;
   .category {
-
     .menu-all-button {
       @include flex();
       flex-wrap: wrap;
@@ -186,7 +261,7 @@ header {
         width: 10%;
         @include flex();
         flex-direction: column;
-       
+
         button {
           width: 100px;
           transition: all 0.8s ease;
@@ -197,7 +272,7 @@ header {
           font-weight: 400;
           line-height: 38px;
           background-color: #1b1b1b;
-          color:$home-color ;
+          color: $home-color;
           border: 1px solid $home-color;
           &.button-active {
             color: white;
@@ -205,19 +280,15 @@ header {
         }
       }
     }
-
-
-    .category-form {
-      padding: 50px 0 0 0;
-      background-color: #1b1b1b;
-      display: flex;
-      flex-direction: column;
-      @include flex();
-      gap: 1rem;
-
+    .search-input {
+      width: 30%;
+      margin-top: 50px;
+      position: relative;
+      border: 1px solid $home-color;
+      padding: 10px;
       input {
-        width: 50%;
-        padding: 20px 0;
+        background-color: transparent;
+        width: 100%;
         &::placeholder {
           color: black;
           font-family: $font-noto;
@@ -226,14 +297,52 @@ header {
           line-height: 26px;
         }
       }
+      i {
+        top: 30%;
+        right: 5px;
+        position: absolute;
+        color: $home-color;
+      }
+    }
+    #category-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .category-form {
+        h1 {
+          font-size: 60px;
+          margin-bottom: 20px;
+        }
+        width: 50%;
+        padding: 50px 0 50px 0;
+        background-color: #1b1b1b;
+        display: flex;
+        flex-direction: column;
+        @include flex();
+        gap: 1rem;
 
-      button {
-        @extend %btn;
-        background-color: $home-color;
-        width: 100%;
-        &:hover {
-          background-color: transparent;
-          color: $home-color;
+        input {
+          width: 90%;
+          padding: 20px 0 20px 10px;
+          &::placeholder {
+            color: black;
+            font-family: $font-noto;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 26px;
+          }
+        }
+
+        button {
+          @extend %btn;
+          background-color: $home-color;
+
+          width: 92%;
+          &:hover {
+            background-color: transparent;
+            color: $home-color;
+          }
         }
       }
     }
@@ -270,18 +379,81 @@ header {
   }
 }
 #vacancy {
+  padding: 100px 0 50px 0;
   .vacancy {
-    .vacancy-form {
-      padding: 50px 0 0 0;
-      background-color: #1b1b1b;
+    #vacancy-form {
       display: flex;
       flex-direction: column;
-      @include flex();
-      gap: 1rem;
-
-      input {
+      justify-content: center;
+      align-items: center;
+      .vacancy-form {
+        h1 {
+          font-size: 60px;
+          margin-bottom: 20px;
+        }
         width: 50%;
-        padding: 20px 0;
+        padding: 50px 0 50px 0;
+        background-color: #1b1b1b;
+        display: flex;
+        flex-direction: column;
+        @include flex();
+        gap: 1rem;
+
+        input {
+          width: 90%;
+          padding: 20px 0 20px 10px;
+          &::placeholder {
+            color: black;
+            font-family: $font-noto;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 26px;
+          }
+        }
+        textarea {
+          width: 90%;
+          padding: 20px 0 20px 10px;
+          &::placeholder {
+            color: black;
+            font-family: $font-noto;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 26px;
+          }
+        }
+        input {
+          width: 90%;
+          padding: 20px 0 20px 10px;
+          &::placeholder {
+            color: black;
+            font-family: $font-noto;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 26px;
+          }
+        }
+
+        button {
+          @extend %btn;
+          background-color: $home-color;
+
+          width: 92%;
+          &:hover {
+            background-color: transparent;
+            color: $home-color;
+          }
+        }
+      }
+    }
+    .search-input {
+      width: 30%;
+      margin-top: 50px;
+      position: relative;
+      border: 1px solid $home-color;
+      padding: 10px;
+      input {
+        background-color: transparent;
+        width: 100%;
         &::placeholder {
           color: black;
           font-family: $font-noto;
@@ -290,15 +462,11 @@ header {
           line-height: 26px;
         }
       }
-
-      button {
-        @extend %btn;
-        background-color: $home-color;
-        width: 100%;
-        &:hover {
-          background-color: transparent;
-          color: $home-color;
-        }
+      i {
+        top: 30%;
+        right: 5px;
+        position: absolute;
+        color: $home-color;
       }
     }
   }
@@ -334,39 +502,84 @@ header {
   }
 }
 #reservation {
+  padding: 100px 0 50px 0;
   .reservation {
-    .reservation-form {
-      padding: 50px 0 0 0;
-      background-color: #1b1b1b;
+    #reservation-form {
       display: flex;
       flex-direction: column;
-      @include flex();
-      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      .reservation-form {
+        h1 {
+          font-size: 60px;
+          margin-bottom: 20px;
+        }
+        width: 50%;
+        padding: 50px 0 50px 0;
+        background-color: #1b1b1b;
+        display: flex;
+        flex-direction: column;
+        @include flex();
+        gap: 1rem;
 
-      input {
-        width: 50%;
-        padding: 20px 0;
-        &::placeholder {
-          color: black;
-          font-family: $font-noto;
-          font-size: 14px;
-          font-weight: 400;
-          line-height: 26px;
+        input {
+          width: 90%;
+          padding: 20px 0 20px 10px;
+          &::placeholder {
+            color: black;
+            font-family: $font-noto;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 26px;
+          }
+        }
+        select {
+          width: 92%;
+          padding: 20px 0 20px 10px;
+          &::placeholder {
+            color: black;
+            font-family: $font-noto;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 26px;
+          }
+        }
+
+        button {
+          @extend %btn;
+          background-color: $home-color;
+
+          width: 92%;
+          &:hover {
+            background-color: transparent;
+            color: $home-color;
+          }
         }
       }
-      select {
-        width: 50%;
-        padding: 20px 0;
+    }
+  }
+  .search-input {
+    width: 30%;
+    margin-top: 50px;
+    position: relative;
+    border: 1px solid $home-color;
+    padding: 10px;
+    input {
+      background-color: transparent;
+      width: 100%;
+      &::placeholder {
+        color: black;
+        font-family: $font-noto;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 26px;
       }
-      button {
-        @extend %btn;
-        background-color: $home-color;
-        width: 100%;
-        &:hover {
-          background-color: transparent;
-          color: $home-color;
-        }
-      }
+    }
+    i {
+      top: 30%;
+      right: 5px;
+      position: absolute;
+      color: $home-color;
     }
   }
   .reservation-table {

@@ -985,11 +985,11 @@ main header .header {
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
-  background-image: url("../../images/services/banner5.jpg");
+  background-image: url("../../images/chefs/5.jpg");
 }
 main header .header .bg-color {
   width: 100%;
-  padding: 200px 0;
+  padding: 310px 0;
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;

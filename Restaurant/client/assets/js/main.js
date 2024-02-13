@@ -142,7 +142,27 @@ $(".owl-carousel").owlCarousel({
     });
   });
 })(jQuery);
-
+//Toastify 
+function toastifySuccesful(text) {
+  Toastify({
+    text: text,
+    duration: 3000,
+    newWindow: true,
+    gravity: "top", // `top` or `bottom`
+    positionLeft: true, // `true` or `false`
+    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)"
+  }).showToast();
+}
+function toastifyError(text) {
+  Toastify({
+    text: text,
+    duration: 3000,
+    newWindow: true,
+    gravity: "top", // `top` or `bottom`
+    positionLeft: false, // `true` or `false`
+    backgroundColor: "#ff0000",
+  }).showToast();
+}
 const spinner = document.querySelector(".spinner-loader");
 const main = document.querySelector("main");
 const candoreAside = document.querySelector("#candore-aside");
@@ -311,11 +331,14 @@ function favs(icon, id) {
       icon.className = "fa-solid fa-heart";
       let find = menuAllData.find((item) => item._id == id);
       favorites.push(find);
+      toastifySuccesful('succesfuly add favorites')
     } else {
       icon.className = "fa-regular fa-heart";
       favorites = favorites.filter((item) => item._id != id);
+      toastifySuccesful('succesfuly remove favorites')
     }
     setTolocalStorage(favorites);
+    
   } else {
     window.location = "login-signup.html";
   }
@@ -356,6 +379,7 @@ function cart(id) {
     }
     countBasket(basket);
     setTolocalStorageBasket(basket);
+    toastifySuccesful('succesfuly add btn')
   } else {
     window.location = "login-signup.html";
   }
@@ -409,15 +433,9 @@ rezervForm.addEventListener("submit", async function (e) {
   if (login === "true") {
     if (!time) {
       await axios.post(`${BASE_URL}/rezervs`, rezervsObj);
+      toastifySuccesful('succesfuly add rezervs')
     } else {
-      Toastify({
-        text: "bu vaxta bos yer yoxdur. ",
-        duration: 3000,
-        newWindow: true,
-        gravity: "top", // `top` or `bottom`
-        positionLeft: false, // `true` or `false`
-        backgroundColor: "#ff0000",
-      }).showToast();
+    toastifyError("bu vaxta bos yer yoxdur. ",)
     }
   } else {
     window.location = "login-signup.html";
@@ -434,3 +452,46 @@ rezervForm.addEventListener("submit", async function (e) {
 // if (window.location.pathname=='*') {
 //   window.location="error.html";
 // }
+let teamCardLists = document.querySelector(".team-card-lists");
+async function getALLTeamData() {
+  let res = await axios(`${BASE_URL}/team`);
+  drawTeamCard(res.data);
+  // console.log(res.data);
+}
+getALLTeamData()
+function drawTeamCard(array) {
+  teamCardLists.innerHTML = "";
+  array.forEach((el) => {
+    teamCardLists.innerHTML += `             
+   <div class="team-card">
+                        <div class="team-img">
+                          <img src="${el.image}" alt="" />
+                        </div>
+                        <div class="team-content">
+                          <h4>${el.userName}</h4>
+                          <span>${el.userJob}</span>
+                          <p>
+                          ${el.description}
+                          </p>
+                          <div class="social">
+                            <a href="#"
+                              ><i class="fa-brands fa-linkedin"></i
+                            ></a>
+                            <a href="#"
+                              ><i class="fa-brands fa-facebook-f"></i
+                            ></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"
+                              ><i class="fa-brands fa-instagram"></i
+                            ></a>
+                          </div>
+                        </div>
+                        <div class="title-box">
+                          <h3>${el.userName}</h3>
+                          <p>${el.userJob}</p>
+                        </div>
+                      </div>
+   
+   `;
+  });
+}

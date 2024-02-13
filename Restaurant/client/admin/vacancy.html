@@ -23,9 +23,25 @@
       href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pinyon+Script&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <link rel="stylesheet" href="./admin.css" />
     <title>Document</title>
+    <script
+      defer
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
 
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
@@ -39,6 +55,17 @@
     <script defer src="./js/vacancy.js"></script>
   </head>
   <body>
+    <div class="progress-wrap">
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        <i class="fa-solid fa-arrow-up"></i>
+      </svg>
+    </div>
     <header>
       <div class="container">
         <div class="header">
@@ -46,10 +73,11 @@
             <img src="../assets/images/logo (3).png" alt="" />
           </div>
           <div class="icons">
+            <div class="menu-icon">
+              <i class="fa-solid fa-bars"></i>
+            </div>
             <a href="#"><i class="fa-solid fa-user"></i></a>
-            <a href="../index.html"
-              ><i class="fa-solid fa-right-from-bracket"></i
-            ></a>
+            <i class="fa-solid fa-right-from-bracket"></i>
           </div>
         </div>
       </div>
@@ -61,7 +89,7 @@
           <img src="../assets/images/logo (3).png" alt="" />
         </div>
         <div class="user-name">
-          <h4>Hello,Admin</h4>
+          <h4 id="admin-name"></h4>
         </div>
       </div>
       <nav>
@@ -72,9 +100,7 @@
             >
           </li>
           <li>
-            <a href="customers.html"
-              ><i class="fa-solid fa-users"></i>Customers</a
-            >
+            <a href="customers.html"><i class="fa-solid fa-users"></i>Users</a>
           </li>
           <li>
             <a href="category.html"
@@ -83,7 +109,7 @@
           </li>
           <li>
             <a href="comment.html"
-              ><i class="fa-regular fa-comment"></i>Comment</a
+              ><i class="fa-regular fa-comment"></i>Message</a
             >
           </li>
           <li>
@@ -113,42 +139,50 @@
           <div class="home-icon">
             <i class="fa-solid fa-bars"></i>
           </div>
-
-          <form action="" class="vacancy-form">
-            <input type="file" id="cv-input" placeholder="CV" />
-            <input
-              type="text"
-              id="lastname-input"
-              placeholder="User Lastname"
-              required
-            />
-            <input
-              type="text"
-              id="firstname-input"
-              placeholder="User Fistname"
-              required
-            />
-            <input
-              type="text"
-              id="email-input"
-              placeholder="User Email"
-              required
-            />
-            <input type="text" id="phone-input" placeholder="Phone" required />
-            <input type="number" id="age-input" placeholder="Age" required />
-            <input type="text" id="job-input" placeholder="Job" required />
-            <input type="text" id="city-input" placeholder="City" required />
-            <textarea
-              name=""
-              id="experience-input"
-              placeholder="Experience"
-              required
-            ></textarea>
-
-            <p class="error"></p>
-            <button type="submit" class="add">Add</button>
-          </form>
-
+          <div id="vacancy-form">
+            <form action="" class="vacancy-form">
+              <h1>Edited Vacancy</h1>
+              <input type="file" id="cv-input" placeholder="CV" />
+              <input
+                type="text"
+                id="lastname-input"
+                placeholder="User Lastname"
+                required
+              />
+              <input
+                type="text"
+                id="firstname-input"
+                placeholder="User Fistname"
+                required
+              />
+              <input
+                type="text"
+                id="email-input"
+                placeholder="User Email"
+                required
+              />
+              <input
+                type="text"
+                id="phone-input"
+                placeholder="Phone"
+                required
+              />
+              <input type="number" id="age-input" placeholder="Age" required />
+              <input type="text" id="job-input" placeholder="Job" required />
+              <input type="text" id="city-input" placeholder="City" required />
+              <textarea
+                name=""
+                id="experience-input"
+                placeholder="Experience"
+                required
+              ></textarea>
+              <button type="submit" class="add">Edit</button>
+            </form>
+          </div>
+          <div class="search-input">
+            <input type="text" id="search" placeholder="Search User Name..." />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
           <table class="vacancy-table">
             <thead>
               <th><h4>CV</h4></th>
@@ -159,6 +193,8 @@
               <th><h4>Job</h4></th>
               <th><h4>City</h4></th>
               <th><h4>Experience</h4></th>
+              <th><h4>Created</h4></th>
+              <th><h4>Updated</h4></th>
               <th><h4>Delete</h4></th>
               <th><h4>Edit</h4></th>
             </thead>

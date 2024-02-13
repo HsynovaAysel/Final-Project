@@ -216,7 +216,7 @@ span {
   text-transform: uppercase;
 }
 
-#reservation .reservation .reservation-form button, #vacancy .vacancy .vacancy-form button, #category .category .category-form button, #customer .customer .customer-form button {
+#reservation .reservation #reservation-form .reservation-form button, #vacancy .vacancy #vacancy-form .vacancy-form button, #category .category #category-form .category-form button, #customer .customer #customer-form .customer-form button {
   outline: none;
   border: 1px solid #c19d60;
   font-family: "Noah", sans-serif;
@@ -231,8 +231,216 @@ span {
   background-color: transparent;
   transition: all 0.5s;
 }
-#reservation .reservation .reservation-form button:hover, #vacancy .vacancy .vacancy-form button:hover, #category .category .category-form button:hover, #customer .customer .customer-form button:hover {
+#reservation .reservation #reservation-form .reservation-form button:hover, #vacancy .vacancy #vacancy-form .vacancy-form button:hover, #category .category #category-form .category-form button:hover, #customer .customer #customer-form .customer-form button:hover {
   background-color: #c19d60;
+}
+
+#lvideo-wrap {
+  position: fixed;
+  height: 100dvh;
+  z-index: 9991;
+  opacity: 0;
+  visibility: hidden;
+}
+#lvideo-wrap, #lvideo-wrap:after,
+#lvideo-wrap .lvideo-overlay {
+  left: 0;
+  top: 0;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+#lvideo-wrap .lvideo-container {
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#lvideo-wrap video,
+#lvideo-wrap iframe {
+  border-radius: 12px;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #000;
+  z-index: 10;
+  box-shadow: 0 0 19px rgba(0, 0, 0, 0.16);
+  display: block;
+  max-width: 1280px;
+  height: auto;
+  width: 90%;
+  aspect-ratio: 16/9;
+}
+#lvideo-wrap .lvideo-close {
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  width: 42px;
+  height: 42px;
+  border-radius: 100%;
+  border: solid 2px rgba(0, 0, 0, 0.5);
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 150;
+}
+#lvideo-wrap .lvideo-close:before, #lvideo-wrap .lvideo-close:after {
+  content: "";
+  width: 60%;
+  height: 3px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+#lvideo-wrap .lvideo-close:before {
+  transform: rotate(42deg);
+}
+#lvideo-wrap .lvideo-close:after {
+  transform: rotate(-42deg);
+}
+#lvideo-wrap .lvideo-close:focus {
+  outline: none;
+}
+#lvideo-wrap .lvideo-close:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#lvideo-wrap .lvideo-close:hover:before, #lvideo-wrap .lvideo-close:hover:after {
+  background-color: #fff;
+}
+#lvideo-wrap.active {
+  opacity: 1;
+  visibility: visible;
+}
+#lvideo-wrap.active:after {
+  opacity: 0.5;
+}
+
+/* #Progress
+================================================== */
+.progress-wrap {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 200ms linear;
+}
+
+.progress-wrap.active-progress {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.progress-wrap svg path {
+  fill: none;
+}
+
+.progress-wrap svg.progress-circle path {
+  stroke: #c19d60;
+  stroke-width: 4;
+  box-sizing: border-box;
+  transition: all 200ms linear;
+}
+
+.progress-wrap i {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  /* content: '\f062'; */
+  text-align: center;
+  line-height: 46px;
+  font-size: 18px;
+  color: #c19d60;
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  z-index: 1;
+  transition: all 200ms linear;
+}
+
+.spinner-loader {
+  height: 100vh;
+  display: block;
+  background-color: white;
+}
+.spinner-loader #spinner {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: wait;
+}
+
+svg.spinner-webkit {
+  width: 80px;
+  height: 80px;
+}
+svg.spinner-webkit path {
+  stroke-dasharray: 329;
+  stroke-dashoffset: 0;
+  stroke: #c19d60;
+  stroke-width: 1.8px;
+  animation: draw 4s ease-in-out infinite;
+  fill: transparent;
+  fill-opacity: 0;
+}
+@keyframes draw {
+  100% {
+    stroke-dasharray: 329;
+    stroke-dashoffset: 658;
+  }
+}
+
+.spinner-ie {
+  width: 32px;
+  height: 32px;
+  top: 8px;
+  left: 8px;
+  position: absolute;
+  display: none;
+  animation: spin 0.5s linear infinite;
+  border: 2px solid transparent;
+  border-top: 2px solid #c19d60;
+  border-left: 2px solid #c19d60;
+  border-radius: 50px;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .spinner-webkit {
+    display: none;
+  }
+  .spinner-ie {
+    display: block;
+  }
+}
+i {
+  cursor: pointer;
 }
 
 .container {
@@ -245,7 +453,16 @@ span {
   }
 }
 
+body {
+  background-color: #f2eee8;
+}
+
 header {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  position: fixed;
   padding: 30px 0;
   background-color: #1b1b1b;
 }
@@ -260,9 +477,35 @@ header .header .logo {
 header .header .logo img {
   width: 100%;
 }
+header .header .icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+header .header .icons .menu-icon {
+  width: 30px;
+  height: 30px;
+  color: #c19d60;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  cursor: pointer;
+}
+header .header .icons .menu-icon.menu-scroll {
+  visibility: visible;
+}
 header .header .icons i {
   cursor: pointer;
   font-size: 20px;
+}
+header .header .icons i.fa-right-from-bracket {
+  color: white;
+}
+header.header-scroll {
+  background-color: rgba(27, 27, 27, 0.9);
 }
 
 .home-icon {
@@ -276,6 +519,10 @@ header .header .icons i {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  visibility: visible;
+}
+.home-icon.home-scroll {
+  visibility: hidden;
 }
 
 #candore {
@@ -292,6 +539,7 @@ header .header .icons i {
   gap: 70px;
   left: -350px;
   transition: all 0.5s ease;
+  z-index: 5;
 }
 #candore .fa-x {
   cursor: pointer;
@@ -330,8 +578,18 @@ header .header .icons i {
   left: 0px;
 }
 
-#customer .customer .customer-form {
-  padding: 50px 0 0 0;
+#customer {
+  padding: 100px 0 50px 0;
+}
+#customer .customer #customer-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#customer .customer #customer-form .customer-form {
+  width: 50%;
+  padding: 50px 0 50px 0;
   background-color: #1b1b1b;
   display: flex;
   flex-direction: column;
@@ -340,31 +598,69 @@ header .header .icons i {
   align-items: center;
   gap: 1rem;
 }
-#customer .customer .customer-form input {
-  width: 50%;
-  padding: 20px 0;
+#customer .customer #customer-form .customer-form h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
 }
-#customer .customer .customer-form input::-moz-placeholder {
+#customer .customer #customer-form .customer-form input {
+  width: 90%;
+  padding: 20px 0 20px 10px;
+}
+#customer .customer #customer-form .customer-form input::-moz-placeholder {
   color: black;
   font-family: "Noah", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 26px;
 }
-#customer .customer .customer-form input::placeholder {
+#customer .customer #customer-form .customer-form input::placeholder {
   color: black;
   font-family: "Noah", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 26px;
 }
-#customer .customer .customer-form button {
+#customer .customer #customer-form .customer-form button {
   background-color: #c19d60;
-  width: 100%;
+  width: 92%;
 }
-#customer .customer .customer-form button:hover {
+#customer .customer #customer-form .customer-form button:hover {
   background-color: transparent;
   color: #c19d60;
+}
+#customer .search-input {
+  width: 30%;
+  margin-top: 50px;
+  position: relative;
+  border: 1px solid #c19d60;
+  padding: 10px;
+}
+#customer .search-input input {
+  background-color: transparent;
+  width: 100%;
+}
+#customer .search-input input::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#customer .search-input input::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#customer .search-input i {
+  top: 30%;
+  right: 5px;
+  position: absolute;
+  color: #c19d60;
+}
+#customer h2 {
+  text-align: center;
 }
 #customer .customer-table {
   margin-top: 50px;
@@ -389,6 +685,9 @@ header .header .icons i {
   font-size: 20px;
 }
 
+#category {
+  padding: 100px 0 50px 0;
+}
 #category .category .menu-all-button {
   display: flex;
   justify-content: center;
@@ -420,8 +719,46 @@ header .header .icons i {
 #category .category .menu-all-button .menu-button-img button.button-active {
   color: white;
 }
-#category .category .category-form {
-  padding: 50px 0 0 0;
+#category .category .search-input {
+  width: 30%;
+  margin-top: 50px;
+  position: relative;
+  border: 1px solid #c19d60;
+  padding: 10px;
+}
+#category .category .search-input input {
+  background-color: transparent;
+  width: 100%;
+}
+#category .category .search-input input::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#category .category .search-input input::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#category .category .search-input i {
+  top: 30%;
+  right: 5px;
+  position: absolute;
+  color: #c19d60;
+}
+#category .category #category-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#category .category #category-form .category-form {
+  width: 50%;
+  padding: 50px 0 50px 0;
   background-color: #1b1b1b;
   display: flex;
   flex-direction: column;
@@ -430,29 +767,33 @@ header .header .icons i {
   align-items: center;
   gap: 1rem;
 }
-#category .category .category-form input {
-  width: 50%;
-  padding: 20px 0;
+#category .category #category-form .category-form h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
 }
-#category .category .category-form input::-moz-placeholder {
+#category .category #category-form .category-form input {
+  width: 90%;
+  padding: 20px 0 20px 10px;
+}
+#category .category #category-form .category-form input::-moz-placeholder {
   color: black;
   font-family: "Noah", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 26px;
 }
-#category .category .category-form input::placeholder {
+#category .category #category-form .category-form input::placeholder {
   color: black;
   font-family: "Noah", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 26px;
 }
-#category .category .category-form button {
+#category .category #category-form .category-form button {
   background-color: #c19d60;
-  width: 100%;
+  width: 92%;
 }
-#category .category .category-form button:hover {
+#category .category #category-form .category-form button:hover {
   background-color: transparent;
   color: #c19d60;
 }
@@ -479,8 +820,18 @@ header .header .icons i {
   font-size: 20px;
 }
 
-#vacancy .vacancy .vacancy-form {
-  padding: 50px 0 0 0;
+#vacancy {
+  padding: 100px 0 50px 0;
+}
+#vacancy .vacancy #vacancy-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#vacancy .vacancy #vacancy-form .vacancy-form {
+  width: 50%;
+  padding: 50px 0 50px 0;
   background-color: #1b1b1b;
   display: flex;
   flex-direction: column;
@@ -489,30 +840,101 @@ header .header .icons i {
   align-items: center;
   gap: 1rem;
 }
-#vacancy .vacancy .vacancy-form input {
-  width: 50%;
-  padding: 20px 0;
+#vacancy .vacancy #vacancy-form .vacancy-form h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
 }
-#vacancy .vacancy .vacancy-form input::-moz-placeholder {
+#vacancy .vacancy #vacancy-form .vacancy-form input {
+  width: 90%;
+  padding: 20px 0 20px 10px;
+}
+#vacancy .vacancy #vacancy-form .vacancy-form input::-moz-placeholder {
   color: black;
   font-family: "Noah", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 26px;
 }
-#vacancy .vacancy .vacancy-form input::placeholder {
+#vacancy .vacancy #vacancy-form .vacancy-form input::placeholder {
   color: black;
   font-family: "Noah", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 26px;
 }
-#vacancy .vacancy .vacancy-form button {
+#vacancy .vacancy #vacancy-form .vacancy-form textarea {
+  width: 90%;
+  padding: 20px 0 20px 10px;
+}
+#vacancy .vacancy #vacancy-form .vacancy-form textarea::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#vacancy .vacancy #vacancy-form .vacancy-form textarea::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#vacancy .vacancy #vacancy-form .vacancy-form input {
+  width: 90%;
+  padding: 20px 0 20px 10px;
+}
+#vacancy .vacancy #vacancy-form .vacancy-form input::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#vacancy .vacancy #vacancy-form .vacancy-form input::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#vacancy .vacancy #vacancy-form .vacancy-form button {
   background-color: #c19d60;
+  width: 92%;
+}
+#vacancy .vacancy #vacancy-form .vacancy-form button:hover {
+  background-color: transparent;
+  color: #c19d60;
+}
+#vacancy .vacancy .search-input {
+  width: 30%;
+  margin-top: 50px;
+  position: relative;
+  border: 1px solid #c19d60;
+  padding: 10px;
+}
+#vacancy .vacancy .search-input input {
+  background-color: transparent;
   width: 100%;
 }
-#vacancy .vacancy .vacancy-form button:hover {
-  background-color: transparent;
+#vacancy .vacancy .search-input input::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#vacancy .vacancy .search-input input::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#vacancy .vacancy .search-input i {
+  top: 30%;
+  right: 5px;
+  position: absolute;
   color: #c19d60;
 }
 #vacancy .vacancy-table {
@@ -538,8 +960,18 @@ header .header .icons i {
   font-size: 20px;
 }
 
-#reservation .reservation .reservation-form {
-  padding: 50px 0 0 0;
+#reservation {
+  padding: 100px 0 50px 0;
+}
+#reservation .reservation #reservation-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#reservation .reservation #reservation-form .reservation-form {
+  width: 50%;
+  padding: 50px 0 50px 0;
   background-color: #1b1b1b;
   display: flex;
   flex-direction: column;
@@ -548,34 +980,83 @@ header .header .icons i {
   align-items: center;
   gap: 1rem;
 }
-#reservation .reservation .reservation-form input {
-  width: 50%;
-  padding: 20px 0;
+#reservation .reservation #reservation-form .reservation-form h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
 }
-#reservation .reservation .reservation-form input::-moz-placeholder {
+#reservation .reservation #reservation-form .reservation-form input {
+  width: 90%;
+  padding: 20px 0 20px 10px;
+}
+#reservation .reservation #reservation-form .reservation-form input::-moz-placeholder {
   color: black;
   font-family: "Noah", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 26px;
 }
-#reservation .reservation .reservation-form input::placeholder {
+#reservation .reservation #reservation-form .reservation-form input::placeholder {
   color: black;
   font-family: "Noah", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 26px;
 }
-#reservation .reservation .reservation-form select {
-  width: 50%;
-  padding: 20px 0;
+#reservation .reservation #reservation-form .reservation-form select {
+  width: 92%;
+  padding: 20px 0 20px 10px;
 }
-#reservation .reservation .reservation-form button {
+#reservation .reservation #reservation-form .reservation-form select::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#reservation .reservation #reservation-form .reservation-form select::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#reservation .reservation #reservation-form .reservation-form button {
   background-color: #c19d60;
+  width: 92%;
+}
+#reservation .reservation #reservation-form .reservation-form button:hover {
+  background-color: transparent;
+  color: #c19d60;
+}
+#reservation .search-input {
+  width: 30%;
+  margin-top: 50px;
+  position: relative;
+  border: 1px solid #c19d60;
+  padding: 10px;
+}
+#reservation .search-input input {
+  background-color: transparent;
   width: 100%;
 }
-#reservation .reservation .reservation-form button:hover {
-  background-color: transparent;
+#reservation .search-input input::-moz-placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#reservation .search-input input::placeholder {
+  color: black;
+  font-family: "Noah", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+#reservation .search-input i {
+  top: 30%;
+  right: 5px;
+  position: absolute;
   color: #c19d60;
 }
 #reservation .reservation-table {

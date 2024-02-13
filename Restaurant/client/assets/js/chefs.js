@@ -98,7 +98,7 @@ pagesList.addEventListener("click", function () {
   pagesUl.classList.toggle("pages-ul");
 });
 window.addEventListener("scroll", function () {
-  chefBgImg.classList.toggle("chef-animation-img", this.window.scrollY > "400");
+  chefBgImg.classList.toggle("chef-animation-img", this.window.scrollY > "200");
 });
 
 let rezervForm = document.querySelector(".form-rezerv");
@@ -163,3 +163,46 @@ rezervForm.addEventListener("submit", async function (e) {
 const count = document.querySelector(".count-basket");
 let basketCount = JSON.parse(localStorage.getItem("basketCount")) ?? 0;
 count.innerText = basketCount;
+let teamCardLists = document.querySelector(".team-card-lists");
+async function getALLTeamData() {
+  let res = await axios(`${BASE_URL}/team`);
+  drawTeamCard(res.data);
+  // console.log(res.data);
+}
+getALLTeamData()
+function drawTeamCard(array) {
+  teamCardLists.innerHTML = "";
+  array.forEach((el) => {
+    teamCardLists.innerHTML += `             
+   <div class="team-card">
+                        <div class="team-img">
+                          <img src="${el.image}" alt="" />
+                        </div>
+                        <div class="team-content">
+                          <h4>${el.userName}</h4>
+                          <span>${el.userJob}</span>
+                          <p>
+                          ${el.description}
+                          </p>
+                          <div class="social">
+                            <a href="#"
+                              ><i class="fa-brands fa-linkedin"></i
+                            ></a>
+                            <a href="#"
+                              ><i class="fa-brands fa-facebook-f"></i
+                            ></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"
+                              ><i class="fa-brands fa-instagram"></i
+                            ></a>
+                          </div>
+                        </div>
+                        <div class="title-box">
+                          <h3>${el.userName}</h3>
+                          <p>${el.userJob}</p>
+                        </div>
+                      </div>
+   
+   `;
+  });
+}
