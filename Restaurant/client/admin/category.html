@@ -69,17 +69,19 @@
     <header>
       <div class="container">
         <div class="header">
-          <div class="logo">
+          <a href="index.html" class="logo">
             <img src="../assets/images/logo (3).png" alt="" />
-          </div>
+          </a>
           <div class="icons">
             <div class="menu-icon">
               <i class="fa-solid fa-bars"></i>
             </div>
-            <a href="#"><i class="fa-solid fa-user"></i></a>
-           
-              <i class="fa-solid fa-right-from-bracket"></i>
-          
+            <a id="toggle">
+              <i class="fas fa-moon"></i>
+            </a>
+            <a ><i class="fa-solid fa-user"></i></a>
+
+            <i class="fa-solid fa-right-from-bracket"></i>
           </div>
         </div>
       </div>
@@ -102,9 +104,7 @@
             >
           </li>
           <li>
-            <a href="customers.html"
-              ><i class="fa-solid fa-users"></i>Users</a
-            >
+            <a href="customers.html"><i class="fa-solid fa-users"></i>Users</a>
           </li>
           <li>
             <a href="category.html"
@@ -163,42 +163,47 @@
               <button class="menu-button">Wine</button>
             </div>
           </div>
-         <div id="category-form">
-          <form action="" class="category-form">
-            <h1>Menu Form</h1>
-            <input type="file" id="item-input" placeholder="Item Image" />
-            <input
-              type="text"
-              id="category-input"
-              placeholder="Item Category"
-            />
-            <input
-              type="text"
-              id="name-input"
-              placeholder="Item Name"
-              required
-            />
-            <input
-              type="text"
-              id="description-input"
-              placeholder="Iteam Description"
-              required
-            />
-            <input
-              type="number"
-              id="price-input"
-              min="1"
-              placeholder="Iteam Price"
-              required
-            />
-            <p class="error"></p>
-            <button type="submit" class="add">Add</button>
-          </form>
-         </div>
-         <div class="search-input">
-          <input type="text" id="search" placeholder="Search Name..." />
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
+          <div id="category-form">
+            <form action="" class="category-form">
+              <h1>Menu Form</h1>
+              <input type="file" id="item-input" placeholder="Item Image" />
+              <input
+                type="text"
+                id="category-input"
+                placeholder="Item Category"
+              />
+              <input
+                type="text"
+                id="name-input"
+                placeholder="Item Name"
+                required
+              />
+              <input
+                type="text"
+                id="description-input"
+                placeholder="Iteam Description"
+                required
+              />
+              <input
+                type="number"
+                id="price-input"
+                min="1"
+                placeholder="Iteam Price"
+                required
+              />
+              <p class="error"></p>
+              <button type="submit" class="add">Add</button>
+            </form>
+          </div>
+          <div class="input-button">
+            <div class="search-input">
+              <input type="text" id="search" placeholder="Search Name..." />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <button class="btn sort">ASCENDING PRICE</button>
+          </div>
+
           <table class="category-table">
             <thead>
               <th><h4>Item</h4></th>

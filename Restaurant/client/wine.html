@@ -30,6 +30,13 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./assets/sass/pages/wine.css" />
     <title>Document</title>
     <script
@@ -42,6 +49,13 @@
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     ></script>
     <script
       defer
@@ -264,6 +278,43 @@
           </div>
         </div>
       </section>
+      <div id="counter-starts">
+        <div class="container">
+          <div class="counter-starts">
+            <div class="img">
+              <img src="./assets/images/wine/white-bottle-dark.png" alt="" />
+            </div>
+            <div class="counter-lists">
+              <div class="stats">
+                <h1>
+                  +
+                  <div class="counting" data-count="280">0</div>
+                </h1>
+
+                <h3>VARIETALS</h3>
+              </div>
+
+              <div class="stats">
+                <h1>
+                  +
+                  <div class="counting" data-count="75">0</div>
+                </h1>
+
+                <h3>WINE PRODUCED</h3>
+              </div>
+
+              <div class="stats">
+                <h1>
+                  +
+                  <div class="counting" data-count="999">0</div>
+                </h1>
+
+                <h3>AWARDS WON</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <section id="wine-bar">
         <div class="wine-bar">
           <div class="left">
@@ -340,7 +391,6 @@
                     type="date"
                     placeholder="Date"
                     required
-                   
                     id="rezerv-date"
                   />
                   <select id="rezerv-person">

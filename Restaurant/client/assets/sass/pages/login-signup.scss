@@ -2,14 +2,40 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-@media screen and (max-width:1199px) {
+@media screen and (max-width: 1199px) {
   .container {
     padding: 0 5%;
   }
 }
+header {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  position: fixed;
+  padding: 30px 0;
+  background-color: rgba($color: #1b1b1b, $alpha: 0);
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      width: 150px;
+      img {
+        width: 100%;
+      }
+    }
+    .icons {
+      i {
+        cursor: pointer;
+        font-size: 20px;
+        color: white;
+      }
+    }
+  }
+}
 #cont {
   display: flex;
-  // justify-content: center;
   align-items: center;
   background-image: url("../../images/bg-about-us.jpg");
   background-repeat: no-repeat;
@@ -19,10 +45,11 @@
 }
 
 .cont {
+  margin-top: 50px;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  width: 900px;
+  width: 75%;
   height: 550px;
   background: transparent;
   box-shadow: -10px -10px 15px rgba(70, 70, 70, 0.15),
@@ -71,7 +98,7 @@ button {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 input {
-    caret-color: white;
+  caret-color: white;
   color: white;
   display: block;
   width: 100%;

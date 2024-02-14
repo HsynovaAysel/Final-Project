@@ -1,3 +1,44 @@
+
+let homeIcons = document.querySelectorAll(".fa-bars");
+let homeIconScroll = document.querySelector(".home-icon");
+let menuIconScroll = document.querySelector(".menu-icon");
+let header=document.querySelector('header')
+let xMarkIcon = document.querySelector(".fa-x");
+let aside = document.querySelector("aside");
+let userAllData = null;
+let findAdmin = null;
+let BASE_URL = "http://localhost:8080";
+let adminName = document.querySelector("#admin-name");
+let logOut = document.querySelector(".fa-right-from-bracket");
+
+
+$('.counting').each(function() {
+  var $this = $(this),
+      countTo = $this.attr('data-count');
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 3000,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+  
+
+});
+
+
+
 // Scroll back to top
 
 (function ($) {
@@ -45,60 +86,34 @@ function toastifySuccesful(text) {
     text: text,
     duration: 3000,
     newWindow: true,
-    close: true,
-    gravity: "top", // `top` or `bottom`
+    gravity: "bottom", // `top` or `bottom`
     positionLeft: true, // `true` or `false`
     backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
   }).showToast();
 }
-function toastifyError(text) {
-  Toastify({
-    text: text,
-    duration: 3000,
-    newWindow: true,
-    gravity: "top", // `top` or `bottom`
-    positionLeft: false, // `true` or `false`
-    backgroundColor: "#ff0000",
-  }).showToast();
-}
-let homeIcons = document.querySelectorAll(".fa-bars");
-let homeIconScroll = document.querySelector(".home-icon");
-let menuIconScroll = document.querySelector(".menu-icon");
+
+
 window.addEventListener("scroll", function () {
+  header.classList.toggle('header-scroll',this.window.scrollY > 30)
   menuIconScroll.classList.toggle("menu-scroll", this.window.scrollY > 0);
   homeIconScroll.classList.toggle("home-scroll", this.window.scrollY > 30);
 });
 
 homeIcons.forEach((homeIcon) =>
-  homeIcon.addEventListener("click", function () {
+homeIcon.addEventListener("click", function () {
     document.querySelector(".aside")?.classList.remove("aside");
     aside.classList.toggle("aside");
   })
-);
-let xMarkIcon = document.querySelector(".fa-x");
-let aside = document.querySelector("aside");
-let userAllData = null;
-let findAdmin = null;
-let BASE_URL = "http://localhost:8080";
-let adminName = document.querySelector("#admin-name");
-async function getALLUserData() {
-  let res = await axios(`${BASE_URL}/users`);
-  // console.log(res.data);
-  userAllData = res.data;
-  findAdmin = userAllData.find((item) => item.isAdmin);
-  adminName.innerText = `Hello,${
-    findAdmin.userName[0].toLocaleUpperCase() +
-    findAdmin.userName.slice(1).toLocaleLowerCase()
-  }`;
-}
-getALLUserData();
+  );
+  
+  
 xMarkIcon.addEventListener("click", function () {
   aside.classList.remove("aside");
 });
 if (!localStorage.getItem("isAdmin")) {
   window.location = "login-signup.html";
 }
-let logOut = document.querySelector(".fa-right-from-bracket");
+
 
 let userNameLocal=localStorage.getItem('userName')
 adminName.innerText = `Hello,${
@@ -106,6 +121,35 @@ adminName.innerText = `Hello,${
   userNameLocal.slice(1).toLocaleLowerCase()
 }`;
 logOut.addEventListener("click", function () {
-localStorage.removeItem("isAdmin");
-localStorage.removeItem("userName");
+  localStorage.removeItem("isAdmin");
+  localStorage.removeItem("userName");
 });
+
+
+toastifySuccesful(`Welcome Admin , ${
+  userNameLocal[0].toLocaleUpperCase() +
+  userNameLocal.slice(1).toLocaleLowerCase()
+}`)
+let moonIcon=document.querySelector('.fa-moon')
+moonIcon.addEventListener('click',function (params) {
+  document.body.classList.toggle("dark-mode");
+  let mode;
+  if (document.body.classList.contains("dark-mode")) {
+    mode = "dark";
+    moonIcon.className='fas fa-sun'
+    // console.log(mode);
+  } else {
+    moonIcon.className='fas fa-moon'
+    mode = "light";
+    // console.log(mode);
+  }
+  localStorage.setItem("mode", JSON.stringify(mode));
+})
+
+
+
+let getMode = JSON.parse(localStorage.getItem("mode"));
+if (getMode === "dark") {
+  moonIcon.className='fas fa-sun'
+  document.body.classList.add("dark-mode");
+}

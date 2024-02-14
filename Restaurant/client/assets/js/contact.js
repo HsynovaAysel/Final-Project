@@ -62,6 +62,29 @@ $(".owl-carousel").owlCarousel({
     });
   });
 })(jQuery);
+
+//Toastify
+function toastifySuccesful(text) {
+  Toastify({
+    text: text,
+    duration: 3000,
+    newWindow: true,
+    gravity: "top", // `top` or `bottom`
+    positionLeft: true, // `true` or `false`
+    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+  }).showToast();
+}
+function toastifyError(text) {
+  Toastify({
+    text: text,
+    duration: 3000,
+    newWindow: true,
+    gravity: "top", // `top` or `bottom`
+    positionLeft: false, // `true` or `false`
+    backgroundColor: "#ff0000",
+  }).showToast();
+}
+
 const spinner = document.querySelector(".spinner-loader");
 const main = document.querySelector("main");
 const candoreAside = document.querySelector("#candore-aside");
@@ -71,6 +94,22 @@ const pagesUl = document.querySelector(".pages");
 let BASE_URL = "http://localhost:8080";
 let login = localStorage.getItem("login");
 let logOut = document.querySelector(".fa-right-to-bracket");
+let messageForm = document.querySelector("form.message-form");
+let nameMessageInput = document.querySelector("#name-message");
+let phoneMessageInput = document.querySelector("#phone-message");
+let emailMessageInput = document.querySelector("#email-message");
+let subjectMessageInput = document.querySelector("#subject-message");
+let textareaMessageInput = document.querySelector("#textarea-message");
+const count = document.querySelector(".count-basket");
+let rezervForm = document.querySelector(".form-rezerv");
+let rezervNameInput = document.querySelector("#rezerv-name");
+let rezervPhoneInput = document.querySelector("#rezerv-phone");
+let rezervEmailInput = document.querySelector("#rezerv-email");
+let rezervDateInput = document.querySelector("#rezerv-date");
+let rezervTimeInput = document.querySelector("#rezerv-time");
+let rezervPersonSelect = document.querySelector("#rezerv-person");
+let reservsData = null;
+
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
@@ -95,12 +134,6 @@ pagesList.addEventListener("click", function () {
   pagesUl.classList.toggle("pages-ul");
 });
 
-let messageForm = document.querySelector("form.message-form");
-let nameMessageInput = document.querySelector("#name-message");
-let phoneMessageInput = document.querySelector("#phone-message");
-let emailMessageInput = document.querySelector("#email-message");
-let subjectMessageInput = document.querySelector("#subject-message");
-let textareaMessageInput = document.querySelector("#textarea-message");
 messageForm.addEventListener("submit", async function (e) {
   e.preventDefault();
   console.log(nameMessageInput.value);
@@ -112,6 +145,7 @@ messageForm.addEventListener("submit", async function (e) {
     message: textareaMessageInput.value,
   };
   if (login === "true") {
+    toastifySuccesful("succesfuly");
     await axios.post(`${BASE_URL}/messages`, messageObj);
   } else {
     window.location = "login-signup.html";
@@ -123,18 +157,10 @@ messageForm.addEventListener("submit", async function (e) {
     (textareaMessageInput.value = "");
 });
 
-let rezervForm = document.querySelector(".form-rezerv");
-let rezervNameInput = document.querySelector("#rezerv-name");
-let rezervPhoneInput = document.querySelector("#rezerv-phone");
-let rezervEmailInput = document.querySelector("#rezerv-email");
-let rezervDateInput = document.querySelector("#rezerv-date");
-let rezervTimeInput = document.querySelector("#rezerv-time");
-let rezervPersonSelect = document.querySelector("#rezerv-person");
-let reservsData = null;
 rezervDateInput.min = moment().format().slice(0, 10);
 rezervDateInput.max = "2024-12-31";
-rezervDateInput.value=moment().format().slice(0, 10)
-rezervTimeInput.value=moment().format().slice(11,16)
+rezervDateInput.value = moment().format().slice(0, 10);
+rezervTimeInput.value = moment().format().slice(11, 16);
 async function getRezervsData() {
   let res = await axios(`${BASE_URL}/rezervs`);
   console.log(res.data);
@@ -160,15 +186,9 @@ rezervForm.addEventListener("submit", async function (e) {
   if (login === "true") {
     if (!time) {
       await axios.post(`${BASE_URL}/rezervs`, rezervsObj);
+      toastifyError("bu vaxta bos yer yoxdur. ");
     } else {
-      Toastify({
-        text: "bu vaxta bos yer yoxdur. ",
-        duration: 3000,
-        newWindow: true,
-        gravity: "top", // `top` or `bottom`
-        positionLeft: false, // `true` or `false`
-        backgroundColor: "#ff0000",
-      }).showToast();
+      toastifySuccesful("succesfuly add rezervs");
     }
   } else {
     window.location = "login-signup.html";
@@ -181,6 +201,5 @@ rezervForm.addEventListener("submit", async function (e) {
     (rezervPhoneInput.value = ""),
     (rezervPersonSelect.value = "");
 });
-const count = document.querySelector(".count-basket");
 let basketCount = JSON.parse(localStorage.getItem("basketCount")) ?? 0;
 count.innerText = basketCount;

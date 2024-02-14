@@ -27,10 +27,18 @@
       href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pinyon+Script&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <link rel="stylesheet" href="./assets/sass/pages/login-signup.css" />
     <title>Document</title>
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
 
     <script
       defer
@@ -45,6 +53,18 @@
     <script defer src="./assets/js/login-signup.js"></script>
   </head>
   <body>
+    <header>
+      <div class="container">
+        <div class="header">
+          <a href="index.html" class="logo">
+            <img src="./assets/images/logo (3).png" alt="" />
+          </a>
+          <div class="icons">
+            <a href="index.html"><i class="fa-solid fa-user"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
     <div id="cont">
       <div class="container">
         <div class="cont">
@@ -53,7 +73,6 @@
             <label>
               <span>Email</span>
               <input type="email" required id="email-signin" />
-              <p class="error"></p>
             </label>
             <label>
               <span>Password</span>
@@ -61,7 +80,6 @@
                 <input type="password" required id="password-signin" />
                 <i class="fa-solid fa-eye"></i>
               </div>
-              <p class="error"></p>
             </label>
             <p class="forgot-pass">Forgot password?</p>
             <button type="submit" class="submit">Sign In</button>
@@ -86,12 +104,10 @@
               <label>
                 <span>Name</span>
                 <input type="text" required id="name-signup" />
-                <p class="error"></p>
               </label>
               <label>
                 <span>Email</span>
                 <input type="email" required id="email-signup" />
-                <p class="error"></p>
               </label>
               <label>
                 <span>Password</span>
@@ -99,7 +115,6 @@
                   <input type="password" required id="password-signup" />
                   <i class="fa-solid fa-eye"></i>
                 </div>
-                <p class="error"></p>
               </label>
               <button type="submit" class="submit">Sign Up</button>
             </form>

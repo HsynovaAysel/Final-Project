@@ -142,7 +142,8 @@ $(".owl-carousel").owlCarousel({
     });
   });
 })(jQuery);
-//Toastify 
+
+//Toastify
 function toastifySuccesful(text) {
   Toastify({
     text: text,
@@ -150,7 +151,7 @@ function toastifySuccesful(text) {
     newWindow: true,
     gravity: "top", // `top` or `bottom`
     positionLeft: true, // `true` or `false`
-    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)"
+    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
   }).showToast();
 }
 function toastifyError(text) {
@@ -173,15 +174,35 @@ const chefBgImg = document.querySelector(".chef-img");
 const aboutImg = document.querySelector(".about-img");
 const faqs = document.querySelectorAll(".faq");
 let logOut = document.querySelector(".fa-right-to-bracket");
+let login = localStorage.getItem("login");
+const count = document.querySelector(".count-basket");
+let BASE_URL = "http://localhost:8080";
+let menuCardLists = document.querySelector(".menu-card-lists");
+let menuAllData = null;
+let favorites = getFromlocalStorage();
+let menuBtnAll = document.querySelectorAll(".menu-button");
+let wineCardLists = document.querySelector(".wine-card-list");
+let basket = getFromlocalStorageBasket();
+let rezervForm = document.querySelector(".form-rezerv");
+let rezervNameInput = document.querySelector("#rezerv-name");
+let rezervPhoneInput = document.querySelector("#rezerv-phone");
+let rezervEmailInput = document.querySelector("#rezerv-email");
+let rezervDateInput = document.querySelector("#rezerv-date");
+let rezervTimeInput = document.querySelector("#rezerv-time");
+let rezervPersonSelect = document.querySelector("#rezerv-person");
+let reservsData = null;
+let teamCardLists = document.querySelector(".team-card-lists");
+
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
-let login = localStorage.getItem("login");
+
 if (login === "false") {
   logOut.style.display = "none";
 } else {
   logOut.style.display = "inline-block";
 }
+
 faqs.forEach((item) => {
   item.addEventListener("click", function () {
     document
@@ -202,6 +223,7 @@ navbar.addEventListener("click", function () {
   candoreAside.classList.toggle("aside");
   navbar.classList.toggle("menu-icon");
 });
+
 pagesList.addEventListener("click", function () {
   pagesUl.classList.toggle("pages-ul");
 });
@@ -210,11 +232,6 @@ window.addEventListener("scroll", function () {
   chefBgImg.classList.toggle("chef-animation-img", this.window.scrollY > "750");
   aboutImg.classList.toggle("bg-img-about", this.window.scrollY > "100");
 });
-const count = document.querySelector(".count-basket");
-
-let BASE_URL = "http://localhost:8080";
-let menuCardLists = document.querySelector(".menu-card-lists");
-let menuAllData = null;
 
 async function getALLData() {
   let res = await axios(`${BASE_URL}/menus`);
@@ -231,7 +248,7 @@ async function getALLData() {
   drawWineCard(filteredWine);
 }
 getALLData();
-let favorites = getFromlocalStorage();
+
 function drawCards(array) {
   menuCardLists.innerHTML = "";
   array.forEach((el) => {
@@ -272,7 +289,6 @@ function drawCards(array) {
   });
 }
 
-menuBtnAll = document.querySelectorAll(".menu-button");
 menuBtnAll.forEach((item) =>
   item.addEventListener("click", function () {
     document.querySelector(".button-active").classList.remove("button-active");
@@ -284,8 +300,6 @@ menuBtnAll.forEach((item) =>
     drawCards(filtered);
   })
 );
-
-let wineCardLists = document.querySelector(".wine-card-list");
 
 function drawWineCard(array) {
   wineCardLists.innerHTML = "";
@@ -331,14 +345,13 @@ function favs(icon, id) {
       icon.className = "fa-solid fa-heart";
       let find = menuAllData.find((item) => item._id == id);
       favorites.push(find);
-      toastifySuccesful('succesfuly add favorites')
+      toastifySuccesful("succesfuly add favorites");
     } else {
       icon.className = "fa-regular fa-heart";
       favorites = favorites.filter((item) => item._id != id);
-      toastifySuccesful('succesfuly remove favorites')
+      toastifySuccesful("succesfuly remove favorites");
     }
     setTolocalStorage(favorites);
-    
   } else {
     window.location = "login-signup.html";
   }
@@ -349,8 +362,6 @@ function setTolocalStorage(array) {
 function getFromlocalStorage() {
   return JSON.parse(localStorage.getItem("favorites")) ?? [];
 }
-
-let basket = getFromlocalStorageBasket();
 
 function countBasket(arr) {
   let basketCount = arr.reduce((acc, cur) => acc + cur.count, 0);
@@ -379,7 +390,7 @@ function cart(id) {
     }
     countBasket(basket);
     setTolocalStorageBasket(basket);
-    toastifySuccesful('succesfuly add btn')
+    toastifySuccesful("succesfuly add btn");
   } else {
     window.location = "login-signup.html";
   }
@@ -391,15 +402,6 @@ function setTolocalStorageBasket(array) {
 function getFromlocalStorageBasket() {
   return JSON.parse(localStorage.getItem("basket")) ?? [];
 }
-
-let rezervForm = document.querySelector(".form-rezerv");
-let rezervNameInput = document.querySelector("#rezerv-name");
-let rezervPhoneInput = document.querySelector("#rezerv-phone");
-let rezervEmailInput = document.querySelector("#rezerv-email");
-let rezervDateInput = document.querySelector("#rezerv-date");
-let rezervTimeInput = document.querySelector("#rezerv-time");
-let rezervPersonSelect = document.querySelector("#rezerv-person");
-let reservsData = null;
 
 // console.log(moment().format().slice(0, 10));
 
@@ -433,9 +435,9 @@ rezervForm.addEventListener("submit", async function (e) {
   if (login === "true") {
     if (!time) {
       await axios.post(`${BASE_URL}/rezervs`, rezervsObj);
-      toastifySuccesful('succesfuly add rezervs')
+      toastifySuccesful("succesfuly add rezervs");
     } else {
-    toastifyError("bu vaxta bos yer yoxdur. ",)
+      toastifyError("bu vaxta bos yer yoxdur. ");
     }
   } else {
     window.location = "login-signup.html";
@@ -449,23 +451,19 @@ rezervForm.addEventListener("submit", async function (e) {
     (rezervPersonSelect.value = "");
 });
 
-// if (window.location.pathname=='*') {
-//   window.location="error.html";
-// }
-let teamCardLists = document.querySelector(".team-card-lists");
 async function getALLTeamData() {
   let res = await axios(`${BASE_URL}/team`);
   drawTeamCard(res.data);
   // console.log(res.data);
 }
-getALLTeamData()
+getALLTeamData();
 function drawTeamCard(array) {
   teamCardLists.innerHTML = "";
   array.forEach((el) => {
     teamCardLists.innerHTML += `             
    <div class="team-card">
                         <div class="team-img">
-                          <img src="${el.image}" alt="" />
+                          <img src="${el.image.slice(1)}" alt="" />
                         </div>
                         <div class="team-content">
                           <h4>${el.userName}</h4>
@@ -495,3 +493,37 @@ function drawTeamCard(array) {
    `;
   });
 }
+// if (window.location.pathname=='*') {
+//   window.location="error.html";
+// }
+
+let page = [
+  "/Restaurant/client/index.html",
+  "/Restaurant/client/about.html",
+  "/Restaurant/client/blog.html",
+  "/Restaurant/client/chefs.html",
+  "/Restaurant/client/contact.html",
+  "/Restaurant/client/details.html",
+  "/Restaurant/client/faq.html",
+  "/Restaurant/client/favorites.html",
+  "/Restaurant/client/login-signup.html",
+  "/Restaurant/client/menu.html",
+  "/Restaurant/client/services.html",
+  "/Restaurant/client/shop.html",
+  "/Restaurant/client/vakan.html",
+  "/Restaurant/client/wine.html",
+];
+// console.log();
+// page.find(
+//   (el) =>
+//     function pageError(e) {
+//       if (window.location.pathname === el) {
+//         window.location=el;
+//         e.preventDefault();
+//       } else {
+//         window.location.pathname = "/Restaurant/client/error.html";
+//         e.preventDefault();
+//       }
+//     }
+// );
+

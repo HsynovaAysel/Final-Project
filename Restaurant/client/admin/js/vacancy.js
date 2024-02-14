@@ -27,7 +27,7 @@ let errorText = document.querySelector(".error");
 let addBtn = document.querySelector(".add");
 let vacancyAllData = null;
 let vacancyAllDataCopy = null;
-// let search = document.querySelector("#search");
+let search = document.querySelector("#search");
 // let goBackBtn = document.querySelector(".go-back");
 
 // Scroll back to top
@@ -257,3 +257,26 @@ search.addEventListener("input", function (event) {
   );
   drawTabel(filtered);
 });
+let moonIcon=document.querySelector('.fa-moon')
+moonIcon.addEventListener('click',function (params) {
+  document.body.classList.toggle("dark-mode");
+  let mode;
+  if (document.body.classList.contains("dark-mode")) {
+    mode = "dark";
+    moonIcon.className='fas fa-sun'
+    // console.log(mode);
+  } else {
+    moonIcon.className='fas fa-moon'
+    mode = "light";
+    // console.log(mode);
+  }
+  localStorage.setItem("mode", JSON.stringify(mode));
+})
+
+
+
+let getMode = JSON.parse(localStorage.getItem("mode"));
+if (getMode === "dark") {
+  moonIcon.className='fas fa-sun'
+  document.body.classList.add("dark-mode");
+}

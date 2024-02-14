@@ -24,35 +24,39 @@
       rel="stylesheet"
     />
     <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-  />
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <link rel="stylesheet" href="./admin.css" />
     <title>Document</title>
-  <script
-    defer
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/toastify-js"
-  ></script>
+    <script
+      defer
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
 
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
     ></script>
-    <!-- <script
-              defer
-              src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-              integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-              crossorigin="anonymous"
-            ></script> -->
+    <script defer src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script> defer
+      zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+      ZC.LICENSE = [
+        "569d52cefae586f634c54f86dc99e6a9",
+        "ee6b7db5b51705a13dc2339db3edaf6d",
+      ];
+    </script>
     <script defer src="./js/admin.js"></script>
+    <script defer src="./js/app.js"></script>
+  
   </head>
   <body>
     <div class="progress-wrap">
@@ -68,7 +72,7 @@
     </div>
     <header>
       <div class="container">
-        <div class="header">
+        <a href="index.html" class="header">
           <div class="logo">
             <img src="../assets/images/logo (3).png" alt="" />
           </div>
@@ -76,12 +80,13 @@
             <div class="menu-icon">
               <i class="fa-solid fa-bars"></i>
             </div>
+            <a id="toggle">
+              <i class="fas fa-moon"></i>
+            </a>
             <a href="#"><i class="fa-solid fa-user"></i></a>
-            <a href="../client/login-signup.html"
-              ><i class="fa-solid fa-right-from-bracket"></i
-            ></a>
+            <i class="fa-solid fa-right-from-bracket"></i>
           </div>
-        </div>
+        </a>
       </div>
     </header>
     <aside id="candore">
@@ -102,9 +107,7 @@
             >
           </li>
           <li>
-            <a href="customers.html"
-              ><i class="fa-solid fa-users"></i>Customers</a
-            >
+            <a href="customers.html"><i class="fa-solid fa-users"></i>Users</a>
           </li>
           <li>
             <a href="category.html"
@@ -113,7 +116,7 @@
           </li>
           <li>
             <a href="comment.html"
-              ><i class="fa-regular fa-comment"></i>Comment</a
+              ><i class="fa-regular fa-comment"></i>Message</a
             >
           </li>
           <li>
@@ -139,17 +142,37 @@
     </aside>
     <section id="banner">
       <div class="container">
+        <div class="home-icon">
+          <i class="fa-solid fa-bars"></i>
+        </div>
         <div class="banner">
-          <div class="home-icon">
-            <i class="fa-solid fa-bars"></i>
-          </div>
-          <div class="banner-card-lists">
-            <div class="banner-card">
-              <h2>aysel</h2>
-              <p>bcsnxkN</p>
-              <h4>$790</h4>
+          <div class="counter-starts">
+            <div class="stats">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <div class="counting" data-count="100">0</div>
+              <h5>Rezervition</h5>
+            </div>
+
+            <div class="stats">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <div class="counting" data-count="280">0</div>
+              <h5>Users</h5>
+            </div>
+
+            <div class= "stats">
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <div class="counting" data-count="20">0</div>
+              <h5>Vacancy</h5>
+            </div>
+
+            <div class="stats">
+              <i class="fa fa-coffee" aria-hidden="true"></i>
+              <div class="counting" data-count="999">0</div>
+              <h5>Menu</h5>
             </div>
           </div>
+            <div id='myChart'></div>
+          
         </div>
       </div>
     </section>

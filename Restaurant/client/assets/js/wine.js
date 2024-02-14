@@ -63,13 +63,49 @@ $(".owl-carousel").owlCarousel({
     });
   });
 })(jQuery);
-
+//Toastify 
+function toastifySuccesful(text) {
+  Toastify({
+    text: text,
+    duration: 3000,
+    newWindow: true,
+    gravity: "top", // `top` or `bottom`
+    positionLeft: true, // `true` or `false`
+    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)"
+  }).showToast();
+}
+function toastifyError(text) {
+  Toastify({
+    text: text,
+    duration: 3000,
+    newWindow: true,
+    gravity: "top", // `top` or `bottom`
+    positionLeft: false, // `true` or `false`
+    backgroundColor: "#ff0000",
+  }).showToast();
+}
 const spinner = document.querySelector(".spinner-loader");
 const main = document.querySelector("main");
 const candoreAside = document.querySelector("#candore-aside");
 const navbar = document.querySelector(".navbar");
 const pagesList = document.querySelector("#pages");
 const pagesUl = document.querySelector(".pages");
+let login = localStorage.getItem("login");
+let logOut = document.querySelector(".fa-right-to-bracket");
+let BASE_URL = "http://localhost:8080";
+let menuCardLists = document.querySelector(".menu-card-lists");
+let menuAllData = null;
+let favorites = getFromlocalStorage();
+let wineCardLists = document.querySelector(".wine-card-list");
+const count = document.querySelector(".count-basket");
+let rezervForm = document.querySelector(".form-rezerv");
+let rezervNameInput = document.querySelector("#rezerv-name");
+let rezervPhoneInput = document.querySelector("#rezerv-phone");
+let rezervEmailInput = document.querySelector("#rezerv-email");
+let rezervDateInput = document.querySelector("#rezerv-date");
+let rezervTimeInput = document.querySelector("#rezerv-time");
+let rezervPersonSelect = document.querySelector("#rezerv-person");
+let reservsData = null;
 
 main.style.display = "block";
 candoreAside.style.display = "flex";
@@ -85,20 +121,16 @@ navbar.addEventListener("click", function () {
 pagesList.addEventListener("click", function () {
   pagesUl.classList.toggle("pages-ul");
 });
-let logOut = document.querySelector(".fa-right-to-bracket");
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
-let login = localStorage.getItem("login");
 if (login === "false") {
   logOut.style.display = "none";
 } else {
   logOut.style.display = "inline-block";
 }
 
-let BASE_URL = "http://localhost:8080";
-let menuCardLists = document.querySelector(".menu-card-lists");
-let menuAllData = null;
+
 
 async function getALLData() {
   let res = await axios(`${BASE_URL}/menus`);
@@ -113,9 +145,7 @@ async function getALLData() {
   drawCards(filteredWine);
 }
 getALLData();
-let favorites = getFromlocalStorage();
 
-let wineCardLists = document.querySelector(".wine-card-list");
 function drawCards(array) {
   menuCardLists.innerHTML = "";
   array.forEach((el) => {
@@ -199,9 +229,13 @@ function favs(icon, id) {
       icon.className = "fa-solid fa-heart";
       let find = menuAllData.find((item) => item._id == id);
       favorites.push(find);
+      toastifySuccesful('succesfuly add favorites')
+
     } else {
       icon.className = "fa-regular fa-heart";
       favorites = favorites.filter((item) => item._id != id);
+      toastifySuccesful('succesfuly remove favorites')
+
     }
     setTolocalStorage(favorites);
   } else {
@@ -216,7 +250,6 @@ function getFromlocalStorage() {
 }
 
 let basket = getFromlocalStorageBasket();
-const count = document.querySelector(".count-basket");
 function countBasket(arr) {
   let basketCount = arr.reduce((acc, cur) => acc + cur.count, 0);
   count.innerText = basketCount;
@@ -243,6 +276,8 @@ function cart(id) {
     }
     countBasket(basket);
     setTolocalStorageBasket(basket);
+    toastifySuccesful('succesfuly add btn')
+
   } else {
     window.location = "login-signup.html";
   }
@@ -258,14 +293,6 @@ logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
 
-let rezervForm = document.querySelector(".form-rezerv");
-let rezervNameInput = document.querySelector("#rezerv-name");
-let rezervPhoneInput = document.querySelector("#rezerv-phone");
-let rezervEmailInput = document.querySelector("#rezerv-email");
-let rezervDateInput = document.querySelector("#rezerv-date");
-let rezervTimeInput = document.querySelector("#rezerv-time");
-let rezervPersonSelect = document.querySelector("#rezerv-person");
-let reservsData = null;
 
 rezervDateInput.min = moment().format().slice(0, 10);
 rezervDateInput.max = "2024-12-31";
@@ -296,15 +323,11 @@ rezervForm.addEventListener("submit", async function (e) {
   if (login === "true") {
     if (!time) {
       await axios.post(`${BASE_URL}/rezervs`, rezervsObj);
+      toastifySuccesful('succesfuly add rezervs')
+
     } else {
-      Toastify({
-        text: "bu vaxta bos yer yoxdur. ",
-        duration: 3000,
-        newWindow: true,
-        gravity: "top", // `top` or `bottom`
-        positionLeft: false, // `true` or `false`
-        backgroundColor: "#ff0000",
-      }).showToast();
+    toastifyError("bu vaxta bos yer yoxdur. ",)
+     
     }
   } else {
     window.location = "login-signup.html";
@@ -316,4 +339,29 @@ rezervForm.addEventListener("submit", async function (e) {
     (rezervTimeInput.value = ""),
     (rezervPhoneInput.value = ""),
     (rezervPersonSelect.value = "");
+});
+
+$('.counting').each(function() {
+  var $this = $(this),
+      countTo = $this.attr('data-count');
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 3000,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+  
+
 });

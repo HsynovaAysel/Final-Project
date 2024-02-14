@@ -63,6 +63,28 @@ $(".owl-carousel").owlCarousel({
     });
   });
 })(jQuery);
+
+//Toastify 
+function toastifySuccesful(text) {
+  Toastify({
+    text: text,
+    duration: 3000,
+    newWindow: true,
+    gravity: "top", // `top` or `bottom`
+    positionLeft: true, // `true` or `false`
+    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)"
+  }).showToast();
+}
+function toastifyError(text) {
+  Toastify({
+    text: text,
+    duration: 3000,
+    newWindow: true,
+    gravity: "top", // `top` or `bottom`
+    positionLeft: false, // `true` or `false`
+    backgroundColor: "#ff0000",
+  }).showToast();
+}
 const spinner = document.querySelector(".spinner-loader");
 const main = document.querySelector("main");
 const candoreAside = document.querySelector("#candore-aside");
@@ -71,6 +93,23 @@ const pagesList = document.querySelector("#pages");
 const pagesUl = document.querySelector(".pages");
 let BASE_URL = "http://localhost:8080";
 let logOut = document.querySelector(".fa-right-to-bracket");
+let favoritesList = document.querySelector(".favorites");
+let favorites = getFromlocalStorageFavorites();
+let rezervForm = document.querySelector(".form-rezerv");
+let rezervNameInput = document.querySelector("#rezerv-name");
+let rezervPhoneInput = document.querySelector("#rezerv-phone");
+let rezervEmailInput = document.querySelector("#rezerv-email");
+let rezervDateInput = document.querySelector("#rezerv-date");
+let rezervTimeInput = document.querySelector("#rezerv-time");
+let rezervPersonSelect = document.querySelector("#rezerv-person");
+let reservsData = null;
+let basket = getFromlocalStorageBasket();
+const count = document.querySelector(".count-basket");
+
+
+
+
+
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
@@ -95,9 +134,7 @@ navbar.addEventListener("click", function () {
   navbar.classList.toggle("menu-icon");
 });
 
-let favoritesList = document.querySelector(".favorites");
 
-let favorites = getFromlocalStorageFavorites();
 function drawCard(data) {
   favoritesList.innerHTML = "";
   data.forEach((el) => {
@@ -133,6 +170,7 @@ function trash(icon, id) {
     icon.closest(".favorites-card").remove();
     setTolocalStorageFavorites(favorites);
     drawCard(favorites);
+    toastifySuccesful('succesfuly remove favorites')
   } else {
     window.location = "login-signup.html";
   }
@@ -144,8 +182,7 @@ function setTolocalStorageFavorites(array) {
 function getFromlocalStorageFavorites() {
   return JSON.parse(localStorage.getItem("favorites")) ?? [];
 }
-let basket = getFromlocalStorageBasket();
-const count = document.querySelector(".count-basket");
+
 function countBasket(arr) {
   let basketCount = arr.reduce((acc, cur) => acc + cur.count, 0);
   count.innerText = basketCount;
@@ -172,6 +209,8 @@ function cart(id) {
     }
     countBasket(basket);
     setTolocalStorageBasket(basket);
+    toastifySuccesful('succesfuly add btn')
+
   } else {
     window.location = "login-signup.html";
   }
@@ -184,14 +223,6 @@ function getFromlocalStorageBasket() {
   return JSON.parse(localStorage.getItem("basket")) ?? [];
 }
 
-let rezervForm = document.querySelector(".form-rezerv");
-let rezervNameInput = document.querySelector("#rezerv-name");
-let rezervPhoneInput = document.querySelector("#rezerv-phone");
-let rezervEmailInput = document.querySelector("#rezerv-email");
-let rezervDateInput = document.querySelector("#rezerv-date");
-let rezervTimeInput = document.querySelector("#rezerv-time");
-let rezervPersonSelect = document.querySelector("#rezerv-person");
-let reservsData = null;
 rezervDateInput.min = moment().format().slice(0, 10);
 rezervDateInput.max = "2024-12-31";
 rezervDateInput.value=moment().format().slice(0, 10)
@@ -221,15 +252,11 @@ rezervForm.addEventListener("submit", async function (e) {
   if (login === "true") {
     if (!time) {
       await axios.post(`${BASE_URL}/rezervs`, rezervsObj);
+      toastifySuccesful('succesfuly add rezervs')
+
     } else {
-      Toastify({
-        text: "bu vaxta bos yer yoxdur. ",
-        duration: 3000,
-        newWindow: true,
-        gravity: "top", // `top` or `bottom`
-        positionLeft: false, // `true` or `false`
-        backgroundColor: "#ff0000",
-      }).showToast();
+    toastifyError("bu vaxta bos yer yoxdur. ",)
+      
     }
   } else {
     window.location = "login-signup.html";

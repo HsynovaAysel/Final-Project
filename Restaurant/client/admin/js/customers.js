@@ -203,3 +203,26 @@ search.addEventListener("input", function (event) {
 // goBackBtn.addEventListener("click", function () {
 //   window.location = "index.html";
 // });
+let moonIcon=document.querySelector('.fa-moon')
+moonIcon.addEventListener('click',function (params) {
+  document.body.classList.toggle("dark-mode");
+  let mode;
+  if (document.body.classList.contains("dark-mode")) {
+    mode = "dark";
+    moonIcon.className='fas fa-sun'
+    // console.log(mode);
+  } else {
+    moonIcon.className='fas fa-moon'
+    mode = "light";
+    // console.log(mode);
+  }
+  localStorage.setItem("mode", JSON.stringify(mode));
+})
+
+
+
+let getMode = JSON.parse(localStorage.getItem("mode"));
+if (getMode === "dark") {
+  moonIcon.className='fas fa-sun'
+  document.body.classList.add("dark-mode");
+}

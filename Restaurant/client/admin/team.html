@@ -24,24 +24,24 @@
       rel="stylesheet"
     />
     <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-  />
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <link rel="stylesheet" href="./admin.css" />
     <title>Document</title>
-  <script
-    defer
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/toastify-js"
-  ></script>
+    <script
+      defer
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
 
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
@@ -52,7 +52,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script> -->
-    <script defer src="./js/customers.js"></script>
+    <script defer src="./js/team.js"></script>
   </head>
   <body>
     <div class="progress-wrap">
@@ -69,16 +69,18 @@
     <header>
       <div class="container">
         <div class="header">
-          <div class="logo">
+          <a href="index.html"class="logo">
             <img src="../assets/images/logo (3).png" alt="" />
-          </div>
+          </a>
           <div class="icons">
             <div class="menu-icon">
               <i class="fa-solid fa-bars"></i>
             </div>
+            <a id="toggle">
+              <i class="fas fa-moon"></i>
+            </a>
             <a href="#"><i class="fa-solid fa-user"></i></a>
             <i class="fa-solid fa-right-from-bracket"></i>
-           
           </div>
         </div>
       </div>
@@ -90,7 +92,7 @@
           <img src="../assets/images/logo (3).png" alt="" />
         </div>
         <div class="user-name">
-          <h4  id="admin-name"></h4>
+          <h4 id="admin-name"></h4>
         </div>
       </div>
       <nav>
@@ -101,9 +103,7 @@
             >
           </li>
           <li>
-            <a href="customers.html"
-              ><i class="fa-solid fa-users"></i>Users</a
-            >
+            <a href="customers.html"><i class="fa-solid fa-users"></i>Users</a>
           </li>
           <li>
             <a href="category.html"
@@ -136,53 +136,45 @@
         </ul>
       </nav>
     </aside>
-    <section id="customer">
+    <section id="team">
       <div class="container">
-        <div class="customer">
+        <div class="team">
           <div class="home-icon">
             <i class="fa-solid fa-bars"></i>
           </div>
+          <div id="team-form">
+            <form action="" class="team-form">
+              <h1>Team Form</h1>
+              <input type="file" id="image-input" placeholder="Image" required />
+              <input type="text" id="name-input" placeholder="Name" required />
+              <input type="text" id="job-input" placeholder="Job" required />
+              <input
+                type="text"
+                id="description-input"
+                placeholder="Description"
+                required
+              />
+              <p class="error"></p>
+              <button type="submit" class="add">Add</button>
+            </form>
+          </div>
 
-          <form action="" class="customer-form">
-            <input
-              type="text"
-              id="name-input"
-              placeholder="User Name"
-              required
-            />
-            <input
-              type="text"
-              id="email-input"
-              placeholder="User Email"
-              required
-            />
-            <input
-              type="text"
-              id="password-input"
-              placeholder="User Password"
-              required
-            />
-            <p class="error"></p>
-            <button type="submit" class="add">Add</button>
-          </form>
-
-          <table class="customer-table">
-            <thead>
-              <th><h4>User Name</h4></th>
-              <th><h4>User Email</h4></th>
-              <th><h4>Delete</h4></th>
-              <th><h4>Edit</h4></th>
-            </thead>
-            <tbody>
-              <!-- <tr>
-                <td><h5>jh</h5></td>
-                <td><h5>m,m</h5></td>
-                <td><h5>nknk</h5></td>
-                <td><i class="fa-solid fa-trash"></i></td>
-                <td><i class="fa-solid fa-pen-to-square"></i></td>
-              </tr> -->
-            </tbody>
-          </table>
+          <div class="search-input">
+            <input type="text" id="search" placeholder="Search Name..." />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="team-card-lists">
+            <!-- <div class="team-card">
+              <div class="img">
+                <img src="../assets/images/home/1 (1).jpg" alt="" />
+              </div>
+              <div class="text-content">
+                <h3>mlml</h3>
+                <h5>kmlml</h5>
+                <p>mlkml</p>
+              </div>
+            </div> -->
+          </div>
         </div>
       </div>
     </section>

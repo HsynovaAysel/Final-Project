@@ -28,12 +28,12 @@ const deleteTeamById = async (req, res) => {
   const { id } = req.params;
   try {
     const deletedTeam = await Team.findByIdAndDelete(id);
-    const team = await Team.find({});
+    // const team = await Team.find({});
     
     res.status(200).json({
       message: "success",
       deletedTeam: deletedTeam,
-      allTeams: team,
+      // allTeams: team,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });
@@ -46,11 +46,11 @@ const addNewTeam = async (req, res) => {
   const newTeam = new Team({ ...req.body });
   try {
     await newTeam.save();
-    const team = await Team.find({});
+    // const team = await Team.find({});
     res.status(201).send({
       message: "created succesfully!",
       data: newTeam,
-      allTeams: team,
+      // allTeams: team,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });
@@ -64,11 +64,11 @@ const updateTeamById = async (req, res) => {
   try {
     await Team.findByIdAndUpdate(id, { ...req.body });
     const updatedTeam = await Team.findById(id);
-    const team = await Team.find({});
+    // const team = await Team.find({});
     res.status(200).send({
       message: "updated succesfully!",
       data: updatedTeam,
-      allTeams: team,
+      // allTeams: team,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });
