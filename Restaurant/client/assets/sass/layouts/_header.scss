@@ -62,13 +62,12 @@ i {
   left: 0;
   top: 0;
   border-right: 1px solid rgba(255, 255, 255, 0.02);
-  display: flex;
+  // display: flex;
   flex-direction: column;
   gap: 70px;
   z-index: 1111;
   transition: all 0.5s ease;
-
-  // display: none;
+  display: none;
   .candore-logo {
     // padding: 0 30px;
     max-width: 200px;

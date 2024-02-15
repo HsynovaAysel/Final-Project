@@ -192,9 +192,11 @@ function drawTabel(array) {
 
 async function postData(obj) {
   await axios.post(`${BASE_URL}/announcement`, obj);
+ 
 }
 async function patchData(id, obj) {
   await axios.put(`${BASE_URL}/announcement/${id}`, obj);
+  
 }
 
 async function removeData(id, icon) {

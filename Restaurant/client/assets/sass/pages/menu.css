@@ -193,6 +193,7 @@ h6 {
 
 p {
   color: #777777;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 13.5px;
   font-weight: 400;
   line-height: 26px;
@@ -310,7 +311,7 @@ span {
 }
 
 /* #Progress
-================================================== */
+  ================================================== */
 .progress-wrap {
   position: fixed;
   right: 30px;
@@ -365,69 +366,30 @@ span {
 }
 
 .spinner-loader {
+  width: 100%;
+  z-index: 10;
+  position: relative;
   height: 100vh;
-  display: block;
-  background-color: white;
-}
-.spinner-loader #spinner {
-  width: 52px;
-  height: 52px;
-  position: absolute;
-  display: block;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  cursor: wait;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1b1b1b;
 }
 
-svg.spinner-webkit {
-  width: 80px;
-  height: 80px;
-}
-svg.spinner-webkit path {
-  stroke-dasharray: 329;
-  stroke-dashoffset: 0;
-  stroke: #c19d60;
-  stroke-width: 1.8px;
-  animation: draw 4s ease-in-out infinite;
-  fill: transparent;
-  fill-opacity: 0;
-}
-@keyframes draw {
-  100% {
-    stroke-dasharray: 329;
-    stroke-dashoffset: 658;
-  }
+#loading {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(193, 157, 96, 0.3);
+  border-radius: 50%;
+  border-top-color: #c19d60;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
 }
 
-.spinner-ie {
-  width: 32px;
-  height: 32px;
-  top: 8px;
-  left: 8px;
-  position: absolute;
-  display: none;
-  animation: spin 0.5s linear infinite;
-  border: 2px solid transparent;
-  border-top: 2px solid #c19d60;
-  border-left: 2px solid #c19d60;
-  border-radius: 50px;
-}
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .spinner-webkit {
-    display: none;
-  }
-  .spinner-ie {
-    display: block;
+  to {
+    -webkit-transform: rotate(360deg);
   }
 }
 main footer .footer #footer-top .footer-top .footer-column .subscribe form button, main #reservation .bg-color .reservation .reservation-box form button {
@@ -519,11 +481,11 @@ i {
   left: 0;
   top: 0;
   border-right: 1px solid rgba(255, 255, 255, 0.02);
-  display: flex;
   flex-direction: column;
   gap: 70px;
   z-index: 1111;
   transition: all 0.5s ease;
+  display: none;
 }
 #candore-aside .candore-logo {
   max-width: 200px;
@@ -1133,8 +1095,8 @@ main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .desc-icon 
 main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .desc-icon .icon .fa-cart-shopping {
   color: white;
 }
-main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .desc-icon .icon .fa-magnifying-glass {
-  color: #c19d60;
+main #menu-book .menu-book .menu-card-lists .menu-card .menu-content .desc-icon .icon .fa-eye {
+  color: #ece1cf;
 }
 main #menu-book .menu-book .menu-card-lists .menu-card:hover .menu-content .desc-icon .icon {
   z-index: 5;

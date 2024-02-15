@@ -63,7 +63,7 @@ $(".owl-carousel").owlCarousel({
     });
   });
 })(jQuery);
-//Toastify 
+//Toastify
 function toastifySuccesful(text) {
   Toastify({
     text: text,
@@ -71,7 +71,7 @@ function toastifySuccesful(text) {
     newWindow: true,
     gravity: "top", // `top` or `bottom`
     positionLeft: true, // `true` or `false`
-    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)"
+    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
   }).showToast();
 }
 function toastifyError(text) {
@@ -106,10 +106,9 @@ let rezervDateInput = document.querySelector("#rezerv-date");
 let rezervTimeInput = document.querySelector("#rezerv-time");
 let rezervPersonSelect = document.querySelector("#rezerv-person");
 let reservsData = null;
-let subTotalArray = basket.map((item) => item.count * item.obj.price);
-let subTotal = subTotalArray.reduce((sum, el) => sum + el);
+let subTotalArray =  basket?.map((item) => item.count * item.obj.price)
 
-
+let subTotal = subTotalArray.length>0 ? subTotalArray?.reduce((sum, el) => sum + el) : 0;
 
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
@@ -125,10 +124,7 @@ pagesList.addEventListener("click", function () {
 });
 main.style.display = "block";
 candoreAside.style.display = "flex";
-// setTimeout(() => {
-//   spinner.style.display = "none";
 
-// }, 1000);
 
 navbar.addEventListener("click", function () {
   candoreAside.classList.toggle("aside");
@@ -136,7 +132,7 @@ navbar.addEventListener("click", function () {
 });
 
 function countBasket(arr) {
-  let basketCount = arr.reduce((acc, cur) => acc + cur.count, 0);
+  let basketCount = arr?.reduce((acc, cur) => acc + cur.count, 0);
   count.innerText = basketCount;
   setTolocalStorageBasketCount(basketCount);
 }
@@ -183,7 +179,7 @@ function inc(id) {
       setTolocalStorageBasket(basket);
       countBasket(basket);
       drawTableBox();
-      toastifySuccesful('succesfuly remove basket')
+      toastifySuccesful("succesfuly remove basket");
     }
   } else {
     window.location = "login-signup.html";
@@ -197,8 +193,7 @@ function dec(id) {
     setTolocalStorageBasket(basket);
     countBasket(basket);
     drawTableBox();
-    toastifySuccesful('succesfuly add basket')
-
+    toastifySuccesful("succesfuly add basket");
   } else {
     window.location = "login-signup.html";
   }
@@ -212,8 +207,7 @@ function trash(btn, id) {
     drawTableShop(basket);
     countBasket(basket);
     drawTableBox();
-    toastifySuccesful('succesfuly remove basket ')
-
+    toastifySuccesful("succesfuly remove basket ");
   } else {
     window.location = "login-signup.html";
   }
@@ -275,9 +269,9 @@ rezervForm.addEventListener("submit", async function (e) {
   if (login === "true") {
     if (!time) {
       await axios.post(`${BASE_URL}/rezervs`, rezervsObj);
-      toastifySuccesful('succesfuly add rezervs')
+      toastifySuccesful("succesfuly add rezervs");
     } else {
-    toastifyError("bu vaxta bos yer yoxdur. ",)
+      toastifyError("bu vaxta bos yer yoxdur. ");
     }
   } else {
     window.location = "login-signup.html";
@@ -293,10 +287,14 @@ rezervForm.addEventListener("submit", async function (e) {
 let a = document.querySelectorAll("nav a");
 
 a.forEach((item) => {
-  
   if (item.href.slice(40) == window.location.pathname.slice(19)) {
-   
     let li = item.parentElement;
     li.classList.add("active");
   }
+});
+
+let checkOutBtn = document.querySelector(".check-out-btn");
+checkOutBtn.addEventListener("click", function () {
+  window.location = "card.html";
+  // setTolocalStorageBasket([]);
 });

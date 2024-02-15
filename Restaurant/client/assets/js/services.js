@@ -130,10 +130,7 @@ faqs.forEach((item) => {
 
 main.style.display = "block";
 candoreAside.style.display = "flex";
-// setTimeout(() => {
-//   spinner.style.display = "none";
 
-// }, 1000);
 
 navbar.addEventListener("click", function () {
   candoreAside.classList.toggle("aside");

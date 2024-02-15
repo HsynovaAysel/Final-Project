@@ -93,7 +93,7 @@ label span {
   text-transform: uppercase;
 }
 
-input,
+
 button {
   border: none;
   outline: none;
@@ -102,6 +102,10 @@ button {
 }
 
 input {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   caret-color: white;
   color: white;
   display: block;
@@ -282,6 +286,4 @@ button {
   right: 0;
 }
 
-.error {
-  color: red;
-}/*# sourceMappingURL=login-signup.css.map */
+/*# sourceMappingURL=login-signup.css.map */

@@ -32,7 +32,7 @@ const deleteAnnouncementById = async (req, res) => {
     res.status(200).json({
       message: "success",
       deletedAnnouncement: deletedAnnouncement,
-      allAnnouncements: announcements,
+      // allAnnouncements: announcements,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });
@@ -49,7 +49,7 @@ const addNewAnnouncement = async (req, res) => {
     res.status(201).send({
       message: "created succesfully!",
       data: newAnnouncement,
-      allAnnouncements: announcements,
+      // allAnnouncements: announcements,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });
@@ -67,7 +67,7 @@ const updateAnnouncementById = async (req, res) => {
     res.status(200).send({
       message: "updated succesfully!",
       data: updatedAnnouncement,
-      allAnnouncements: announcements,
+      // allAnnouncements: announcements,
     });
   } catch (error) {
     res.status(500).send({ message: error.message });

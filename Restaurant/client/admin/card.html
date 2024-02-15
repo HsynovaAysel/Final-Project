@@ -46,20 +46,13 @@
       defer
       src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
     ></script>
-    <script
-    defer
-    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"
-    integrity="sha512-Dz4zO7p6MrF+VcOD6PUbA08hK1rv0hDv/wGuxSUjImaUYxRyK2gLC6eQWVqyDN9IM1X/kUA8zkykJS/gEVOd3w=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
     <!-- <script
       defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script> -->
-    <script defer src="./js/reservation.js"></script>
+    <script defer src="./js/card.js"></script>
   </head>
   <body>
     <div class="progress-wrap">
@@ -110,9 +103,7 @@
             >
           </li>
           <li>
-            <a href="customers.html"
-              ><i class="fa-solid fa-users"></i>Users</a
-            >
+            <a href="customers.html"><i class="fa-solid fa-users"></i>Users</a>
           </li>
           <li>
             <a href="category.html"
@@ -150,73 +141,26 @@
         </ul>
       </nav>
     </aside>
-    <section id="reservation">
+    <section id="customer">
       <div class="container">
-        <div class="reservation">
+        <div class="customer">
           <div class="home-icon">
             <i class="fa-solid fa-bars"></i>
           </div>
-          <div id="reservation-form">
-            <form action="" class="reservation-form">
-              <h1>Reservation Form</h1>
-              <input
-                type="text"
-                id="name-input"
-                placeholder="User Name"
-                required
-              />
-              <input
-                type="text"
-                id="email-input"
-                placeholder="User Email"
-                required
-              />
-              <input type="date" id="date-input" placeholder="Date" required />
-              <input type="time" id="time-input" placeholder="Time" required />
-              <input
-                type="text"
-                id="phone-input"
-                placeholder="Phone"
-                required
-              />
-              <select id="person-select">
-                <option value="" disabled selected>Persons</option>
-                <option value="1 Person">1 Person</option>
-                <option value="2 People">2 People</option>
-                <option value="3 People">3 People</option>
-                <option value="4 People">4 People</option>
-                <option value="5 People">5 People</option>
-                <option value="6 People">6 People</option>
-                <option value="7 People ">7 People</option>
-              </select>
-              <p class="error"></p>
-              <button type="submit" class="add">Add</button>
-            </form>
-          </div>
-          <div class="search-input">
-            <input type="text" id="search" placeholder="Search E-mail..." />
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </div>
-          <table class="reservation-table">
+
+          <table class="customer-table">
+            <h2>Card Table</h2>
             <thead>
-              <th><h4>User Name</h4></th>
-              <th><h4>User Email</h4></th>
-              <th><h4>Date</h4></th>
-              <th><h4>Time</h4></th>
-              <th><h4>User Phone</h4></th>
-              <th><h4>Number of People</h4></th>
-              <th><h4>Created</h4></th>
+              <th><h4>Card Holder</h4></th>
+              <th><h4>Card Number</h4></th>
+              <th><h4>Expiration MM</h4></th>
+              <th><h4>Expiration YY</h4></th>
+              <th><h4>CVV</h4></th>
+              <th><h4>Check</h4></th>
               <th><h4>Delete</h4></th>
-              <th><h4>Edit</h4></th>
             </thead>
             <tbody>
-              <!-- <tr>
-                <td><h5>jh</h5></td>
-                <td><h5>m,m</h5></td>
-                <td><h5>nknk</h5></td>
-                <td><i class="fa-solid fa-trash"></i></td>
-                <td><i class="fa-solid fa-pen-to-square"></i></td>
-              </tr> -->
+             
             </tbody>
           </table>
         </div>

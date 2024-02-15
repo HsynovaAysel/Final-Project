@@ -124,10 +124,6 @@ pagesList.addEventListener("click", function () {
 });
 main.style.display = "block";
 candoreAside.style.display = "flex";
-// setTimeout(() => {
-//   spinner.style.display = "none";
-
-// }, 1000);
 
 navbar.addEventListener("click", function () {
   candoreAside.classList.toggle("aside");
@@ -155,7 +151,7 @@ function drawCard(data) {
         <i class="fa-solid fa-cart-shopping" onclick=cart("${el._id}")></i>
         <a href="details.html?id=${
           el._id
-        }"><i class="fa-solid fa-magnifying-glass"></i></a>
+        }"><i class="fa-regular fa-eye"></i> </a>
       </div>
     </div>
   </div>

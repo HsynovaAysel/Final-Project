@@ -116,10 +116,7 @@ logOut.addEventListener("click", function () {
 
 main.style.display = "block";
 candoreAside.style.display = "flex";
-// setTimeout(() => {
-//   spinner.style.display = "none";
 
-// }, 1000);
 
 navbar.addEventListener("click", function () {
   candoreAside.classList.toggle("aside");
@@ -163,7 +160,7 @@ rezervForm.addEventListener("submit", async function (e) {
   if (login === "true") {
     if (!time) {
       await axios.post(`${BASE_URL}/rezervs`, rezervsObj);
-      toastifySuccesful('succesfuly add rezervs')
+      toastifySuccesful('succesfully add rezervs')
 
     } else {
     toastifyError("bu vaxta bos yer yoxdur. ",)

@@ -1,3 +1,4 @@
+let BASE_URL = "http://localhost:8080";
 let homeIcons = document.querySelectorAll(".fa-bars");
 let homeIconScroll = document.querySelector(".home-icon");
 let menuIconScroll = document.querySelector(".menu-icon");
@@ -6,9 +7,9 @@ let xMarkIcon = document.querySelector(".fa-x");
 let aside = document.querySelector("aside");
 let userAllData = null;
 let findAdmin = null;
-let BASE_URL = "http://localhost:8080";
 let adminName = document.querySelector("#admin-name");
 let logOut = document.querySelector(".fa-right-from-bracket");
+let tbody = document.querySelector("tbody");
 
 // Scroll back to top
 
@@ -57,9 +58,20 @@ function toastifySuccesful(text) {
     text: text,
     duration: 3000,
     newWindow: true,
-    gravity: "bottom", // `top` or `bottom`
+    close: true,
+    gravity: "top", // `top` or `bottom`
     positionLeft: true, // `true` or `false`
     backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+  }).showToast();
+}
+function toastifyError(text) {
+  Toastify({
+    text: text,
+    duration: 3000,
+    newWindow: true,
+    gravity: "top", // `top` or `bottom`
+    positionLeft: false, // `true` or `false`
+    backgroundColor: "#ff0000",
   }).showToast();
 }
 
@@ -76,49 +88,80 @@ homeIcons.forEach((homeIcon) =>
   })
 );
 
+
 xMarkIcon.addEventListener("click", function () {
   aside.classList.remove("aside");
 });
+
 if (!localStorage.getItem("isAdmin")) {
   window.location.pathname = "/Restaurant/client/login-signup.html";
+
 }
 
-let userNameLocal = localStorage.getItem("userName");
+let userNameLocal=localStorage.getItem('userName')
 adminName.innerText = `Hello,${
   userNameLocal[0].toLocaleUpperCase() +
   userNameLocal.slice(1).toLocaleLowerCase()
 }`;
 logOut.addEventListener("click", function () {
-  localStorage.removeItem("isAdmin");
-  localStorage.removeItem("userName");
-  window.location.pathname = "/Restaurant/client/login-signup.html";
+localStorage.removeItem("isAdmin");
+localStorage.removeItem("userName");
+window.location.pathname = "/Restaurant/client/login-signup.html";
+
 });
 
-toastifySuccesful(
-  `Welcome Admin , ${
-    userNameLocal[0].toLocaleUpperCase() +
-    userNameLocal.slice(1).toLocaleLowerCase()
-  }`
-);
-let moonIcon = document.querySelector(".fa-moon");
-moonIcon.addEventListener("click", function (params) {
+async function getALLData() {
+  let res = await axios(`${BASE_URL}/card`);
+  console.log(res.data);
+ 
+  drawTabel(res.data);
+}
+getALLData();
+function drawTabel(array) {
+  tbody.innerHTML = "";
+  array.forEach((el) => {
+    let created = el.createdAt.slice(0, 10);
+    tbody.innerHTML += `
+      <tr>
+      <td><h5>${el.cardHolder}</h5></td>
+      <td><h5>${el.cardNumber}</h5></td>
+      <td><h5>${el.cardMonth}</h5></td>
+      <td><h5>${el.cardYear}</h5></td>
+      <td><h5>${el.cardCvv}</h5></td>
+      <td><h5>${created}</h5></td>
+      <td><i class="fa-solid fa-trash" onclick=removeData("${el._id}",this)></i></td>
+    </tr>
+      `;
+  });
+}
+async function removeData(id, icon) {
+  if (confirm("Are you sure you want to delete this?")) {
+    await axios.delete(`${BASE_URL}/card/${id}`);
+    icon.closest("tr").remove();
+    toastifySuccesful("deleted users succesful");
+  }
+}
+let moonIcon=document.querySelector('.fa-moon')
+moonIcon.addEventListener('click',function (params) {
   document.body.classList.toggle("dark-mode");
   let mode;
   if (document.body.classList.contains("dark-mode")) {
     mode = "dark";
-    moonIcon.className = "fas fa-sun";
+    moonIcon.className='fas fa-sun'
     // console.log(mode);
   } else {
-    moonIcon.className = "fas fa-moon";
+    moonIcon.className='fas fa-moon'
     mode = "light";
     // console.log(mode);
   }
   localStorage.setItem("mode", JSON.stringify(mode));
-});
+})
+
+
 
 let getMode = JSON.parse(localStorage.getItem("mode"));
 if (getMode === "dark") {
-  moonIcon.className = "fas fa-sun";
+  moonIcon.className='fas fa-sun'
   document.body.classList.add("dark-mode");
 }
 let a = document.querySelectorAll("nav a");
@@ -129,69 +172,3 @@ a.forEach((item) => {
     li.classList.add("active");
   }
 });
-
-const rezervCount = document.querySelector(".rezerv-count");
-const vacancyCount = document.querySelector(".vacancy-count");
-const messageCount = document.querySelector(".message-count");
-const menuCount = document.querySelector(".menu-count");
-const announCount = document.querySelector(".announcement-count");
-const usersCount = document.querySelector(".users-count");
-const teamCount = document.querySelector(".team-count");
-const cardCount = document.querySelector(".card-count");
-let rezervAdmin = null;
-let vacancyAdmin = null;
-let announcementAdmin = null;
-let menuAdmin = null;
-let usersAdmin = null;
-let messageAdmin = null;
-let cardAdmin = null;
-let teamAdmin = null;
-
-async function getData() {
-  let rezerv = await axios(`${BASE_URL}/rezervs`);
-  let vacancy = await axios(`${BASE_URL}/vakans`);
-  let announ = await axios(`${BASE_URL}/announcement`);
-  let menu = await axios(`${BASE_URL}/menus`);
-  let users = await axios(`${BASE_URL}/users`);
-  let message = await axios(`${BASE_URL}/messages`);
-  let card = await axios(`${BASE_URL}/card`);
-  let team = await axios(`${BASE_URL}/team`);
-
-  rezervAdmin = rezerv.data;
-  vacancyAdmin = vacancy.data;
-  announcementAdmin = announ.data;
-  menuAdmin = menu.data;
-  usersAdmin = users.data;
-  messageAdmin = message.data;
-  cardAdmin = card.data;
-  teamAdmin = team.data;
-
-  rezervCount.textContent = rezervAdmin.length;
-  vacancyCount.textContent = vacancyAdmin.length;
-  announCount.textContent = announcementAdmin.length;
-  menuCount.textContent = menuAdmin.length;
-  usersCount.textContent = usersAdmin.length;
-  messageCount.textContent = messageAdmin.length;
-  cardCount.textContent = cardAdmin.length;
-  teamCount.textContent = teamAdmin.length;
-
-  let x = document.querySelectorAll(".count");
-
-  let arr = Array.from(x);
-
-  arr.map((item) => {
-    let count = item.innerHTML;
-    item.innerHTML = "0";
-    let countNumber = 0;
-    setInterval((counterUp) => {
-      if (countNumber <= count) {
-        item.innerHTML = countNumber;
-        countNumber++;
-      } else {
-        clearInterval;
-      }
-    }, item.dataset.speed / count);
-  });
-}
-
-getData();
