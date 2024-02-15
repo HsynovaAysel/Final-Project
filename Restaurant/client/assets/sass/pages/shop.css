@@ -558,11 +558,8 @@ i {
 #candore-aside nav ul li .pages.pages-ul {
   z-index: 1;
   padding: 15px 0 0 10px;
-  height: 230px;
+  height: 225px;
   opacity: 1;
-}
-#candore-aside nav ul li .pages li {
-  padding-top: 10px;
 }
 #candore-aside .candore-footer {
   display: flex;
@@ -580,7 +577,7 @@ i {
 }
 #candore-aside .candore-footer .aside-icons .count-basket {
   border-radius: 50%;
-  background-color: #c19d60;
+  background-color: red;
   padding: 0 4px;
 }
 #candore-aside .candore-footer p {
@@ -1064,7 +1061,7 @@ main #shop .shop .shop-table table tbody tr td {
 }
 main #shop .shop .shop-table table tbody tr td .img {
   top: 12%;
-  left: 10%;
+  left: 5%;
   position: absolute;
   width: 40px;
 }
@@ -1107,6 +1104,7 @@ main #shop .shop .shop-box h5 {
   font-size: 20px;
 }
 main #shop .shop .shop-box table {
+  table-layout: fixed;
   margin-top: 20px;
   border: 1px solid #c19d60;
   width: 100%;

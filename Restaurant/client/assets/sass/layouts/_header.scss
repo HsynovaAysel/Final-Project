@@ -110,12 +110,12 @@ i {
             z-index: 1;
             padding: 15px 0 0 10px;
             // display: block;
-            height: 230px;
+            height: 225px;
             opacity: 1;
           }
-          li {
-            padding-top: 10px;
-          }
+          // li {
+          //   padding-top: 10px;
+          // }
         }
       }
     }
@@ -135,7 +135,7 @@ i {
 
       .count-basket {
         border-radius: 50%;
-        background-color: #c19d60;
+        background-color: red;
         padding: 0 4px;
       }
     }

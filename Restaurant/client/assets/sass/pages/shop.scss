@@ -82,6 +82,8 @@ main {
         width: 70%;
 
         table {
+// table-layout: fixed;
+
           border-collapse: collapse;
           width: 100%;
           thead {
@@ -103,7 +105,7 @@ main {
                 border: 1px solid #c19d60;
                 .img {
                   top: 12%;
-                  left: 10%;
+                  left: 5%;
                   position: absolute;
                   width: 40px;
                   img {
@@ -153,6 +155,8 @@ main {
           font-size: 20px;
         }
         table {
+table-layout: fixed;
+
           margin-top: 20px;
           border: 1px solid #c19d60;
           width: 100%;

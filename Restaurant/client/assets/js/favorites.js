@@ -269,3 +269,14 @@ rezervForm.addEventListener("submit", async function (e) {
     (rezervPhoneInput.value = ""),
     (rezervPersonSelect.value = "");
 });
+
+let a = document.querySelectorAll("nav a");
+
+a.forEach((item) => {
+  
+  if (item.href.slice(40) == window.location.pathname.slice(19)) {
+    
+    let li = item.parentElement;
+    li.classList.add("active");
+  }
+});

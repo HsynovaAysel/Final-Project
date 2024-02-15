@@ -513,17 +513,12 @@ let page = [
   "/Restaurant/client/vakan.html",
   "/Restaurant/client/wine.html",
 ];
-// console.log();
-// page.find(
-//   (el) =>
-//     function pageError(e) {
-//       if (window.location.pathname === el) {
-//         window.location=el;
-//         e.preventDefault();
-//       } else {
-//         window.location.pathname = "/Restaurant/client/error.html";
-//         e.preventDefault();
-//       }
-//     }
-// );
 
+let a = document.querySelectorAll("nav a");
+
+a.forEach((item) => {
+  if (item.href.slice(40) == window.location.pathname.slice(19)) {
+    let li = item.parentElement;
+    li.classList.add("active");
+  }
+});

@@ -94,7 +94,8 @@ xMarkIcon.addEventListener("click", function () {
 });
 
 if (!localStorage.getItem("isAdmin")) {
-  window.location = "login-signup.html";
+  window.location.pathname = "/Restaurant/client/login-signup.html";
+
 }
 
 let userNameLocal=localStorage.getItem('userName')
@@ -105,6 +106,8 @@ adminName.innerText = `Hello,${
 logOut.addEventListener("click", function () {
 localStorage.removeItem("isAdmin");
 localStorage.removeItem("userName");
+window.location.pathname = "/Restaurant/client/login-signup.html";
+
 });
 
 async function getALLData() {
@@ -162,3 +165,11 @@ if (getMode === "dark") {
   moonIcon.className='fas fa-sun'
   document.body.classList.add("dark-mode");
 }
+let a = document.querySelectorAll("nav a");
+
+a.forEach((item) => {
+  if (item.href.slice(40) == window.location.pathname.slice(19)) {
+    let li = item.parentElement;
+    li.classList.add("active");
+  }
+});

@@ -184,6 +184,9 @@ rezervForm.addEventListener("submit", async function (e) {
     (rezervPhoneInput.value = ""),
     (rezervPersonSelect.value = "");
 });
+
+let basketCount = JSON.parse(localStorage.getItem("basketCount")) ?? 0;
+count.innerText = basketCount;
 // let downIcon = document.querySelector(".fa-down-long");
 // let shopElem = document.querySelector("footer");
 
@@ -191,5 +194,16 @@ rezervForm.addEventListener("submit", async function (e) {
 //   shopElem.scrollIntoView({ behavior: "smooth", block: "center" });
 // });
 
-let basketCount = JSON.parse(localStorage.getItem("basketCount")) ?? 0;
-count.innerText = basketCount;
+
+
+
+let a = document.querySelectorAll("nav a");
+a.forEach((item) => {
+ 
+  if (item.href.slice(40) == window.location.pathname.slice(19)) {
+    
+    let li = item.parentElement;
+    li.classList.add("active");
+  }
+});
+

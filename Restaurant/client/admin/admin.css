@@ -518,7 +518,7 @@ header.header-scroll {
   width: 15%;
   height: 100vh;
   background-color: #1b1b1b;
-  border-right: 1px solid rgba(255, 255, 255, 0.02);
+  border-right: 2px solid rgba(255, 255, 255, 0.02);
   padding: 100px 50px;
   display: flex;
   flex-direction: column;
@@ -558,6 +558,9 @@ header.header-scroll {
   font-size: 18px;
 }
 #candore nav ul li:hover a {
+  color: #c3b9a9;
+}
+#candore nav ul li.active a {
   color: #c19d60;
 }
 #candore.aside {
@@ -710,6 +713,7 @@ header.header-scroll {
   background-color: #1b1b1b;
   text-align: center;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 #customer .customer-table thead tr th {
   border: 1px solid #c19d60;
@@ -852,6 +856,7 @@ header.header-scroll {
   color: #c19d60;
 }
 #category .category-table {
+  table-layout: fixed;
   margin-top: 50px;
   width: 100%;
   background-color: #1b1b1b;
@@ -992,6 +997,7 @@ header.header-scroll {
   color: #c19d60;
 }
 #vacancy .vacancy-table {
+  table-layout: fixed;
   margin-top: 50px;
   width: 100%;
   background-color: #1b1b1b;
@@ -1083,6 +1089,7 @@ header.header-scroll {
   color: #c19d60;
 }
 #reservation .reservation .reservation-table {
+  table-layout: fixed;
   margin-top: 50px;
   width: 100%;
   background-color: #1b1b1b;
