@@ -99,7 +99,7 @@ const navbar = document.querySelector(".navbar");
 const pagesList = document.querySelector("#pages");
 const pagesUl = document.querySelector(".pages");
 const chefBgImg = document.querySelector(".chef-img");
-let BASE_URL = "http://localhost:8080";
+let BASE_URL = "https://restaurant-crud.onrender.com";
 let logOut = document.querySelector(".fa-right-to-bracket");
 const count = document.querySelector(".count-basket");
 

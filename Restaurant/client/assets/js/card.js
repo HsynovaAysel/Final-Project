@@ -19,7 +19,7 @@ function toastifyError(text) {
     backgroundColor: "#ff0000",
   }).showToast();
 }
-let BASE_URL = "http://localhost:8080";
+let BASE_URL = "https://restaurant-crud.onrender.com";
 let form = document.querySelector("form");
 let cardNumber = document.querySelector(".card-number-input");
 let cardHolder = document.querySelector(".card-holder-input");

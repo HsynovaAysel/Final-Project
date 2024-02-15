@@ -1,4 +1,4 @@
-let BASE_URL = "http://localhost:8080";
+let BASE_URL = "https://restaurant-crud.onrender.com";
 let header=document.querySelector('header')
 let homeIcons = document.querySelectorAll(".fa-bars");
 let homeIconScroll = document.querySelector(".home-icon");

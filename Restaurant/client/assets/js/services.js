@@ -104,7 +104,7 @@ let rezervTimeInput = document.querySelector("#rezerv-time");
 let rezervPersonSelect = document.querySelector("#rezerv-person");
 let reservsData = null;
 const count = document.querySelector(".count-basket");
-let BASE_URL = "http://localhost:8080";
+let BASE_URL = "https://restaurant-crud.onrender.com";
 
 
 

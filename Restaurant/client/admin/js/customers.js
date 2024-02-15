@@ -1,4 +1,4 @@
-let BASE_URL = "http://localhost:8080";
+let BASE_URL = "https://restaurant-crud.onrender.com";
 let form = document.querySelector("form");
 let tbody = document.querySelector("tbody");
 let nameInput = document.querySelector("#name-input");
