@@ -63,7 +63,7 @@ $(".owl-carousel").owlCarousel({
     });
   });
 })(jQuery);
-//Toastify 
+//Toastify
 function toastifySuccesful(text) {
   Toastify({
     text: text,
@@ -71,7 +71,7 @@ function toastifySuccesful(text) {
     newWindow: true,
     gravity: "top", // `top` or `bottom`
     positionLeft: true, // `true` or `false`
-    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)"
+    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
   }).showToast();
 }
 function toastifyError(text) {
@@ -110,7 +110,6 @@ let reservsData = null;
 main.style.display = "block";
 candoreAside.style.display = "flex";
 
-
 navbar.addEventListener("click", function () {
   candoreAside.classList.toggle("aside");
   navbar.classList.toggle("menu-icon");
@@ -126,8 +125,6 @@ if (login === "false") {
 } else {
   logOut.style.display = "inline-block";
 }
-
-
 
 async function getALLData() {
   let res = await axios(`${BASE_URL}/menus`);
@@ -226,13 +223,11 @@ function favs(icon, id) {
       icon.className = "fa-solid fa-heart";
       let find = menuAllData.find((item) => item._id == id);
       favorites.push(find);
-      toastifySuccesful('succesfuly add favorites')
-
+      toastifySuccesful("succesfuly added to favorites");
     } else {
       icon.className = "fa-regular fa-heart";
       favorites = favorites.filter((item) => item._id != id);
-      toastifySuccesful('succesfuly remove favorites')
-
+      toastifySuccesful("succesfuly removed from favorites");
     }
     setTolocalStorage(favorites);
   } else {
@@ -273,8 +268,7 @@ function cart(id) {
     }
     countBasket(basket);
     setTolocalStorageBasket(basket);
-    toastifySuccesful('succesfuly add btn')
-
+    toastifySuccesful("succesfuly added to basket");
   } else {
     window.location = "login-signup.html";
   }
@@ -290,11 +284,10 @@ logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
 
-
 rezervDateInput.min = moment().format().slice(0, 10);
 rezervDateInput.max = "2024-12-31";
 rezervDateInput.value = moment().format().slice(0, 10);
-rezervTimeInput.value=moment().format().slice(11,16)
+rezervTimeInput.value = moment().format().slice(11, 16);
 async function getRezervsData() {
   let res = await axios(`${BASE_URL}/rezervs`);
   console.log(res.data);
@@ -320,11 +313,9 @@ rezervForm.addEventListener("submit", async function (e) {
   if (login === "true") {
     if (!time) {
       await axios.post(`${BASE_URL}/rezervs`, rezervsObj);
-      toastifySuccesful('succesfuly add rezervs')
-
+      toastifySuccesful("successfully");
     } else {
-    toastifyError("bu vaxta bos yer yoxdur. ",)
-     
+      toastifyError("At this time, there is no reserve space ");
     }
   } else {
     window.location = "login-signup.html";
@@ -338,37 +329,25 @@ rezervForm.addEventListener("submit", async function (e) {
     (rezervPersonSelect.value = "");
 });
 
-$('.counting').each(function() {
+$(".counting").each(function () {
   var $this = $(this),
-      countTo = $this.attr('data-count');
-  
-  $({ countNum: $this.text()}).animate({
-    countNum: countTo
-  },
+    countTo = $this.attr("data-count");
 
-  {
-
-    duration: 3000,
-    easing:'linear',
-    step: function() {
-      $this.text(Math.floor(this.countNum));
+  $({ countNum: $this.text() }).animate(
+    {
+      countNum: countTo,
     },
-    complete: function() {
-      $this.text(this.countNum);
-      //alert('finished');
+
+    {
+      duration: 3000,
+      easing: "linear",
+      step: function () {
+        $this.text(Math.floor(this.countNum));
+      },
+      complete: function () {
+        $this.text(this.countNum);
+        //alert('finished');
+      },
     }
-
-  });  
-  
-
-});
-let a = document.querySelectorAll("nav a");
-
-a.forEach((item) => {
-  
-  if (item.href.slice(40) == window.location.pathname.slice(19)) {
-    
-    let li = item.parentElement;
-    li.classList.add("active");
-  }
+  );
 });

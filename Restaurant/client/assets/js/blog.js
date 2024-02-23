@@ -63,7 +63,7 @@ $(".owl-carousel").owlCarousel({
   });
 })(jQuery);
 
-//Toastify 
+//Toastify
 function toastifySuccesful(text) {
   Toastify({
     text: text,
@@ -71,7 +71,7 @@ function toastifySuccesful(text) {
     newWindow: true,
     gravity: "top", // `top` or `bottom`
     positionLeft: true, // `true` or `false`
-    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)"
+    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
   }).showToast();
 }
 function toastifyError(text) {
@@ -114,7 +114,6 @@ if (login === "false") {
 main.style.display = "block";
 candoreAside.style.display = "flex";
 
-
 navbar.addEventListener("click", function () {
   candoreAside.classList.toggle("aside");
   navbar.classList.toggle("menu-icon");
@@ -123,11 +122,10 @@ pagesList.addEventListener("click", function () {
   pagesUl.classList.toggle("pages-ul");
 });
 
-
 rezervDateInput.min = moment().format().slice(0, 10);
 rezervDateInput.max = "2024-12-31";
 rezervDateInput.value = moment().format().slice(0, 10);
-rezervTimeInput.value=moment().format().slice(11,16)
+rezervTimeInput.value = moment().format().slice(11, 16);
 
 async function getRezervsData() {
   let res = await axios(`${BASE_URL}/rezervs`);
@@ -153,12 +151,10 @@ rezervForm.addEventListener("submit", async function (e) {
   let time = date.find((item) => rezervTimeInput.value == item.time);
   if (login === "true") {
     if (!time) {
-      toastifySuccesful('succesfuly add rezervs')
-
       await axios.post(`${BASE_URL}/rezervs`, rezervsObj);
+      toastifySuccesful("successfully");
     } else {
-    toastifyError("bu vaxta bos yer yoxdur. ",)
-     
+      toastifyError("At this time, there is no reserve space  ");
     }
   } else {
     window.location = "login-signup.html";
@@ -173,13 +169,3 @@ rezervForm.addEventListener("submit", async function (e) {
 });
 let basketCount = JSON.parse(localStorage.getItem("basketCount")) ?? 0;
 count.innerText = basketCount;
-let a = document.querySelectorAll("nav a");
-
-a.forEach((item) => {
-
-  if (item.href.slice(40) == window.location.pathname.slice(19)) {
-
-    let li = item.parentElement;
-    li.classList.add("active");
-  }
-});

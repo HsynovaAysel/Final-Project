@@ -138,7 +138,7 @@ async function removeData(id, icon) {
   if (confirm("Are you sure you want to delete this?")) {
     await axios.delete(`${BASE_URL}/card/${id}`);
     icon.closest("tr").remove();
-    toastifySuccesful("deleted users succesful");
+    toastifySuccesful("deleted users successfully");
   }
 }
 let moonIcon=document.querySelector('.fa-moon')

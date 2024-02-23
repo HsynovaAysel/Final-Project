@@ -155,12 +155,12 @@ form.addEventListener("submit", function (event) {
   if (!bool) {
     if (!editStatus) {
       postData(obj);
-      toastifySuccesful("created menu succesful");
+      toastifySuccesful("created menu successfully");
     } else {
       putData(editId, obj);
       editStatus = false;
       addBtn.innerText = "Add";
-      toastifySuccesful("updated menu succesful");
+      toastifySuccesful("updated menu successfully");
     }
   } else {
     toastifyError("Inputlari bos qoymayin");
@@ -201,7 +201,7 @@ async function removeData(id, icon) {
   if (confirm("Are you sure you want to delete this?")) {
     await axios.delete(`${BASE_URL}/menus/${id}`);
     icon.closest("tr").remove();
-    toastifySuccesful("deleted menu succesful");
+    toastifySuccesful("deleted menu successfully");
   }
 }
 function updateData(id) {

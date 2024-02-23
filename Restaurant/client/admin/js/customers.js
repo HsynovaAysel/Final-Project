@@ -130,11 +130,11 @@ form.addEventListener("submit", function (event) {
   if (!bool) {
     if (!editStatus) {
       postData(obj);
-      toastifySuccesful("created users succesful");
+      toastifySuccesful("created users successfully");
     } else {
       putData(editId, obj);
       editStatus = false;
-      toastifySuccesful("updated Users succesful");
+      toastifySuccesful("updated Users successfully");
     }
   } else {
     toastifyError("Inputlari bos qoymayin");
@@ -184,16 +184,16 @@ async function rotateAdmin(id) {
     isAdmin: find.isAdmin ? false : true,
   };
   editId = id;
-  if (confirm("admini deyismeye eminsiniz??")) {
+  if (confirm("deyismeye eminsiniz??")) {
     putData(editId, obj);
-    toastifySuccesful("updated isAdmin succesful");
+    toastifySuccesful("updated isAdmin successfully");
   }
 }
 async function removeData(id, icon) {
   if (confirm("Are you sure you want to delete this?")) {
     await axios.delete(`${BASE_URL}/users/${id}`);
     icon.closest("tr").remove();
-    toastifySuccesful("deleted users succesful");
+    toastifySuccesful("deleted users successfully");
   }
 }
 search.addEventListener("input", function (event) {

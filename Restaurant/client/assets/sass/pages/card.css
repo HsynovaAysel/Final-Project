@@ -52,8 +52,8 @@ header .header .icons i {
   min-height: 100vh;
   background: #eee;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-flow: column;
   padding-bottom: 60px;
 }
@@ -112,7 +112,7 @@ header .header .icons i {
 .card .card-container {
   margin-bottom: -150px;
   position: relative;
-  height: 250px;
+  padding: 120px 0;
   width: 30%;
 }
 .card .card-container .front {
@@ -134,9 +134,19 @@ header .header .icons i {
   justify-content: space-between;
   padding-top: 10px;
 }
+.card .card-container .front .image .cip {
+  width: 10%;
+}
+.card .card-container .front .image .visa-logo {
+  width: 30%;
+}
 .card .card-container .front .card-number-box {
+  width: 80%;
   padding: 30px 0;
-  font-size: 22px;
+  display: flex;
+  gap: 8px;
+}
+.card .card-container .front .card-number-box span {
   color: #fff;
 }
 .card .card-container .front .flexbox {
@@ -187,5 +197,30 @@ header .header .icons i {
   width: 100%;
 }
 .card .card-container .back .box img {
+  width: 20%;
   margin-top: 30px;
+}
+@media screen and (max-width: 767px) {
+  .card form {
+    width: 90%;
+  }
+  .card form .flexbox {
+    flex-direction: column;
+  }
+  .card form .flexbox .inputBox {
+    flex: unset;
+  }
+  .card .card-container {
+    padding: 100px 0;
+    width: 50%;
+  }
+  .card .card-container .front .card-number-box {
+    gap: 3px;
+  }
+  .card .card-container .front .card-number-box span {
+    font-size: 10px;
+  }
+  .card .card-container .front .flexbox .box {
+    font-size: 10px;
+  }
 }/*# sourceMappingURL=card.css.map */

@@ -63,7 +63,7 @@ $(".owl-carousel").owlCarousel({
   });
 })(jQuery);
 
-//Toastify 
+//Toastify
 function toastifySuccesful(text) {
   Toastify({
     text: text,
@@ -71,7 +71,7 @@ function toastifySuccesful(text) {
     newWindow: true,
     gravity: "top", // `top` or `bottom`
     positionLeft: true, // `true` or `false`
-    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)"
+    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
   }).showToast();
 }
 function toastifyError(text) {
@@ -107,9 +107,6 @@ let reservsData = null;
 let basket = getFromlocalStorageBasket();
 const count = document.querySelector(".count-basket");
 
-
-
-
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
@@ -122,7 +119,6 @@ if (login === "false") {
 main.style.display = "block";
 candoreAside.style.display = "flex";
 
-
 navbar.addEventListener("click", function () {
   candoreAside.classList.toggle("aside");
   navbar.classList.toggle("menu-icon");
@@ -130,7 +126,6 @@ navbar.addEventListener("click", function () {
 pagesList.addEventListener("click", function () {
   pagesUl.classList.toggle("pages-ul");
 });
-
 
 async function getALLData() {
   let res = await axios(`${BASE_URL}/menus`);
@@ -190,7 +185,7 @@ menuBtnAll.forEach((item) =>
     this.classList.add("button-active");
     let filtered = menuAllData.filter(
       (item) =>
-        item.category.toLocaleLowerCase() === this.innerText.toLocaleLowerCase() 
+        item.category.toLocaleLowerCase() === this.innerText.toLocaleLowerCase()
     );
     drawCards(filtered);
   })
@@ -202,13 +197,11 @@ function favs(icon, id) {
       icon.className = "fa-solid fa-heart";
       let find = menuAllData.find((item) => item._id == id);
       favorites.push(find);
-      toastifySuccesful('succesfuly add favorites')
-
+      toastifySuccesful("successfully added to favorites");
     } else {
       icon.className = "fa-regular fa-heart";
       favorites = favorites.filter((item) => item._id != id);
-      toastifySuccesful('succesfuly remove favorites')
-
+      toastifySuccesful("successfully removed from favorites");
     }
     setTolocalStorage(favorites);
   } else {
@@ -226,7 +219,6 @@ function countBasket(arr) {
   let basketCount = arr.reduce((acc, cur) => acc + cur.count, 0);
   count.innerText = basketCount;
   setTolocalStorageBasketCount(basketCount);
-
 }
 countBasket(basket);
 
@@ -247,10 +239,9 @@ function cart(id) {
     } else {
       basket[index].count += 1;
     }
-countBasket(basket)
+    countBasket(basket);
     setTolocalStorageBasket(basket);
-    toastifySuccesful('succesfuly add btn')
-
+    toastifySuccesful("successfully added to basket");
   } else {
     window.location = "login-signup.html";
   }
@@ -266,11 +257,10 @@ logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
 
-
 rezervDateInput.min = moment().format().slice(0, 10);
 rezervDateInput.max = "2024-12-31";
-rezervDateInput.value=moment().format().slice(0, 10)
-rezervTimeInput.value=moment().format().slice(11,16)
+rezervDateInput.value = moment().format().slice(0, 10);
+rezervTimeInput.value = moment().format().slice(11, 16);
 async function getRezervsData() {
   let res = await axios(`${BASE_URL}/rezervs`);
   console.log(res.data);
@@ -289,7 +279,7 @@ rezervForm.addEventListener("submit", async function (e) {
     person: rezervPersonSelect.value,
   };
   // console.log(rezervDateInput.value);
-  
+
   let date = reservsData.filter(
     (item) => rezervDateInput.value == item.date.slice(0, 10)
   );
@@ -297,9 +287,9 @@ rezervForm.addEventListener("submit", async function (e) {
   if (login === "true") {
     if (!time) {
       await axios.post(`${BASE_URL}/rezervs`, rezervsObj);
-      toastifySuccesful('succesfuly add rezervs')
+      toastifySuccesful("successfully");
     } else {
-    toastifyError("bu vaxta bos yer yoxdur. ",)
+      toastifyError("At this time, there is no reserve space ");
     }
   } else {
     window.location = "login-signup.html";
@@ -311,14 +301,4 @@ rezervForm.addEventListener("submit", async function (e) {
     (rezervTimeInput.value = ""),
     (rezervPhoneInput.value = ""),
     (rezervPersonSelect.value = "");
-});
-let a = document.querySelectorAll("nav a");
-
-a.forEach((item) => {
-
-  if (item.href.slice(40) == window.location.pathname.slice(19)) {
-   
-    let li = item.parentElement;
-    li.classList.add("active");
-  }
 });

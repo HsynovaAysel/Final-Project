@@ -8,7 +8,6 @@
 @import "../layouts/header";
 @import "../layouts/footer";
 
-
 main {
   display: none;
   position: absolute;
@@ -205,7 +204,6 @@ main {
             .line {
               margin: 5px 0;
               border-top: 1px dotted #999;
-              
             }
             .desc-icon {
               @include flex(space-between);
@@ -226,7 +224,7 @@ main {
                 .fa-cart-shopping {
                   color: white;
                 }
-                .fa-eye{
+                .fa-eye {
                   color: #ece1cf;
                 }
               }
@@ -311,7 +309,6 @@ main {
                 .line {
                   margin: 5px 0;
                   border-top: 1px dotted #999;
-              
                 }
                 .desc-icon {
                   @include flex(space-between);
@@ -332,7 +329,7 @@ main {
                     .fa-cart-shopping {
                       color: white;
                     }
-                    .fa-eye{
+                    .fa-eye {
                       color: #ece1cf;
                     }
                   }
@@ -354,15 +351,15 @@ main {
       }
     }
   }
-  #counter-starts{
+  #counter-starts {
     padding: 100px 0;
     background-color: #1b1b1b;
-    .counter-starts{
+    .counter-starts {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      .img{
-        img{
+      .img {
+        img {
           width: 100%;
         }
       }
@@ -371,7 +368,7 @@ main {
         // justify-content: flex-end;
         margin-top: 100px;
         .stats {
-          h1{
+          h1 {
             display: flex;
             justify-content: center;
           }
@@ -380,13 +377,11 @@ main {
           font-size: 35px;
           font-weight: 700;
           font-family: "Montserrat", sans-serif;
-      
-          
         }
       }
     }
   }
-  
+
   #slider {
     padding: 100px 0 250px 0;
     background: $about-color;
@@ -463,11 +458,9 @@ main {
   @media screen and (max-width: 767px) {
     left: 0;
     width: 100%;
-header{
-  
-    text-align: center;
-  
-}
+    header {
+      text-align: center;
+    }
     #about {
       .about {
         flex-direction: column;
@@ -483,8 +476,8 @@ header{
 
     #menu-book {
       .menu-book {
-        .menu-top{
-          h1{
+        .menu-top {
+          h1 {
             font-size: 100px;
           }
         }
@@ -499,8 +492,8 @@ header{
     }
     #slider {
       padding: 100px 0 150px 0;
-      .wine-top{
-        h1{
+      .wine-top {
+        h1 {
           font-size: 100px;
         }
       }
@@ -512,7 +505,6 @@ header{
     }
     #wine-bar {
       .wine-bar {
-       
         flex-direction: column;
         .left {
           width: 100%;
@@ -523,6 +515,14 @@ header{
           .right {
             padding: unset;
           }
+        }
+      }
+    }
+    #counter-starts {
+      .counter-starts {
+        .counter-lists {
+          gap: 50px;
+          flex-direction: column;
         }
       }
     }

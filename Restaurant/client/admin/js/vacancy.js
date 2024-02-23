@@ -183,7 +183,7 @@ form.addEventListener("submit", function (event) {
     age: ageInput.value,
   };
   if (!bool) {
-    toastifySuccesful("updated Vcancy succesful");
+    toastifySuccesful("updated Vcancy successfully");
     putData(editId, obj);
   } else {
     toastifyError("Inputlari bos qoymayin");
@@ -207,7 +207,7 @@ async function removeData(id, icon) {
   if (confirm("Are you sure you want to delete this?")) {
     await axios.delete(`${BASE_URL}/vakans/${id}`);
     icon.closest("tr").remove();
-    toastifySuccesful("deleted vacancy succesful");
+    toastifySuccesful("deleted vacancy successfully");
   }
 }
 

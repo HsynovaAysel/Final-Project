@@ -268,7 +268,7 @@ header {
     background-color: #1b1b1b;
     text-align: center;
     border-collapse: collapse;
-table-layout: fixed;
+   
     thead {
       tr {
         th {
@@ -406,8 +406,7 @@ table-layout: fixed;
     }
   }
   .category-table {
-table-layout: fixed;
-
+// table-layout: fixed;
     margin-top: 50px;
     width: 100%;
     background-color: #1b1b1b;
@@ -531,7 +530,7 @@ table-layout: fixed;
     }
   }
   .vacancy-table {
-table-layout: fixed;
+// table-layout: fixed;
 
     margin-top: 50px;
     width: 100%;
@@ -620,7 +619,7 @@ table-layout: fixed;
       }
     }
     .reservation-table {
-table-layout: fixed;
+// table-layout: fixed;
 
       margin-top: 50px;
       width: 100%;

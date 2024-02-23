@@ -172,7 +172,6 @@ const pagesList = document.querySelector("#pages");
 const pagesUl = document.querySelector(".pages");
 const chefBgImg = document.querySelector(".chef-img");
 const aboutImg = document.querySelector(".about-img");
-const faqs = document.querySelectorAll(".faq");
 let logOut = document.querySelector(".fa-right-to-bracket");
 let login = localStorage.getItem("login");
 const count = document.querySelector(".count-basket");
@@ -192,7 +191,9 @@ let rezervTimeInput = document.querySelector("#rezerv-time");
 let rezervPersonSelect = document.querySelector("#rezerv-person");
 let reservsData = null;
 let teamCardLists = document.querySelector(".team-card-lists");
-
+let ourMenuBtnAll = document.querySelectorAll(".check-our-menu");
+let makeReservationBtn = document.querySelector(".make-a-reservation");
+let reservationSection = document.querySelector("#reservation");
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
@@ -202,15 +203,6 @@ if (login === "false") {
 } else {
   logOut.style.display = "inline-block";
 }
-
-faqs.forEach((item) => {
-  item.addEventListener("click", function () {
-    document
-      .querySelector(".accordion-active")
-      ?.classList.remove("accordion-active");
-    item.classList.toggle("accordion-active");
-  });
-});
 
 setTimeout(() => {
   main.style.display = "block";
@@ -232,6 +224,11 @@ window.addEventListener("scroll", function () {
   aboutImg.classList.toggle("bg-img-about", this.window.scrollY > "100");
 });
 
+ourMenuBtnAll.forEach((item) =>
+  item.addEventListener("click", function () {
+    window.location = "menu.html";
+  })
+);
 async function getALLData() {
   let res = await axios(`${BASE_URL}/menus`);
   // console.log(res.data);
@@ -344,11 +341,11 @@ function favs(icon, id) {
       icon.className = "fa-solid fa-heart";
       let find = menuAllData.find((item) => item._id == id);
       favorites.push(find);
-      toastifySuccesful("succesfuly add favorites");
+      toastifySuccesful("successfully added to favorites");
     } else {
       icon.className = "fa-regular fa-heart";
       favorites = favorites.filter((item) => item._id != id);
-      toastifySuccesful("succesfuly remove favorites");
+      toastifySuccesful("successfully removed from favorites");
     }
     setTolocalStorage(favorites);
   } else {
@@ -389,7 +386,7 @@ function cart(id) {
     }
     countBasket(basket);
     setTolocalStorageBasket(basket);
-    toastifySuccesful("succesfuly add btn");
+    toastifySuccesful("successfully added to basket");
   } else {
     window.location = "login-signup.html";
   }
@@ -434,9 +431,9 @@ rezervForm.addEventListener("submit", async function (e) {
   if (login === "true") {
     if (!time) {
       await axios.post(`${BASE_URL}/rezervs`, rezervsObj);
-      toastifySuccesful("succesfuly add rezervs");
+      toastifySuccesful("successfully");
     } else {
-      toastifyError("bu vaxta bos yer yoxdur. ");
+      toastifyError("At this time, there is no reserve space ");
     }
   } else {
     window.location = "login-signup.html";
@@ -492,26 +489,6 @@ function drawTeamCard(array) {
    `;
   });
 }
-// if (window.location.pathname=='*') {
-//   window.location="error.html";
-// }
-
-let page = [
-  "/Restaurant/client/index.html",
-  "/Restaurant/client/about.html",
-  "/Restaurant/client/blog.html",
-  "/Restaurant/client/chefs.html",
-  "/Restaurant/client/contact.html",
-  "/Restaurant/client/details.html",
-  "/Restaurant/client/faq.html",
-  "/Restaurant/client/favorites.html",
-  "/Restaurant/client/login-signup.html",
-  "/Restaurant/client/menu.html",
-  "/Restaurant/client/services.html",
-  "/Restaurant/client/shop.html",
-  "/Restaurant/client/vakan.html",
-  "/Restaurant/client/wine.html",
-];
 
 let a = document.querySelectorAll("nav a");
 
@@ -520,4 +497,8 @@ a.forEach((item) => {
     let li = item.parentElement;
     li.classList.add("active");
   }
+});
+
+makeReservationBtn.addEventListener("click", function () {
+  reservationSection.scrollIntoView({ behavior: "smooth" });
 });

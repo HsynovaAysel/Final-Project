@@ -68,7 +68,7 @@ form.addEventListener("submit", async function (e) {
   if (login === "true") {
     if (basket.length > 0) {
       await axios.post(`${BASE_URL}/card`, obj);
-      toastifySuccesful("succesfully ");
+      toastifySuccesful("successfully ");
     } else {
       toastifyError("basketinde erzaq yoxdur");
     }

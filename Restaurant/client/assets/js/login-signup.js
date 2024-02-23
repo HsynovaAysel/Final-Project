@@ -15,7 +15,7 @@ let passwordInputSignin = document.querySelector("#password-signin");
 let errorText = document.querySelector(".error");
 let BASE_URL = "https://restaurant-crud.onrender.com";
 let usersAllData = null;
-  
+
 function toastifySuccesful(text) {
   Toastify({
     text: text,
@@ -23,7 +23,7 @@ function toastifySuccesful(text) {
     newWindow: true,
     gravity: "top", // `top` or `bottom`
     positionLeft: true, // `true` or `false`
-    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)"
+    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
   }).showToast();
 }
 function toastifyError(text) {
@@ -44,19 +44,19 @@ formSignUp.addEventListener("submit", async function (e) {
     userName: nameInputSignup.value,
   };
 
-  if (passwordInputSignup.value.length>=8) {
-   try {
-    const response = await axios.post(`${BASE_URL}/signUp`, users);
-    if (response.status === 201) {
-      toastifySuccesful('succesfully created')
+  if (passwordInputSignup.value.length >= 8) {
+    try {
+      const response = await axios.post(`${BASE_URL}/signUp`, users);
+      if (response.status === 201) {
+        toastifySuccesful("succesfully");
+      }
+    } catch (error) {
+      toastifyError("bu mail artiq istifade olunub");
     }
-  } catch (error) {
-  toastifyError("bu mail artiq istifade olunub")
+  } else {
+    toastifyError("simvol sayi en azi 8 olmalidir ");
   }
-  }else{
-   toastifyError("simvol sayi 8den cox olmalidir ")
-  }
-  
+
   emailInputSignup.value = "";
   passwordInputSignup.value = "";
   nameInputSignup.value = "";
@@ -83,7 +83,7 @@ formSignin.addEventListener("submit", async function (e) {
       }
     }
   } catch (error) {
-   toastifyError("bele bir istifadeci yoxdur")
+    toastifyError("bele bir istifadeci yoxdur");
   }
 
   passwordInputSignin.value = "";

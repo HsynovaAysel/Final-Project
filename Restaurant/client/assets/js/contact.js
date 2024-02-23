@@ -109,7 +109,8 @@ let rezervDateInput = document.querySelector("#rezerv-date");
 let rezervTimeInput = document.querySelector("#rezerv-time");
 let rezervPersonSelect = document.querySelector("#rezerv-person");
 let reservsData = null;
-
+let downIcon = document.querySelector(".down-icon");
+let servicesSection = document.querySelector("#services");
 logOut.addEventListener("click", function () {
   localStorage.setItem("login", false);
 });
@@ -121,7 +122,6 @@ if (login === "false") {
 
 main.style.display = "block";
 candoreAside.style.display = "flex";
-
 
 navbar.addEventListener("click", function () {
   candoreAside.classList.toggle("aside");
@@ -142,8 +142,12 @@ messageForm.addEventListener("submit", async function (e) {
     message: textareaMessageInput.value,
   };
   if (login === "true") {
-    toastifySuccesful("succesfuly");
-    await axios.post(`${BASE_URL}/messages`, messageObj);
+    try {
+      toastifySuccesful("successfully");
+      await axios.post(`${BASE_URL}/messages`, messageObj);
+    } catch (error) {
+      toastifyError("If unsuccessful, leave the information blank");
+    }
   } else {
     window.location = "login-signup.html";
   }
@@ -183,9 +187,9 @@ rezervForm.addEventListener("submit", async function (e) {
   if (login === "true") {
     if (!time) {
       await axios.post(`${BASE_URL}/rezervs`, rezervsObj);
-      toastifyError("bu vaxta bos yer yoxdur. ");
+      toastifySuccesful("successfully");
     } else {
-      toastifySuccesful("succesfuly add rezervs");
+      toastifyError("At this time, there is no reserve space ");
     }
   } else {
     window.location = "login-signup.html";
@@ -200,13 +204,7 @@ rezervForm.addEventListener("submit", async function (e) {
 });
 let basketCount = JSON.parse(localStorage.getItem("basketCount")) ?? 0;
 count.innerText = basketCount;
-let a = document.querySelectorAll("nav a");
 
-a.forEach((item) => {
-
-  if (item.href.slice(40) == window.location.pathname.slice(19)) {
-    
-    let li = item.parentElement;
-    li.classList.add("active");
-  }
+downIcon.addEventListener("click", function () {
+  servicesSection.scrollIntoView({ behavior: "smooth" });
 });

@@ -149,11 +149,11 @@ form.addEventListener("submit", function (event) {
   if (!bool) {
     if (!editStatus) {
       postData(obj);
-      toastifySuccesful("created rezerv succesful");
+      toastifySuccesful("created rezerv successfully");
     } else {
       patchData(editId, obj);
       editStatus = false;
-      toastifySuccesful("updated rezerv succesful");
+      toastifySuccesful("updated rezerv successfully");
       addBtn.innerText = "Add";
     }
   } else {

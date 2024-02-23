@@ -156,7 +156,7 @@ form.addEventListener("submit", function (event) {
   };
   if (!bool) {
     postData(obj);
-    toastifySuccesful("created team succesful");
+    toastifySuccesful("created team successfully");
   } else {
     toastifyError("Inputlari bos qoymayin");
   }
@@ -170,7 +170,7 @@ async function removeData(id, icon) {
   if (confirm("Are you sure you want to delete this?")) {
     await axios.delete(`${BASE_URL}/team/${id}`);
     icon.closest("tr").remove();
-    toastifySuccesful("deleted team succesful");
+    toastifySuccesful("deleted team successfully");
   }
 }
 async function postData(obj) {

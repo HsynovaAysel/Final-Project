@@ -1417,4 +1417,8 @@ main #slider .slider span img {
   main #wine-bar .wine-bar .wine-bar-right .right {
     padding: unset;
   }
+  main #counter-starts .counter-starts .counter-lists {
+    gap: 50px;
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=wine.css.map */

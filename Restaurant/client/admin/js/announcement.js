@@ -145,15 +145,15 @@ form.addEventListener("submit", function (event) {
   if (!bool) {
     if (!editStatus) {
       postData(obj);
-      toastifySuccesful("created announcement succesful");
+      toastifySuccesful("created announcement successfully");
     } else {
       patchData(editId, obj);
       editStatus = false;
-      toastifySuccesful("updated announcement succesful");
+      toastifySuccesful("updated announcement successfully");
       addBtn.innerText = "Add";
     }
   } else {
-    toastifyError("Inputlari bos qoymayin");
+    toastifyError("Melumatlari doldurun");
   }
   jobInput.value = "";
   hoursInput.value = "";
@@ -203,7 +203,7 @@ async function removeData(id, icon) {
   if (confirm("Are you sure you want to delete this?")) {
     await axios.delete(`${BASE_URL}/announcement/${id}`);
     icon.closest("tr").remove();
-    toastifySuccesful("deleted announcement succesful");
+    toastifySuccesful("deleted announcement successfully");
   }
 }
 function updateData(id) {
