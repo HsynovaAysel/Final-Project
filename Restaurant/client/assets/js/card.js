@@ -40,9 +40,11 @@ cardMonth.oninput = () => {
 cardYear.oninput = () => {
   document.querySelector(".exp-year").innerText = cardYear.value;
 };
-cardCvv.oninput = () => {
-  document.querySelector(".cvv-box").innerText = cardCvv.value;
-};
+// cardCvv.oninput = () => {
+//   document.querySelector(".cvv-box").innerText = `${
+//     cardCvv.type === "password" ? "***" : cardCvv.value
+//   }`;
+// };
 cardCvv.onmouseenter = () => {
   document.querySelector(".front").style.transform =
     "perspective(1000px) rotateY(-180deg)";
@@ -82,7 +84,6 @@ form.addEventListener("submit", async function (e) {
   cardYear.value = "";
   cardCvv.value = "";
   setTolocalStorageBasket([]);
-
 });
 
 function setTolocalStorageBasket(array) {
@@ -92,3 +93,13 @@ function getFromlocalStorageBasket() {
   return JSON.parse(localStorage.getItem("basket")) ?? [];
 }
 
+let eyeIcon = document.querySelector(".fa-eye");
+eyeIcon.addEventListener("click", function () {
+  if (this.className === "fa-solid fa-eye") {
+    cardCvv.type = "text";
+    this.className = "fa-solid fa-eye-slash";
+  } else {
+    cardCvv.type = "password";
+    this.className = "fa-solid fa-eye";
+  }
+});

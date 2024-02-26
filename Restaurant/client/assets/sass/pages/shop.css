@@ -914,7 +914,7 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
     width: 100%;
   }
   main #logo .owl-carousel .owl-item .item .all-logos .logo {
-    height: 100px;
+    height: 50px;
     width: 25%;
   }
   main footer .footer #footer-top .footer-top {
@@ -994,7 +994,7 @@ main header .header .bg-color .header-content .down-icon i {
   }
 }
 main #shop {
-  padding: 100px;
+  padding: 100px 0;
   background-color: #1b1b1b;
 }
 main #shop .shop {
@@ -1021,13 +1021,13 @@ main #shop .shop .shop-table table tbody tr td {
   text-align: center;
   border: 1px solid #c19d60;
 }
-main #shop .shop .shop-table table tbody tr td .img {
+main #shop .shop .shop-table table tbody tr td.image .img {
   top: 12%;
   left: 5%;
   position: absolute;
   width: 40px;
 }
-main #shop .shop .shop-table table tbody tr td .img img {
+main #shop .shop .shop-table table tbody tr td.image .img img {
   width: 100%;
 }
 main #shop .shop .shop-table table tbody tr td p {
@@ -1066,7 +1066,6 @@ main #shop .shop .shop-box h5 {
   font-size: 20px;
 }
 main #shop .shop .shop-box table {
-  table-layout: fixed;
   margin-top: 20px;
   border: 1px solid #c19d60;
   width: 100%;
@@ -1096,13 +1095,23 @@ main #shop .shop .shop-box button:hover {
     left: 0;
     width: 100%;
   }
+  main header {
+    text-align: center;
+  }
   main #shop .shop {
     flex-direction: column;
   }
   main #shop .shop .shop-table {
     width: 100%;
+    overflow: scroll;
+  }
+  main #shop .shop .shop-table td {
+    height: 80px;
+  }
+  main #shop .shop .shop-table td.image {
+    width: 50px;
   }
   main #shop .shop .shop-box {
-    width: 87%;
+    width: 82%;
   }
 }/*# sourceMappingURL=shop.css.map */

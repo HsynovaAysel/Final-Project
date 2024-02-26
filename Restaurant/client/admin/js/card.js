@@ -124,10 +124,10 @@ function drawTabel(array) {
     tbody.innerHTML += `
       <tr>
       <td><h5>${el.cardHolder}</h5></td>
-      <td><h5>${el.cardNumber}</h5></td>
+      <td><h5>************${el.cardNumber.slice(12)}</h5></td>
       <td><h5>${el.cardMonth}</h5></td>
       <td><h5>${el.cardYear}</h5></td>
-      <td><h5>${el.cardCvv}</h5></td>
+      <td><h5>***</h5></td>
       <td><h5>${created}</h5></td>
       <td><i class="fa-solid fa-trash" onclick=removeData("${el._id}",this)></i></td>
     </tr>

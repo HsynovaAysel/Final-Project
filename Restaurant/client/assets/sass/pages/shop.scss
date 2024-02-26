@@ -8,7 +8,6 @@
 @import "../layouts/header";
 @import "../layouts/footer";
 
-
 main {
   display: none;
   position: absolute;
@@ -73,7 +72,7 @@ main {
     }
   }
   #shop {
-    padding: 100px;
+    padding: 100px 0;
     background-color: #1b1b1b;
     .shop {
       gap: 1rem;
@@ -82,8 +81,7 @@ main {
         width: 70%;
 
         table {
-// table-layout: fixed;
-
+          // table-layout: fixed;
           border-collapse: collapse;
           width: 100%;
           thead {
@@ -99,17 +97,21 @@ main {
           tbody {
             tr {
               td {
+                // height: 80px;
                 position: relative;
                 // padding: 10px 0;
                 text-align: center;
                 border: 1px solid #c19d60;
-                .img {
-                  top: 12%;
-                  left: 5%;
-                  position: absolute;
-                  width: 40px;
-                  img {
-                    width: 100%;
+                &.image {
+                  // width: 50px;
+                  .img {
+                    top: 12%;
+                    left: 5%;
+                    position: absolute;
+                    width: 40px;
+                    img {
+                      width: 100%;
+                    }
                   }
                 }
 
@@ -117,7 +119,6 @@ main {
                   font-size: 16px;
                 }
                 span {
-                  
                   width: 30px;
                   font-size: 20px;
                 }
@@ -132,7 +133,6 @@ main {
                 }
 
                 h5 {
-                  
                   width: 50px;
                   font-size: 15px;
                   color: #c19d60;
@@ -155,8 +155,7 @@ main {
           font-size: 20px;
         }
         table {
-table-layout: fixed;
-
+          // table-layout: fixed;
           margin-top: 20px;
           border: 1px solid #c19d60;
           width: 100%;
@@ -191,14 +190,24 @@ table-layout: fixed;
   @media screen and (max-width: 767px) {
     left: 0;
     width: 100%;
+    header {
+      text-align: center;
+    }
     #shop {
       .shop {
         flex-direction: column;
         .shop-table {
           width: 100%;
+          overflow: scroll;
+          td {
+            height: 80px;
+            &.image {
+              width: 50px;
+            }
+          }
         }
         .shop-box {
-          width: 87%;
+          width: 82%;
         }
       }
     }

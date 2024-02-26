@@ -914,7 +914,7 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
     width: 100%;
   }
   main #logo .owl-carousel .owl-item .item .all-logos .logo {
-    height: 100px;
+    height: 50px;
     width: 25%;
   }
   main footer .footer #footer-top .footer-top {
@@ -1122,11 +1122,15 @@ main #map .map iframe {
     left: 0;
     width: 100%;
   }
+  main #services {
+    padding: 130px 0 0 0;
+  }
   main #services .services {
     flex-direction: column;
   }
   main #services .services .services-card {
     width: 100%;
+    justify-content: space-evenly;
   }
   main #services .services .services-card .img {
     width: 80px;

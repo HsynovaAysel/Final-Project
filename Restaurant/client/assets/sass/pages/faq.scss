@@ -199,23 +199,23 @@ main {
   @media screen and (max-width: 767px) {
     left: 0;
     width: 100%;
-
+    header {
+      text-align: center;
+    }
     #food {
       .food {
-        
-          .food-top {
-            h1 {
-              font-size: 100px;
-            }
-          }
-          .food-bottom {
-            flex-direction: column;
-            .item {
-              width: 100%;
-            }
+        .food-top {
+          h1 {
+            font-size: 100px;
           }
         }
-      
+        .food-bottom {
+          flex-direction: column;
+          .item {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }

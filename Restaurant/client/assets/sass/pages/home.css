@@ -914,7 +914,7 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
     width: 100%;
   }
   main #logo .owl-carousel .owl-item .item .all-logos .logo {
-    height: 100px;
+    height: 50px;
     width: 25%;
   }
   main footer .footer #footer-top .footer-top {
@@ -2575,6 +2575,9 @@ main #new-events #new-events-bottom .owl-carousel .owl-nav {
   main #food .food .food-bottom .item .shape {
     bottom: 20%;
     left: 40%;
+  }
+  main #new-menu {
+    text-align: center;
   }
   main #new-events {
     padding: unset;

@@ -8,8 +8,6 @@
 @import "../layouts/header";
 @import "../layouts/footer";
 
-
-
 main {
   display: none;
   position: absolute;
@@ -802,7 +800,6 @@ main {
               .line {
                 margin: 5px 0;
                 border-top: 1px dotted #999;
-                
               }
               .desc-icon {
                 @include flex(space-between);
@@ -823,7 +820,6 @@ main {
                   .fa-cart-shopping {
                     color: white;
                   }
-                  
                 }
               }
             }
@@ -1134,7 +1130,6 @@ main {
                 .line {
                   margin: 5px 0;
                   border-top: 1px dotted #999;
-              
                 }
                 .desc-icon {
                   @include flex(space-between);
@@ -1155,7 +1150,7 @@ main {
                     .fa-cart-shopping {
                       color: white;
                     }
-                    .fa-eye{
+                    .fa-eye {
                       color: #ece1cf;
                     }
                   }
@@ -1580,7 +1575,7 @@ main {
     left: 0;
     width: 100%;
     header {
-      h1{
+      h1 {
         text-align: center;
       }
       .reservation {
@@ -1612,8 +1607,8 @@ main {
     }
     #recommends {
       .recommends {
-        .recommends-top{
-          h1{
+        .recommends-top {
+          h1 {
             font-size: 100px;
           }
         }
@@ -1658,8 +1653,8 @@ main {
       .features {
         #features-top {
           padding: 100px 0 50px 0;
-          .features-top{
-            h1{
+          .features-top {
+            h1 {
               font-size: 100px;
             }
           }
@@ -1678,8 +1673,8 @@ main {
     }
     #menu-book {
       .menu-book {
-        .menu-top{
-          h1{
+        .menu-top {
+          h1 {
             font-size: 100px;
           }
         }
@@ -1736,8 +1731,8 @@ main {
     }
     #food {
       .food {
-        .food-top{
-          h1{
+        .food-top {
+          h1 {
             font-size: 100px;
           }
         }
@@ -1753,6 +1748,9 @@ main {
           }
         }
       }
+    }
+    #new-menu {
+      text-align: center;
     }
     #new-events {
       padding: unset;

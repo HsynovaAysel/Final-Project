@@ -8,7 +8,6 @@
 @import "../layouts/header";
 @import "../layouts/footer";
 
-
 main {
   display: none;
   position: absolute;
@@ -161,7 +160,9 @@ main {
   @media screen and (max-width: 767px) {
     left: 0;
     width: 100%;
-
+    header {
+      text-align: center;
+    }
     #new-events {
       .new-events {
         .new-events-card-lists {

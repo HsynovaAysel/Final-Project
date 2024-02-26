@@ -914,7 +914,7 @@ main footer .footer #footer-bottom .footer-bottom p:hover {
     width: 100%;
   }
   main #logo .owl-carousel .owl-item .item .all-logos .logo {
-    height: 100px;
+    height: 50px;
     width: 25%;
   }
   main footer .footer #footer-top .footer-top {
@@ -1141,13 +1141,15 @@ main #announcement {
   background-color: #1b1b1b;
   padding: 100px 0;
 }
+main #announcement .announcement {
+  overflow: auto;
+}
 main #announcement .announcement h2 {
   color: #c19d60;
   margin-bottom: 50px;
   text-align: center;
 }
 main #announcement .announcement .announcement-tabel {
-  table-layout: fixed;
   width: 100%;
   text-align: center;
   border-collapse: collapse;
@@ -1181,7 +1183,7 @@ main #announcement .announcement .announcement-tabel tbody tr td h5 {
     width: 93%;
   }
   main #vakan .vakan .vakan-left form select {
-    width: 96%;
+    width: 99%;
   }
   main #vakan .vakan .vakan-left form input {
     width: 92%;

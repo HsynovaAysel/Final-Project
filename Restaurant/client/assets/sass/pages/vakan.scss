@@ -202,14 +202,15 @@ main {
     background-color: #1b1b1b;
     padding: 100px 0;
     .announcement {
+      
+      overflow: auto;
       h2 {
         color: $home-color;
         margin-bottom: 50px;
         text-align: center;
       }
       .announcement-tabel {
-table-layout: fixed;
-
+        // table-layout: fixed;
         width: 100%;
         text-align: center;
         border-collapse: collapse;
@@ -249,7 +250,7 @@ table-layout: fixed;
               width: 93%;
             }
             select {
-              width: 96%;
+              width: 99%;
             }
             input {
               width: 92%;

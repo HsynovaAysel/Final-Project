@@ -87,6 +87,14 @@ header .header .icons i {
   border: 1px solid rgba(0, 0, 0, 0.3);
   color: #444;
 }
+.card form .inputBox .icon-input {
+  position: relative;
+}
+.card form .inputBox .icon-input i {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
 .card form .flexbox {
   display: flex;
   gap: 15px;
@@ -211,14 +219,15 @@ header .header .icons i {
     flex: unset;
   }
   .card .card-container {
-    padding: 100px 0;
-    width: 50%;
+    margin-top: 50px;
+    padding: 110px 0;
+    width: 80%;
   }
   .card .card-container .front .card-number-box {
     gap: 3px;
   }
   .card .card-container .front .card-number-box span {
-    font-size: 10px;
+    font-size: 20px;
   }
   .card .card-container .front .flexbox .box {
     font-size: 10px;

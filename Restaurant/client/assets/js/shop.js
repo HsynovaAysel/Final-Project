@@ -148,7 +148,7 @@ function drawTableShop(array) {
   array.forEach((el) => {
     shopBody.innerHTML += `
 <tr>
-<td>
+<td class="image" >
   <div class="img"><img src="${el.obj.image}" alt="" /></div>
 </td>
 <td><p>${el.obj.title}</p></td>
@@ -283,4 +283,8 @@ rezervForm.addEventListener("submit", async function (e) {
     (rezervTimeInput.value = ""),
     (rezervPhoneInput.value = ""),
     (rezervPersonSelect.value = "");
+});
+let checkOutBtn = document.querySelector(".check-out-btn");
+checkOutBtn.addEventListener("click", function () {
+  window.location = "card.html";
 });
